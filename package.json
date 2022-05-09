@@ -1,13 +1,16 @@
 {
   "name": "smidiggruppe35",
   "version": "1.0.0",
-  "description": "### Webløsning for Meliora Impact",
+  "description": "Meliora Impact",
   "main": "index.js",
   "scripts": {
     "dev": "concurrently npm:dev:client npm:dev:server",
     "dev:client": "cd client && npm run dev",
     "dev:server": "cd server && npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:server && npm run build:client",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm run build"
   },
   "repository": {
     "type": "git",
