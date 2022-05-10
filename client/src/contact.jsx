@@ -7,36 +7,44 @@ import EmailIcon from '@mui/icons-material/Email';
 import BusinessIcon from '@mui/icons-material/Business';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import Grid from '@mui/material/Grid';
+import "./styling/contact.css";
+
 
 export function Contact() {
   return (
-    <div>
-        <h1>Contact</h1>
-        <p>
-            Reach out if you want to collaborate or know more about our services, or
-            just to connect
-        </p>
-        <div>
-            <ContactForm/>
-        </div>
-       <div>
-           <div>
-               <PhoneIcon/>
-               <p>
-                   +47 92 45 26 10
-               </p>
-           </div>
-           <div>
-               <EmailIcon/>
-               <p>contact@melioraimpact.no
-               </p>
-           </div>
-           <div>
-               <LocationOnIcon/>
-               <p>Peder Ankers plass 49 0301 Oslo</p>
-           </div>
-       </div>
-    </div>
+      <>
+      <header className="contactHeader">
+          <h1>Contact</h1>
+          <p>
+              Reach out if you want to collaborate or know more about our services, or
+              just to connect
+          </p>
+      </header>
+        <Grid container spacing={10}>
+            <Grid item>
+                <ContactForm color={"primary"}/>
+            </Grid>
+
+            <Grid item>
+                <div>
+                    <PhoneIcon color={"primary"}/>
+                    <p>
+                        +47 92 45 26 10
+                    </p>
+                </div>
+                <div>
+                    <EmailIcon color={"primary"}/>
+                    <p>contact@melioraimpact.no
+                    </p>
+                </div>
+                <div>
+                    <LocationOnIcon color={"primary"}/>
+                    <p>Peder Ankers plass 49 0301 Oslo</p>
+                </div>
+            </Grid>
+        </Grid>
+      </>
   );
 }
 
@@ -49,10 +57,10 @@ function ContactForm() {
   return (
     <form>
       <div>
-        <TextField required label={"Name"} InputProps={{
+        <TextField required color={"primary"} label={"Name"} InputProps={{
             endAdornment: (
                 <InputAdornment position="end">
-                    <PersonIcon />
+                    <PersonIcon color={"primary"}/>
                 </InputAdornment>
             ),
         }} variant={"standard"} />
@@ -67,7 +75,7 @@ function ContactForm() {
         <TextField required label={"Co. Name"} InputProps={{
             endAdornment: (
                 <InputAdornment position="end">
-                    <BusinessIcon />
+                    <BusinessIcon color={"primary"}/>
                 </InputAdornment>
             ),
         }} variant={"standard"} />
@@ -81,7 +89,7 @@ function ContactForm() {
         <TextField required label={"Email"} InputProps={{
             endAdornment: (
                 <InputAdornment position="end">
-                    <EmailIcon />
+                    <EmailIcon color={"primary"}/>
                 </InputAdornment>
             ),
         }} variant={"standard"}/>
