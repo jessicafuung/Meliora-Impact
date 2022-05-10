@@ -1,12 +1,14 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React from "react";
-import {Test} from "./components/test";
+import {Header} from "./components/header";
+
+
 
 export function Application() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path={"/"} element={<Test />}/>
+                <Route path={"/"} element={<Header />}/>
             </Routes>
         </BrowserRouter>
     )

@@ -1,0 +1,13 @@
+.partnerCard {
+    text-align: center;
+}
+.centerDiv {
+    margin: auto;
+    width: 90%;
+    background-color: #081825;
+    padding: 10px;
+    color: white;
+}
+.items {
+    text-align: center;
+}
