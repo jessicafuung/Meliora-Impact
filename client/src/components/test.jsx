@@ -1,6 +1,11 @@
 import React from "react"
 import ReactDOOM from "react-dom"
+import CustomHeadline from './CustomHeadline/CustomHeadlineComponent.jsx';
 
 export function Test(){
-    return<h1>Hello World</h1>
+    return (
+        <div>
+            <CustomHeadline />
+        </div>
+    )
 }
