@@ -1,0 +1,9 @@
+.headline-container{
+    display: inline-block;
+
+}
+.line{
+    height: 2px;
+    width: 100%;
+    background-color: #034F7A;
+}
