@@ -4,6 +4,7 @@ import dotenv from "dotenv"
 import { MongoClient } from "mongodb";
 import {FAQApi} from "./api/FAQApi.js";
 import {BookingApi} from "./api/BookingApi.js";
+import {OrganizationApi} from "./api/OrganizationApi.js";
 
 dotenv.config();
 const app = express()
@@ -17,6 +18,11 @@ mongoClient.connect().then(async () => {
 mongoClient.connect().then(async () => {
     console.log("Connected to mongodb (Booking)");
     app.use("/api/bookings", BookingApi(mongoClient.db(process.env.MONGODB_DATABASE)));
+});
+
+mongoClient.connect().then(async () => {
+    console.log("Connected to mongodb (Organizations)");
+    app.use("/api/organizations", OrganizationApi(mongoClient.db(process.env.MONGODB_DATABASE)));
 });
 
 app.get("/", (req, res) => {
