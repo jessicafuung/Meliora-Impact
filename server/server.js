@@ -13,10 +13,6 @@ mongoClient.connect().then(async () => {
     app.use("/api/faq", FAQApi(mongoClient.db(process.env.MONGODB_DATABASE)));
 });
 
-app.get("/", (req, res) => {
-    res.send("Hello Meliora Backend")
-})
-
 app.use(express.static("../client/dist/"));
 app.use((req, res, next) => {
     if (req.method === "GET" && !req.path.startsWith("/api")) {

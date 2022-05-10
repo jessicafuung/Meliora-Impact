@@ -1,14 +1,16 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React from "react";
-import {Header} from "./components/header";
+import {HeaderWater} from "./components/headerWater";
+import Navbar from "./components/navbar";
 
 
 
 export function Application() {
     return (
         <BrowserRouter>
+            <Navbar />
             <Routes>
-                <Route path={"/"} element={<Header />}/>
+                <Route path={"/"} element={<HeaderWater />}/>
             </Routes>
         </BrowserRouter>
     )
