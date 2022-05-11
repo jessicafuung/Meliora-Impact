@@ -1,7 +1,7 @@
 import {createTheme} from "@mui/material/styles"
 import { green, purple } from '@mui/material/colors';
 
-const primary = "#EAC14B"
+const primary = "#034F7A"
 
 const theme = createTheme({
   palette: {
