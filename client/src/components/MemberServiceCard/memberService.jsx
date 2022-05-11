@@ -2,10 +2,10 @@ import {Business, Soap} from "@mui/icons-material";
 import {Box, Button, Card, CardActions, Grid, SvgIcon, Typography} from "@mui/material";
 import "./memberService.css";
 import {HandHoldingHeartIcon} from "../../assets/handHoldingHeartIcon";
+import CustomButton from "../CustomButton/CustomButton";
 
 
 export function MemberService() {
-
     return (
         <Box textAlign="center" className="service-container">
             <Grid container flexDirection="row">
@@ -20,7 +20,7 @@ export function MemberService() {
                     for greater social good
                 </Typography>
                 <Box textAlign="center" className="service-button">
-                    <Button variant="contained">Learn more</Button>
+                    <CustomButton to="/" variant="contained">Learn more</CustomButton>
                 </Box>
             </Card>
             <Card className="service-card">
@@ -34,7 +34,7 @@ export function MemberService() {
                     <br/>
                 </Typography>
                     <Box textAlign="center" className="service-button">
-                        <Button variant="contained">Learn more</Button>
+                        <CustomButton to="/" variant="contained">Learn more</CustomButton>
                     </Box>
             </Card>
             </Grid>
