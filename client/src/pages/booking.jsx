@@ -1,16 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import "date-fns"
 import Grid from "@material-ui/core/Grid"
 import DateFnsUtils from "@date-io/date-fns"
-import {
-    MuiPickersUtilsProvider,
-    KeyboardTimePicker,
-    KeyboardDatePicker
-} from "@material-ui/pickers";
+import moment from 'moment';
+import {KeyboardDatePicker, KeyboardTimePicker, MuiPickersUtilsProvider} from "@material-ui/pickers";
 
 export function Booking() {
     /* todays date */
-    const [selectedDate, setSelectedDate] = React.useState(
+    const [selectedDate, setSelectedDate] = useState(
         new Date()
     )
 
@@ -22,14 +19,22 @@ export function Booking() {
         return date.getDay() === 0 || date.getDay() === 6;
     }
 
-    return <>
+    function convertUTCDateToLocalDate(date) {
+        const iso = new Date(date.getTime() - date.getTimezoneOffset() * 60 * 1000);
+        const outputDate = moment(iso).format("dddd, DD.MM.YYYY");
+        console.log("Moment: "+outputDate)
+        return iso
+    }
+
+    return (
+        <>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
-            <Grid container justify='space-around'>
+            <Grid container justifyContent='space-around'>
                 <KeyboardDatePicker
                     variant='static'
                     id='date-picker'
                     label='Date Picker'
-                    format='MM/dd/yyy'
+                    format='dd/MM/yyyy'
                     margin='normal'
                     disablePast
                     hintText="Weekends Disabled"
@@ -42,7 +47,9 @@ export function Booking() {
                 <KeyboardTimePicker />
             </Grid>
         </MuiPickersUtilsProvider>
-        <p>Your date: {selectedDate.getDate()}</p>
+        <h3>Your date (date picker): {selectedDate.getDate()} {selectedDate.getMonth()} {selectedDate.getFullYear()}</h3>
+            <h3>ISO format: {convertUTCDateToLocalDate(selectedDate).toISOString()}</h3>
     </>
+    );
 
 }
