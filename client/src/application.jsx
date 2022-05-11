@@ -8,6 +8,7 @@ import { ThemeProvider } from "@mui/system";
 import theme from "./styling/theme";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
 import Header from "./components/navbar";
+import {BeTheChange} from "./components/BeTheChange/beTheChange";
 
 export function Application() {
     return (
@@ -16,7 +17,7 @@ export function Application() {
         <BrowserRouter>
             <Header/>
             <Routes>
-                <Route path={"/"} element={<Home />}/>
+                <Route path={"/"} element={<BeTheChange />}/>
                 <Route path={"/test"} element={<TestPage />}/>
             </Routes>
         </BrowserRouter>

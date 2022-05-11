@@ -9,10 +9,13 @@ export function BeTheChange() {
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={0}>
                     <Grid item xs={6} md={6}>
-                        <div className="image1">side1</div>
+                        <div className="image1">bilde1</div>
                     </Grid>
                     <Grid item xs={6} md={6}>
-                        <div className="text1">text1</div>
+                        <div className="text1">
+                            PhotoFindr has helped us build wells and give clean water to 10 different villages,
+                            that never have had access to it before
+                        </div>
                     </Grid>
                 </Grid>
             </Box>
@@ -20,10 +23,13 @@ export function BeTheChange() {
             <Box sx={{ flexGrow: 1 }}>
                 <Grid container spacing={0}>
                     <Grid item xs={6} md={6}>
-                        <div className="text2">text2</div>
+                        <div className="text2">
+                            PhotoFindr has helped us build wells and give clean water to 10 different villages,
+                            that never have had access to it before
+                        </div>
                     </Grid>
                     <Grid item xs={6} md={6}>
-                        <div className="image2">image2</div>
+                        <div className="image2">bilde2</div>
                     </Grid>
                 </Grid>
             </Box>
