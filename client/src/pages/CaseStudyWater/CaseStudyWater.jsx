@@ -1,7 +1,7 @@
 import React from "react"
-import "./header.css"
+import "./CaseStudyWater.css"
 
-export function HeaderWater(){
+export function CaseStudyWater(){
     return <>
         <div className="header">
             <div>

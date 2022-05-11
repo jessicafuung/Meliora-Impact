@@ -1,9 +1,9 @@
 import React from "react"
 
 import React from "react"
-import "./headerFrontPage.css"
+import "./Home.css"
 
-export function HeaderFrontPage(){
+export function Home(){
     return <>
         <div className="header">
             <div>
