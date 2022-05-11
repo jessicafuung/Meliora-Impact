@@ -7,7 +7,7 @@ export function Application() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path={"/"} element={<MemberService />}/>
+                <Route path={"/"} element={<Test />}/>
                 <Route path={"/test"} element={<TestPage />}/>
             </Routes>
         </BrowserRouter>
