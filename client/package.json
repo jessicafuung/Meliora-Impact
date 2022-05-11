@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel src/index.html",
+    "dev": "parcel public/index.html",
     "build": "npm install --include=dev && parcel build index.html"
   },
   "keywords": [],
@@ -19,6 +19,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-favicon": "^1.0.0",
+    "react-icons": "^4.3.1",
     "react-query": "^3.39.0",
     "react-router-dom": "^6.2.2"
   }
