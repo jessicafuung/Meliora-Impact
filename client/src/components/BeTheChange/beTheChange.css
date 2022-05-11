@@ -1,24 +1,36 @@
+.container {
+    max-height: 1130px;
+    max-width: 1440px;
+    margin: auto;
+    width: 50%;
+}
 .image1 {
     background-image: url("../../images/bethechangeimg1.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 450px;
+    height: 453px;
 }
 .text1 {
     width: 100%;
     background-color: rgb(3, 79, 122, 0.1);
-    height: 450px;
+    height: 453px;
 }
 .image2 {
     background-image: url("../../images/beTheChange2.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 450px;
+    height: 453px;
 }
 .text2 {
     width: 100%;
     background-color: rgb(3, 79, 122, 0.1);
-    height: 450px;
+    height: 453px;
+}
+.description {
+    font-size: 16px;
+}
+.description em {
+    color: #034F7A
 }
 

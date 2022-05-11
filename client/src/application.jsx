@@ -9,15 +9,16 @@ import theme from "./styling/theme";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
 import Header from "./components/navbar";
 import {BeTheChange} from "./components/BeTheChange/beTheChange";
+import {PartnerCard} from "./components/PartnerCard/partnerCard";
 
 export function Application() {
     return (
         <ThemeProvider theme={theme}>
         <AnimationContainer>
         <BrowserRouter>
-            <Header/>
+
             <Routes>
-                <Route path={"/"} element={<BeTheChange />}/>
+                <Route path={"/"} element={<PartnerCard />}/>
                 <Route path={"/test"} element={<TestPage />}/>
             </Routes>
         </BrowserRouter>
