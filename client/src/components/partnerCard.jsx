@@ -9,13 +9,13 @@ export function PartnerCard(){
         <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
                 <Grid item xs={4} md={4}>
-                    <div className="items">Google</div>
+                    <img src="https://i.postimg.cc/c404Kx3F/google.png"/>
                 </Grid>
                 <Grid item xs={4} md={4}>
-                    <div className="items">Høyskolen Kristiania</div>
+                    <img src="https://i.postimg.cc/j5yt5mSV/Kristiania.png"/>
                 </Grid>
                 <Grid item xs={4} md={4}>
-                    <div className="items">Linkedin</div>
+                    <img src="https://i.postimg.cc/bwYJ5yNZ/linkedin.png"/>
                 </Grid>
             </Grid>
         </Box>

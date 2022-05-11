@@ -3,10 +3,11 @@
 }
 .centerDiv {
     margin: auto;
-    width: 90%;
-    background-color: #081825;
+    width: 100%;
+    background-color: rgba(3,79,122,0.2);
     padding: 10px;
     color: white;
+    align-content: center;
 }
 .items {
     text-align: center;
