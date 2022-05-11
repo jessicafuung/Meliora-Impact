@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Logo from '../assets/Logo';
 import PersonIcon from '@mui/icons-material/Person';
 import "./Navbar.css"
+import Box from "@mui/material/Box";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
@@ -17,7 +18,7 @@ const Navbar = () => {
       setNavbar(false);
     }
   };
-  
+
   window.addEventListener("scroll", changeBackground);
   
 
@@ -43,9 +44,9 @@ const Navbar = () => {
             <Link to="/contact">Contact</Link>
             <Link to="/privacy">Privacy</Link>
         </div>
-            <div style={{marginLeft: "15px", marginRight: "15px"}}>
-             <span className='divider'/>
-            </div>
+            <Box mx={"15px"}>
+              <span className='divider'/>
+            </Box>
             <PersonIcon sx={{marginRight: "15px", color: "#FFF"}}/>
             <div className="links">
             <Link className="strong" to="/login">Log in</Link>
