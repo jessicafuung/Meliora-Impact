@@ -3,6 +3,7 @@ import React from "react";
 import {Test} from "./components/test";
 import TestPage from "./pages/TestPage";
 import Navbar from "./components/Navbar/Navbar";
+
 export function Application() {
     return (
         <BrowserRouter>

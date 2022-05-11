@@ -1,11 +1,13 @@
 import React from 'react'
+
 import { Link } from 'react-router-dom';
-import "./Navbar.css"
-import PersonIcon from '@mui/icons-material/Person';
+import { useEffect, useState } from "react";
 import Logo from '../assets/Logo';
+import PersonIcon from '@mui/icons-material/Person';
+import "./Navbar.css"
 
 const Navbar = () => {
-    const [navbar, setNavbar] = React.useState(false);
+  const [navbar, setNavbar] = useState(false);
 
   
   const changeBackground = () => {
@@ -15,13 +17,25 @@ const Navbar = () => {
       setNavbar(false);
     }
   };
+
   window.addEventListener("scroll", changeBackground);
+  
   return (
-    <div className='main'>
-    <div className="navbar-container">
-    <div className={navbar ? "navbar active" : "navbar"}>
-            <Logo/>
-        <div className="link-container">
+    <>
+      <div className="navbar-container">
+        <div className={navbar ? "navbar active" : "navbar"}>
+          <div className="navbar-content">
+            <div className="logo-container">
+              <Link
+                to="/"
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
+                <Logo/>
+              </Link>
+            </div>
+            <div className="link-container">
         <div className="links">
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
@@ -37,10 +51,14 @@ const Navbar = () => {
             <Link className="strong" to="/signup">Sign up</Link>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
-  )
-}
+                </div>
+                </div>
+      </div>
+    </>
+  );
+};
+
+
+
 
 export default Navbar
