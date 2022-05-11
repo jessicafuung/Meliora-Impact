@@ -1,5 +1,5 @@
 import {Business, Soap} from "@mui/icons-material";
-import {Box, Button, Card, CardActions, SvgIcon, Typography} from "@mui/material";
+import {Box, Button, Card, CardActions, Grid, SvgIcon, Typography} from "@mui/material";
 import "./memberService.css";
 import {HandHoldingHeartIcon} from "../../assets/handHoldingHeartIcon";
 
@@ -8,6 +8,7 @@ export function MemberService() {
 
     return (
         <Box textAlign="center" className="service-container">
+            <Grid container flexDirection="row">
             <Card className="service-card">
                 <Business fontSize="large" className="service-icon"/>
                 <h4 className="service-header">
@@ -36,6 +37,7 @@ export function MemberService() {
                         <Button variant="contained">Learn more</Button>
                     </Box>
             </Card>
+            </Grid>
         </Box>
     )
 }
