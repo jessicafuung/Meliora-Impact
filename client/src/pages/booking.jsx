@@ -18,20 +18,26 @@ export function Booking() {
         setSelectedDate(date)
     }
 
+    function disableWeekends(date) {
+        return date.getDay() === 0 || date.getDay() === 6;
+    }
+
     return <>
         <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <Grid container justify='space-around'>
                 <KeyboardDatePicker
-                disableToolbar
-                variant='static'
-                format='MM/dd/yyy'
-                margin='normal'
-                id='date-picker'
-                label='Date Picker'
-                disablePast
-                value={selectedDate}
-                onChange={handleDateChange}
-                KeyboardButtonProps={{'aria-label':'change date'}}
+                    variant='static'
+                    id='date-picker'
+                    label='Date Picker'
+                    format='MM/dd/yyy'
+                    margin='normal'
+                    disablePast
+                    hintText="Weekends Disabled"
+                    shouldDisableDate={disableWeekends}
+                    disableToolbar
+                    value={selectedDate}
+                    onChange={handleDateChange}
+                    KeyboardButtonProps={{'aria-label':'change date'}}
                 />
                 <KeyboardTimePicker />
             </Grid>
