@@ -9,5 +9,14 @@ export function BookingApi(mongoDatabase) {
         console.log(bookings)
     });
 
+    router.post("/",  (req, res) => {
+        const {date} = req.body;
+
+        mongoDatabase
+            .collection("bookings")
+            .insertOne({date});
+        res.sendStatus(200)
+    })
+
     return router;
 }
