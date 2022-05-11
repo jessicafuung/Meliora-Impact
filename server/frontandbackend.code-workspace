@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "folders": [
         {
             "path": "../client"
@@ -7,4 +8,15 @@
             "path": "."
         }
     ]
+=======
+	"folders": [
+		{
+			"path": "../client"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+>>>>>>> 5b8f07cbaf6cfb00b871da947fac85045ae1a802
 }

@@ -15,6 +15,10 @@ const theme = createTheme({
       main: green[500],
     },
   },
+  typography: {
+    fontFamily: '"Montserrat", sans-serif',
+    fontSize: 16,
+  },
 });
 
 
