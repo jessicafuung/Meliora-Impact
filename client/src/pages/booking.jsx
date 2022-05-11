@@ -23,17 +23,20 @@ export function Booking() {
             <Grid container justify='space-around'>
                 <KeyboardDatePicker
                 disableToolbar
-                variant='dialog'
+                variant='static'
                 format='MM/dd/yyy'
                 margin='normal'
                 id='date-picker'
                 label='Date Picker'
+                disablePast
                 value={selectedDate}
                 onChange={handleDateChange}
                 KeyboardButtonProps={{'aria-label':'change date'}}
                 />
+                <KeyboardTimePicker />
             </Grid>
         </MuiPickersUtilsProvider>
+        <p>Your date: {selectedDate.getDate()}</p>
     </>
 
 }
