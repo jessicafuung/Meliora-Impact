@@ -10,6 +10,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Grid from '@mui/material/Grid';
 import './styling/contact.css';
 import Typography from '@mui/material/Typography';
+import CustomButton from "./components/CustomButton/CustomButton";
 
 
 export function Contact() {
@@ -117,8 +118,8 @@ function ContactForm() {
           onChange={(event) => setMessage(event.target.value)}
         />*/}
             </div>
-            <div>
-                <Button variant={"contained"}>Submit</Button>
+            <div align="center">
+                <CustomButton variant="contained">Submit</CustomButton>
             </div>
         </form>
     );
