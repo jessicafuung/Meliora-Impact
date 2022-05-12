@@ -8,16 +8,16 @@ export function NonProfit(){
             <div className="header">
                 <div>
                     <p className="top">t</p>
-                    <p className="headline"><strong>Non-profit members</strong></p>
-                    <p className="description">There's often no solid philanthropic strategy and<br/> nonprofits are picked on an ad-hoc basis.k</p>
+                    <p className="headline"><strong>Non-profit <em>members</em></strong></p>
+                    <p className="description">There's often no solid <em>philanthropic</em> strategy and<br/> nonprofits are picked on an <em>ad-hoc basis.</em></p>
                 </div>
             </div>
         </div>
-        <div style={{height: 90}}></div>
+        <div style={{height: 100}}/>
         <Benefits />
-        <div style={{height: 90}}></div>
+        <div style={{height: 100}}/>
         <Services />
-        <div style={{height: 90}}></div>
+        <div style={{height: 100}}/>
         <img src={require("../../images/Footer.svg")} width={"100%"}/>
 
 

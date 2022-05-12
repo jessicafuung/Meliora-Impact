@@ -9,3 +9,10 @@
     width: 1440px;
     margin: auto;
 }
+@media only screen and (max-width: 900px) {
+
+.containerServices {
+    height: 600px;
+}
+
+}
