@@ -10,6 +10,8 @@ import AnimationContainer from "./components/AnimationContainer/AnimationContain
 import Header from "./components/navbar";
 import {BeTheChange} from "./components/BeTheChange/beTheChange";
 import {PartnerCard} from "./components/PartnerCard/partnerCard";
+import {NonProfit} from "./pages/Non-profitMember/nonProfitMember";
+import {Benefits} from "./pages/Non-profitMember/benefits";
 
 export function Application() {
     return (
@@ -18,7 +20,7 @@ export function Application() {
         <BrowserRouter>
 
             <Routes>
-                <Route path={"/"} element={<Home/>}/>
+                <Route path={"/"} element={<BeTheChange/>}/>
                 <Route path={"/test"} element={<TestPage />}/>
             </Routes>
         </BrowserRouter>

@@ -1,9 +1,9 @@
 import React from "react"
-
 import React from "react"
 import "./Home.css"
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import CustomButton from "../../components/CustomButton/CustomButton";
 
 export function Home(){
     return <>
@@ -21,6 +21,7 @@ export function Home(){
                             and <strong><em>sustainable</em></strong> way
                         </p>
                         <button className="consultationBtn"><strong>Book a Consultation</strong></button>
+
                     </div>
                 </Grid>
             </Grid>
