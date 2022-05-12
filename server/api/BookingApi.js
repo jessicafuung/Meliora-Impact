@@ -4,9 +4,43 @@ export function BookingApi(mongoDatabase) {
     const router = new Router();
 
     router.get("/", async (req, res) => {
-        const bookings = await mongoDatabase.collection("bookings").find().toArray();
-        res.json(bookings);
-        console.log(bookings)
+        const query = {};
+
+        const { isBooked } = req.query;
+
+        if(isBooked) {
+            query.isBooked = isBooked
+        }
+
+        const bookingsQuery = await mongoDatabase
+            .collection("bookings")
+            .find(query)
+            .map(({_id, date, time, isBooked}) => ({
+                _id,
+                date,
+                time,
+                isBooked
+            }))
+            .toArray();
+
+        const bookingsWithoutQuery = await mongoDatabase
+            .collection("bookings")
+            .find(query)
+            .map(({_id, date, time, isBooked}) => ({
+                _id,
+                date,
+                time,
+                isBooked
+            }))
+            .toArray();
+
+        if (bookingsQuery.length >= 1) {
+            // If succeed finding isBooked = false
+            res.json(bookingsQuery);
+        } else {
+            // If not, return the whole collection
+            res.json(bookingsWithoutQuery);
+        }
     });
 
     router.post("/",  (req, res) => {
