@@ -1,116 +1,125 @@
-import { useState } from "react";
+import {useState} from "react";
 import React from "react";
 import Button from "@mui/material/Button";
-import {InputAdornment, TextField} from "@mui/material";
+import {Box, InputAdornment, TextField} from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
 import BusinessIcon from '@mui/icons-material/Business';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Grid from '@mui/material/Grid';
-import "./styling/contact.css";
+import './styling/contact.css';
+import Typography from '@mui/material/Typography';
 
 
 export function Contact() {
-  return (
-      <>
-      <header className="contactHeader">
-          <h1>Contact</h1>
-          <p>
-              Reach out if you want to collaborate or know more about our services, or
-              just to connect
-          </p>
-      </header>
-        <Grid container spacing={10}>
-            <Grid item>
-                <ContactForm color={"primary"}/>
-            </Grid>
+    return (
+        <Box mt={10}>
 
-            <Grid item>
-                <div>
-                    <PhoneIcon color={"primary"}/>
-                    <p>
-                        +47 92 45 26 10
-                    </p>
-                </div>
-                <div>
-                    <EmailIcon color={"primary"}/>
-                    <p>contact@melioraimpact.no
-                    </p>
-                </div>
-                <div>
-                    <LocationOnIcon color={"primary"}/>
-                    <p>Peder Ankers plass 49 0301 Oslo</p>
-                </div>
+
+        <Grid container justifyContent="center" alignItems='center'>
+            <header className="contactHeader">
+                <Grid item xs={12}>
+                    <Typography textAlign='center' variant="h2">
+                        Contact
+                    </Typography>
+                    <Typography paragraph>
+                        Reach out if you want to collaborate or know more about our services, or just to connect
+                    </Typography>
+                </Grid>
+
+            </header>
+            <Grid container gap={12} alignItems="center" justifyContent="center">
+                <Grid item>
+                    <ContactForm color={"primary"}/>
+                </Grid>
+
+                <Grid item>
+                    <div className="contactInfo">
+                        <PhoneIcon color={"primary"}/>
+                        <Typography paragraph>
+                            +47 92 45 26 10
+                        </Typography>
+                    </div>
+                    <div className="contactInfo">
+                        <EmailIcon color={"primary"}/>
+                        <Typography paragraph>contact@melioraimpact.no
+                        </Typography>
+                    </div>
+                    <div className="contactInfo">
+                        <LocationOnIcon color={"primary"}/>
+                        <Typography paragraph>Peder Ankers plass 49 0301 Oslo</Typography>
+                    </div>
+                </Grid>
             </Grid>
         </Grid>
-      </>
-  );
+        </Box>
+    );
 }
 
 function ContactForm() {
-  const [name, setName] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+    const [name, setName] = useState("");
+    const [companyName, setCompanyName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
 
-  return (
-    <form>
-      <div>
-        <TextField required color={"primary"} label={"Name"} InputProps={{
-            endAdornment: (
-                <InputAdornment position="end">
-                    <PersonIcon color={"primary"}/>
-                </InputAdornment>
-            ),
-        }} variant={"standard"} />
-          {/*
+    return (
+        <form>
+            <div className="formInfo">
+                <TextField required color={"primary"} label={"Name"} InputProps={{
+                    endAdornment: (
+                        <InputAdornment position="end">
+                            <PersonIcon color={"primary"}/>
+                        </InputAdornment>
+                    ),
+                }} variant={"standard"}/>
+                {/*
         <input
           id={"name"}
           name={name}
           onChange={(event) => setName(event.target.value)}
         />*/}
-      </div>
-      <div>
-        <TextField required label={"Co. Name"} InputProps={{
-            endAdornment: (
-                <InputAdornment position="end">
-                    <BusinessIcon color={"primary"}/>
-                </InputAdornment>
-            ),
-        }} variant={"standard"} />
-          {/*
+            </div>
+            <div className="formInfo">
+                <TextField required label={"Co. Name"} InputProps={{
+                    endAdornment: (
+                        <InputAdornment position="end">
+                            <BusinessIcon color={"primary"}/>
+                        </InputAdornment>
+                    ),
+                }} variant={"standard"}/>
+                {/*
         <input
           name={companyName}
           onChange={(event) => setCompanyName(event.target.value)}
         />*/}
-      </div>
-      <div>
-        <TextField required label={"Email"} InputProps={{
-            endAdornment: (
-                <InputAdornment position="end">
-                    <EmailIcon color={"primary"}/>
-                </InputAdornment>
-            ),
-        }} variant={"standard"}/>
+            </div>
+            <div className="formInfo">
+                <TextField required label={"Email"} InputProps={{
+                    endAdornment: (
+                        <InputAdornment position="end">
+                            <EmailIcon color={"primary"}/>
+                        </InputAdornment>
+                    ),
+                }} variant={"standard"}/>
 
-          {/*
+                {/*
           <input
             name={email}
             onChange={(event) => setEmail(event.target.value)}
           />*/}
-      </div>
-      <div>
-        <TextField required label="Message" multiline rows={4} />
-          {/*
+            </div>
+            <div className="formInfo">
+                <TextField required label="Message" multiline rows={4}/>
+                {/*
         <textarea
           name={message}
           onChange={(event) => setMessage(event.target.value)}
         />*/}
-      </div>
-      <div>
-        <Button variant={"contained"}>Submit</Button>
-      </div>
-    </form>
-  );
+            </div>
+            <div>
+                <Button variant={"contained"}>Submit</Button>
+            </div>
+        </form>
+    );
 }
