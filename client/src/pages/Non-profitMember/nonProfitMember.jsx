@@ -1,5 +1,7 @@
 import React from "react"
 import "./nonProfitMember.css"
+import {Benefits} from "./benefits";
+import {Services} from "./services";
 export function NonProfit(){
     return <>
         <div>
@@ -11,6 +13,12 @@ export function NonProfit(){
                 </div>
             </div>
         </div>
+        <div style={{height: 90}}></div>
+        <Benefits />
+        <div style={{height: 90}}></div>
+        <Services />
+        <div style={{height: 90}}></div>
+        <img src={require("../../images/Footer.svg")} width={"100%"}/>
 
 
     </>

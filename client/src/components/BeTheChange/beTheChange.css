@@ -27,10 +27,12 @@
     background-color: rgb(3, 79, 122, 0.1);
     height: 453px;
 }
-.description {
-    font-size: 20px;
+.text {
+    font-size: 16px;
+    color: black;
 }
-.description em {
-    color: #034F7A
+.text em {
+    color: #034F7A;
+    font-style: normal;
 }
 

@@ -5,16 +5,27 @@ import "./nonProfitMember.css";
 
 export function Benefits(){
     return <>
-        <div className="container">
+        <div>
             <div>
                 <h1 style={{
                     fontSize: 36,
                     textAlign: "center"
                 }}>Benefits</h1>
-            <div style={{height: 50}}></div>
+                <div style={{
+                    width: "5%",
+                    height: 2,
+                    backgroundColor: "#034F7A",
+                    margin: "auto",
+                    marginTop: 5,
+                    marginBottom: 50
+
+                }}/>
             </div>
+        <div style={{height: 50}}></div>
+        </div>
+        <div className="container">
             <Box className="box" sx={{ flexGrow: 1 }}>
-                <Grid container spacing={12}>
+                <Grid container spacing={6}>
                     <Grid style={{textAlign: "center"}} item xs={12} md={6}>
                         <p style={{textAlign: "left"}}>
                             <strong>More nonprofits are going digital: payments, platforms, marketing and storytelling are done and supported online.</strong>
@@ -31,7 +42,7 @@ export function Benefits(){
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <div>
-                            <img style={{width: 466, height: 391, marginLeft: 100}} src={require("../../images/nonmemberprofit.svg")}/>
+                            <img style={{width: 466, height: 391, display: "block", marginLeft: "auto", marginRight: "auto"}} src={require("../../images/nonmemberprofit.svg")}/>
                         </div>
                     </Grid>
                 </Grid>

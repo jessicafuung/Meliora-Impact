@@ -47,7 +47,7 @@ export function BeTheChange() {
                             <p style={{
                                 textAlign: "left",
                                 marginLeft: 45,
-                            }}className="description">
+                            }}className="text">
                                 The donations <strong><em>Kristiania University College</em></strong> has made has contributed<br/>
                                 with us being able to build <strong><em>50</em></strong> more schools.
                             </p>
@@ -72,9 +72,8 @@ export function BeTheChange() {
                                 clear: "right",
                                 textAlign: "right",
                                 marginRight: 45,
-                            }} className="description">
-                                <strong><em>PhotoFindr</em></strong> has helped us build wells and give clean water to
-                                <strong><em>10</em></strong> different<br/> villages, that never have had access to it before
+                            }} className="text">
+                                <strong><em>PhotoFindr</em></strong> has helped us build wells and give clean water to <strong><em>10</em></strong> different<br/> villages, that never have had access to it before
                             </p>
                         </div>
                     </Grid>
