@@ -7,6 +7,7 @@ import TestPage from "./pages/TestPage";
 import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider } from "@mui/system";
 import theme from "./styling/theme";
+import {ListCases} from "./listCases";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
 import Header from "./components/navbar";
 
@@ -21,6 +22,8 @@ export function Application() {
                 <Route path={"/contact"} element={<Contact />}/>
                 <Route path={"/"} element={<Home />}/>
                 <Route path={"/test"} element={<TestPage />}/>
+                <Route path={"/cases"} element={<ListCases/>}/>
+
             </Routes>
         </BrowserRouter>
         </AnimationContainer>
