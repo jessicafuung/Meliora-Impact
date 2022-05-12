@@ -1,13 +1,39 @@
 import React from 'react'
 import CustomButton from '../components/CustomButton/CustomButton';
 import CustomHeadline from '../components/CustomHeadline/CustomHeadlineComponent';
+import {Business} from "@mui/icons-material";
+import {HandHoldingHeartIcon} from "../assets/handHoldingHeartIcon";
+import {MemberServiceCard} from "../components/MemberServiceCard/memberServiceCard";
+import {Box, Grid} from "@mui/material";
 
 const TestPage = () => {
+     const members = [
+        {
+            title: "Business",
+            content: "For businesses who are profitable \n" +
+                     "and want to use their resources \n" +
+                     "for greater social good",
+            // icon: <Business />,
+        },
+        {
+            title: "Non-profits",
+            content: "For nonprofits who are seeking \n" +
+                     "to carry out their frontline work",
+            // icon: <HandHoldingHeartIcon />,
+        }
+    ]
+
 
     return (
         <>
-        <div style={{height: "120vh", backgroundImage: "url(https://images.unsplash.com/photo-1636320804382-912276801e97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80)"}}/>
-        <CustomButton variant="contained">Learn more</CustomButton>
+            <Grid container>
+            {members.map(ass => (
+                <>
+                    <MemberServiceCard key={ass.title} title={ass.title} content={ass.content} />
+                </>
+                )
+            )}
+            </Grid>
         </>
     )
 }
