@@ -2,7 +2,7 @@
     max-height: 1130px;
     max-width: 1440px;
     margin: auto;
-    width: 50%;
+    width: 90%;
 }
 .image1 {
     background-image: url("../../images/bethechangeimg1.png");
@@ -28,7 +28,7 @@
     height: 453px;
 }
 .description {
-    font-size: 16px;
+    font-size: 35px;
 }
 .description em {
     color: #034F7A

@@ -18,7 +18,7 @@ export function Application() {
         <BrowserRouter>
 
             <Routes>
-                <Route path={"/"} element={<PartnerCard />}/>
+                <Route path={"/"} element={<Home/>}/>
                 <Route path={"/test"} element={<TestPage />}/>
             </Routes>
         </BrowserRouter>

@@ -71,7 +71,7 @@ export function BeTheChange() {
                             <p style={{
                                 clear: "right",
                                 textAlign: "right",
-                                marginRight: 45
+                                marginRight: 45,
                             }} className="description">
                                 <strong><em>PhotoFindr</em></strong> has helped us build wells and give clean water to <strong><em>10</em></strong> different<br/> villages,
                             that never have had access to it before
