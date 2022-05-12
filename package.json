@@ -25,9 +25,6 @@
   },
   "homepage": "https://github.com/FabianSolheim/Smidiggruppe35#readme",
   "dependencies": {
-    "concurrently": "^7.1.0",
-    "mongodb": "^4.5.0",
-    "prettier": "^2.6.2",
-    "react-router-dom": "^6.3.0"
+    "concurrently": "^7.1.0"
   }
 }

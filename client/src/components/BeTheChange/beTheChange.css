@@ -1,0 +1,23 @@
+.image1 {
+    width: 100%;
+    background-image: url("../../images/bethechangeimg1.png");
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 400px;
+}
+.text1 {
+    width: 100%;
+    background-color: green;
+    height: 400px;
+}
+.image2 {
+    width: 100%;
+    background-color: blue;
+    height: 400px;
+}
+.text2 {
+    width: 100%;
+    background-color: yellow;
+    height: 400px;
+}
+
