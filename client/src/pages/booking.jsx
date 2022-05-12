@@ -4,7 +4,6 @@ import moment from 'moment';
 import Grid from "@material-ui/core/Grid"
 import DateFnsUtils from "@date-io/date-fns"
 import {KeyboardDatePicker, MuiPickersUtilsProvider} from "@material-ui/pickers";
-import Box from '@mui/material/Box';
 
 import {ApiContext} from "../../lib/useContext";
 import {useLoading} from "../../lib/useLoader";
@@ -19,6 +18,9 @@ const availabilities = [
     {time: "14.30"},
     {time: "15.30"},
 ];
+
+let bookedDate = "";
+let bookedTime = "";
 
 /* fetch booked times from DB */
 export function GetBookings() {
@@ -48,14 +50,30 @@ export function GetBookings() {
     </div>
 }
 
-/* mapping open hours (availabilities) */
+/* mapping open hours (availabilities) and */
 function GetOpenHours() {
     const [selectedTime, setSelectedTime] = useState("");
+    const [isClicked, setIsClicked] = useState(false);
+    bookedTime = selectedTime
+
+    /* Triggered when selected time */
+    function handleSubmit(e) {
+        e.preventDefault()
+        setIsClicked(true)
+    }
 
     return <div>
-        {availabilities.map(({time}) => (
-            <ul key={time}><button>{time}</button></ul>
-        ))}
+            <p>Selected time: {bookedTime}</p>
+            {availabilities.map(({time}) => (
+                <ul key={time}>
+                    <button value={time} onClick={(e) => setSelectedTime(e.target.value)}>{time}</button>
+                </ul>
+            ))}
+        {isClicked?<div>Clicked</div>:<div>Not clicked yet</div>}
+
+        <form onSubmit={handleSubmit}>
+            <button>Select Time</button>
+        </form>
     </div>
 }
 
@@ -83,9 +101,11 @@ export function Booking() {
     function handleSubmit(e) {
         e.preventDefault()
         setIsClicked(true)
+        bookedDate = date
         postBooking({date})
     }
 
+    console.log(bookedDate)
     /* Sets new selected date */
     const handleDateChange = (date) => {
         setSelectedDate(date)
@@ -98,38 +118,33 @@ export function Booking() {
 
     return (
         <>
-                <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                    <Grid container justifyContent='space-around'>
-                        <KeyboardDatePicker
-                            variant='static'
-                            id='date-picker'
-                            label='Date Picker'
-                            format='dd/MM/yyyy'
-                            margin='normal'
-                            disablePast
-                            hintText="Weekends Disabled"
-                            shouldDisableDate={disableWeekends}
-                            disableToolbar
-                            value={selectedDate}
-                            onChange={handleDateChange}
-                            KeyboardButtonProps={{'aria-label':'change date'}}
-                        />
+            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <Grid container justifyContent='space-around'>
+                    <KeyboardDatePicker
+                        variant='static'
+                        id='date-picker'
+                        label='Date Picker'
+                        format='dd/MM/yyyy'
+                        margin='normal'
+                        disablePast
+                        hintText="Weekends Disabled"
+                        shouldDisableDate={disableWeekends}
+                        disableToolbar
+                        value={selectedDate}
+                        onChange={handleDateChange}
+                        KeyboardButtonProps={{'aria-label':'change date'}}
+                    />
 
-                            {isClicked?
-                                    <GetOpenHours />
-                                :<div>Not clicked yet</div>
-                            }
+                    {isClicked?<GetOpenHours />:<div>Not clicked yet</div>}
 
-                            {<GetBookings />}
-                            {<GetOpenHours />}
-                    </Grid>
-                </MuiPickersUtilsProvider>
+                    <div>isbooked: false {<GetBookings />}</div>
+                </Grid>
+            </MuiPickersUtilsProvider>
 
+            <p>Selected date: {bookedDate}</p>
             <form onSubmit={handleSubmit}>
                 <button>Select date</button>
             </form>
-
-            <p>Date to DB: {date}</p>
         </>
     );
 
