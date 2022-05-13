@@ -28,6 +28,10 @@
     max-width: 500px;
 }
 
+.contact-btn {
+    padding-right: 2em;
+}
+
 .footer-contact {
     flex-direction: column;
     padding-top: 1em;
@@ -35,6 +39,10 @@
 }
 
 .footer-links {
-    padding: 1em;
-    justify-content: space-evenly;
+    width: 600px;
+}
+
+.footer-headline {
+    padding: 1em 0 1em 0;
+
 }

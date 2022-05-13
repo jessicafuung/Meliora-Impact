@@ -11,12 +11,14 @@ export function MemberServiceCard({title, content, icon}) {
             <Box textAlign="center" className="service-container">
                 <Grid container flexDirection="row">
                     <Card className="service-card">
-                        {/*<div{props.icon} className="service-icon"/>*/}
+                        <Grid item xs={12}>
+                        <div className="service-icon">{icon}</div>
                         <Typography className="service-header">{title}</Typography>
                         <Typography className="service-content">{content} </Typography>
-                        <Box alignItems="center" textAlign="center" className="service-button">
+                        </Grid>
+                            <Grid item container xs={12} alignItems="center" justifyContent="end" xs={12} flexDirection="column" className="service-button">
                             <CustomButton to={"/"} variant="contained">Learn more</CustomButton>
-                        </Box>
+                        </Grid>
                     </Card>
                 </Grid>
             </Box>
