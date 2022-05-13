@@ -17,8 +17,9 @@ export function FaqPage() {
                 </Grid>
                 <Grid item container justifyContent='center' xs={12} md={6}>
                     <Box>
-                        <SearchIcon/>
-                        <TextField label={"Search"} type="search"/>
+                        <input type="text" name="search" className="searchBar" placeholder="search" />
+                        <SearchIcon color="primary" fontSize="large"/>
+                        
                     </Box>
                 </Grid>
             </Grid>
@@ -35,6 +36,26 @@ export function FaqPage() {
                             </Grid>
                         })
                     */}
+                    <Grid item xs={12} md={6}>
+                        <FaqQuestionCard />
+
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <FaqQuestionCard />
+
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <FaqQuestionCard />
+
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <FaqQuestionCard />
+
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <FaqQuestionCard />
+
+                    </Grid>
                     <Grid item xs={12} md={6}>
                         <FaqQuestionCard />
 
