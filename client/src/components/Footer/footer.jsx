@@ -40,7 +40,7 @@ export function Footer() {
                 <Box>
                     <Grid display="flex" flexDirection="column" className="footer-links">
                         <Typography>
-                            About us
+                            About us!
                         </Typography>
                         <Link href="/" style={{color: "white", fontSize: "10px"}}>About</Link>
                         <Link href="/" style={{color: "white", fontSize: "10px"}}>Businesses</Link>
