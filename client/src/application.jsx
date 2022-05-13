@@ -3,6 +3,7 @@ import React from "react";
 import {Home} from "./pages/Home/Home";
 import {Contact} from "./contact";
 import TestPage from "./pages/TestPage";
+import {FaqPage} from "./pages/FaqPage";
 import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider } from "@mui/system";
 import theme from "./styling/theme";
@@ -21,9 +22,7 @@ export function Application() {
                 <Route path={"/contact"} element={<Contact />}/>
                 <Route path={"/"} element={<Home />}/>
                 <Route path={"/test"} element={<TestPage />}/>
-                <Route path={"/cases"} element={<ListCases/>}/>
-                <Route path={"/contact"} element={<Contact/>}/>
-
+                <Route path={"/faq"} element={<FaqPage />}/>
             </Routes>
         </BrowserRouter>
         </AnimationContainer>
