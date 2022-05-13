@@ -24,8 +24,8 @@ export function Footer() {
                         </Grid>
                     </Box>
                 </Grid>
-            <Box borderTop={1} display="flex" flexDirection="row">
-                <Grid item className="footer-contact">
+            <Box borderTop={1} display="flex" flexDirection="row" justifyContent="space-between">
+                    <Grid item className="footer-contact">
                     <Logo />
                     <Typography>
                         Peder Ankers plass 49, 0301 Oslo
@@ -37,16 +37,34 @@ export function Footer() {
                         contact@melioraimpact.no
                     </Typography>
                 </Grid>
-                <Box>
-                    <Grid display="flex" flexDirection="column" className="footer-links">
-                        <Typography>
-                            About us!
+                <Box className="footer-links" >
+                    <Grid container display="flex" flexDirection="row" justifyContent="space-between">
+                    <Grid display="flex" flexDirection="column">
+                        <Typography fontWeight={600} className="footer-headline">
+                            About us
                         </Typography>
-                        <Link href="/" style={{color: "white", fontSize: "10px"}}>About</Link>
-                        <Link href="/" style={{color: "white", fontSize: "10px"}}>Businesses</Link>
-                        <Link href="/" style={{color: "white", fontSize: "10px"}}>Nonprofits</Link>
-                        <Link href="/" style={{color: "white", fontSize: "10px"}}>FAQ</Link>
-                        <Link href="/" style={{color: "white", fontSize: "10px"}}>Privacy Policy</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px"}}>About</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px"}}>Businesses</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px"}}>Nonprofits</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px"}}>FAQ</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px"}}>Privacy Policy</Link>
+                        </Grid>
+                    <Grid display="flex" flexDirection="column">
+                        <Typography fontWeight={600} className="footer-headline">
+                            Follow us
+                        </Typography>
+                        <Link href="/" style={{color: "white", fontSize: "17px"}}>Instagram</Link>
+                        <Link href="https://nc.linkedin.com/company/meliora-impact" style={{color: "white", fontSize: "17px"}}>LinkedIn</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px"}}>Twitter</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px"}}>Facebook</Link>
+                    </Grid>
+                        <Grid display="flex" flexDirection="column" className="footer-headline">
+                            <Typography  fontWeight={600} >
+                                Work with us
+                            </Typography>
+                            <Link href="/" style={{color: "white", fontSize: "17px"}}>Schedule meeting</Link>
+                            <Link href="/" style={{color: "white", fontSize: "17px"}}>Corporate members</Link>
+                        </Grid>
                     </Grid>
                 </Box>
                 </Box>
