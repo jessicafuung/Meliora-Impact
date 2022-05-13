@@ -1,9 +1,15 @@
 import React, {useContext, useEffect, useState} from "react";
 import "date-fns"
 import moment from 'moment';
+
 import Grid from "@material-ui/core/Grid"
 import DateFnsUtils from "@date-io/date-fns"
 import {KeyboardDatePicker, MuiPickersUtilsProvider} from "@material-ui/pickers";
+import {InputAdornment, TextField} from "@material-ui/core";
+import PersonIcon from '@mui/icons-material/Person';
+import BusinessIcon from '@mui/icons-material/Business';
+import EmailIcon from '@mui/icons-material/Email';
+import PhoneIcon from '@mui/icons-material/Phone';
 
 import {ApiContext} from "../../lib/useContext";
 import {useLoading} from "../../lib/useLoader";
@@ -50,6 +56,80 @@ export function GetBookings() {
     </div>
 }
 
+function FormSchema() {
+    const [name, setName] = useState("");
+    const [companyName, setCompanyName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [telephone, setTelephone] = useState("");
+
+    console.log("name: "+name)
+    console.log("co. name: "+companyName)
+    console.log("email: "+email)
+    console.log("message: "+message)
+    console.log("telephone: "+telephone)
+
+    return (
+        <form>
+            <div className="formInfo">
+                <TextField required label={"Co. Name"}
+                           variant={"standard"}
+                           onChange={(e) => setCompanyName(e.target.value)}
+                           InputProps={{endAdornment: (
+                                <InputAdornment position="end">
+                                    <BusinessIcon color={"primary"}/>
+                                </InputAdornment>)}}
+                />
+            </div>
+
+            <div className="formInfo">
+                <TextField required color={"primary"}
+                           label={"Name"}
+                           variant={"standard"}
+                           onChange={(e) => setName(e.target.value)}
+                           InputProps={{endAdornment: (
+                                   <InputAdornment position="end">
+                                       <PersonIcon color={"primary"}/>
+                                   </InputAdornment>)}}
+                />
+            </div>
+
+            <div className="formInfo">
+                <TextField required label={"Email"}
+                           variant={"standard"}
+                           onChange={(e) => setEmail(e.target.value)}
+                           InputProps={{endAdornment: (
+                                <InputAdornment position="end">
+                                    <EmailIcon color={"primary"}/>
+                                </InputAdornment>)}}
+                />
+            </div>
+
+            <div className="formInfo">
+                <TextField required label={"Telephone"}
+                           variant={"standard"}
+                           onChange={(e) => setTelephone(e.target.value)}
+                           InputProps={{endAdornment: (
+                               <InputAdornment position="end">
+                                   <PhoneIcon color={"primary"}/>
+                               </InputAdornment>)}}
+            />
+            </div>
+
+            <div className="formInfo">
+                <TextField required label="Message"
+                           multiline minRows={4}
+                           onChange={(e) => setMessage(e.target.value)}
+                />
+            </div>
+
+            <div align="center">
+                <button>Submit</button>
+            </div>
+        </form>
+    );
+}
+
 /* mapping open hours (availabilities) and */
 function GetOpenHours() {
     const [selectedTime, setSelectedTime] = useState("");
@@ -69,7 +149,7 @@ function GetOpenHours() {
                     <button value={time} onClick={(e) => setSelectedTime(e.target.value)}>{time}</button>
                 </ul>
             ))}
-        {isClicked?<div>Clicked</div>:<div>Not clicked yet</div>}
+        {isClicked?<FormSchema />:<div>Not clicked yet</div>}
 
         <form onSubmit={handleSubmit}>
             <button>Select Time</button>
@@ -78,8 +158,6 @@ function GetOpenHours() {
 }
 
 /**
- * 1. Legg inn isBooked i DB
- * 2. List ut kun "false" fra serveren
  * 3. Ved booking legg inn isBooked = true
  ***/
 
@@ -105,7 +183,6 @@ export function Booking() {
         postBooking({date})
     }
 
-    console.log(bookedDate)
     /* Sets new selected date */
     const handleDateChange = (date) => {
         setSelectedDate(date)
