@@ -1,0 +1,44 @@
+
+
+.service-container {
+    display: flex;
+    justify-content: center;
+
+}
+
+.service-header {
+    text-align: center;
+    font-size: 2em;
+    color: #034F7A;
+
+}
+
+.service-content {
+    text-align: center;
+    font-size: 36px;
+    color: #212121;
+    padding: 1em 2em 2em 2em;
+}
+
+.service-icon {
+    padding-top: 20px;
+    color: #034F7A;
+}
+
+.service-card {
+    padding: 1rem;
+    margin: 100px;
+    max-width: 500px;
+    flex-direction: row;
+    height: 400px;
+    box-shadow: #034F7A;
+
+}
+
+.service-button {
+    padding-top: 50px;
+
+}
+
+
+
