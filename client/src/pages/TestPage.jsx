@@ -2,27 +2,14 @@ import React from 'react'
 import CustomButton from '../components/CustomButton/CustomButton';
 import CustomHeadline from '../components/CustomHeadline/CustomHeadlineComponent';
 import {Business} from "@mui/icons-material";
-import {HandHoldingHeartIcon} from "../assets/handHoldingHeartIcon";
+import {HandHoldingHeartIcon} from "../components/assets/handHoldingHeartIcon";
 import {MemberServiceCard} from "../components/MemberServiceCard/memberServiceCard";
 import {Box, Grid} from "@mui/material";
+import {Footer} from "../components/Footer/footer";
+import {members} from "../components/MemberServiceCard/Members";
+import Navbar from "../components/Navbar/Navbar";
 
 const TestPage = () => {
-     const members = [
-        {
-            title: "Business",
-            content: "For businesses who are profitable \n" +
-                     "and want to use their resources \n" +
-                     "for greater social good",
-            // icon: <Business />,
-        },
-        {
-            title: "Non-profits",
-            content: "For nonprofits who are seeking \n" +
-                     "to carry out their frontline work",
-            // icon: <HandHoldingHeartIcon />,
-        }
-    ]
-
 
     return (
         <>
@@ -33,7 +20,9 @@ const TestPage = () => {
                 </>
                 )
             )}
+                <Footer/>
             </Grid>
+
         </>
     )
 }

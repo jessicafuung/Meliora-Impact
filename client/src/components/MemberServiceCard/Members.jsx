@@ -1,5 +1,5 @@
 import {Business} from "@mui/icons-material";
-import {HandHoldingHeartIcon} from "../../assets/handHoldingHeartIcon";
+import {HandHoldingHeartIcon} from "../assets/handHoldingHeartIcon";
 
 export const members = [
     {
@@ -12,7 +12,8 @@ export const members = [
     {
         title: "Non-profits",
         content: "For nonprofits who are seeking \n" +
-            "to carry out their frontline work",
-        // icon: <HandHoldingHeartIcon />,
+            "to carry out their frontline work \n"
+        // icon:<HandHoldingHeartIcon />,
     }
 ]
+
