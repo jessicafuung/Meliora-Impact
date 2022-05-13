@@ -1,10 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Button from '@mui/material/Button'
 
 
-const CustomButton = ({children, variant}) => {
+const CustomButton = ({children, variant, w, h, to, p}) => {
+  if(to === undefined){
+    console.log(`%cCorrect usage: <CustomButton variant=\"contained | outlined | text\" to=\"/\">${children}</CustomButton>`, "color: #00ff00")
+  }
+
   return (
-        <Button variant={variant} color="primary" style={{ height: "40px", paddingLeft: "25px", paddingRight: "25px", fontWeight: "normal", borderRadius: 0, textTransform: "none" }}>
+    
+        <Button variant={variant} as={Link} to={`${to}`} color="primary" style={{ padding: p, textDecoration: "none", fontWeight: 500, borderRadius: 0, textTransform: "none" }}>
             {children}
         </Button>
   )

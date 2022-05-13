@@ -1,28 +1,12 @@
 import React from 'react'
 import CustomButton from '../components/CustomButton/CustomButton';
 import CustomHeadline from '../components/CustomHeadline/CustomHeadlineComponent';
-import {Business} from "@mui/icons-material";
-import {HandHoldingHeartIcon} from "../components/assets/handHoldingHeartIcon";
-import {MemberServiceCard} from "../components/MemberServiceCard/memberServiceCard";
-import {Box, Grid} from "@mui/material";
-import {Footer} from "../components/Footer/footer";
-import {members} from "../components/MemberServiceCard/Members";
-import Navbar from "../components/Navbar/Navbar";
 
 const TestPage = () => {
-
     return (
         <>
-            <Grid container>
-            {members.map(ass => (
-                <>
-                    <MemberServiceCard key={ass.title} title={ass.title} content={ass.content} />
-                </>
-                )
-            )}
-                <Footer/>
-            </Grid>
-
+        <div style={{height: "120vh", backgroundImage: "url(https://images.unsplash.com/photo-1636320804382-912276801e97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80)"}}/>
+        <CustomButton variant="contained" to="/"  p="10px">Book a consultation</CustomButton>
         </>
     )
 }
