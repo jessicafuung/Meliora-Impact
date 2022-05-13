@@ -3,7 +3,7 @@ import React from "react";
 import {Home} from "./pages/Home/Home";
 import {Contact} from "./contact";
 import TestPage from "./pages/TestPage";
-import {FaqPage} from "./pages/FaqPage";
+import { FaqPage } from "./pages/FaqPage/FaqPage";
 import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider } from "@mui/system";
 import theme from "./styling/theme";
