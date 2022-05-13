@@ -10,6 +10,7 @@ import { ThemeProvider } from "@mui/system";
 import theme from "./styling/theme";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
 import Header from "./components/navbar";
+import {AboutUsPage} from "./pages/AboutUsPage";
 
 export function Application() {
     return (
@@ -23,6 +24,7 @@ export function Application() {
                 <Route path={"/"} element={<Home />}/>
                 <Route path={"/test"} element={<TestPage />}/>
                 <Route path={"/faq"} element={<FaqPage />}/>
+                <Route path={"/about"} element={<AboutUsPage/>}/>
             </Routes>
         </BrowserRouter>
         </AnimationContainer>

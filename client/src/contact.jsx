@@ -1,6 +1,5 @@
 import {useState} from "react";
 import React from "react";
-import Button from "@mui/material/Button";
 import {Box, InputAdornment, TextField} from "@mui/material";
 import PersonIcon from '@mui/icons-material/Person';
 import EmailIcon from '@mui/icons-material/Email';
@@ -16,49 +15,48 @@ import CustomButton from "./components/CustomButton/CustomButton";
 export function Contact() {
     return (
         <Box mt={10}>
-
-
-        <Grid container justifyContent="center" alignItems='center'>
-            <header className="contactHeader">
-                <Grid item xs={12}>
-                    <Typography textAlign='center' variant="h2">
-                        Contact
-                    </Typography>
-                    <Typography paragraph>
-                        Reach out if you want to collaborate or know more about our services, or just to connect
-                    </Typography>
-                </Grid>
-
-            </header>
-            <Grid container gap={12} alignItems="center" justifyContent="center">
-                <Grid item>
-                    <ContactForm color={"primary"}/>
-                </Grid>
-
-                <Grid item>
-                    <div className="contactInfo">
-                        <PhoneIcon color={"primary"}/>
+            <Grid container justifyContent="center" alignItems='center'>
+                <header className="contactHeader">
+                    <Grid item xs={12}>
+                        <Typography textAlign='center' variant="h2">
+                            Contact
+                        </Typography>
                         <Typography paragraph>
-                            +47 92 45 26 10
+                            Reach out if you want to collaborate or know more about our services, or just to connect
                         </Typography>
-                    </div>
-                    <div className="contactInfo">
-                        <EmailIcon color={"primary"}/>
-                        <Typography paragraph>contact@melioraimpact.no
-                        </Typography>
-                    </div>
-                    <div className="contactInfo">
-                        <LocationOnIcon color={"primary"}/>
-                        <Typography paragraph>Peder Ankers plass 49 0301 Oslo</Typography>
-                    </div>
+                    </Grid>
+
+                </header>
+                <Grid container gap={12} alignItems="center" justifyContent="center">
+                    <Grid item>
+                        <ContactForm color={"primary"}/>
+                    </Grid>
+
+                    <Grid item>
+                        <div className="contactInfo">
+                            <PhoneIcon color={"primary"}/>
+                            <Typography paragraph>
+                                +47 92 45 26 10
+                            </Typography>
+                        </div>
+                        <div className="contactInfo">
+                            <EmailIcon color={"primary"}/>
+                            <Typography paragraph>contact@melioraimpact.no
+                            </Typography>
+                        </div>
+                        <div className="contactInfo">
+                            <LocationOnIcon color={"primary"}/>
+                            <Typography paragraph>Peder Ankers plass 49 0301 Oslo</Typography>
+                        </div>
+                    </Grid>
                 </Grid>
             </Grid>
-        </Grid>
         </Box>
     );
 }
 
 function ContactForm() {
+    //om man skal få den til å lagre informasjonen man skriver inn
     const [name, setName] = useState("");
     const [companyName, setCompanyName] = useState("");
     const [email, setEmail] = useState("");
