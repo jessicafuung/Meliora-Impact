@@ -9,3 +9,22 @@
     width: 1440px;
     margin: auto;
 }
+@media only screen and (max-width: 750px) {
+
+
+    .headline {
+        font-size: 34px;
+        margin-top: 100px;
+    }
+    .description {
+        font-size: 16px;
+    }
+    .consultationBtn {
+        font-size: 16px;
+        margin-top: 60px;
+    }
+    .header {
+        max-height: 5em;
+    }
+
+}
