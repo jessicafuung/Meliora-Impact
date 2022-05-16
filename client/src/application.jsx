@@ -13,6 +13,9 @@ import {PartnerCard} from "./components/PartnerCard/partnerCard";
 import {NonProfit} from "./pages/Non-profitMember/nonProfitMember";
 import {Benefits} from "./pages/Non-profitMember/benefits";
 import {Services} from "./pages/Non-profitMember/services";
+import {CorporateMember} from "./pages/CorporateMember/corporateMember";
+import {CorporateBenefits} from "./pages/CorporateMember/corporateBenefits";
+import {CorporateServices} from "./pages/CorporateMember/corporateServices";
 
 export function Application() {
     return (
@@ -21,7 +24,7 @@ export function Application() {
         <BrowserRouter>
 
             <Routes>
-                <Route path={"/"} element={<NonProfit/>}/>
+                <Route path={"/"} element={<CorporateMember/>}/>
                 <Route path={"/test"} element={<TestPage />}/>
             </Routes>
         </BrowserRouter>
