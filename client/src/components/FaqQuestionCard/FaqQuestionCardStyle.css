@@ -1,0 +1,19 @@
+.card-container{
+    display: inline-block;
+    inline-size: 300px;
+    cursor: pointer;
+    overflow-wrap: break-word;
+
+
+}
+.underline{
+
+    height: 1px;
+    width: 100%;
+    background-color: #034F7A;
+}
+.hidden-text-container{
+    position: relative;
+    top: -1rem;
+    overflow-wrap: break-word;
+}

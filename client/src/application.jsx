@@ -16,6 +16,8 @@ import {Services} from "./pages/Non-profitMember/services";
 import {CorporateMember} from "./pages/CorporateMember/corporateMember";
 import {CorporateBenefits} from "./pages/CorporateMember/corporateBenefits";
 import {CorporateServices} from "./pages/CorporateMember/corporateServices";
+import {TestFaq} from "./pages/Faq/testHomeForFaq";
+import {GetFaq} from "./pages/Faq/Faq";
 
 export function Application() {
     return (
@@ -24,7 +26,7 @@ export function Application() {
         <BrowserRouter>
 
             <Routes>
-                <Route path={"/"} element={<CorporateMember/>}/>
+                <Route path={"/"} element={<GetFaq/>}/>
                 <Route path={"/test"} element={<TestPage />}/>
             </Routes>
         </BrowserRouter>
