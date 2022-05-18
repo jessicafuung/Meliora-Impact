@@ -1,4 +1,4 @@
-import { Router } from "express";
+import {Router} from "express";
 
 export function FAQApi(mongoDatabase) {
     const router = new Router();
@@ -6,45 +6,38 @@ export function FAQApi(mongoDatabase) {
     router.get("/", async (req, res) => {
 
         const { search } = req.query
-
         console.log(search)
 
-        if( search ) {
-            let arg = {'question': {$eq: search}}
-            let collection = context.services
-                .get("smidig_test")
-                .collection("test")
+        let testSearch = [
+            "can", "who", "join"
+        ]
 
-            let pipeline = [
-                {
-                    $search: {
-                       index: "SearchFAQ",
-                        text: {
-                            query: arg,
-                            path: {
-                                'wildcard': '*'
-                            }
-                        }
-                    }
-                }
-            ]
-            console.log(faqs.aggregate(pipeline))
-            res.json(collection.aggregate(pipeline))
+        if( search ) {
+            const faqs = await mongoDatabase
+                .collection("test")
+                .find()
+                .toArray();
+            let searchArray = faqs.filter((q) => {
+
+                return q.question.toLowerCase().includes(
+                    search )
+            })
+            /*
+            const loopTest = testSearch.forEach(item => {
+                "{item}"
+            })
+
+             */
+
+            console.log(searchArray)
+            res.json(searchArray)
         }else{
             const faqs = await mongoDatabase
                 .collection("test")
                 .find()
-                .map(({ _id, question, answer }) => ({
-                    _id,
-                    question,
-                    answer,
-                }))
                 .toArray();
             res.json(faqs);
-            console.log(faqs)
         }
-
-
     });
 
     return router;
