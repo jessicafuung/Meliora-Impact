@@ -10,9 +10,14 @@ import PersonIcon from '@mui/icons-material/Person';
 import BusinessIcon from '@mui/icons-material/Business';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
+import Box from '@mui/material/Box';
+
 
 import {ApiContext} from "../../lib/useContext";
 import {useLoading} from "../../lib/useLoader";
+
+let bookedDate = "";
+let bookedTime = "";
 
 const availabilities = [
     {time: "08.30"},
@@ -25,15 +30,13 @@ const availabilities = [
     {time: "15.30"},
 ];
 
-let bookedDate = "";
-let bookedTime = "";
-
 /* fetch booked times from DB */
-export function GetBookings() {
-    const { listTimes } = useContext(ApiContext);
-    const [isBooked, setIsBooked] = useState("false")
-    const { loading, error, data } = useLoading(
-        async () => await listTimes({isBooked}), [isBooked]
+function GetBookings() {
+    const {listTimes} = useContext(ApiContext);
+    const [isBooked, setIsBooked] = useState("true")
+    const {loading, error, data} = useLoading(
+        async () => await listTimes({isBooked}),
+        [isBooked]
     );
 
     if (loading) {
@@ -56,18 +59,18 @@ export function GetBookings() {
     </div>
 }
 
-function FormSchema() {
+function ShowForm() {
     const [name, setName] = useState("");
     const [companyName, setCompanyName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [telephone, setTelephone] = useState("");
 
-    console.log("name: "+name)
-    console.log("co. name: "+companyName)
-    console.log("email: "+email)
-    console.log("message: "+message)
-    console.log("telephone: "+telephone)
+    console.log(name)
+    console.log(companyName)
+    console.log(email)
+    console.log(message)
+    console.log(telephone)
 
     return (
         <form>
@@ -75,10 +78,12 @@ function FormSchema() {
                 <TextField required label={"Co. Name"}
                            variant={"standard"}
                            onChange={(e) => setCompanyName(e.target.value)}
-                           InputProps={{endAdornment: (
-                                <InputAdornment position="end">
-                                    <BusinessIcon color={"primary"}/>
-                                </InputAdornment>)}}
+                           InputProps={{
+                               endAdornment: (
+                                   <InputAdornment position="end">
+                                       <BusinessIcon color={"primary"}/>
+                                   </InputAdornment>)
+                           }}
                 />
             </div>
 
@@ -87,10 +92,12 @@ function FormSchema() {
                            label={"Name"}
                            variant={"standard"}
                            onChange={(e) => setName(e.target.value)}
-                           InputProps={{endAdornment: (
+                           InputProps={{
+                               endAdornment: (
                                    <InputAdornment position="end">
                                        <PersonIcon color={"primary"}/>
-                                   </InputAdornment>)}}
+                                   </InputAdornment>)
+                           }}
                 />
             </div>
 
@@ -98,10 +105,12 @@ function FormSchema() {
                 <TextField required label={"Email"}
                            variant={"standard"}
                            onChange={(e) => setEmail(e.target.value)}
-                           InputProps={{endAdornment: (
-                                <InputAdornment position="end">
-                                    <EmailIcon color={"primary"}/>
-                                </InputAdornment>)}}
+                           InputProps={{
+                               endAdornment: (
+                                   <InputAdornment position="end">
+                                       <EmailIcon color={"primary"}/>
+                                   </InputAdornment>)
+                           }}
                 />
             </div>
 
@@ -109,11 +118,13 @@ function FormSchema() {
                 <TextField required label={"Telephone"}
                            variant={"standard"}
                            onChange={(e) => setTelephone(e.target.value)}
-                           InputProps={{endAdornment: (
-                               <InputAdornment position="end">
-                                   <PhoneIcon color={"primary"}/>
-                               </InputAdornment>)}}
-            />
+                           InputProps={{
+                               endAdornment: (
+                                   <InputAdornment position="end">
+                                       <PhoneIcon color={"primary"}/>
+                                   </InputAdornment>)
+                           }}
+                />
             </div>
 
             <div className="formInfo">
@@ -124,32 +135,30 @@ function FormSchema() {
             </div>
 
             <div align="center">
-                <button>Submit</button>
+                <button>Book</button>
             </div>
         </form>
     );
 }
 
-/* mapping open hours (availabilities) and */
-function GetOpenHours() {
+/* mapping open hours (availabilities) and after click sends user to FormFn*/
+function ShowAvailabilities() {
     const [selectedTime, setSelectedTime] = useState("");
-    const [isClicked, setIsClicked] = useState(false);
-    bookedTime = selectedTime
 
     /* Triggered when selected time */
     function handleSubmit(e) {
         e.preventDefault()
-        setIsClicked(true)
+        bookedTime = selectedTime
+        console.log(bookedTime)
     }
 
+
     return <div>
-            <p>Selected time: {bookedTime}</p>
             {availabilities.map(({time}) => (
                 <ul key={time}>
                     <button value={time} onClick={(e) => setSelectedTime(e.target.value)}>{time}</button>
                 </ul>
             ))}
-        {isClicked?<FormSchema />:<div>Not clicked yet</div>}
 
         <form onSubmit={handleSubmit}>
             <button>Select Time</button>
@@ -157,73 +166,87 @@ function GetOpenHours() {
     </div>
 }
 
-/**
- * 3. Ved booking legg inn isBooked = true
- ***/
-
-export function Booking() {
-    const { postBooking } = useContext(ApiContext);
-    const [selectedDate, setSelectedDate] = useState( new Date() );
+function ShowCalendar() {
+    /*const { postBooking } = useContext(ApiContext);*/
+    const [selectedDate, setSelectedDate] = useState(new Date());
     const [date, setDate] = useState("");
-    const [isClicked, setIsClicked] = useState(false);
 
-    /* Triggered everytime a date is selected. Todays date by default. */
-    /* Convert to ISO format, then again formatting it again by using 'moment' */
-    useEffect(() => {
-        const iso = new Date(selectedDate.getTime() - selectedDate.getTimezoneOffset() * 60 * 1000);
-        const momentFormat = moment(iso).format("DD.MM.YYYY");
-        setDate(momentFormat)
-    }, [selectedDate])
+     /* Calendar shows only monday - friday */
+     function disableWeekends(date) {
+         return date.getDay() === 0 || date.getDay() === 6;
+     }
 
-    /* Triggered by form onSubmit */
-    function handleSubmit(e) {
-        e.preventDefault()
-        setIsClicked(true)
-        bookedDate = date
-        postBooking({date})
-    }
-
-    /* Sets new selected date */
+    /* Triggered by selected date */
     const handleDateChange = (date) => {
         setSelectedDate(date)
     }
 
-    /* Calendar shows only monday - friday */
-    function disableWeekends(date) {
-        return date.getDay() === 0 || date.getDay() === 6;
-    }
+     /* Triggered everytime a date is selected. Todays date by default. */
+     /* Convert to ISO format, then again formatting it again by using 'moment' */
+     useEffect(() => {
+         const iso = new Date(selectedDate.getTime() - selectedDate.getTimezoneOffset() * 60 * 1000);
+         const momentFormat = moment(iso).format("DD.MM.YYYY");
+         setDate(momentFormat)
+     }, [selectedDate])
+
+     /* Triggered by select button */
+     function handleSubmit(e) {
+         e.preventDefault();
+         /*setIsClickedDate(true);*/
+         bookedDate = date;
+         console.log("booked date: "+bookedDate)
+         /*postBooking({date})*/
+     }
 
     return (
         <>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <Grid container justifyContent='space-around'>
-                    <KeyboardDatePicker
-                        variant='static'
-                        id='date-picker'
-                        label='Date Picker'
-                        format='dd/MM/yyyy'
-                        margin='normal'
-                        disablePast
-                        hintText="Weekends Disabled"
-                        shouldDisableDate={disableWeekends}
-                        disableToolbar
-                        value={selectedDate}
-                        onChange={handleDateChange}
-                        KeyboardButtonProps={{'aria-label':'change date'}}
-                    />
+                <Grid container spacing={2}>
+                    <Grid item>
+                        <KeyboardDatePicker
+                            variant='static'
+                            id='date-picker'
+                            label='Date Picker'
+                            format='dd/MM/yyyy'
+                            margin='normal'
+                            disablePast
+                            hintText="Weekends Disabled"
+                            shouldDisableDate={disableWeekends}
+                            disableToolbar
+                            value={selectedDate}
+                            onChange={handleDateChange}
+                            KeyboardButtonProps={{'aria-label': 'change date'}}/>
+                    </Grid>
 
-                    {isClicked?<GetOpenHours />:<div>Not clicked yet</div>}
-
-                    <div>isbooked: false {<GetBookings />}</div>
+                    <button onClick={handleSubmit}>Select date</button>
                 </Grid>
             </MuiPickersUtilsProvider>
-
-            <p>Selected date: {bookedDate}</p>
-            <form onSubmit={handleSubmit}>
-                <button>Select date</button>
-            </form>
         </>
     );
-
 }
+
+export function Start() {
+    return <div style={{marginTop: 50}}>
+        <Box sx={{background: "white"}}>
+            <Grid container spacing={5} justifyContent={"center"} alignItems={"center"}>
+
+                <Grid item xs={4}>
+                    <div style={{backgroundColor: "rgba(39, 34, 186, 0.3)"}}>
+                        {<ShowCalendar/>}
+                    </div>
+                </Grid>
+
+                <Grid item xs={4}>
+                    <ShowAvailabilities/>
+                </Grid>
+
+                <Grid item xs={8} >
+                   <ShowForm/>
+                </Grid>
+
+            </Grid>
+        </Box>
+    </div>
+}
+
 
