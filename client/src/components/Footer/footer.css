@@ -46,3 +46,7 @@
     padding: 1em 0 1em 0;
 
 }
+
+.footer-links Link {
+    padding-bottom: 0.5em!important;
+}

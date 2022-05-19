@@ -36,6 +36,11 @@ export function Footer() {
                     <Typography>
                         contact@melioraimpact.no
                     </Typography>
+                        <Box>
+                            <Typography style={{color: "gray", fontSize: "10px", paddingTop: "3.5em"}}>
+                                © 2022 Meliora Impact. All rights reserved.
+                            </Typography>
+                        </Box>
                 </Grid>
                 <Box className="footer-links" >
                     <Grid container display="flex" flexDirection="row" justifyContent="space-between">
@@ -43,28 +48,28 @@ export function Footer() {
                         <Typography fontWeight={600} className="footer-headline">
                             About us
                         </Typography>
-                        <Link href="/" style={{color: "white", fontSize: "17px"}}>About</Link>
-                        <Link href="/" style={{color: "white", fontSize: "17px"}}>Businesses</Link>
-                        <Link href="/" style={{color: "white", fontSize: "17px"}}>Nonprofits</Link>
-                        <Link href="/" style={{color: "white", fontSize: "17px"}}>FAQ</Link>
-                        <Link href="/" style={{color: "white", fontSize: "17px"}}>Privacy Policy</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px", paddingBottom: "0.5em"}}>About</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px", paddingBottom: "0.5em"}}>Businesses</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px", paddingBottom: "0.5em"}}>Nonprofits</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px", paddingBottom: "0.5em"}}>FAQ</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px", paddingBottom: "0.5em"}}>Privacy Policy</Link>
                         </Grid>
                     <Grid display="flex" flexDirection="column">
                         <Typography fontWeight={600} className="footer-headline">
                             Follow us
                         </Typography>
-                        <Link href="/" style={{color: "white", fontSize: "17px"}}>Instagram</Link>
-                        <Link href="https://nc.linkedin.com/company/meliora-impact" style={{color: "white", fontSize: "17px"}}>LinkedIn</Link>
-                        <Link href="/" style={{color: "white", fontSize: "17px"}}>Twitter</Link>
-                        <Link href="/" style={{color: "white", fontSize: "17px"}}>Facebook</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px", paddingBottom: "0.5em"}}>Instagram</Link>
+                        <Link href="https://nc.linkedin.com/company/meliora-impact" style={{color: "white", fontSize: "17px", paddingBottom: "0.5em"}}>LinkedIn</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px", paddingBottom: "0.5em"}}>Twitter</Link>
+                        <Link href="/" style={{color: "white", fontSize: "17px", paddingBottom: "0.5em"}}>Facebook</Link>
                     </Grid>
-                        <Grid display="flex" flexDirection="column" className="footer-headline">
-                            <Typography  fontWeight={600} >
+                        <Grid display="flex" flexDirection="column">
+                            <Typography  fontWeight={600} className="footer-headline">
                                 Work with us
                             </Typography>
-                            <Link href="/" style={{color: "white", fontSize: "17px"}}>Schedule meeting</Link>
-                            <Link href="/" style={{color: "white", fontSize: "17px"}}>Corporate members</Link>
-                        </Grid>
+                            <Link href="/" style={{color: "white", fontSize: "17px", paddingBottom: "0.5em"}}>Schedule meeting</Link>
+                            <Link href="/" style={{color: "white", fontSize: "17px", paddingBottom: "0.5em"}}>Corporate members</Link>
+                            </Grid>
                     </Grid>
                 </Box>
                 </Box>
