@@ -1,6 +1,5 @@
 import express from "express"
 import * as path from "path";
-import bodyParser from "body-parser"
 import dotenv from "dotenv"
 import {MongoClient} from "mongodb";
 import {FAQApi} from "./api/FAQApi.js";
@@ -35,10 +34,6 @@ mongoClient.connect().then(async () => {
 mongoClient.connect().then(async () => {
     console.log("Connected to mongodb (Cases)");
     app.use("/api/cases", CasesApi(mongoClient.db(process.env.MONGODB_DATABASE)));
-});
-
-app.get("/", (req, res) => {
-    res.send("Hello Meliora Backend")
 });
 
 app.use(express.static("../client/dist/"));
