@@ -29,16 +29,14 @@ mongoClient.connect().then(async () => {
     app.use("/api/organizations", OrganizationApi(mongoClient.db(process.env.MONGODB_DATABASE)));
 });
 
-
 mongoClient.connect().then(async () => {
     console.log("Connected to mongodb (Cases)");
     app.use("/api/cases", CasesApi(mongoClient.db(process.env.MONGODB_DATABASE)));
 });
 
-
 app.get("/", (req, res) => {
     res.send("Hello Meliora Backend")
-})
+});
 
 app.use(express.static("../client/dist/"));
 app.use((req, res, next) => {

@@ -1,4 +1,6 @@
 import {useEffect, useState} from "react";
+import './styling/case.css';
+import {Typography} from "@mui/material";
 
 function useLoading(loadingFunction) {
 
@@ -37,31 +39,46 @@ export function ListCases() {
             <div>
                 <h1>Error</h1>
                 <div>{error.toString()}</div>
-            </div>);
+            </div>
+        );
     }
     return (
         <div>
-            {data.map((organization) => (
-                <OrganizationCard key={organization._id} organizations={organization}/>
-            ))}
-        </div>);
+            <Typography id={"top"}>Limited access</Typography>
+            <Typography id={"text"}>That’s nearly 1 in 10 worldwide. Or, twice the population of the United States.
+                The majority live in isolated rural areas and spend hours every day walking to collect water for their
+                family.
+
+                Not only does walking for water keep children out of school or take up time that parents could be using
+                to earn money, but the water often carries diseases that can make everyone sick.
+
+                But access to clean water means education, income and health - especially for women and kids.</Typography>
+            <div className={"list"}>
+                {data.map((organization) => (
+                    <OrganizationCard key={organization._id} organizations={organization}/>
+                ))}
+            </div>
+        </div>
+    );
 }
 
-function OrganizationCard({organizations: {name, category, info}}) {
+function OrganizationCard({organizations: {name, info}}) {
     return <>
-        <h1>{name}</h1>
-        <h3>{category}</h3>
-        {info.map((info) => (
-            <InfoCard key={info._id} info={info}/>
-        ))}
+        <div className={"organization"}>
+            <Typography id={"headline"}>{name}</Typography>
+            {info.map((info) => (
+                <InfoCard key={info._id} info={info}/>
+            ))}
+        </div>
     </>
 }
 
 function InfoCard({info: {title, description, image}}) {
     return <>
-        <h2>{title}</h2>
-        <div>{description}</div>
-        {image && <img src={image}/>}
+        {image && <img src={image} id={"image"}/>}
+        <Typography id={"imageText"}>Over 11 million people in Madagascar have no access to safe water.</Typography>
+        <Typography id={"head"}>{title}</Typography>
+        <Typography>{description}</Typography>
     </>
 }
 

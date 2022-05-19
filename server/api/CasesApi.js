@@ -6,9 +6,8 @@ export function CasesApi(mongoDatabase) {
     router.get("/", async (req, res) => {
         const cases = await mongoDatabase.collection("organizations")
             .find()
-            .map(({name, category, info}) => ({
+            .map(({name, info}) => ({
                 name,
-                category,
                 info,
             }))
             .toArray();
