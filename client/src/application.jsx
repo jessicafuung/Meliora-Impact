@@ -17,7 +17,6 @@ export function Application() {
         <ThemeProvider theme={theme}>
         <AnimationContainer>
         <BrowserRouter>
-            <Header/>
             <Routes>
                 <Route path={"/contact"} element={<Contact />}/>
                 <Route path={"/"} element={<Home />}/>
