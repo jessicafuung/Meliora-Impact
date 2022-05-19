@@ -10,8 +10,8 @@ import theme from "./styling/theme";
 import {ListCases} from "./listCases";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
 import Header from "./components/navbar";
-import {Contact} from './contact';
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
+import {AboutUsPage} from "./pages/AboutUsPage";
 
 export function Application() {
     return (
@@ -24,6 +24,7 @@ export function Application() {
                 <Route path={"/test"} element={<TestPage />}/>
                 <Route path={"/faq"} element={<FaqPage />}/>
                 <Route path={"/privacy"} element={<PrivacyPage />}/>
+                <Route path={"/about"} element={<AboutUsPage />}/>
             </Routes>
         </BrowserRouter>
         </AnimationContainer>

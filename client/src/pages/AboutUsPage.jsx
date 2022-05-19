@@ -23,7 +23,7 @@ export function AboutUsPage() {
     }
 
     return (
-        <Box mt={10}>
+        <Box>
                 <Grid container alignItems="center" justifyContent="center" mb={12}>
                     <Grid item>
                         <Typography variant="h2">About us</Typography>
