@@ -1,12 +1,12 @@
-import {createTheme} from "@mui/material/styles"
-import { green, purple } from '@mui/material/colors';
+import { createTheme } from "@mui/material/styles";
+import { green, purple } from "@mui/material/colors";
 
-const primary = "#034F7A"
-const textPrimary = "#212121"
+const primary = "#034F7A";
+const textPrimary = "#212121";
 const theme = createTheme({
   palette: {
     primary: {
-        main: primary
+      main: primary,
     },
     text: {
       primary: textPrimary,
@@ -21,5 +21,4 @@ const theme = createTheme({
   },
 });
 
-
-export default theme
+export default theme;

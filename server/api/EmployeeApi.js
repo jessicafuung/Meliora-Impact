@@ -1,12 +1,15 @@
-import {Router} from "express";
+import { Router } from "express";
 
 export function EmployeeApi(mongoDatabase) {
-    const router = new Router();
+  const router = new Router();
 
-    router.get("/", async (req, res) => {
-        const employees = await mongoDatabase.collection("employees").find().toArray();
-        res.json(employees);
-    });
+  router.get("/", async (req, res) => {
+    const employees = await mongoDatabase
+      .collection("employees")
+      .find()
+      .toArray();
+    res.json(employees);
+  });
 
-    return router;
+  return router;
 }
