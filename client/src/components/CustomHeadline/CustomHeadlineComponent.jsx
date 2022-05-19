@@ -3,7 +3,7 @@ import './CustomHeadlineStyle.css'
 import { Typography } from '@mui/material';
 
 
-const CustomHeadline = ({size, children}) => {
+const CustomHeadline = ({size, children, ...otherProps}) => {
 
     //CustomHeadline takes in a size prop and a children prop.
     //The size prop is used to determine the size of the headline.
@@ -11,7 +11,7 @@ const CustomHeadline = ({size, children}) => {
 
     return (
         <div className='headline-container'>
-            <Typography variant={size} color="primary" className="title">{children}</Typography>
+            <Typography  variant={size} className="title" {...otherProps}>{children}</Typography>
             <div className="line" />
         </div>
     )
