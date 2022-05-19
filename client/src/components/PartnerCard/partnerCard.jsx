@@ -3,7 +3,7 @@ import "./partnerCard.css"
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 
-export function PartnerCard(){
+export function PartnerCard() {
     return (
         <Box className="box" sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>

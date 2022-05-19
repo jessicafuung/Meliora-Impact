@@ -2,13 +2,17 @@ import express from "express"
 import * as path from "path";
 import bodyParser from "body-parser"
 import dotenv from "dotenv"
-import { MongoClient } from "mongodb";
+import {MongoClient} from "mongodb";
 import {FAQApi} from "./api/FAQApi.js";
 import {BookingApi} from "./api/BookingApi.js";
 import {OrganizationApi} from "./api/OrganizationApi.js";
+import {CasesApi} from "./api/CasesApi.js";
+import * as bodyParser from "express";
 
 dotenv.config();
-const app = express()
+const app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 const mongoClient = new MongoClient(process.env.MONGODB_URL);
 
 app.use(bodyParser.json())
@@ -26,6 +30,15 @@ mongoClient.connect().then(async () => {
 mongoClient.connect().then(async () => {
     console.log("Connected to mongodb (Organizations)");
     app.use("/api/organizations", OrganizationApi(mongoClient.db(process.env.MONGODB_DATABASE)));
+});
+
+mongoClient.connect().then(async () => {
+    console.log("Connected to mongodb (Cases)");
+    app.use("/api/cases", CasesApi(mongoClient.db(process.env.MONGODB_DATABASE)));
+});
+
+app.get("/", (req, res) => {
+    res.send("Hello Meliora Backend")
 });
 
 app.use(express.static("../client/dist/"));

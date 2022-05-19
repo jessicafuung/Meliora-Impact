@@ -1,33 +1,29 @@
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import React from "react";
 import {Home} from "./pages/Home/Home";
-import {Test} from "./components/test";
+import {Contact} from "./contact";
 import TestPage from "./pages/TestPage";
+import { FaqPage } from "./pages/FaqPage/FaqPage";
 import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider } from "@mui/system";
 import theme from "./styling/theme";
+import {ListCases} from "./listCases";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
 import Header from "./components/navbar";
-import {BeTheChange} from "./components/BeTheChange/beTheChange";
-import {PartnerCard} from "./components/PartnerCard/partnerCard";
-import {NonProfit} from "./pages/Non-profitMember/nonProfitMember";
-import {Benefits} from "./pages/Non-profitMember/benefits";
-import {Services} from "./pages/Non-profitMember/services";
-import {CorporateMember} from "./pages/CorporateMember/corporateMember";
-import {CorporateBenefits} from "./pages/CorporateMember/corporateBenefits";
-import {CorporateServices} from "./pages/CorporateMember/corporateServices";
-import {TestFaq} from "./pages/Faq/testHomeForFaq";
-import {GetFaq} from "./pages/Faq/Faq";
+import {Contact} from './contact';
+import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 
 export function Application() {
     return (
         <ThemeProvider theme={theme}>
         <AnimationContainer>
         <BrowserRouter>
-
             <Routes>
-                <Route path={"/"} element={<GetFaq/>}/>
+                <Route path={"/contact"} element={<Contact />}/>
+                <Route path={"/"} element={<Home />}/>
                 <Route path={"/test"} element={<TestPage />}/>
+                <Route path={"/faq"} element={<FaqPage />}/>
+                <Route path={"/privacy"} element={<PrivacyPage />}/>
             </Routes>
         </BrowserRouter>
         </AnimationContainer>
