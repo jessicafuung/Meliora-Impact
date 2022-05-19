@@ -12,7 +12,7 @@ import AnimationContainer from "./components/AnimationContainer/AnimationContain
 import Header from "./components/navbar";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
-import {GetFaq} from "./pages/Faq/Faq";
+import { GetFaq } from "./pages/Faq/Faq";
 
 export function Application() {
   return (
