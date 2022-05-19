@@ -12,6 +12,7 @@ import AnimationContainer from "./components/AnimationContainer/AnimationContain
 import Header from "./components/navbar";
 import {Contact} from './contact';
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
+
 export function Application() {
     return (
         <ThemeProvider theme={theme}>

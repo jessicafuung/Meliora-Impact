@@ -7,7 +7,6 @@
 
 }
 .underline{
-    
     height: 1px;
     width: 100%;
     background-color: #034F7A;
@@ -17,3 +16,4 @@
     top: -1rem;
     overflow-wrap: break-word;
 }
+

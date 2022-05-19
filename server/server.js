@@ -1,5 +1,6 @@
 import express from "express"
 import * as path from "path";
+import bodyParser from "body-parser"
 import dotenv from "dotenv"
 import {MongoClient} from "mongodb";
 import {FAQApi} from "./api/FAQApi.js";
@@ -13,6 +14,8 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 const mongoClient = new MongoClient(process.env.MONGODB_URL);
+
+app.use(bodyParser.json())
 
 mongoClient.connect().then(async () => {
     console.log("Connected to mongodb (FAQ)");
