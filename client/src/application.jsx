@@ -12,6 +12,7 @@ import AnimationContainer from "./components/AnimationContainer/AnimationContain
 import Header from "./components/navbar";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
+import {GetFaq} from "./pages/Faq/Faq";
 
 export function Application() {
   return (
@@ -20,7 +21,7 @@ export function Application() {
         <BrowserRouter>
           <Routes>
             <Route path={"/contact"} element={<Contact />} />
-            <Route path={"/"} element={<Home />} />
+            <Route path={"/"} element={<GetFaq />} />
             <Route path={"/test"} element={<TestPage />} />
             <Route path={"/faq"} element={<FaqPage />} />
             <Route path={"/privacy"} element={<PrivacyPage />} />
