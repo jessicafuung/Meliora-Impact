@@ -2,7 +2,7 @@
 
 .service-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 
 }
 
@@ -17,7 +17,7 @@
     text-align: center;
     font-size: 36px;
     color: #212121;
-    padding-bottom: 2em;
+    padding: 1em 2em 2em 2em;
 }
 
 .service-icon {
@@ -26,15 +26,22 @@
 }
 
 .service-card {
+    position: relative;
     padding: 1rem;
     margin: 100px;
-    width: 500px;
+    max-width: 500px;
     flex-direction: row;
     height: 400px;
-    box-shadow: #034F7A;
+    box-shadow: 5px 10px #034F7A;
 
 }
 
 .service-button {
-    padding-top: 50px;
+    position: absolute;
+    bottom: 3.5rem;
+    left: 0;
+
 }
+
+
+

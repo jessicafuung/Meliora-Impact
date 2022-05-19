@@ -1,0 +1,52 @@
+
+
+.footer {
+    width: 100%;
+    border-top-right-radius: 300px;
+    background-color: #034F7A;
+    color: white;
+}
+.footer.footer {
+    max-width: 4000px;
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.footer-collaborate {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.collaborate-text {
+    max-width: 500px;
+}
+
+.contact-btn {
+    padding-right: 2em;
+}
+
+.footer-contact {
+    flex-direction: column;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
+.footer-links {
+    width: 600px;
+}
+
+.footer-headline {
+    padding: 1em 0 1em 0;
+
+}
+
+.footer-links Link {
+    padding-bottom: 0.5em!important;
+}

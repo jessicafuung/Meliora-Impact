@@ -1,0 +1,48 @@
+.organization {
+    margin-top: 200px;
+    width: 500px;
+}
+
+#head {
+    color: #034f7a;
+    margin: 20px;
+}
+
+#headline {
+    margin: 50px;
+    text-align: center;
+    font-size: 20px;
+    color: #034f7a;
+}
+
+#top {
+    margin: 200px;
+    color: #034f7a;
+    text-align: center;
+    font-size: 35px;
+}
+
+#text {
+    text-align: center;
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.organization {
+    margin: 50px;
+}
+
+#image {
+    margin: 15px;
+}
+
+#imageText {
+    text-align: center;
+}

@@ -9,26 +9,22 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    font-size: 64px;
 }
 .top {
     font-size: 0px;
 }
 .titleImage{
-    width: 588px;
-    height: 282px;
+    width: 420px;
 }
 .description {
-    font-size: 30px;
     font-family: "Montserrat", sans-serif;
-    text-align: center;
 }
 .description em {
     color: #034F7A;
     font-style: normal;
 }
 .consultationBtn {
-    margin-top: 80px;
+    margin-top: 40px;
     font-family: "Montserrat", sans-serif;
     border-radius: 0;
     height: 50px;
@@ -38,25 +34,28 @@ body{
     border: 0;
     font-size: 16px;
 }
-
-
+/*
 @media only screen and (max-width: 750px) {
 
     .titleImage {
         width: 240px;
         height: 150px;
     }
+
     .headline {
-        font-size: 34px;
+        font-size: 10px;
         margin-top: 100px;
     }
+
     .description {
         font-size: 16px;
     }
+
     .consultationBtn {
         font-size: 16px;
         margin-top: 60px;
     }
+
     .header {
         max-height: 5em;
     }

@@ -1,0 +1,21 @@
+body{
+    margin-top: 15rem;
+}
+section{
+    margin-block: 4rem;
+}
+h5{
+    font-weight: 600;
+}
+.privacy-page-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+ol{
+    list-style-type: disc;
+
+}
+li{
+    padding-block: .3rem;
+}
