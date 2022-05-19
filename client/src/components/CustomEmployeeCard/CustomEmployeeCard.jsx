@@ -11,7 +11,7 @@ export function CustomEmployeeCard({employee: {name, image, position, about, lin
             <CardContent>
                 <Grid container mt={2} gap={4} justifyContent='center' alignItems="center">
                     <Grid item container justifyContent='center' xs={2}>
-                        <Avatar sx={{ width: 56, height: 56 }}>H</Avatar>
+                        <Avatar sx={{ width: 56, height: 56 }} src={`${image}`}/>
                     </Grid>
                     <Grid item container justifyContent='start' xs={8}>
                         <Typography mb={0} variant="h6" color="primary">
