@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel public/index.html",
+    "dev": "parcel watch public/index.html",
     "build": "npm install --include=dev && parcel build index.html"
   },
   "keywords": [],
@@ -26,6 +26,7 @@
     "react-router-dom": "^6.2.2"
   },
   "devDependencies": {
-    "@parcel/transformer-react-refresh-wrap": "^2.5.0"
+    "@parcel/transformer-react-refresh-wrap": "^2.5.0",
+    "process": "^0.11.10"
   }
 }

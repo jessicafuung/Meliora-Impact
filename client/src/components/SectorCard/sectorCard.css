@@ -1,0 +1,35 @@
+.sector-container {
+    display: flex;
+    justify-content: center;
+}
+
+.sector-header {
+    text-align: center;
+    font-size: 2em;
+    color: #034F7A;
+}
+
+.sector-content {
+    text-align: center;
+    font-size: 10px;
+    color: #212121;
+    padding: 1em 2em 2em 2em;
+}
+
+.sector-card {
+    padding: 1rem;
+    margin: 100px;
+    max-width: 500px;
+    flex-direction: row;
+    height: 500px;
+    box-shadow: #034F7A;
+    position: relative;
+}
+
+.sector-button {
+    position: absolute;
+    bottom: 3.5rem;
+    left: 0;
+    right: 0;
+    padding-top: 5em;
+}
