@@ -44,11 +44,11 @@ export function BookingApi(mongoDatabase) {
     });
 
     router.post("/",  (req, res) => {
-        const {date, selectedTime, name, companyName, email, message, telephone} = req.body;
+        const {companyName, contactPerson, email, telephone, date, time, message} = req.body;
 
         mongoDatabase
             .collection("bookings")
-            .insertOne({date, selectedTime, name, companyName, email, message, telephone});
+            .insertOne({companyName, contactPerson, email, telephone, date, time,  message});
         res.sendStatus(200)
     })
 
