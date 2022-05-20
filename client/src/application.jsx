@@ -10,6 +10,8 @@ import theme from "./styling/theme";
 import { ListCases } from "./listCases";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
 import Header from "./components/navbar";
+import {Contact} from './contact';
+import {KnowledgeCases} from "./knowledge";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
 import { GetFaq } from "./pages/Faq/Faq";
@@ -28,6 +30,7 @@ export function Application() {
             <Route path={"/privacy"} element={<PrivacyPage />} />
             <Route path={"/about"} element={<AboutUsPage />} />
           </Routes>
+
         </BrowserRouter>
       </AnimationContainer>
     </ThemeProvider>
