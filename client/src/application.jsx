@@ -10,7 +10,7 @@ import theme from "./styling/theme";
 import { ListCases } from "./listCases";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
 import Header from "./components/navbar";
-import { Contact } from "./contact";
+import { Contact } from "./pages/contact";
 import { KnowledgeCases } from "./knowledge";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
