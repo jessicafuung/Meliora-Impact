@@ -8,7 +8,7 @@ import { OrganizationApi } from "./api/OrganizationApi.js";
 import { EmployeeApi } from "./api/EmployeeApi.js";
 import { CasesApi } from "./api/CasesApi.js";
 import * as bodyParser from "express";
-import {KnowledgeApi} from "./api/KnowledgeApi.js";
+import { KnowledgeApi } from "./api/KnowledgeApi.js";
 
 dotenv.config();
 const app = express();
@@ -45,14 +45,18 @@ mongoClient.connect().then(async () => {
     "/api/employees",
     EmployeeApi(mongoClient.db(process.env.MONGODB_DATABASE))
   );
+});
 
 mongoClient.connect().then(async () => {
-    console.log("Connected to mongodb (Knowledge)");
-    app.use("/api/knowledge", KnowledgeApi(mongoClient.db(process.env.MONGODB_DATABASE)));
+  console.log("Connected to mongodb (Knowledge)");
+  app.use(
+    "/api/knowledge",
+    KnowledgeApi(mongoClient.db(process.env.MONGODB_DATABASE))
+  );
 });
 
 app.get("/", (req, res) => {
-    res.send("Hello Meliora Backend")
+  res.send("Hello Meliora Backend");
 
   console.log("Connected to mongodb (Cases)");
   app.use("/api/cases", CasesApi(mongoClient.db(process.env.MONGODB_DATABASE)));
