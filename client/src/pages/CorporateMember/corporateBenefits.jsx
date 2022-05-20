@@ -16,7 +16,7 @@ export function CorporateBenefits() {
         >
           Benefits
         </h1>
-        {Underline(100, "#959786")}
+        {Underline(100, "#034F7A")}
       </div>
       <div className="corporateContainerBenefits">
         <div className="widthContainerCorporateBenefits">
