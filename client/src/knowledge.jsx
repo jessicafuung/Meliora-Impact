@@ -26,9 +26,9 @@ function useLoading(loadingFunction) {
     return {loading, error, data};
 }
 
-export function ListCases() {
+export function KnowledgeCases() {
     const {loading, error, data} = useLoading(async () => {
-        return fetchJSON("/api/cases")
+        return fetchJSON("/api/knowledge")
     });
 
     if (loading) {
@@ -44,27 +44,27 @@ export function ListCases() {
     }
     return (
         <div>
-            <Typography id={"top"}>Limited access</Typography>
-            <Typography id={"text"}>That’s nearly 1 in 10 worldwide. Or, twice the population of the United States.
-                The majority live in isolated rural areas and spend hours every day walking to collect water for their
-                family.
+            <Typography id={"top"}>Global Issue</Typography>
+            <Typography id={"text"}>759 million adults are illiterate and do not have the awareness necessary to improve
+                both their living conditions and those
+                for their children.
 
-                Not only does walking for water keep children out of school or take up time that parents could be using
-                to earn money, but the water often carries diseases that can make everyone sick.
-
-                But access to clean water means education, income and health - especially for women and kids.</Typography>
+                Without skills for lifelong learning, children face greater barriers to earning potential and employment
+                later in life. They are more likely to suffer adverse health outcomes and less likely to participate in
+                the decisions that affect them – threatening their ability to build a better future for themselves and
+                their communities.</Typography>
             <div className={"list"}>
-                {data.map((organization) => (
-                    <OrganizationCard key={organization._id} organizations={organization}/>
+                {data.map((knowledge) => (
+                    <KnowledgeCard key={knowledge._id} knowledge={knowledge}/>
                 ))}
             </div>
         </div>
     );
 }
 
-function OrganizationCard({organizations: {name, info}}) {
+function KnowledgeCard({knowledge: {name, info}}) {
     return <>
-        <div className={"organization"}>
+        <div className={"knowledge"}>
             <Typography id={"headline"}>{name}</Typography>
             {info.map((info) => (
                 <InfoCard key={info._id} info={info}/>
@@ -75,7 +75,7 @@ function OrganizationCard({organizations: {name, info}}) {
 
 function InfoCard({info: {title, description, imagetext, image}}) {
     return <>
-        {image && <img src={image} id={"image"} alt={"Image"}/>}
+        {image && <img src={image} id={"image"}/>}
         <Typography id={"imageText"}>{imagetext}</Typography>
         <Typography id={"head"}>{title}</Typography>
         <Typography>{description}</Typography>

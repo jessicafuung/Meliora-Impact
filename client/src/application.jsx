@@ -11,6 +11,7 @@ import {ListCases} from "./listCases";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
 import Header from "./components/navbar";
 import {Contact} from './contact';
+import {KnowledgeCases} from "./knowledge";
 
 export function Application() {
     return (
@@ -22,6 +23,8 @@ export function Application() {
                 <Route path={"/"} element={<Home />}/>
                 <Route path={"/test"} element={<TestPage />}/>
                 <Route path={"/faq"} element={<FaqPage />}/>
+                <Route path={"/knowledge"} element={<KnowledgeCases />}/>
+                <Route path={"/cases"} element={<ListCases />}/>
             </Routes>
         </BrowserRouter>
         </AnimationContainer>
