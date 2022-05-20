@@ -1,10 +1,10 @@
 import { Router } from "express";
 
-export function CasesApi(mongoDatabase) {
+export function WaterApi(mongoDatabase) {
   const router = new Router();
 
   router.get("/", async (req, res) => {
-    const cases = await mongoDatabase
+    const water = await mongoDatabase
       .collection("organizations")
       .find()
       .map(({ name, info }) => ({
@@ -12,8 +12,8 @@ export function CasesApi(mongoDatabase) {
         info,
       }))
       .toArray();
-    res.json(cases);
-    console.log("cases");
+    res.json(water);
+    console.log("water");
   });
 
   return router;

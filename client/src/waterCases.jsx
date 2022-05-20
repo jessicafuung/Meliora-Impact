@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styling/case.css";
 import { Typography } from "@mui/material";
+import {Underline} from "./components/Underline/underline";
 
 function useLoading(loadingFunction) {
   const [loading, setLoading] = useState(true);
@@ -25,9 +26,9 @@ function useLoading(loadingFunction) {
   return { loading, error, data };
 }
 
-export function ListCases() {
+export function WaterCases() {
   const { loading, error, data } = useLoading(async () => {
-    return fetchJSON("/api/cases");
+    return fetchJSON("/api/water");
   });
 
   if (loading) {
@@ -44,6 +45,7 @@ export function ListCases() {
   return (
     <div>
       <Typography id={"top"}>Limited access</Typography>
+        {Underline(215, "#034f7a")}
       <Typography id={"text"}>
         That’s nearly 1 in 10 worldwide. Or, twice the population of the United
         States. The majority live in isolated rural areas and spend hours every
@@ -86,7 +88,6 @@ function InfoCard({info: {title, description, imagetext, image}}) {
         <Typography>{description}</Typography>
 
     </>
-  );
 }
 
 async function fetchJSON(url) {
