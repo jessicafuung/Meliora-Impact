@@ -39,20 +39,21 @@ export function BeTheChange() {
         </div>
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={0}>
-                                    <Grid item xs={6} md={6}>
-                            <div className="image1" />
+            <Grid item xs={6} md={6}>
+              <div className="image1" />
             </Grid>
-                                    <Grid item xs={6} md={6}>
-                                            <div className="text1">
+            <Grid item xs={6} md={6}>
+              <div className="text1">
                 <img
                   style={{
                     width: 320,
                     height: 129,
                     marginTop: 45,
-                                                             marginLeft: 45,
+                    marginLeft: 45,
                     marginBottom: 90,
                   }}
-                  src={require("../../images/KristianiaUniversityCollege_sort_rgb 1.svg")}                      />
+                  src={require("../../images/KristianiaUniversityCollege_sort_rgb 1.svg")}
+                />
                 <p
                   style={{
                     textAlign: "left",
