@@ -1,38 +1,56 @@
-import { Typography } from "@mui/material";
-import { Grid } from "@mui/material";
-import { Box } from "@mui/system";
+import {
+  Avatar,
+  Card,
+  CardActions,
+  CardContent,
+  Grid,
+  Typography,
+} from "@mui/material";
 import React from "react";
-import './CustomEmployeeStyle.css';
+import "./CustomEmployeeStyle.css";
+import CustomButton from "../CustomButton/CustomButton";
+import { Box } from "@mui/system";
 
-const CustomEmployeeCard = () => {
-
-
-    return(
-        <Box >
-            <Grid container p={3} className="cardContainer">
-                <Grid item xs={12}>
-                    <div>
-
-                    </div>
-                    <div>
-                    <Typography paragraph color="primary">
-                        Test name
-                    </Typography>    
-                    <Typography paragraph color="textDisabled">
-                        Test role
-                    </Typography>    
-
-                    </div>
-
-                </Grid>
-                <Grid item xs={12}>
-                    <Typography paragraph>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et quidem repellendus fugit facere neque sed illo corporis facilis, accusamus voluptates quaerat, quod saepe aspernatur maxime vero animi impedit. Est, corporis.
-                    </Typography>
-                </Grid>
-            </Grid>
+export function CustomEmployeeCard({
+  employee: { name, image, position, about, linkedin },
+}) {
+  return (
+    <Card
+      sx={{ maxWidth: 350 }}
+      className="employeeCard"
+      style={{ backgroundColor: "#DFE5E9" }}
+    >
+      <CardContent>
+        <Grid
+          container
+          mt={2}
+          gap={4}
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Grid item container justifyContent="center" xs={2}>
+            <Avatar sx={{ width: 56, height: 56 }} src={`${image}`} />
+          </Grid>
+          <Grid item container justifyContent="start" xs={8}>
+            <Typography mb={0} variant="h6" color="primary">
+              {name}
+            </Typography>
+            <Typography mb={0} paragraph color="textDisabled">
+              {position}
+            </Typography>
+          </Grid>
+        </Grid>
+        <Box mt={3} pr={2} pl={2}>
+          <Typography color="textPrimary" paragraph>
+            {about}
+          </Typography>
         </Box>
-    )
+      </CardContent>
+      <CardActions style={{ justifyContent: "center" }}>
+        <CustomButton variant="contained" to={linkedin}>
+          LinkedIn
+        </CustomButton>
+      </CardActions>
+    </Card>
+  );
 }
-
-export default CustomEmployeeCard

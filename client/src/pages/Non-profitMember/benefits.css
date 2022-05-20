@@ -1,0 +1,41 @@
+.containerBenefits{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.widthContainerBenefits {
+    width: 1440px;
+    margin: auto;
+}
+.joinUsBtnBenefits {
+    font-family: "Montserrat", sans-serif;
+    border-radius: 0;
+    height: 50px;
+    width: 200px;
+    background-color: #034F7A;
+    color: white;
+    border: 0;
+    font-size: 16px;
+    display:block; margin: 0 auto
+}
+.benefitsImg {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.textBenefits {
+    text-align: left;
+}
+@media only screen and (max-width: 900px) {
+
+    .benefitsImg {
+        width: 350px;
+        margin-top: 20px;
+    }
+    .textBenefits {
+        text-align: center;
+    }
+
+}
+
