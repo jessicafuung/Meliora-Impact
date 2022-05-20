@@ -22,6 +22,7 @@ export function Application() {
         <BrowserRouter>
           <Routes>
             <Route path={"/contact"} element={<Contact />} />
+            <Route path={"/home"} element={<Home />} />
             <Route path={"/"} element={<CorporateMember />} />
             <Route path={"/test"} element={<TestPage />} />
             <Route path={"/faq"} element={<FaqPage />} />
