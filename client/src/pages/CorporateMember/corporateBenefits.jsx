@@ -1,6 +1,7 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import "./corporateBenefits.css"
 
 export function CorporateBenefits() {
   return (
@@ -25,8 +26,8 @@ export function CorporateBenefits() {
           }}
         />
       </div>
-      <div className="containerBenefits">
-        <div className="widthContainerBenefits">
+      <div className="corporateContainerBenefits">
+        <div className="widthContainerCorporateBenefits">
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={0}>
               <Grid item xs={12} md={6}>
@@ -72,7 +73,7 @@ export function CorporateBenefits() {
                 <div style={{ marginTop: 30 }}>
                   <img
                     className="benefitsImg"
-                    src={require("../../images/20vettednpo.png")}
+                    src={require("../../images/20vettednpo.svg")}
                   />
                 </div>
               </Grid>
