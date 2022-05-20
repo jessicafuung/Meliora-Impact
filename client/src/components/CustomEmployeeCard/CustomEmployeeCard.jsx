@@ -9,7 +9,7 @@ export function CustomEmployeeCard({
 }) {
   return (
     <Box
-      sx={{ maxWidth: 350 }}
+      sx={{ borderRadius: 2, maxWidth: 350 }}
       className="employeeCard"
       style={{ backgroundColor: "#DFE5E9" }}
     >

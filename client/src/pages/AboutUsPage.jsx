@@ -25,7 +25,7 @@ export function AboutUsPage() {
 
   return (
     <Box>
-      <Grid container alignItems="center" justifyContent="center" mb={12}>
+      <Grid container alignItems="center" justifyContent="center" mb={4}>
         <Grid item>
           <Typography variant="h2">About us</Typography>
           {Underline(200, "#034F7A")}
@@ -36,7 +36,7 @@ export function AboutUsPage() {
         gap={15}
         alignItems="center"
         justifyContent="center"
-        mb={12}
+        mb={25}
       >
         <Grid item className="aboutSection">
           <Typography variant="h6" style={{ marginBottom: "30px" }}>
@@ -71,8 +71,8 @@ export function AboutUsPage() {
           />
         </Grid>
       </Grid>
-      <Grid container alignItems="center" justifyContent="center" mb={10}>
-        <Grid item mb={10}>
+      <Grid container alignItems="center" justifyContent="center" mb={25}>
+        <Grid item mb={4}>
           <Typography text-align="center" variant="h2">
             Our team
           </Typography>
