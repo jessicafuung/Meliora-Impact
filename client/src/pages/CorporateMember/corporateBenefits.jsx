@@ -1,6 +1,8 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
+import "./corporateBenefits.css";
+import { Underline } from "../../components/Underline/underline";
 
 export function CorporateBenefits() {
   return (
@@ -14,23 +16,14 @@ export function CorporateBenefits() {
         >
           Benefits
         </h1>
-        <div
-          style={{
-            width: "5%",
-            height: 2,
-            backgroundColor: "#034F7A",
-            margin: "auto",
-            marginTop: 5,
-            marginBottom: 100,
-          }}
-        />
+        {Underline(100, "#959786")}
       </div>
-      <div className="containerBenefits">
-        <div className="widthContainerBenefits">
+      <div className="corporateContainerBenefits">
+        <div className="widthContainerCorporateBenefits">
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={0}>
               <Grid item xs={12} md={6}>
-                <p className="textBenefits">
+                <p className="textCorporateBenefits">
                   By using Meliora Impact's platform, companies can leverage
                   their corporate resources for greater social good.
                   <br />
@@ -72,7 +65,7 @@ export function CorporateBenefits() {
                 <div style={{ marginTop: 30 }}>
                   <img
                     className="benefitsImg"
-                    src={require("../../images/20vettednpo.png")}
+                    src={require("../../images/20vettednpo.svg")}
                   />
                 </div>
               </Grid>
