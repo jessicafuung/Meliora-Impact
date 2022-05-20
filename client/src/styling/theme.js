@@ -4,17 +4,17 @@ import { green, purple } from '@mui/material/colors';
 const primary = "#EAC14B"
 
 const theme = createTheme({
-  palette: {
-    primary: {
-        main: primary
+    palette: {
+        primary: {
+            main: primary
+        },
+        text: {
+            primary: primary,
+        },
+        secondary: {
+            main: green[500],
+        },
     },
-    text: {
-      primary: primary,
-    },
-    secondary: {
-      main: green[500],
-    },
-  },
 });
 
 
