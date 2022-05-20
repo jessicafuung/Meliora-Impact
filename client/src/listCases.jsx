@@ -78,13 +78,13 @@ function OrganizationCard({ organizations: { name, info } }) {
   );
 }
 
-function InfoCard({info: {title, description, imagetext, image}}) {
-    return <>
-        {image && <img src={image} id={"image"} alt={"Image"}/>}
-        <Typography id={"imageText"}>{imagetext}</Typography>
-        <Typography id={"head"}>{title}</Typography>
-        <Typography>{description}</Typography>
-
+function InfoCard({ info: { title, description, imagetext, image } }) {
+  return (
+    <>
+      {image && <img src={image} id={"image"} alt={"Image"} />}
+      <Typography id={"imageText"}>{imagetext}</Typography>
+      <Typography id={"head"}>{title}</Typography>
+      <Typography>{description}</Typography>
     </>
   );
 }
