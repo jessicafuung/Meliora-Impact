@@ -11,10 +11,11 @@ import BusinessIcon from '@mui/icons-material/Business';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import Box from '@mui/material/Box';
-
+import {ThemeProvider} from "@material-ui/styles";
 
 import {ApiContext} from "../../lib/useContext";
 import {useLoading} from "../../lib/useLoader";
+import materialTheme from "../styling/booking";
 
 let bookedDate = "";
 let bookedTime = "";
@@ -59,25 +60,26 @@ function GetBookings() {
     </div>
 }
 
-function ShowForm() {
-    const [name, setName] = useState("");
-    const [companyName, setCompanyName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
-    const [telephone, setTelephone] = useState("");
+function ShowForm({userDate, setUserDate}) {
+    const { postBooking } = useContext(ApiContext);
 
-    console.log(name)
-    console.log(companyName)
-    console.log(email)
-    console.log(message)
-    console.log(telephone)
+    function handleSubmit(e) {
+        e.preventDefault();
+        postBooking(userDate)
+    }
+
+    const handleChange = event => {
+        const {name, value} = event.target
+        setUserDate({...userDate, [name]: value})
+    }
 
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className="formInfo">
                 <TextField required label={"Co. Name"}
                            variant={"standard"}
-                           onChange={(e) => setCompanyName(e.target.value)}
+                           name="companyName"
+                           onChange={handleChange}
                            InputProps={{
                                endAdornment: (
                                    <InputAdornment position="end">
@@ -91,7 +93,8 @@ function ShowForm() {
                 <TextField required color={"primary"}
                            label={"Name"}
                            variant={"standard"}
-                           onChange={(e) => setName(e.target.value)}
+                           name="contactPerson"
+                           onChange={handleChange}
                            InputProps={{
                                endAdornment: (
                                    <InputAdornment position="end">
@@ -104,7 +107,8 @@ function ShowForm() {
             <div className="formInfo">
                 <TextField required label={"Email"}
                            variant={"standard"}
-                           onChange={(e) => setEmail(e.target.value)}
+                           name="email"
+                           onChange={handleChange}
                            InputProps={{
                                endAdornment: (
                                    <InputAdornment position="end">
@@ -117,7 +121,8 @@ function ShowForm() {
             <div className="formInfo">
                 <TextField required label={"Telephone"}
                            variant={"standard"}
-                           onChange={(e) => setTelephone(e.target.value)}
+                           name="telephone"
+                           onChange={handleChange}
                            InputProps={{
                                endAdornment: (
                                    <InputAdornment position="end">
@@ -130,8 +135,8 @@ function ShowForm() {
             <div className="formInfo">
                 <TextField required label="Message"
                            multiline minRows={4}
-                           onChange={(e) => setMessage(e.target.value)}
-                />
+                           name="message"
+                           onChange={handleChange}/>
             </div>
 
             <div align="center">
@@ -142,23 +147,26 @@ function ShowForm() {
 }
 
 /* mapping open hours (availabilities) and after click sends user to FormFn*/
-function ShowAvailabilities() {
+function ShowAvailabilities({userDate, setUserDate, setTimeIsClicked}) {
     const [selectedTime, setSelectedTime] = useState("");
 
     /* Triggered when selected time */
     function handleSubmit(e) {
         e.preventDefault()
         bookedTime = selectedTime
-        console.log(bookedTime)
+        setTimeIsClicked(true)
+        setUserDate({...userDate, time: selectedTime})
     }
 
 
     return <div>
+        <div style={{background: "red"}}>
             {availabilities.map(({time}) => (
                 <ul key={time}>
                     <button value={time} onClick={(e) => setSelectedTime(e.target.value)}>{time}</button>
                 </ul>
             ))}
+        </div>
 
         <form onSubmit={handleSubmit}>
             <button>Select Time</button>
@@ -166,8 +174,7 @@ function ShowAvailabilities() {
     </div>
 }
 
-function ShowCalendar() {
-    /*const { postBooking } = useContext(ApiContext);*/
+function ShowCalendar({setUserDate, userDate, setDateIsClicked}) {
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [date, setDate] = useState("");
 
@@ -192,15 +199,15 @@ function ShowCalendar() {
      /* Triggered by select button */
      function handleSubmit(e) {
          e.preventDefault();
-         /*setIsClickedDate(true);*/
          bookedDate = date;
-         console.log("booked date: "+bookedDate)
-         /*postBooking({date})*/
+         setDateIsClicked(true);
+         setUserDate({...userDate, date: date})
      }
 
     return (
         <>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                <ThemeProvider theme={materialTheme}>
                 <Grid container spacing={2}>
                     <Grid item>
                         <KeyboardDatePicker
@@ -218,32 +225,60 @@ function ShowCalendar() {
                             KeyboardButtonProps={{'aria-label': 'change date'}}/>
                     </Grid>
 
-                    <button onClick={handleSubmit}>Select date</button>
                 </Grid>
+                </ThemeProvider>
             </MuiPickersUtilsProvider>
+            <button onClick={handleSubmit}>Select date</button>
         </>
     );
 }
 
 export function Start() {
+    const [dateIsClicked, setDateIsClicked] = useState(false)
+    const [timeIsClicked, setTimeIsClicked] = useState(false)
+
+    const [userData, setUserData] = useState({
+        companyName: '',
+        contactPerson: '',
+        email: '',
+        telephone: '',
+        date: '',
+        time: '',
+        message: '',
+    });
+
+
     return <div style={{marginTop: 50}}>
-        <Box sx={{background: "white"}}>
+        <Box sx={{background: "green"}}>
             <Grid container spacing={5} justifyContent={"center"} alignItems={"center"}>
 
                 <Grid item xs={4}>
-                    <div style={{backgroundColor: "rgba(39, 34, 186, 0.3)"}}>
-                        {<ShowCalendar/>}
+                    <div>
+                        {<ShowCalendar
+                            userDate={userData}
+                            setUserDate={setUserData}
+                            setDateIsClicked={setDateIsClicked}/>}
                     </div>
                 </Grid>
 
                 <Grid item xs={4}>
-                    <ShowAvailabilities/>
+                    {dateIsClicked &&
+                        <ShowAvailabilities
+                            userDate={userData}
+                            setUserDate={setUserData}
+                            setTimeIsClicked={setTimeIsClicked}
+                        />
+                    }
                 </Grid>
 
                 <Grid item xs={8} >
-                   <ShowForm/>
+                    {timeIsClicked &&
+                        <ShowForm
+                            userDate={userData}
+                            setUserDate={setUserData}
+                        />
+                    }
                 </Grid>
-
             </Grid>
         </Box>
     </div>
