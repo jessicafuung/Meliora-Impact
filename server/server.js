@@ -55,9 +55,7 @@ mongoClient.connect().then(async () => {
   );
 });
 
-app.get("/", (req, res) => {
-  res.send("Hello Meliora Backend");
-
+mongoClient.connect().then(async () => {
   console.log("Connected to mongodb (Cases)");
   app.use("/api/cases", CasesApi(mongoClient.db(process.env.MONGODB_DATABASE)));
 });
