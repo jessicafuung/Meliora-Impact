@@ -78,13 +78,11 @@ function OrganizationCard({ organizations: { name, info } }) {
   );
 }
 
-function InfoCard({ info: { title, description, image } }) {
+function InfoCard({ info: { title, description, imagetext, image } }) {
   return (
     <>
-      {image && <img src={image} id={"image"} />}
-      <Typography id={"imageText"}>
-        Over 11 million people in Madagascar have no access to safe water.
-      </Typography>
+      {image && <img src={image} id={"image"} alt={"Image"} />}
+      <Typography id={"imageText"}>{imagetext}</Typography>
       <Typography id={"head"}>{title}</Typography>
       <Typography>{description}</Typography>
     </>
