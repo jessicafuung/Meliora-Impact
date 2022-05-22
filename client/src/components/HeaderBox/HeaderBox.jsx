@@ -1,17 +1,41 @@
 import React from "react";
 import "./Headerbox.css";
 
-export function HeaderBox(headline, text) {
+export function HeaderBox(
+  backgroundImageUrl,
+  headline,
+  headlineColor,
+  text,
+  textColor
+) {
   return (
-    <div className="HeaderBox">
-      <div className="Headline">{headline}</div>
-      <div
-        style={{
-          marginTop: 50,
-          fontSize: 24,
-        }}
-      >
-        {text}
+    <div
+      className="TopHeader"
+      style={{
+        backgroundImage: `url(${backgroundImageUrl})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        textAlign: "center",
+      }}
+    >
+      <div className="HeaderBox">
+        <div
+          className="BoxHeadline"
+          style={{
+            color: headlineColor,
+          }}
+        >
+          {headline}
+        </div>
+        <div
+          className="BoxText"
+          style={{
+            color: textColor,
+          }}
+        >
+          {text}
+        </div>
       </div>
     </div>
   );

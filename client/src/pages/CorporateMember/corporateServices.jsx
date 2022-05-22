@@ -2,22 +2,12 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import "./corporateServices.css";
-import { Underline } from "../../components/Underline/underline";
+import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/headlineWithUnderline";
 
 export function CorporateServices() {
   return (
     <>
-      <div>
-        <h1
-          style={{
-            fontSize: 36,
-            textAlign: "center",
-          }}
-        >
-          Services
-        </h1>
-        {Underline(100, "#034F7A")}
-      </div>
+      {HeadlineWithUnderline("Services", 100, "#034F7A", 50)}
       <div className="containerCorporateServices">
         <div className="widthContainerServices">
           <Box sx={{ flexGrow: 1 }}>
