@@ -14,16 +14,16 @@ export function CorporateMember() {
         </h1>,
         "white",
         <p>
-          Joining Meloria Impact gives you access to a <em>broad variety</em>
-          <br /> of <em>helpful tools</em> for tracking, statistics & more
+            Joining Meloria Impact gives you access to a <strong><em>broad variety</em></strong>
+            <br /> of <strong><em>helpful tools</em></strong> for tracking, statistics & more
         </p>,
         "white"
       )}
-      <div style={{ height: 50 }} />
+      <div style={{ height: 100 }} />
       <CorporateBenefits />
-      <div style={{ height: 50 }} />
+      <div style={{ height: 100 }} />
       <CorporateServices />
-      <div style={{ height: 50 }} />
+      <div style={{ height: 100 }} />
     </div>
   );
 }
