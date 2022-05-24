@@ -13,7 +13,7 @@ import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/he
 export function Home() {
   return (
     <>
-      <Box className="homeheader" sx={{ flexGrow: 1 }}>
+      <Box className="home-header" sx={{ flexGrow: 1 }}>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <div />

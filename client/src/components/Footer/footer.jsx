@@ -25,7 +25,7 @@ export function Footer() {
               xs={12}
               className="contact-btn"
             >
-              <Button variant="contained">Contact</Button>
+              <CustomButton to="/contact" variant="contained">Contact</CustomButton>
             </Grid>
           </Box>
         </Grid>
