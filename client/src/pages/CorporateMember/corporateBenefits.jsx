@@ -7,8 +7,7 @@ import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/he
 export function CorporateBenefits() {
   return (
     <>
-
-        {HeadlineWithUnderline("Benefits",100, "#034F7A", 100)}
+      {HeadlineWithUnderline("Benefits", 100, "#034F7A", 100)}
 
       <Box
         sx={{ flexGrow: 1 }}
