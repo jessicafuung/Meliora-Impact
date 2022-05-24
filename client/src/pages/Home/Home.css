@@ -1,5 +1,5 @@
 body{
-    margin: 0;
+    margin: 0!important;
 }
 
 .header {
@@ -9,6 +9,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    margin-bottom: 50px;
 }
 .top {
     font-size: 0px;
@@ -34,6 +35,13 @@ body{
     border: 0;
     font-size: 16px;
 }
+
+.sector-text {
+    max-width: 800px;
+    font-size: 16px;
+}
+
+
 /*
 @media only screen and (max-width: 750px) {
 

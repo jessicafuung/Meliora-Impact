@@ -1,7 +1,6 @@
 .box {
-    margin: auto;
     width: 1440px;
-
+    margin: auto auto 200px;
     background-color: rgba(3,79,122,0.1);
 
 }

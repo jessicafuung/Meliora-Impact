@@ -1,3 +1,5 @@
+// noinspection JSVoidFunctionReturnValueUsed
+
 import { useState } from "react";
 import React from "react";
 import { Box, InputAdornment, TextField } from "@mui/material";
@@ -7,19 +9,18 @@ import BusinessIcon from "@mui/icons-material/Business";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Grid from "@mui/material/Grid";
-import "./styling/contact.css";
+import "../styling/contact.css";
 import Typography from "@mui/material/Typography";
-import CustomButton from "./components/CustomButton/CustomButton";
+import CustomButton from "../components/CustomButton/CustomButton";
+import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
 
 export function Contact() {
   return (
-    <Box mt={10}>
+    <Box mt={10} mb={20}>
       <Grid container justifyContent="center" alignItems="center">
         <header className="contactHeader">
           <Grid item xs={12}>
-            <Typography textAlign="center" variant="h2">
-              Contact
-            </Typography>
+            {HeadlineWithUnderline("Contact", 120, "#034F7A", 0)}
             <Typography paragraph>
               Reach out if you want to collaborate or know more about our
               services, or just to connect
@@ -57,6 +58,10 @@ function ContactForm() {
   const [companyName, setCompanyName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  function handleClick() {
+    alert("Thank you, we will reach out to you soon.");
+  }
 
   return (
     <form>
@@ -129,7 +134,9 @@ function ContactForm() {
         />*/}
       </div>
       <div align="center">
-        <CustomButton variant="contained">Submit</CustomButton>
+        <CustomButton variant="contained" to={"/contact"}>
+          Submit
+        </CustomButton>
       </div>
     </form>
   );
