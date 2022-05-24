@@ -4,14 +4,14 @@ export function KnowledgeApi(mongoDatabase) {
     const router = new Router();
 
     router.get("/", async (req, res) => {
-        const cases = await mongoDatabase.collection("knowledge")
+        const knowledge = await mongoDatabase.collection("knowledge")
             .find()
             .map(({name, info}) => ({
                 name,
                 info,
             }))
             .toArray();
-        res.json(cases);
+        res.json(knowledge);
         console.log("knowledge")
     });
 

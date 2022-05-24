@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "./styling/case.css";
 import { Typography } from "@mui/material";
-import {Underline} from "./components/Underline/underline";
+import { Underline } from "./components/Underline/underline";
+import { CaseStudyWaterHeader } from "./pages/CaseStudyWater/CaseStudyWaterHeader";
 
 function useLoading(loadingFunction) {
   const [loading, setLoading] = useState(true);
@@ -44,8 +45,9 @@ export function WaterCases() {
   }
   return (
     <div>
+      <CaseStudyWaterHeader />
       <Typography id={"top"}>Limited access</Typography>
-        {Underline(215, "#034f7a")}
+      {Underline(215, "#034f7a")}
       <Typography id={"text"}>
         That’s nearly 1 in 10 worldwide. Or, twice the population of the United
         States. The majority live in isolated rural areas and spend hours every
@@ -58,7 +60,7 @@ export function WaterCases() {
       <div className={"list"}>
         {data.map((organization) => (
           <OrganizationCard
-            key={organization._id}
+            key={organization.id}
             organizations={organization}
           />
         ))}
@@ -73,21 +75,22 @@ function OrganizationCard({ organizations: { name, info } }) {
       <div className={"organization"}>
         <Typography id={"headline"}>{name}</Typography>
         {info.map((info) => (
-          <InfoCard key={info._id} info={info} />
+          <InfoCard key={info.id} info={info} />
         ))}
       </div>
     </>
   );
 }
 
-function InfoCard({info: {title, description, imagetext, image}}) {
-    return <>
-        {image && <img src={image} id={"image"} alt={"Image"}/>}
-        <Typography id={"imageText"}>{imagetext}</Typography>
-        <Typography id={"head"}>{title}</Typography>
-        <Typography>{description}</Typography>
-
+function InfoCard({ info: { title, description, imagetext, image } }) {
+  return (
+    <>
+      {image && <img src={image} id={"image"} alt={"Image"} />}
+      <Typography id={"imageText"}>{imagetext}</Typography>
+      <Typography id={"head"}>{title}</Typography>
+      <Typography>{description}</Typography>
     </>
+  );
 }
 
 async function fetchJSON(url) {
