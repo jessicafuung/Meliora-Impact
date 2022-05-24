@@ -23,11 +23,11 @@
 }
 
 #top {
-    margin: 200px;
     color: #034f7a;
     text-align: center;
     font-size: 35px;
     font-weight: bold;
+    margin-top: 100px;
 }
 
 #text {
@@ -41,6 +41,7 @@
     flex-direction: row;
     align-items: start;
     justify-content: center;
+    margin-bottom: 200px;
 }
 
 #image {

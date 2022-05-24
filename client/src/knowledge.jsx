@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./styling/case.css";
 import { Typography } from "@mui/material";
+import { Underline } from "./components/Underline/underline";
+import { CaseStudyKnowledgeHeader } from "./pages/CaseStudyKnowledge/CaseStudyKnowledgeHeader";
 
 function useLoading(loadingFunction) {
   const [loading, setLoading] = useState(true);
@@ -43,7 +45,9 @@ export function KnowledgeCases() {
   }
   return (
     <div>
+      <CaseStudyKnowledgeHeader />
       <Typography id={"top"}>Global Issue</Typography>
+      {Underline(175, "#034f7a")}
       <Typography id={"text"}>
         759 million adults are illiterate and do not have the awareness
         necessary to improve both their living conditions and those for their
@@ -55,7 +59,7 @@ export function KnowledgeCases() {
       </Typography>
       <div className={"list"}>
         {data.map((knowledge) => (
-          <KnowledgeCard key={knowledge._id} knowledge={knowledge} />
+          <KnowledgeCard key={knowledge.id} knowledge={knowledge} />
         ))}
       </div>
     </div>
@@ -68,7 +72,7 @@ function KnowledgeCard({ knowledge: { name, info } }) {
       <div className={"knowledge"}>
         <Typography id={"headline"}>{name}</Typography>
         {info.map((info) => (
-          <InfoCard key={info._id} info={info} />
+          <InfoCard key={info.id} info={info} />
         ))}
       </div>
     </>
@@ -78,7 +82,7 @@ function KnowledgeCard({ knowledge: { name, info } }) {
 function InfoCard({ info: { title, description, imagetext, image } }) {
   return (
     <>
-      {image && <img src={image} id={"image"} />}
+      {image && <img src={image} id={"image"} alt={"Image"} />}
       <Typography id={"imageText"}>{imagetext}</Typography>
       <Typography id={"head"}>{title}</Typography>
       <Typography>{description}</Typography>
