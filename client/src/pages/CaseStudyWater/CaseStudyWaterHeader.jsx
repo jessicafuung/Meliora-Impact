@@ -18,13 +18,13 @@ export function CaseStudyWaterHeader() {
             <strong>
               <em>without</em>
             </strong>
-            <br /> clean water.
+            <br /> clean water. <br />
+            <button style={{ margin: 105 }} className="consultationButton">
+              <strong>Book a Consultation</strong>
+            </button>
           </p>,
           "black"
         )}
-        <button className="consultationButton">
-          <strong>Book a Consultation</strong>
-        </button>
       </div>
     </>
   );

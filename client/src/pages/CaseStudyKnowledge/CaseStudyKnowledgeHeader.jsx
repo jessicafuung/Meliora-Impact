@@ -22,12 +22,13 @@ export function CaseStudyKnowledgeHeader() {
               <em>not</em>
             </strong>{" "}
             in school.
+            <br />
+            <button style={{ margin: 100 }} className="consultationButton">
+              <strong>Book a Consultation</strong>
+            </button>
           </p>,
           "white"
         )}
-        <button className="consultationButton">
-          <strong>Book a Consultation</strong>
-        </button>
       </div>
     </>
   );
