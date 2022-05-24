@@ -1,5 +1,3 @@
-// noinspection JSVoidFunctionReturnValueUsed
-
 import { useState } from "react";
 import React from "react";
 import { Box, InputAdornment, TextField } from "@mui/material";
@@ -13,6 +11,7 @@ import "../styling/contact.css";
 import Typography from "@mui/material/Typography";
 import CustomButton from "../components/CustomButton/CustomButton";
 import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
+import { useToast } from "@chakra-ui/react";
 
 export function Contact() {
   return (
@@ -20,7 +19,7 @@ export function Contact() {
       <Grid container justifyContent="center" alignItems="center">
         <header className="contactHeader">
           <Grid item xs={12}>
-            {HeadlineWithUnderline("Contact", 120, "#034F7A", 0)}
+            {HeadlineWithUnderline("Contact", 120, "#034F7A", 10)}
             <Typography paragraph>
               Reach out if you want to collaborate or know more about our
               services, or just to connect
@@ -58,10 +57,7 @@ function ContactForm() {
   const [companyName, setCompanyName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-
-  function handleClick() {
-    alert("Thank you, we will reach out to you soon.");
-  }
+  const toast = useToast();
 
   return (
     <form>
@@ -79,12 +75,6 @@ function ContactForm() {
           }}
           variant={"standard"}
         />
-        {/*
-        <input
-          id={"name"}
-          name={name}
-          onChange={(event) => setName(event.target.value)}
-        />*/}
       </div>
       <div className="formInfo">
         <TextField
@@ -99,11 +89,6 @@ function ContactForm() {
           }}
           variant={"standard"}
         />
-        {/*
-        <input
-          name={companyName}
-          onChange={(event) => setCompanyName(event.target.value)}
-        />*/}
       </div>
       <div className="formInfo">
         <TextField
@@ -118,23 +103,24 @@ function ContactForm() {
           }}
           variant={"standard"}
         />
-
-        {/*
-          <input
-            name={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />*/}
       </div>
       <div className="formInfo">
         <TextField required label="Message" multiline rows={4} />
-        {/*
-        <textarea
-          name={message}
-          onChange={(event) => setMessage(event.target.value)}
-        />*/}
       </div>
       <div align="center">
-        <CustomButton variant="contained" to={"/contact"}>
+        <CustomButton
+          variant="contained"
+          to={"/contact"}
+          onClick={() =>
+            toast({
+              title: "Message sent.",
+              description: "Thank you for reaching out to us.",
+              status: "success",
+              duration: 9000,
+              isClosable: true,
+            })
+          }
+        >
           Submit
         </CustomButton>
       </div>
