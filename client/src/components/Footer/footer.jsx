@@ -60,7 +60,7 @@ export function Footer() {
                   About us
                 </Typography>
                 <Link
-                  href="/"
+                  href="/about"
                   style={{
                     color: "white",
                     fontSize: "17px",
@@ -70,7 +70,7 @@ export function Footer() {
                   About
                 </Link>
                 <Link
-                  href="/"
+                  href="/corporate"
                   style={{
                     color: "white",
                     fontSize: "17px",
@@ -80,7 +80,7 @@ export function Footer() {
                   Businesses
                 </Link>
                 <Link
-                  href="/"
+                  href="/nonprofit"
                   style={{
                     color: "white",
                     fontSize: "17px",
@@ -90,7 +90,7 @@ export function Footer() {
                   Nonprofits
                 </Link>
                 <Link
-                  href="/"
+                  href="/faq"
                   style={{
                     color: "white",
                     fontSize: "17px",
@@ -100,7 +100,7 @@ export function Footer() {
                   FAQ
                 </Link>
                 <Link
-                  href="/"
+                  href="/privacy"
                   style={{
                     color: "white",
                     fontSize: "17px",
@@ -170,7 +170,7 @@ export function Footer() {
                   Schedule meeting
                 </Link>
                 <Link
-                  href="/"
+                  href="/corporate"
                   style={{
                     color: "white",
                     fontSize: "17px",

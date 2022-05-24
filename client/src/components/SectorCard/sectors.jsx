@@ -5,7 +5,7 @@ export const sectors = [
       "Imagine spending hours everyday searching for water. \n" +
       "but with clean water, everything changes",
     image: "https://i.imgur.com/pi1w9X5.png",
-    linkTo: "/water"
+    linkTo: "/water",
   },
   {
     title: "Knowledge",
@@ -15,6 +15,6 @@ export const sectors = [
       "fight the climate crisis, and one of the best ways \n" +
       "to break the cycle of poverty",
     image: "https://i.imgur.com/ltNtgN8.png",
-    linkTo: "/knowledge"
+    linkTo: "/knowledge",
   },
 ];
