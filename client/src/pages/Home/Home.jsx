@@ -1,20 +1,14 @@
 import React from "react";
-import React from "react";
 import "./Home.css";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import CustomButton from "../../components/CustomButton/CustomButton";
-import { Footer } from "../../components/Footer/footer";
 import { members } from "../../components/MemberServiceCard/Members";
 import { MemberServiceCard } from "../../components/MemberServiceCard/memberServiceCard";
-import { Typography } from "@mui/material";
 import { sectors } from "../../components/SectorCard/sectors";
 import { SectorCard } from "../../components/SectorCard/sectorCard";
 import { BeTheChange } from "../../components/BeTheChange/beTheChange";
 import { PartnerCard } from "../../components/PartnerCard/partnerCard";
-import CustomHeadline from "../../components/CustomHeadline/CustomHeadlineComponent";
-import Navbar from "../../components/Navbar/Navbar";
-import { Underline } from "../../components/Underline/underline";
+import {HeadlineWithUnderline} from "../../components/HeadlineWithUnderline/headlineWithUnderline";
 
 export function Home() {
   return (
@@ -58,16 +52,7 @@ export function Home() {
         <Grid container justifyContent="center">
           <Grid item>
             <div className="text-box">
-              <h1
-                style={{
-                  fontSize: 36,
-                  color: "#034F7A",
-                  textAlign: "center",
-                }}
-              >
-                Member services
-              </h1>
-              {Underline(200, "#034F7A")}
+                {HeadlineWithUnderline("Member services", 80 , "#034F7A", 0, "#034F7A")}
             </div>
           </Grid>
         </Grid>
@@ -93,16 +78,7 @@ export function Home() {
         >
           <Grid item>
             <div className="text-box">
-              <h1
-                style={{
-                  fontSize: 36,
-                  color: "#034F7A",
-                  textAlign: "center",
-                }}
-              >
-                Sectors
-              </h1>
-              {Underline(80, "#034F7A")}
+                {HeadlineWithUnderline("Sectors", 80 , "#034F7A", 15, "#034F7A")}
             </div>
           </Grid>
           <Grid item>
@@ -132,21 +108,13 @@ export function Home() {
       </Grid>
       <Box>
         <BeTheChange />
+        <div style={{ marginTop: 40}}/>
       </Box>
       <Box>
-        <h1
-          style={{
-            fontSize: 36,
-            color: "#034F7A",
-            textAlign: "center",
-          }}
-        >
-          Partners
-        </h1>
-        {Underline(80, "#034F7A")}
+          {HeadlineWithUnderline("Partners", 80 , "#034F7A", 40, "#034F7A")}
         <PartnerCard />
+        <div style={{ marginBottom: 40}}/>
       </Box>
-      <Footer />
     </>
   );
 }
