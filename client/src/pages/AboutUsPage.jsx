@@ -24,7 +24,7 @@ export function AboutUsPage() {
   }
 
   return (
-    <Box>
+    <Box mt={10}>
       <Grid container alignItems="center" justifyContent="center" mb={4}>
         <Grid item>
           {HeadlineWithUnderline("About us", 120, "#034F7A", 30)}

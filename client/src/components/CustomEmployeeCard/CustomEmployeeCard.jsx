@@ -1,7 +1,6 @@
 import { Avatar, Grid, Typography } from "@mui/material";
 import React from "react";
 import "./CustomEmployeeStyle.css";
-import CustomButton from "../CustomButton/CustomButton";
 import { Box } from "@mui/system";
 
 export function CustomEmployeeCard({
@@ -39,9 +38,8 @@ export function CustomEmployeeCard({
           </Typography>
         </Box>
         <div className={"buttonDiv"}>
-          <CustomButton variant="outlined" to={linkedin}>
-            LinkedIn
-          </CustomButton>
+            <a className={"fakeButton"} href={linkedin} target={"_blank"}>
+              LinkedIn</a>
         </div>
       </Box>
     </Box>
