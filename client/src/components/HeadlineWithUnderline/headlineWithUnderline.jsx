@@ -4,7 +4,8 @@ export function HeadlineWithUnderline(
   headlineText,
   lineWidth,
   hashtagColor,
-  marginBottom
+  marginBottom,
+  textColor
 ) {
   return (
     <>

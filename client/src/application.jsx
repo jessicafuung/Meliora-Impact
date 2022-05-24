@@ -16,6 +16,7 @@ import { AboutUsPage } from "./pages/AboutUsPage";
 import { GetFaq } from "./pages/Faq/Faq";
 import { CorporateMember } from "./pages/CorporateMember/corporateMember";
 import { Footer } from "./components/Footer/footer";
+import { NonProfit } from "./pages/Non-profitMember/nonProfitMember";
 
 export function Application() {
   return (
