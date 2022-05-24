@@ -57,7 +57,7 @@ function ContactForm() {
   const [companyName, setCompanyName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const toast = useToast();
+  /*const toast = useToast();*/
 
   return (
     <form>
@@ -111,6 +111,8 @@ function ContactForm() {
         <CustomButton
           variant="contained"
           to={"/contact"}
+          /*
+          Toast with chakra
           onClick={() =>
             toast({
               title: "Message sent.",
@@ -119,7 +121,7 @@ function ContactForm() {
               duration: 9000,
               isClosable: true,
             })
-          }
+          }*/
         >
           Submit
         </CustomButton>
