@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./styling/case.css";
 import { Typography } from "@mui/material";
 import { CaseStudyKnowledgeHeader } from "./pages/CaseStudyKnowledge/CaseStudyKnowledgeHeader";
-import {HeadlineWithUnderline} from "./components/HeadlineWithUnderline/headlineWithUnderline";
+import { HeadlineWithUnderline } from "./components/HeadlineWithUnderline/headlineWithUnderline";
 
 function useLoading(loadingFunction) {
   const [loading, setLoading] = useState(true);
@@ -46,7 +46,8 @@ export function KnowledgeCases() {
   return (
     <div>
       <CaseStudyKnowledgeHeader />
-      {HeadlineWithUnderline("Global Issue",175, "#034f7a")}
+      <div style={{ marginTop: 100 }}></div>
+      {HeadlineWithUnderline("Global Issue", 175, "#034f7a")}
       <Typography id={"text"}>
         759 million adults are illiterate and do not have the awareness
         necessary to improve both their living conditions and those for their
