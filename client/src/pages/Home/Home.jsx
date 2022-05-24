@@ -64,6 +64,7 @@ export function Home() {
                 title={member.title}
                 content={member.content}
                 icon={member.icon}
+                linkTo={member.linkTo}
               />
             </>
           ))}
@@ -102,6 +103,7 @@ export function Home() {
               title={sector.title}
               content={sector.content}
               image={sector.image}
+              linkTo={sector.linkTo}
             />
           </>
         ))}
