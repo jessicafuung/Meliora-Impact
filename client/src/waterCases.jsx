@@ -46,6 +46,7 @@ export function WaterCases() {
   return (
     <div>
       <CaseStudyWaterHeader />
+      <div style={{ marginTop: 100 }}></div>
       {HeadlineWithUnderline("Limited access", 215, "#034f7a")}
       <Typography id={"text"}>
         That’s nearly 1 in 10 worldwide. Or, twice the population of the United

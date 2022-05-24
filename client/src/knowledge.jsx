@@ -43,6 +43,7 @@ export function KnowledgeCases() {
       </div>
     );
   }
+
   return (
     <div>
       <CaseStudyKnowledgeHeader />

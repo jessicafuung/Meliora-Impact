@@ -1,16 +1,16 @@
 import React from "react";
 import "./CaseStudyWater.css";
+import { HeaderBox } from "../../components/HeaderBox/HeaderBox";
 
 export function CaseStudyWaterHeader() {
   return (
     <>
       <div className="header">
-        <div>
-          <p className="top">t</p>
-          <p className="headline">
-            <strong>Water</strong>
-          </p>
-          <p className="description">
+        {HeaderBox(
+          "../../images/waterBackground.svg",
+          "Water",
+          "black",
+          <p>
             <strong>
               <em>785 million</em>
             </strong>{" "}
@@ -19,9 +19,10 @@ export function CaseStudyWaterHeader() {
               <em>without</em>
             </strong>
             <br /> clean water.
-          </p>
-        </div>
-        <button className="consultationBtn">
+          </p>,
+          "black"
+        )}
+        <button className="consultationButton">
           <strong>Book a Consultation</strong>
         </button>
       </div>
