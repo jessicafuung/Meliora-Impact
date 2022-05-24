@@ -27,8 +27,7 @@ export function AboutUsPage() {
     <Box>
       <Grid container alignItems="center" justifyContent="center" mb={4}>
         <Grid item>
-          <Typography variant="h2">About us</Typography>
-          {HeadlineWithUnderline(200, "#034F7A")}
+          {HeadlineWithUnderline("About us", 120, "#034F7A", 30)}
         </Grid>
       </Grid>
       <Grid
@@ -73,10 +72,7 @@ export function AboutUsPage() {
       </Grid>
       <Grid container alignItems="center" justifyContent="center" mb={25}>
         <Grid item mb={4}>
-          <Typography text-align="center" variant="h2">
-            Our team
-          </Typography>
-          {HeadlineWithUnderline(210, "#034F7A")}
+          {HeadlineWithUnderline("Our team", 120, "#034F7A", 20)}
         </Grid>
         <Grid
           container
