@@ -8,10 +8,8 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Grid from "@mui/material/Grid";
 import "../styling/contact.css";
-import Typography from "@mui/material/Typography";
 import CustomButton from "../components/CustomButton/CustomButton";
 import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
-import { useToast } from "@chakra-ui/react";
 
 export function Contact() {
   return (
@@ -19,11 +17,11 @@ export function Contact() {
       <Grid container justifyContent="center" alignItems="center">
         <header className="contactHeader">
           <Grid item xs={12}>
-            {HeadlineWithUnderline("Contact", 120, "#034F7A", 10)}
-            <Typography paragraph>
+            {HeadlineWithUnderline("Contact", 120, "#034F7A", 20)}
+            <p style={{ maxWidth: 300, textAlign: "center", marginBottom: 30 }}>
               Reach out if you want to collaborate or know more about our
-              services, or just to connect
-            </Typography>
+              services, or just to connect.
+            </p>
           </Grid>
         </header>
         <Grid container gap={12} alignItems="center" justifyContent="center">
@@ -33,16 +31,17 @@ export function Contact() {
 
           <Grid item>
             <div className="contactInfo">
-              <PhoneIcon color={"primary"} />
-              <Typography paragraph>+47 92 45 26 10</Typography>
+              <PhoneIcon sx={{ fontSize: 50 }} color={"primary"} />
+              <p>+47 92 45 26 10</p>
             </div>
             <div className="contactInfo">
-              <EmailIcon color={"primary"} />
-              <Typography paragraph>contact@melioraimpact.no</Typography>
+              <EmailIcon sx={{ fontSize: 50 }} color={"primary"} />
+              <p>contact@melioraimpact.no</p>
             </div>
             <div className="contactInfo">
-              <LocationOnIcon color={"primary"} />
-              <Typography paragraph>Peder Ankers plass 49 0301 Oslo</Typography>
+              <LocationOnIcon sx={{ fontSize: 50 }} color={"primary"} />
+              <p>Peder Ankers plass 49</p>
+              <p>0301 Oslo</p>
             </div>
           </Grid>
         </Grid>
@@ -65,7 +64,8 @@ function ContactForm() {
         <TextField
           required
           color={"primary"}
-          label={"Name"}
+          label={"Contact person"}
+          sx={{ width: 330 }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -80,6 +80,7 @@ function ContactForm() {
         <TextField
           required
           label={"Co. Name"}
+          sx={{ width: 330 }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -94,6 +95,7 @@ function ContactForm() {
         <TextField
           required
           label={"Email"}
+          sx={{ width: 330 }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -105,7 +107,13 @@ function ContactForm() {
         />
       </div>
       <div className="formInfo">
-        <TextField required label="Message" multiline rows={4} />
+        <TextField
+          required
+          label="Message"
+          sx={{ width: 330 }}
+          multiline
+          rows={4}
+        />
       </div>
       <div align="center">
         <CustomButton

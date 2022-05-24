@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./styling/case.css";
 import { Typography } from "@mui/material";
-import { Underline } from "./components/Underline/underline";
 import { CaseStudyWaterHeader } from "./pages/CaseStudyWater/CaseStudyWaterHeader";
+import {HeadlineWithUnderline} from "./components/HeadlineWithUnderline/headlineWithUnderline";
 
 function useLoading(loadingFunction) {
   const [loading, setLoading] = useState(true);
@@ -47,7 +47,7 @@ export function WaterCases() {
     <div>
       <CaseStudyWaterHeader />
       <Typography id={"top"}>Limited access</Typography>
-      {Underline(215, "#034f7a")}
+      {HeadlineWithUnderline(215, "#034f7a")}
       <Typography id={"text"}>
         That’s nearly 1 in 10 worldwide. Or, twice the population of the United
         States. The majority live in isolated rural areas and spend hours every
