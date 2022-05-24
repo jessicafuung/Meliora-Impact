@@ -6,7 +6,7 @@ import { FaqPage } from "./pages/FaqPage/FaqPage";
 import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider } from "@mui/system";
 import theme from "./styling/theme";
-import { ListCases } from "./listCases";
+import { WaterCases } from "./waterCases";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
 import Header from "./components/navbar";
 import { Contact } from "./pages/contact";
@@ -34,6 +34,8 @@ export function Application() {
             <Route path={"/faq"} element={<FaqPage />} />
             <Route path={"/privacy"} element={<PrivacyPage />} />
             <Route path={"/about"} element={<AboutUsPage />} />
+            <Route path={"/water"} element={<WaterCases />} />
+            <Route path={"/knowledge"} element={<KnowledgeCases />} />
           </Routes>
           <Footer />
         </BrowserRouter>
