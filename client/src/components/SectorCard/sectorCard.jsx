@@ -3,7 +3,7 @@ import CustomButton from "../CustomButton/CustomButton";
 import "./sectors";
 import "./sectorCard.css";
 
-export function SectorCard({ title, content, image }) {
+export function SectorCard({ title, content, image, linkTo }) {
   return (
     <Box textAlign="center" className="sector-container">
       <Grid container flexDirection="row">
@@ -14,7 +14,7 @@ export function SectorCard({ title, content, image }) {
             {content}{" "}
           </Typography>
           <Box alignItems="center" textAlign="center" className="sector-button">
-            <CustomButton to={"/"} variant="contained">
+            <CustomButton to={linkTo} variant="contained">
               Case study
             </CustomButton>
           </Box>

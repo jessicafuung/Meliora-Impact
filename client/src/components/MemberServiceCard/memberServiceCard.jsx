@@ -13,7 +13,7 @@ import { HandHoldingHeartIcon } from "../assets/handHoldingHeartIcon";
 import "./Members";
 import CustomButton from "../CustomButton/CustomButton";
 
-export function MemberServiceCard({ title, content, icon }) {
+export function MemberServiceCard({ title, content, icon, linkTo }) {
   return (
     <Box textAlign="center" className="service-container">
       <Grid container flexDirection="row">
@@ -33,7 +33,7 @@ export function MemberServiceCard({ title, content, icon }) {
             flexDirection="column"
             className="service-button"
           >
-            <CustomButton to={"/"} variant="contained">
+            <CustomButton to={linkTo} variant="contained">
               Learn more
             </CustomButton>
           </Grid>

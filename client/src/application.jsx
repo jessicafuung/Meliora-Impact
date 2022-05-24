@@ -29,7 +29,8 @@ export function Application() {
           <Routes>
             <Route path={"/contact"} element={<Contact />} />
             <Route path={"/corporate"} element={<CorporateMember />} />
-            <Route path={"/"} element={< KnowledgeCases/>} />
+            <Route path={"/nonprofit"} element={<NonProfit />} />
+            <Route path={"/"} element={<Home />} />
             <Route path={"/test"} element={<TestPage />} />
             <Route path={"/faq"} element={<FaqPage />} />
             <Route path={"/privacy"} element={<PrivacyPage />} />

@@ -9,6 +9,7 @@ export const members = [
       "and want to use their resources \n" +
       "for greater social good",
     icon: <Business />,
+    linkTo: "/corporate",
   },
   {
     title: "Non-profits",
@@ -16,5 +17,6 @@ export const members = [
       "For nonprofits who are seeking \n" +
       "to carry out their frontline work \n",
     icon: <HandHoldingHeartIcon />,
+    linkTo: "/nonprofit",
   },
 ];
