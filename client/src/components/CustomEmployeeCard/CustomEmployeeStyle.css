@@ -1,2 +1,11 @@
 .employeeCard {
 }
+
+.fakeButton {
+    padding: .5rem 1rem;
+    border: 2px solid #034f7a;
+    text-decoration: none;
+    font-weight: 700;
+    color: #034f7a;
+    cursor: pointer;
+}
