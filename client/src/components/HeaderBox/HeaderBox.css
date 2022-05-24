@@ -1,0 +1,49 @@
+.TopHeader {
+    width: 100%;
+    height: 764px;
+}
+.HeaderBox {
+    position: relative;
+    height: 40%;
+    width: 50%;
+    min-width: 850px;
+    top: 50%;
+    padding: 50px;
+    margin: auto;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(6px);
+}
+.BoxHeadline {
+    font-size: 64px;
+}
+.BoxHeadline em {
+    color: #034F7A;
+    font-style: normal;
+}
+.BoxText em {
+    color: #034F7A;
+    font-style: normal;
+}
+.BoxText {
+    font-size: 26px;
+    margin-top: 50px;
+}
+@media only screen and (max-width: 900px) {
+
+    .TopHeader {
+        height: 289px;
+    }
+    .HeaderBox {
+        min-width: 350px;
+        height: 60%;
+        padding: 10px;
+    }
+    .BoxHeadline {
+        font-size: 30px;
+    }
+    .BoxText {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+}

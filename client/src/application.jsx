@@ -1,7 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
 import { Home } from "./pages/Home/Home";
-import { Contact } from "./contact";
 import TestPage from "./pages/TestPage";
 import { FaqPage } from "./pages/FaqPage/FaqPage";
 import Navbar from "./components/Navbar/Navbar";
@@ -10,13 +9,14 @@ import theme from "./styling/theme";
 import { WaterCases } from "./waterCases";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
 import Header from "./components/navbar";
-import { Contact } from "./contact";
+import { Contact } from "./pages/contact";
 import { KnowledgeCases } from "./knowledge";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
 import { GetFaq } from "./pages/Faq/Faq";
 import { CorporateMember } from "./pages/CorporateMember/corporateMember";
 import { Footer } from "./components/Footer/footer";
+import { NonProfit } from "./pages/Non-profitMember/nonProfitMember";
 
 export function Application() {
   return (
@@ -28,7 +28,8 @@ export function Application() {
           </header>
           <Routes>
             <Route path={"/contact"} element={<Contact />} />
-            <Route path={"/"} element={<CorporateMember />} />
+            <Route path={"/corporate"} element={<CorporateMember />} />
+            <Route path={"/"} element={<Home />} />
             <Route path={"/test"} element={<TestPage />} />
             <Route path={"/faq"} element={<FaqPage />} />
             <Route path={"/privacy"} element={<PrivacyPage />} />

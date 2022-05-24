@@ -9,8 +9,11 @@
     width: 1440px;
     margin: auto;
 }
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 900px) {
 
+    .containerCorporateServices{
+        height: 1500px;
+    }
 
     .headline {
         font-size: 34px;

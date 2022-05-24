@@ -2,36 +2,18 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import "./corporateServices.css";
+import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/headlineWithUnderline";
 
 export function CorporateServices() {
   return (
     <>
-      <div>
-        <h1
-          style={{
-            fontSize: 36,
-            textAlign: "center",
-          }}
-        >
-          Services
-        </h1>
-        <div
-          style={{
-            width: "5%",
-            height: 2,
-            backgroundColor: "#034F7A",
-            margin: "auto",
-            marginTop: 5,
-            marginBottom: 50,
-          }}
-        />
-      </div>
+      {HeadlineWithUnderline("Services", 100, "#034F7A", 50)}
       <div className="containerCorporateServices">
         <div className="widthContainerServices">
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} md={4}>
-                <div style={{ textAlign: "center", marginTop: 10 }}>
+                <div style={{ textAlign: "center" }}>
                   <img src={require("../../images/currentdonation.svg")} />
                   <p
                     style={{

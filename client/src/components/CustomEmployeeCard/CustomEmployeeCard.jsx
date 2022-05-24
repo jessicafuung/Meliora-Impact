@@ -1,11 +1,4 @@
-import {
-  Avatar,
-  Card,
-  CardActions,
-  CardContent,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Avatar, Grid, Typography } from "@mui/material";
 import React from "react";
 import "./CustomEmployeeStyle.css";
 import CustomButton from "../CustomButton/CustomButton";
@@ -15,12 +8,12 @@ export function CustomEmployeeCard({
   employee: { name, image, position, about, linkedin },
 }) {
   return (
-    <Card
-      sx={{ maxWidth: 350 }}
+    <Box
+      sx={{ borderRadius: 2, maxWidth: 350 }}
       className="employeeCard"
       style={{ backgroundColor: "#DFE5E9" }}
     >
-      <CardContent>
+      <Box>
         <Grid
           container
           mt={2}
@@ -45,12 +38,12 @@ export function CustomEmployeeCard({
             {about}
           </Typography>
         </Box>
-      </CardContent>
-      <CardActions style={{ justifyContent: "center" }}>
-        <CustomButton variant="contained" to={linkedin}>
-          LinkedIn
-        </CustomButton>
-      </CardActions>
-    </Card>
+        <div className={"buttonDiv"}>
+          <CustomButton variant="outlined" to={linkedin}>
+            LinkedIn
+          </CustomButton>
+        </div>
+      </Box>
+    </Box>
   );
 }

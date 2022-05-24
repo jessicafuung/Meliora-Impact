@@ -7,19 +7,19 @@ import BusinessIcon from "@mui/icons-material/Business";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Grid from "@mui/material/Grid";
-import "./styling/contact.css";
+import "../styling/contact.css";
 import Typography from "@mui/material/Typography";
-import CustomButton from "./components/CustomButton/CustomButton";
+import CustomButton from "../components/CustomButton/CustomButton";
+import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
+import { useToast } from "@chakra-ui/react";
 
 export function Contact() {
   return (
-    <Box mt={10}>
+    <Box mt={10} mb={20}>
       <Grid container justifyContent="center" alignItems="center">
         <header className="contactHeader">
           <Grid item xs={12}>
-            <Typography textAlign="center" variant="h2">
-              Contact
-            </Typography>
+            {HeadlineWithUnderline("Contact", 120, "#034F7A", 10)}
             <Typography paragraph>
               Reach out if you want to collaborate or know more about our
               services, or just to connect
@@ -57,6 +57,7 @@ function ContactForm() {
   const [companyName, setCompanyName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  /*const toast = useToast();*/
 
   return (
     <form>
@@ -74,12 +75,6 @@ function ContactForm() {
           }}
           variant={"standard"}
         />
-        {/*
-        <input
-          id={"name"}
-          name={name}
-          onChange={(event) => setName(event.target.value)}
-        />*/}
       </div>
       <div className="formInfo">
         <TextField
@@ -94,11 +89,6 @@ function ContactForm() {
           }}
           variant={"standard"}
         />
-        {/*
-        <input
-          name={companyName}
-          onChange={(event) => setCompanyName(event.target.value)}
-        />*/}
       </div>
       <div className="formInfo">
         <TextField
@@ -113,23 +103,28 @@ function ContactForm() {
           }}
           variant={"standard"}
         />
-
-        {/*
-          <input
-            name={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />*/}
       </div>
       <div className="formInfo">
         <TextField required label="Message" multiline rows={4} />
-        {/*
-        <textarea
-          name={message}
-          onChange={(event) => setMessage(event.target.value)}
-        />*/}
       </div>
       <div align="center">
-        <CustomButton variant="contained">Submit</CustomButton>
+        <CustomButton
+          variant="contained"
+          to={"/contact"}
+          /*
+          Toast with chakra
+          onClick={() =>
+            toast({
+              title: "Message sent.",
+              description: "Thank you for reaching out to us.",
+              status: "success",
+              duration: 9000,
+              isClosable: true,
+            })
+          }*/
+        >
+          Submit
+        </CustomButton>
       </div>
     </form>
   );

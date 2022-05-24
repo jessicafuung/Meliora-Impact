@@ -1,9 +1,14 @@
 import React from "react";
-import React from "react";
 import "./Home.css";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import CustomButton from "../../components/CustomButton/CustomButton";
+import { members } from "../../components/MemberServiceCard/Members";
+import { MemberServiceCard } from "../../components/MemberServiceCard/memberServiceCard";
+import { sectors } from "../../components/SectorCard/sectors";
+import { SectorCard } from "../../components/SectorCard/sectorCard";
+import { BeTheChange } from "../../components/BeTheChange/beTheChange";
+import { PartnerCard } from "../../components/PartnerCard/partnerCard";
+import {HeadlineWithUnderline} from "../../components/HeadlineWithUnderline/headlineWithUnderline";
 
 export function Home() {
   return (
@@ -42,6 +47,73 @@ export function Home() {
             </div>
           </Grid>
         </Grid>
+      </Box>
+      <Box>
+        <Grid container justifyContent="center">
+          <Grid item>
+            <div className="text-box">
+                {HeadlineWithUnderline("Member services", 80 , "#034F7A", 0, "#034F7A")}
+            </div>
+          </Grid>
+        </Grid>
+        <Grid container justifyContent="center">
+          {members.map((member) => (
+            <>
+              <MemberServiceCard
+                key={member.title}
+                title={member.title}
+                content={member.content}
+                icon={member.icon}
+              />
+            </>
+          ))}
+        </Grid>
+      </Box>
+      <Box>
+        <Grid
+          container
+          flexDirection="column"
+          alignContent="center"
+          textAlign="center"
+        >
+          <Grid item>
+            <div className="text-box">
+                {HeadlineWithUnderline("Sectors", 80 , "#034F7A", 15, "#034F7A")}
+            </div>
+          </Grid>
+          <Grid item>
+            <div className="sector-text" style={{ textAlign: "center" }}>
+              <p>
+                Collaborating with the right partners and donors is important to
+                us, and research shows that too many choices can lead to a
+                paradox of choice. That is why we have chosen to focus on
+                Knowledge and Water. These two categories encompass several of
+                the U.N SDGs most notably goals.
+              </p>
+            </div>
+          </Grid>
+        </Grid>
+      </Box>
+      <Grid container justifyContent="center">
+        {sectors.map((sector) => (
+          <>
+            <SectorCard
+              key={sector.title}
+              title={sector.title}
+              content={sector.content}
+              image={sector.image}
+            />
+          </>
+        ))}
+      </Grid>
+      <Box>
+        <BeTheChange />
+        <div style={{ marginTop: 40}}/>
+      </Box>
+      <Box>
+          {HeadlineWithUnderline("Partners", 80 , "#034F7A", 40, "#034F7A")}
+        <PartnerCard />
+        <div style={{ marginBottom: 40}}/>
       </Box>
     </>
   );

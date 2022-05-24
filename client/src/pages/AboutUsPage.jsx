@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import { CustomEmployeeCard } from "../components/CustomEmployeeCard/CustomEmployeeCard";
 import { useEffect, useState } from "react";
 import "../styling/about.css";
+import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
 
 export function AboutUsPage() {
   const { loading, error, data } = useLoader(async () =>
@@ -24,9 +25,9 @@ export function AboutUsPage() {
 
   return (
     <Box>
-      <Grid container alignItems="center" justifyContent="center" mb={12}>
+      <Grid container alignItems="center" justifyContent="center" mb={4}>
         <Grid item>
-          <Typography variant="h2">About us</Typography>
+          {HeadlineWithUnderline("About us", 120, "#034F7A", 30)}
         </Grid>
       </Grid>
       <Grid
@@ -34,7 +35,7 @@ export function AboutUsPage() {
         gap={15}
         alignItems="center"
         justifyContent="center"
-        mb={12}
+        mb={25}
       >
         <Grid item className="aboutSection">
           <Typography variant="h6" style={{ marginBottom: "30px" }}>
@@ -69,16 +70,14 @@ export function AboutUsPage() {
           />
         </Grid>
       </Grid>
-      <Grid container alignItems="center" justifyContent="center" mb={10}>
-        <Grid item mb={10}>
-          <Typography text-align="center" variant="h2">
-            Our team
-          </Typography>
+      <Grid container alignItems="center" justifyContent="center" mb={25}>
+        <Grid item mb={4}>
+          {HeadlineWithUnderline("Our team", 120, "#034F7A", 20)}
         </Grid>
         <Grid
           container
           gap={12}
-          alignItems="center"
+          alignItems="start"
           justifyContent="center"
           className="containerSection"
         >
