@@ -9,6 +9,7 @@ import { EmployeeApi } from "./api/EmployeeApi.js";
 import { CasesApi } from "./api/CasesApi.js";
 import * as bodyParser from "express";
 import { KnowledgeApi } from "./api/KnowledgeApi.js";
+import { WaterApi } from "./api/WaterApi.js";
 
 dotenv.config();
 const app = express();
@@ -56,8 +57,8 @@ mongoClient.connect().then(async () => {
 });
 
 mongoClient.connect().then(async () => {
-  console.log("Connected to mongodb (Cases)");
-  app.use("/api/cases", CasesApi(mongoClient.db(process.env.MONGODB_DATABASE)));
+  console.log("Connected to mongodb (Water)");
+  app.use("/api/water", WaterApi(mongoClient.db(process.env.MONGODB_DATABASE)));
 });
 
 app.use(express.static("../client/dist/"));
