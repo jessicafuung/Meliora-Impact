@@ -11,7 +11,6 @@ import "../styling/contact.css";
 import Typography from "@mui/material/Typography";
 import CustomButton from "../components/CustomButton/CustomButton";
 import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
-import { useToast } from "@chakra-ui/react";
 
 export function Contact() {
   return (
