@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import { CustomEmployeeCard } from "../components/CustomEmployeeCard/CustomEmployeeCard";
 import { useEffect, useState } from "react";
 import "../styling/about.css";
-import { Underline } from "../components/Underline/underline";
+import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
 
 export function AboutUsPage() {
   const { loading, error, data } = useLoader(async () =>
@@ -28,7 +28,7 @@ export function AboutUsPage() {
       <Grid container alignItems="center" justifyContent="center" mb={4}>
         <Grid item>
           <Typography variant="h2">About us</Typography>
-          {Underline(200, "#034F7A")}
+          {HeadlineWithUnderline(200, "#034F7A")}
         </Grid>
       </Grid>
       <Grid
@@ -76,7 +76,7 @@ export function AboutUsPage() {
           <Typography text-align="center" variant="h2">
             Our team
           </Typography>
-          {Underline(210, "#034F7A")}
+          {HeadlineWithUnderline(210, "#034F7A")}
         </Grid>
         <Grid
           container

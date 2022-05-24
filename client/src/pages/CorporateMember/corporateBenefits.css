@@ -1,13 +1,3 @@
-.CorporateContainerBenefits{
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.widthContainerCorporateBenefits {
-    width: 1440px;
-    margin: auto;
-}
 .joinUsBtnBenefits {
     font-family: "Montserrat", sans-serif;
     border-radius: 0;
@@ -19,24 +9,25 @@
     font-size: 16px;
     display:block; margin: 0 auto
 }
-.benefitsImg {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.vettedNpoImg {
+    margin-left: 260px;
 }
-.textCorporateBenefits {
-    text-align: left;
-    margin-left: 100px;
+.dashboardImg {
 }
 @media only screen and (max-width: 900px) {
 
-    .benefitsImg {
-        width: 350px;
-        margin-top: 20px;
+    .dashboardImg {
+        width: 300px;
+        margin-right: auto;
+        margin-top: 40px;
+    }
+    .vettedNpoImg {
+        width: 150px;
+        margin-left: auto;
     }
     .textCorporateBenefits {
         text-align: center;
-        margin-left: 0px;
+        padding: 20px;
     }
 
 }
