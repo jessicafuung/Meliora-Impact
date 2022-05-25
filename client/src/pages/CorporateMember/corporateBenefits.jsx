@@ -58,7 +58,7 @@ export function CorporateBenefits() {
                   display: "block",
                   marginLeft: "auto",
                 }}
-                src={require("../../images/dashboard.svg")}
+                src={require("../../images/InsightDesktop.svg")}
               />
             </div>
             <div style={{ marginTop: 30 }}>
