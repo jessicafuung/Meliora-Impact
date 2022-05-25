@@ -39,10 +39,10 @@ export function BeTheChange() {
         </div>
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={0}>
-            <Grid item xs={6} md={6}>
+            <Grid item xs={12} md={6}>
               <div className="image1" />
             </Grid>
-            <Grid item xs={6} md={6}>
+            <Grid item xs={12} md={6}>
               <div className="text1">
                 <img
                   style={{
@@ -80,7 +80,7 @@ export function BeTheChange() {
         <div style={{ height: 30 }} />
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={0}>
-            <Grid item xs={6} md={6}>
+            <Grid item xs={12} md={6}>
               <div className="text2">
                 <img
                   style={{
@@ -113,7 +113,7 @@ export function BeTheChange() {
                 </p>
               </div>
             </Grid>
-            <Grid item xs={6} md={6}>
+            <Grid item xs={12} md={6}>
               <div className="image2" />
             </Grid>
           </Grid>

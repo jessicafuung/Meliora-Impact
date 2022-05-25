@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
 import { Home } from "./pages/Home/Home";
 import TestPage from "./pages/TestPage";
-import { FaqPage } from "./pages/FaqPage/FaqPage";
 import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider } from "@mui/system";
 import theme from "./styling/theme";
@@ -13,10 +12,10 @@ import { Contact } from "./pages/contact";
 import { KnowledgeCases } from "./knowledge";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
-import { GetFaq } from "./pages/Faq/Faq";
 import { CorporateMember } from "./pages/CorporateMember/corporateMember";
 import { Footer } from "./components/Footer/footer";
 import { NonProfit } from "./pages/Non-profitMember/nonProfitMember";
+import {FaqPage} from "./pages/Faq/Faq";
 
 export function Application() {
   return (

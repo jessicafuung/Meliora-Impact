@@ -8,7 +8,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { useLoading } from "../../assets/useLoading";
 import { ApiContext } from "../../assets/apiContext";
 
-export function GetFaq() {
+export function FaqPage() {
   const { listFaq } = useContext(ApiContext);
   const [searchQuery, setSearchQuery] = useState("");
   const [search, setSearch] = useState("");
