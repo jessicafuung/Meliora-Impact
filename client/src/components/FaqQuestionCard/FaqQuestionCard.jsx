@@ -1,39 +1,37 @@
 import React from "react";
-import { Box, Typography, Grid } from "@mui/material";
-import "./FaqQuestionCardStyle.css";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import { useState } from "react";
+import "./FaqQuestionCard.css";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
 export function FaqQuestionCard({ faqs: { _id, question, answer } }) {
-  const [isHidden, setIsHidden] = useState(true);
-
-  const cardStyle = {
-    display: !isHidden ? "block" : "none",
-    top: !isHidden && "0rem",
-    opacity: isHidden ? 0 : 1,
-    transition: "all 50ms ease-out",
+  const [selected, setSelected] = useState(null);
+  const toggle = (_id) => {
+    if (selected === _id) {
+      return setSelected(null);
+    }
+    setSelected(_id);
+    console.log(selected + _id);
   };
-
-  const handleClick = () => {
-    setIsHidden(!isHidden);
-  };
-
   return (
-    <Box onClick={handleClick} className="card-container">
-      <Grid container>
-        <Grid item xs={11}>
-          <Typography paragraph mb={0} fontWeight={500}>
-            {question}
-          </Typography>
-          <div className="underline" />
-        </Grid>
-        <Grid mb={3} item xs={1}>
-          <AddCircleOutlineIcon sx={{ color: "#034F7A" }} />
-        </Grid>
-        <Grid className="hidden-text-container" style={cardStyle} item xs={12}>
-          <Typography paragraph>{answer}</Typography>
-        </Grid>
-      </Grid>
-    </Box>
+    <div className="accordion">
+      <div className="item">
+        <div className="title" onClick={() => toggle(_id)}>
+          <h1>
+            <strong>{question}</strong>
+          </h1>
+          <span>
+            {selected === _id ? (
+              <RemoveCircleOutlineIcon style={{ color: "#034F7A" }} />
+            ) : (
+              <AddCircleOutlineIcon style={{ color: "#034F7A" }} />
+            )}
+          </span>
+        </div>
+        <div className={selected === _id ? "content show" : "content"}>
+          <p>{answer}</p>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -14,8 +14,15 @@ export function CorporateMember() {
         </h1>,
         "white",
         <p>
-            Joining Meloria Impact gives you access to a <strong><em>broad variety</em></strong>
-            <br /> of <strong><em>helpful tools</em></strong> for tracking, statistics & more
+          Joining Meloria Impact gives you access to a{" "}
+          <strong>
+            <em>broad variety</em>
+          </strong>
+          <br /> of{" "}
+          <strong>
+            <em>helpful tools</em>
+          </strong>{" "}
+          for tracking, statistics & more
         </p>,
         "white"
       )}

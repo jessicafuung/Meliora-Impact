@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import "./Faq.css";
-import { FaqQuestionCard } from "../../components/FaqQuestionCard/FaqQuestionCard";
 import CustomButton from "../../components/CustomButton/CustomButton";
 import CustomHeadline from "../../components/CustomHeadline/CustomHeadlineComponent";
 import SearchIcon from "@mui/icons-material/Search";
 import { useLoading } from "../../assets/useLoading";
 import { ApiContext } from "../../assets/apiContext";
+import { FaqQuestionCard } from "../../components/FaqQuestionCard/FaqQuestionCard";
 
 export function FaqPage() {
   const { listFaq } = useContext(ApiContext);
@@ -36,7 +36,11 @@ export function FaqPage() {
   }
 
   return (
-    <Box mt={20} px={{ xs: 2, md: 12, lg: 18, xl: 28 }}>
+    <Box
+      mt={20}
+      px={{ xs: 2, md: 12, lg: 18, xl: 28 }}
+      style={{ height: 650, overflowY: "auto" }}
+    >
       <Grid textAlign="center" container justifyContent="center">
         <Grid item container justifyContent="center" xs={12} md={6}>
           <Box>
@@ -59,14 +63,18 @@ export function FaqPage() {
                 className="searchBar"
                 placeholder="search..."
               />
-              <SearchIcon color="primary" fontSize="large" />
-              <button>test search</button>
+              <SearchIcon
+                color="primary"
+                fontSize="large"
+                onClick={handleSubmit}
+                style={{ cursor: "pointer" }}
+              />
             </form>
           </Box>
         </Grid>
       </Grid>
       <Box my={4}>
-        <Grid container gap={{ xs: 4, sm: 0 }} justifyContent="center">
+        <Grid container gap={{ xs: 4, sm: 0 }} justify="flex-end">
           {data.map((faqs) => (
             <Grid item xs={12} sm={6}>
               <FaqQuestionCard key={faqs._id} faqs={faqs} />

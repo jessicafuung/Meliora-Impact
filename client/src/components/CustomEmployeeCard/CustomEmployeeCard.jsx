@@ -38,8 +38,9 @@ export function CustomEmployeeCard({
           </Typography>
         </Box>
         <div className={"buttonDiv"}>
-            <a className={"fakeButton"} href={linkedin} target={"_blank"}>
-              LinkedIn</a>
+          <a className={"fakeButton"} href={linkedin} target={"_blank"}>
+            LinkedIn
+          </a>
         </div>
       </Box>
     </Box>
