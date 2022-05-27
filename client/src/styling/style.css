@@ -3,10 +3,10 @@
 .row {
     background-color: #034F7A;
     width: 300px;
+    max-width: 320px;
 }
 
 .timeBoxes-container{
-
     padding-bottom: 2rem !important;
 }
 
@@ -20,7 +20,6 @@
     font-size: 19px;
     color: white;
     text-align: center;
-    margin-left: -30px;
 }
 
 .time-btn {
@@ -35,4 +34,8 @@
 
 body {
 
+}
+
+input {
+    margin-top: 2rem !important;
 }
