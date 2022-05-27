@@ -5,7 +5,7 @@
 }
 
 .widthContainerBenefits {
-    width: 1440px;
+    width: 1200px;
     margin: auto;
 }
 .joinUsBtnBenefits {
@@ -22,7 +22,6 @@
 .benefitsImg {
     display: block;
     margin-left: auto;
-    margin-right: auto;
 }
 .textBenefits {
     text-align: left;
@@ -32,6 +31,9 @@
     .benefitsImg {
         width: 350px;
         margin-top: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     .textBenefits {
         text-align: center;

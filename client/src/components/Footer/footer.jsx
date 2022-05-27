@@ -172,7 +172,7 @@ export function Footer() {
                   Schedule meeting
                 </Link>
                 <Link
-                  href="/corporate"
+                  to="/corporate"
                   style={{
                     color: "white",
                     fontSize: "17px",
