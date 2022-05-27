@@ -2,17 +2,20 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import "./benefits.css";
-import {HeadlineWithUnderline} from "../../components/HeadlineWithUnderline/headlineWithUnderline";
+import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/headlineWithUnderline";
 
 export function Benefits() {
   return (
     <>
-
-        {HeadlineWithUnderline("Benefits", 100, "#034F7A", 50, "black")}
+      {HeadlineWithUnderline("Benefits", 100, "#034F7A", 50, "black")}
       <div className="containerBenefits">
         <div className="widthContainerBenefits">
           <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={0} style={{maxWidth: 1440, margin: "auto"}}>
+            <Grid
+              container
+              spacing={0}
+              style={{ maxWidth: 1440, margin: "auto" }}
+            >
               <Grid item xs={12} md={6}>
                 <p className="textBenefits">
                   <strong>
