@@ -10,13 +10,14 @@ export function FAQApi(mongoDatabase) {
 
     const { search } = req.query;
     const searchArray = [];
-    let replaceSpace = search.split(" ");
+    let replaceSpace = search.toLowerCase().split(" ");
 
     if (search) {
       const faqs = await mongoDatabase.collection("test").find().toArray();
       faqs.filter((q) => {
         for (let item in replaceSpace) {
           if (q.question.toLowerCase().includes(replaceSpace[item]) === true) {
+            console.log(replaceSpace[item])
             searchArray.push(q);
           }
         }

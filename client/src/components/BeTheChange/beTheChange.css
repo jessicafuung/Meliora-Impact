@@ -1,5 +1,5 @@
 .container {
-    max-height: 1130px;
+    max-height: 999999px;
     max-width: 1440px;
     margin: auto auto 40px;
     width: 90%;
@@ -10,7 +10,7 @@
     background-size: cover;
     height: 453px;
 }
-.text1 {
+.section1 {
     width: 100%;
     background-color: rgb(3, 79, 122, 0.1);
     height: 453px;
@@ -22,17 +22,78 @@
     background-size: cover;
     height: 453px;
 }
-.text2 {
+.section2 {
     width: 100%;
     background-color: rgb(3, 79, 122, 0.1);
     height: 453px;
 }
-.text {
+.text1 {
+    text-align: left;
+    margin-left: 45px;
     font-size: 16px;
     color: black;
 }
-.text em {
+.text2 {
+    clear: right;
+    text-align: right;
+    margin-right: 45px;
+}
+.text1 em  {
     color: #034F7A;
     font-style: normal;
+}
+.text2 em  {
+    color: #034F7A;
+    font-style: normal;
+}
+.PhotoFindrImg {
+    width: 394px;
+    height: 82px;
+    margin-top: 45px;
+    margin-right: 45px;
+    margin-bottom: 90px;
+    float: right;
+}
+.KristianiaImg {
+    width: 320px;
+    height: 129px;
+    margin-top: 45px;
+    margin-left: 45px;
+    margin-bottom: 90px;
+}
+@media only screen and (max-width: 900px) {
+    .PhotoFindrImg {
+        padding-top: 20px;
+        display: block;
+        margin: 0 auto 40px;
+        width: 50%;
+        float: none;
+    }
+    .KristianiaImg {
+        padding-top: 20px;
+        display: block;
+        margin: 0 auto 40px;
+        width: 50%;
+    }
+    .text1 {
+        text-align: center;
+        margin-left: 0;
+    }
+    .text2 {
+        text-align: center;
+        margin-right: 0;
+    }
+    .section1 {
+        height: 300px;
+    }
+    .section2 {
+        height: 300px;
+    }
+    .image1 {
+        height: 300px;
+    }
+    .image2 {
+        height: 300px;
+    }
 }
 

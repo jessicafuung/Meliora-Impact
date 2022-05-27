@@ -2,30 +2,19 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import "./beTheChange.css";
+import {HeadlineWithUnderline} from "../HeadlineWithUnderline/headlineWithUnderline";
 
 export function BeTheChange() {
   return (
     <>
-      <div className="container">
-        <div>
-          <h1
-            style={{
-              fontSize: 36,
-              color: "#034F7A",
-              textAlign: "center",
-            }}
-          >
-            Be the Change
-          </h1>
-          <div
-            style={{
-              width: "15%",
-              height: 2,
-              backgroundColor: "#034F7A",
-              margin: "auto",
-              marginTop: 5,
-            }}
-          />
+    {HeadlineWithUnderline(
+        "Be the Change",
+        200,
+        "#034f7a",
+        0,
+        "#034f7a"
+    )}
+            <div>
           <p
             style={{
               textAlign: "center",
@@ -38,28 +27,17 @@ export function BeTheChange() {
           </p>
         </div>
         <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={0}>
-            <Grid item xs={12} md={6}>
+          <Grid container spacing={0} style={{maxWidth: 1440, margin: "auto"}}>
+            <Grid item xs={12} md={6} order={{ xs: 2, sm: 2 }}>
               <div className="image1" />
             </Grid>
-            <Grid item xs={12} md={6}>
-              <div className="text1">
-                <img
-                  style={{
-                    width: 320,
-                    height: 129,
-                    marginTop: 45,
-                    marginLeft: 45,
-                    marginBottom: 90,
-                  }}
+            <Grid item xs={12} md={6} order={{ xs: 1, sm: 1 }}>
+              <div className="section1">
+                <img className="KristianiaImg"
                   src={require("../../images/KristianiaUniversityCollege_sort_rgb 1.svg")}
                 />
                 <p
-                  style={{
-                    textAlign: "left",
-                    marginLeft: 45,
-                  }}
-                  className="text"
+                  className="text1"
                 >
                   The donations{" "}
                   <strong>
@@ -79,27 +57,15 @@ export function BeTheChange() {
         </Box>
         <div style={{ height: 30 }} />
         <Box sx={{ flexGrow: 1 }}>
-          <Grid container spacing={0}>
+          <Grid container spacing={0} style={{maxWidth: 1440, margin: "auto"}}>
             <Grid item xs={12} md={6}>
-              <div className="text2">
+              <div className="section2">
                 <img
-                  style={{
-                    width: 394,
-                    height: 82,
-                    marginTop: 45,
-                    marginRight: 45,
-                    marginBottom: 90,
-                    float: "right",
-                  }}
+                  className="PhotoFindrImg"
                   src={require("../../images/PhotoFindr.svg")}
                 />
                 <p
-                  style={{
-                    clear: "right",
-                    textAlign: "right",
-                    marginRight: 45,
-                  }}
-                  className="text"
+                  className="text2"
                 >
                   <strong>
                     <em>PhotoFindr</em>
@@ -118,7 +84,6 @@ export function BeTheChange() {
             </Grid>
           </Grid>
         </Box>
-      </div>
     </>
   );
 }

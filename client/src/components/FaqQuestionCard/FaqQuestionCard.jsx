@@ -4,31 +4,31 @@ import "./FaqQuestionCard.css";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
-export function FaqQuestionCard({ faqs: { _id, question, answer } }) {
+export function FaqQuestionCard({ faqs: { _id, question, answer}, index }) {
   const [selected, setSelected] = useState(null);
-  const toggle = (_id) => {
-    if (selected === _id) {
+  const toggle = (index) => {
+    if (selected === index) {
       return setSelected(null);
     }
-    setSelected(_id);
-    console.log(selected + _id);
+    setSelected(index);
+    console.log(selected + index);
   };
   return (
     <div className="accordion">
       <div className="item">
-        <div className="title" onClick={() => toggle(_id)}>
+        <div className="title" onClick={() => toggle(index)}>
           <h1>
-            <strong>{question}</strong>
+            <strong>{index+1}. {question}</strong>
           </h1>
           <span>
-            {selected === _id ? (
+            {selected === index ? (
               <RemoveCircleOutlineIcon style={{ color: "#034F7A" }} />
             ) : (
               <AddCircleOutlineIcon style={{ color: "#034F7A" }} />
             )}
           </span>
         </div>
-        <div className={selected === _id ? "content show" : "content"}>
+        <div className={selected === index ? "content show" : "content"}>
           <p>{answer}</p>
         </div>
       </div>
