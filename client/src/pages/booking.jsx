@@ -15,10 +15,9 @@ import {ThemeProvider} from "@material-ui/styles";
 
 import {ApiContext} from "../../lib/useContext";
 import {useLoading} from "../../lib/useLoader";
-import materialTheme from "../styling/booking";
-
-let bookedDate = "";
-let bookedTime = "";
+import materialTheme from "../styling/calendar";
+import "../styling/style.css"
+import {Typography} from "@mui/material";
 
 const availabilities = [
     {time: "08.30"},
@@ -29,6 +28,7 @@ const availabilities = [
     {time: "13.30"},
     {time: "14.30"},
     {time: "15.30"},
+    {time: "16.30"},
 ];
 
 /* fetch booked times from DB */
@@ -74,109 +74,116 @@ function ShowForm({userDate, setUserDate}) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="formInfo">
-                <TextField required label={"Co. Name"}
-                           variant={"standard"}
-                           name="companyName"
-                           onChange={handleChange}
-                           InputProps={{
-                               endAdornment: (
-                                   <InputAdornment position="end">
-                                       <BusinessIcon color={"primary"}/>
-                                   </InputAdornment>)
-                           }}
-                />
-            </div>
-
-            <div className="formInfo">
-                <TextField required color={"primary"}
-                           label={"Name"}
-                           variant={"standard"}
-                           name="contactPerson"
-                           onChange={handleChange}
-                           InputProps={{
-                               endAdornment: (
-                                   <InputAdornment position="end">
-                                       <PersonIcon color={"primary"}/>
-                                   </InputAdornment>)
-                           }}
-                />
-            </div>
-
-            <div className="formInfo">
-                <TextField required label={"Email"}
-                           variant={"standard"}
-                           name="email"
-                           onChange={handleChange}
-                           InputProps={{
-                               endAdornment: (
-                                   <InputAdornment position="end">
-                                       <EmailIcon color={"primary"}/>
-                                   </InputAdornment>)
-                           }}
-                />
-            </div>
-
-            <div className="formInfo">
-                <TextField required label={"Telephone"}
-                           variant={"standard"}
-                           name="telephone"
-                           onChange={handleChange}
-                           InputProps={{
-                               endAdornment: (
-                                   <InputAdornment position="end">
-                                       <PhoneIcon color={"primary"}/>
-                                   </InputAdornment>)
-                           }}
-                />
-            </div>
-
-            <div className="formInfo">
-                <TextField required label="Message"
-                           multiline minRows={4}
-                           name="message"
-                           onChange={handleChange}/>
-            </div>
-
-            <div align="center">
-                <button>Book</button>
-            </div>
-        </form>
+        <Grid item container justifyContent={"center"} xs={12}>
+            <Box sx={{backgroundColor: "#DFE5E9", padding: "2rem", marginTop: "2rem"}}>
+                <form onSubmit={handleSubmit}>
+                <Grid container justifyContent={"center"} spacing={10}>
+                    <Grid item xs={12} sm={6}>
+                        <Box sx={{width: 500, maxWidth: '100%'}}>
+                            <Box>
+                                <TextField fullWidth required label={"Company Name"}
+                                           variant={"standard"}
+                                           name="companyName"
+                                           onChange={handleChange}
+                                           InputProps={{
+                                               endAdornment: (
+                                                   <InputAdornment position="end">
+                                                       <BusinessIcon color={"primary"}/>
+                                                   </InputAdornment>)
+                                           }}
+                                />
+                            </Box>
+                            <Box>
+                                <TextField fullWidth required color={"primary"}
+                                           label={"Contact Person"}
+                                           variant={"standard"}
+                                           name="contactPerson"
+                                           onChange={handleChange}
+                                           InputProps={{
+                                               endAdornment: (
+                                                   <InputAdornment position="end">
+                                                       <PersonIcon color={"primary"}/>
+                                                   </InputAdornment>)
+                                           }}
+                                />
+                            </Box>
+                            <Box>
+                                <TextField fullWidth required label={"Email"}
+                                           variant={"standard"}
+                                           name="email"
+                                           onChange={handleChange}
+                                           InputProps={{
+                                               endAdornment: (
+                                                   <InputAdornment position="end">
+                                                       <EmailIcon color={"primary"}/>
+                                                   </InputAdornment>)
+                                           }}
+                                />
+                            </Box>
+                            <Box>
+                                <TextField fullWidth required label={"Telephone"}
+                                           variant={"standard"}
+                                           name="telephone"
+                                           onChange={handleChange}
+                                           InputProps={{
+                                               endAdornment: (
+                                                   <InputAdornment position="end">
+                                                       <PhoneIcon color={"primary"}/>
+                                                   </InputAdornment>)
+                                           }}
+                                />
+                            </Box>
+                        </Box>
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
+                        <TextField fullWidth required label="Message"
+                                   multiline minRows={15}
+                                   name="message"
+                                   variant={"outlined"}
+                                   onChange={handleChange}
+                        />
+                    <div align="center">
+                        <button>Book</button>
+                    </div>
+                    </Grid>
+                </Grid>
+                </form>
+            </Box>
+        </Grid>
     );
 }
 
 /* mapping open hours (availabilities) and after click sends user to FormFn*/
 function ShowAvailabilities({userDate, setUserDate, setTimeIsClicked}) {
-    const [selectedTime, setSelectedTime] = useState("");
-
     /* Triggered when selected time */
-    function handleSubmit(e) {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        bookedTime = selectedTime
+        const time = e.target.value
         setTimeIsClicked(true)
-        setUserDate({...userDate, time: selectedTime})
+        setUserDate({...userDate, time: time})
+        console.log(time)
     }
 
-
-    return <div>
-        <div style={{background: "red"}}>
-            {availabilities.map(({time}) => (
-                <ul key={time}>
-                    <button value={time} onClick={(e) => setSelectedTime(e.target.value)}>{time}</button>
-                </ul>
-            ))}
-        </div>
-
-        <form onSubmit={handleSubmit}>
-            <button>Select Time</button>
-        </form>
-    </div>
+    return <Grid item container justifyContent={"center"} xs={12} sm={6} md={5}>
+        <Box className="row" p={5}>
+            <Box px={0} textalign={"center"}>
+                <p id={"availabilities"}>Availabilities</p>
+            </Box>
+            <Grid container>
+                {availabilities.map(({time}) => (
+                    <Grid item container justifyContent={"center"} xs={4} key={time} className="column timeBoxes-container">
+                        <div>
+                            <button className="time-btn" value={time} onClick={handleSubmit}>{time}</button>
+                        </div>
+                    </Grid>
+                ))}
+            </Grid>
+        </Box>
+    </Grid>
 }
 
 function ShowCalendar({setUserDate, userDate, setDateIsClicked}) {
     const [selectedDate, setSelectedDate] = useState(new Date());
-    const [date, setDate] = useState("");
 
      /* Calendar shows only monday - friday */
      function disableWeekends(date) {
@@ -185,50 +192,34 @@ function ShowCalendar({setUserDate, userDate, setDateIsClicked}) {
 
     /* Triggered by selected date */
     const handleDateChange = (date) => {
+        const momentFormat = moment(date).format("DD.MM.YYYY");
+        setUserDate({...userDate, date: momentFormat})
+        setDateIsClicked(true);
         setSelectedDate(date)
     }
-
-     /* Triggered everytime a date is selected. Todays date by default. */
-     /* Convert to ISO format, then again formatting it again by using 'moment' */
-     useEffect(() => {
-         const iso = new Date(selectedDate.getTime() - selectedDate.getTimezoneOffset() * 60 * 1000);
-         const momentFormat = moment(iso).format("DD.MM.YYYY");
-         setDate(momentFormat)
-     }, [selectedDate])
-
-     /* Triggered by select button */
-     function handleSubmit(e) {
-         e.preventDefault();
-         bookedDate = date;
-         setDateIsClicked(true);
-         setUserDate({...userDate, date: date})
-     }
 
     return (
         <>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <ThemeProvider theme={materialTheme}>
-                <Grid container spacing={2}>
-                    <Grid item>
-                        <KeyboardDatePicker
-                            variant='static'
-                            id='date-picker'
-                            label='Date Picker'
-                            format='dd/MM/yyyy'
-                            margin='normal'
-                            disablePast
-                            hintText="Weekends Disabled"
-                            shouldDisableDate={disableWeekends}
-                            disableToolbar
-                            value={selectedDate}
-                            onChange={handleDateChange}
-                            KeyboardButtonProps={{'aria-label': 'change date'}}/>
-                    </Grid>
-
-                </Grid>
+                        <Grid item container justifyContent={'center'} xs={12} sm={6} md={5}>
+                            <KeyboardDatePicker
+                                variant='static'
+                                id='date-picker'
+                                label='Date Picker'
+                                format='dd/MM/yyyy'
+                                margin='normal'
+                                disablePast
+                                hintText="Weekends Disabled"
+                                shouldDisableDate={disableWeekends}
+                                disableToolbar
+                                value={selectedDate}
+                                onChange={handleDateChange}
+                                KeyboardButtonProps={{'aria-label': 'change date'}}
+                            />
+                        </Grid>
                 </ThemeProvider>
             </MuiPickersUtilsProvider>
-            <button onClick={handleSubmit}>Select date</button>
         </>
     );
 }
@@ -247,41 +238,27 @@ export function Start() {
         message: '',
     });
 
+    return <Box style={{marginTop: 50}} textAlign={"center"}>
+        <Typography variant={"h3"} color={"primary"} gutterBottom={true}>Schedule Meeting</Typography>
+        <Grid container justifyContent={'start'} spacing={1} alignItems={"center"} gutterBottom={true}>
+            <ShowCalendar
+                userDate={userData}
+                setUserDate={setUserData}
+                setDateIsClicked={setDateIsClicked}
+            />
 
-    return <div style={{marginTop: 50}}>
-        <Box sx={{background: "green"}}>
-            <Grid container spacing={5} justifyContent={"center"} alignItems={"center"}>
+            {dateIsClicked && <ShowAvailabilities
+                        userDate={userData}
+                        setUserDate={setUserData}
+                        setTimeIsClicked={setTimeIsClicked}
+                    />}
 
-                <Grid item xs={4}>
-                    <div>
-                        {<ShowCalendar
-                            userDate={userData}
-                            setUserDate={setUserData}
-                            setDateIsClicked={setDateIsClicked}/>}
-                    </div>
-                </Grid>
-
-                <Grid item xs={4}>
-                    {dateIsClicked &&
-                        <ShowAvailabilities
-                            userDate={userData}
-                            setUserDate={setUserData}
-                            setTimeIsClicked={setTimeIsClicked}
-                        />
-                    }
-                </Grid>
-
-                <Grid item xs={8} >
-                    {timeIsClicked &&
-                        <ShowForm
-                            userDate={userData}
-                            setUserDate={setUserData}
-                        />
-                    }
-                </Grid>
-            </Grid>
-        </Box>
-    </div>
+            {timeIsClicked && <ShowForm
+                userDate={userData}
+                setUserDate={setUserData}
+            />}
+        </Grid>
+    </Box>
 }
 
 
