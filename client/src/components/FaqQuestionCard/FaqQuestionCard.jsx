@@ -4,7 +4,7 @@ import "./FaqQuestionCard.css";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
-export function FaqQuestionCard({ faqs: { _id, question, answer}, index }) {
+export function FaqQuestionCard({ faqs: { _id, question, answer }, index }) {
   const [selected, setSelected] = useState(null);
   const toggle = (index) => {
     if (selected === index) {
@@ -18,7 +18,9 @@ export function FaqQuestionCard({ faqs: { _id, question, answer}, index }) {
       <div className="item">
         <div className="title" onClick={() => toggle(index)}>
           <h1>
-            <strong>{index+1}. {question}</strong>
+            <strong>
+              {index + 1}. {question}
+            </strong>
           </h1>
           <span>
             {selected === index ? (

@@ -17,7 +17,7 @@ export function FAQApi(mongoDatabase) {
       faqs.filter((q) => {
         for (let item in replaceSpace) {
           if (q.question.toLowerCase().includes(replaceSpace[item]) === true) {
-            console.log(replaceSpace[item])
+            console.log(replaceSpace[item]);
             searchArray.push(q);
           }
         }

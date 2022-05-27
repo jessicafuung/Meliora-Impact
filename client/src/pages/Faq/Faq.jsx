@@ -41,7 +41,12 @@ export function FaqPage() {
       px={{ xs: 2, md: 12, lg: 18, xl: 28 }}
       style={{ height: 650, overflowY: "auto" }}
     >
-      <Grid textAlign="center" container justifyContent="center" style={{maxWidth: 1440, margin: "auto"}}>
+      <Grid
+        textAlign="center"
+        container
+        justifyContent="center"
+        style={{ maxWidth: 1440, margin: "auto" }}
+      >
         <Grid item container justifyContent="center" xs={12} md={6}>
           <Box>
             <CustomHeadline fontWeight={700} size="h4">
@@ -52,7 +57,7 @@ export function FaqPage() {
             </Typography>
           </Box>
         </Grid>
-        <Grid item container justifyContent="center" xs={12} md={6} >
+        <Grid item container justifyContent="center" xs={12} md={6}>
           <Box>
             <form onSubmit={handleSubmit}>
               <input
@@ -74,9 +79,13 @@ export function FaqPage() {
         </Grid>
       </Grid>
       <Box my={4}>
-        <Grid container  justify="flex-end" style={{maxWidth: 1440, margin: "auto"}}>
+        <Grid
+          container
+          justify="flex-end"
+          style={{ maxWidth: 1440, margin: "auto" }}
+        >
           {data.map((faqs, index) => (
-            <Grid item xs={12} sm={12} md={12} lg={6} >
+            <Grid item xs={12} sm={12} md={12} lg={6}>
               <FaqQuestionCard key={faqs._id} faqs={faqs} index={index} />
             </Grid>
           ))}
