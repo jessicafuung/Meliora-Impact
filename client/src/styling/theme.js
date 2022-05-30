@@ -4,6 +4,7 @@ import { green, purple } from "@mui/material/colors";
 const primary = "#034F7A";
 const textPrimary = "#212121";
 const theme = createTheme({
+
   palette: {
     primary: {
       main: primary,

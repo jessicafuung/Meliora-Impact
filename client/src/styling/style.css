@@ -1,7 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Montserrat:wght@400;500;700;900&display=swap');
 
+.row {
+    background-color: #034F7A;
+    width: 300px;
+    max-width: 320px;
+}
 
+.timeBoxes-container{
+    padding-bottom: 2rem !important;
+}
 
+#btn {
+    margin: 50px;
+}
+
+#availabilities {
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+.time-btn {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+    background-color: #F2F2F2;
+    border: none;
+    border-radius: 5px;
+    width:60px;
+    padding-block: .6rem;
+}
+
+body {
+
+}
+
+input {
+    margin-top: 2rem !important;
+}
 
 * {
     border: 0;
@@ -14,5 +52,3 @@
 a{
     text-decoration: none;
 }
-
-

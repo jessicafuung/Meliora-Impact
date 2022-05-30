@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
+import {CalendarFn, BookingFn, Start} from "./pages/booking";
 import './application.css';
 import { Home } from "./pages/Home/Home";
 import TestPage from "./pages/TestPage";
@@ -36,6 +37,7 @@ export function Application() {
             <Route path={"/about"} element={<AboutUsPage />} />
             <Route path={"/water"} element={<WaterCases />} />
             <Route path={"/knowledge"} element={<KnowledgeCases />} />
+            <Route path={"/booking"} element={<Start />}/>
           </Routes>
           <Footer2 />
         </BrowserRouter>
