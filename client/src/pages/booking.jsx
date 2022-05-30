@@ -63,11 +63,13 @@ function GetBookings() {
 
 function ShowForm({userDate, setUserDate, setActiveStep}) {
     const { postBooking } = useContext(ApiContext);
+    const [isBooked, setIsBooked] = useState(false)
 
     function handleSubmit(e) {
         e.preventDefault();
         postBooking(userDate)
         setActiveStep(3)
+        setIsBooked(true)
     }
 
     const handleChange = event => {
@@ -150,8 +152,8 @@ function ShowForm({userDate, setUserDate, setActiveStep}) {
                                    variant={"outlined"}
                                    onChange={handleChange}
                         />
-                    <div align="center">
-                        <button>Book</button>
+                    <div  align="center">
+                        {isBooked?<p>Booked!</p>:<button>Book</button>}
                     </div>
                     </Grid>
                 </Grid>
@@ -161,10 +163,7 @@ function ShowForm({userDate, setUserDate, setActiveStep}) {
     );
 }
 
-/* mapping open hours (availabilities) and after click sends user to FormFn*/
 function ShowAvailabilities({userDate, setUserDate, setTimeIsClicked, setActiveStep}) {
-
-    /* Triggered when selected time */
     const handleSubmit = (e) => {
         e.preventDefault()
         const time = e.target.value
@@ -199,7 +198,6 @@ function ShowCalendar({setUserDate, userDate, setDateIsClicked, setActiveStep}) 
          return date.getDay() === 0 || date.getDay() === 6;
      }
 
-    /* Triggered by selected date */
     const handleDateChange = (date) => {
         const momentFormat = moment(date).format("DD.MM.YYYY");
         setUserDate({...userDate, date: momentFormat})
@@ -213,7 +211,7 @@ function ShowCalendar({setUserDate, userDate, setDateIsClicked, setActiveStep}) 
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <ThemeProvider theme={materialTheme}>
                     <Grid item container justifyContent={'center'} xs={12} sm={6} md={6}>
-                        <Box sx={{position: {lg: "relative"}, left: "17%"}}>
+                        <Box sx={{position: {lg: "relative"}, left: "17%",}}>
                             <KeyboardDatePicker
                                 variant='static'
                                 id='date-picker'
