@@ -1,47 +1,17 @@
 
-
-.service-container {
-    display: flex;
-    justify-content: space-evenly;
-
-}
-
-.service-header {
-    text-align: center;
-    font-size: 2em;
-    color: #034F7A;
-
-}
-
-.service-content {
-    text-align: center;
-    font-size: 36px;
-    color: #212121;
-    padding: 1em 2em 2em 2em;
-}
-
-.service-icon {
-    padding-top: 20px;
-    color: #034F7A;
-}
-
 .service-card {
-    position: relative;
-    padding: 1rem;
-    margin: 100px;
-    max-width: 500px;
-    flex-direction: row;
-    height: 400px;
-    box-shadow: 5px 10px #034F7A;
-
+    background-color: #FFF;
+    height: 350px;
 }
 
-.service-button {
-    position: absolute;
-    bottom: 3.5rem;
-    left: 0;
-
+@media screen and (min-width: 600px){
+    .service-card {
+        box-shadow: 0px 4px 30px rgba(0,0,0,0.1);
+    }
 }
+
+
+
 
 
 

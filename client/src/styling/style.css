@@ -1,15 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Montserrat:wght@400;500;700;900&display=swap');
 
 
-@font-face {
-    font-family: "FKDisplayRegular";
-    src: url(/src/utils/fonts/FKDisplay-Regular.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: "ComforterRegular";
-    src: url(/src/utils/fonts/Comforter-Regular.ttf) format("truetype");
-}
 
 
 * {
@@ -24,31 +15,4 @@ a{
     text-decoration: none;
 }
 
-.header-logo{
-    font-size: 2rem;
-    color: white;
-    font-family: "Montserrat", sans-serif;
-}
 
-:root div div header header div nav ul a,
-html body div div div a li.MuiMenuItem-root {
-    font-family: "Montserrat", Arial, Helvetica, sans-serif;
-}
-
-html body div#root div div form div div div div {
-    box-shadow: none; /* fjerner vannrett skygge fra grid-elementene i skjema */
-}
-
-@media (min-width: 577px) {
-    body {
-        background-color: #FFF;
-        font-family: "FKDisplayRegular", Arial, Helvetica, sans-serif;
-    }
-
-}
-@media (min-width: 971px) {
-    body {
-        background-color: #FFF;
-    }
-
-}
