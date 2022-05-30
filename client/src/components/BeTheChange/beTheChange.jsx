@@ -22,10 +22,10 @@ export function BeTheChange() {
       </div>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={0} style={{ maxWidth: 1440, margin: "auto" }}>
-          <Grid item xs={12} md={6} order={{ xs: 2, sm: 2 }}>
+          <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
             <div className="image1" />
           </Grid>
-          <Grid item xs={12} md={6} order={{ xs: 1, sm: 1 }}>
+          <Grid item xs={12} md={6} order={{ xs: 1, md: 2 }}>
             <div className="section1">
               <img
                 className="KristianiaImg"
