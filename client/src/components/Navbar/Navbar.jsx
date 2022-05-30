@@ -88,10 +88,17 @@ const Navbar = () => {
                       display: { xs: 'block', md: 'none' },
                     }}
                   >
+                  <Link style={{textDecoration: "none", color: '#212121',}} to={`/`}>
+                    <MenuItem key="home" onClick={handleCloseNavMenu}>
+                      <Typography textAlign="center">Home</Typography>
+                    </MenuItem>
+                  </Link>
                     {pages.map((page) => (
+                    <Link to={`/${page}`} style={{textDecoration: "none", color: '#212121'}}>
                       <MenuItem key={page} onClick={handleCloseNavMenu}>
                         <Typography textAlign="center">{page}</Typography>
                       </MenuItem>
+                    </Link>
                     ))}
                   </Menu>
                 </Box>
