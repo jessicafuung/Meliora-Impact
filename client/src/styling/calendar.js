@@ -58,9 +58,11 @@ const materialTheme = createTheme({
         MuiTypography: {
             body1: {
                 fontFamily: "Montserrat, sans-serif",
-                fontWeight: "400",
-                fontSize: "1rem",
+                fontWeight: "300",
+                fontSize: "24px",
                 color: "white",
+                lineHeight: "0.8"
+
             },
             body2: {
                 fontFamily: "Montserrat, sans-serif",

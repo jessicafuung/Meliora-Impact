@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useState} from "react";
 import "date-fns"
 import moment from 'moment';
 
@@ -11,27 +11,27 @@ import BusinessIcon from '@mui/icons-material/Business';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import Box from '@mui/material/Box';
+import {Typography} from "@mui/material";
 import {ThemeProvider} from "@material-ui/styles";
 
 import {ApiContext} from "../../lib/useContext";
-import {useLoading} from "../../lib/useLoader";
 import materialTheme from "../styling/calendar";
 import "../styling/style.css"
-import {Typography} from "@mui/material";
+import Progressbar from "../components/progressbar";
 
 const availabilities = [
-    {time: "08.30"},
-    {time: "09.30"},
-    {time: "10.30"},
-    {time: "11.30"},
-    {time: "12.30"},
-    {time: "13.30"},
-    {time: "14.30"},
-    {time: "15.30"},
-    {time: "16.30"},
+    {time: "08:30"},
+    {time: "09:30"},
+    {time: "10:30"},
+    {time: "11:30"},
+    {time: "12:30"},
+    {time: "13:30"},
+    {time: "14:30"},
+    {time: "15:30"},
+    {time: "16:30"},
 ];
 
-/* fetch booked times from DB */
+/* fetch booked times from DB
 function GetBookings() {
     const {listTimes} = useContext(ApiContext);
     const [isBooked, setIsBooked] = useState("true")
@@ -59,6 +59,7 @@ function GetBookings() {
         ))}
     </div>
 }
+*/
 
 function ShowForm({userDate, setUserDate}) {
     const { postBooking } = useContext(ApiContext);
@@ -75,9 +76,15 @@ function ShowForm({userDate, setUserDate}) {
 
     return (
         <Grid item container justifyContent={"center"} xs={12}>
-            <Box sx={{backgroundColor: "#DFE5E9", padding: "2rem", marginTop: "2rem"}}>
+            <Box sx={{
+                backgroundColor: "#DFE5E9",
+                padding: "2rem",
+                marginTop: "2rem",
+                position: {xs: "absolute", sm: "absolute", md: "absolute"},
+                left: {xs: "0%", md: "9%", lg: "20%"}
+            }}>
                 <form onSubmit={handleSubmit}>
-                <Grid container justifyContent={"center"} spacing={10}>
+                <Grid item container justifyContent={"center"} spacing={10}>
                     <Grid item xs={12} sm={6}>
                         <Box sx={{width: 500, maxWidth: '100%'}}>
                             <Box>
@@ -164,8 +171,8 @@ function ShowAvailabilities({userDate, setUserDate, setTimeIsClicked}) {
         console.log(time)
     }
 
-    return <Grid item container justifyContent={"center"} xs={12} sm={6} md={5}>
-        <Box className="row" p={5}>
+    return <Grid item container justifyContent={"center"} xs={12} sm={6} md={6}>
+        <Box className="row" p={5} sx={{position: {lg: "relative"}, right: "20%"}}>
             <Box px={0} textalign={"center"}>
                 <p id={"availabilities"}>Availabilities</p>
             </Box>
@@ -202,7 +209,8 @@ function ShowCalendar({setUserDate, userDate, setDateIsClicked}) {
         <>
             <MuiPickersUtilsProvider utils={DateFnsUtils}>
                 <ThemeProvider theme={materialTheme}>
-                        <Grid item container justifyContent={'center'} xs={12} sm={6} md={5}>
+                    <Grid item container justifyContent={'center'} xs={12} sm={6} md={6}>
+                        <Box sx={{position: {lg: "relative"}, left: "17%"}}>
                             <KeyboardDatePicker
                                 variant='static'
                                 id='date-picker'
@@ -217,7 +225,9 @@ function ShowCalendar({setUserDate, userDate, setDateIsClicked}) {
                                 onChange={handleDateChange}
                                 KeyboardButtonProps={{'aria-label': 'change date'}}
                             />
-                        </Grid>
+                        </Box>
+                    </Grid>
+
                 </ThemeProvider>
             </MuiPickersUtilsProvider>
         </>
@@ -238,27 +248,30 @@ export function Start() {
         message: '',
     });
 
-    return <Box style={{marginTop: 50}} textAlign={"center"}>
-        <Typography variant={"h3"} color={"primary"} gutterBottom={true}>Schedule Meeting</Typography>
-        <Grid container justifyContent={'start'} spacing={1} alignItems={"center"} gutterBottom={true}>
+    return (
+        <Box style={{marginTop: 50}} textAlign={"center"}>
+        <Typography variant={"h3"} color={"black"} gutterbottom="true">Schedule Meeting</Typography>
+            <Progressbar />
+        <Grid container justifyContent={'start'} spacing={1} alignItems={"center"} gutterbottom="true">
             <ShowCalendar
                 userDate={userData}
                 setUserDate={setUserData}
                 setDateIsClicked={setDateIsClicked}
             />
 
-            {dateIsClicked && <ShowAvailabilities
+            <ShowAvailabilities
                         userDate={userData}
                         setUserDate={setUserData}
                         setTimeIsClicked={setTimeIsClicked}
-                    />}
+                    />
 
-            {timeIsClicked && <ShowForm
+            <ShowForm
                 userDate={userData}
                 setUserDate={setUserData}
-            />}
+            />
         </Grid>
-    </Box>
+        </Box>
+    )
 }
 
 
