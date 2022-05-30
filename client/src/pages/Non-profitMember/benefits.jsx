@@ -3,7 +3,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import "./benefits.css";
 import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/headlineWithUnderline";
-import {BtnWithHeadline} from "../../components/BtnWithHeadline/BtnWithHeadline";
+import { BtnWithHeadline } from "../../components/BtnWithHeadline/BtnWithHeadline";
 
 export function Benefits() {
   return (
@@ -16,10 +16,10 @@ export function Benefits() {
               container
               spacing={0}
               justifyContent="center"
-              style={{maxWidth: 1440, margin: "auto"}}
+              style={{ maxWidth: 1440, margin: "auto" }}
             >
               <Grid item xs={8} md={6}>
-                  <p>
+                <p>
                   <strong>
                     More nonprofits are going digital: payments, platforms,
                     marketing and storytelling are done and supported online.
@@ -40,17 +40,6 @@ export function Benefits() {
                   <br /> can be a part of the digitization without using up
                   their own resources.
                 </p>
-                <h1
-                  style={{
-                    marginTop: 50,
-                    marginBottom: 20,
-                    fontSize: 30,
-                    textAlign: "center",
-                  }}
-                >
-                  Ready to get started?
-                </h1>
-                <button className={"joinUsBtnBenefits"}>Join us</button>
               </Grid>
               <Grid item xs={12} md={6}>
                 <div>
@@ -62,7 +51,7 @@ export function Benefits() {
               </Grid>
               <Grid item xs={12} md={10}>
                 <div className="joinUsDiv">
-                {BtnWithHeadline("Ready to get started?", "Join us")}
+                  {BtnWithHeadline("Ready to get started?", "Join us")}
                 </div>
               </Grid>
             </Grid>
