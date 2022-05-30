@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
+import './application.css';
 import { Home } from "./pages/Home/Home";
 import TestPage from "./pages/TestPage";
 import Navbar from "./components/Navbar/Navbar";
-import { ThemeProvider } from "@mui/system";
+import { ThemeProvider } from "@mui/material";
 import theme from "./styling/theme";
 import { WaterCases } from "./waterCases";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
@@ -13,7 +14,7 @@ import { KnowledgeCases } from "./knowledge";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
 import { CorporateMember } from "./pages/CorporateMember/corporateMember";
-import { Footer } from "./components/Footer/footer";
+import {Footer2} from "./components/Footer/footer2";
 import { NonProfit } from "./pages/Non-profitMember/nonProfitMember";
 import { FaqPage } from "./pages/Faq/Faq";
 import { FaqQuestionCard } from "./components/FaqQuestionCard/FaqQuestionCard";
@@ -23,9 +24,7 @@ export function Application() {
     <ThemeProvider theme={theme}>
       <AnimationContainer>
         <BrowserRouter>
-          <header>
-            <Navbar />
-          </header>
+          <Navbar />
           <Routes>
             <Route path={"/contact"} element={<Contact />} />
             <Route path={"/corporate"} element={<CorporateMember />} />
@@ -38,7 +37,7 @@ export function Application() {
             <Route path={"/water"} element={<WaterCases />} />
             <Route path={"/knowledge"} element={<KnowledgeCases />} />
           </Routes>
-          <Footer />
+          <Footer2 />
         </BrowserRouter>
       </AnimationContainer>
     </ThemeProvider>

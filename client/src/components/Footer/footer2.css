@@ -1,0 +1,45 @@
+footer{
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+.footer-container{
+    max-width: 2000px;
+}
+
+.meliora-info{
+    color: white;
+    margin-top: 1rem;
+    font-weight: 400;
+}
+
+.footer-heading{
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.footer-links{
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-links:hover{
+    color: #f1de77;
+    cursor: pointer;
+}
+
+.copy-right{
+    color: #A1A1A1;
+    font-size: 13px;
+}
+
+.soMe-icons{
+    color: #cddce4;
+}
+
+.soMe-icons:hover{
+    color: #f1de77;
+    cursor: pointer;
+}
