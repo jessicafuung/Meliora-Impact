@@ -1,17 +1,47 @@
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
-import {Test} from "./components/test";
 import {CalendarFn, BookingFn, Start} from "./pages/booking";
-import Favicon from "react-favicon";
+import './application.css';
+import { Home } from "./pages/Home/Home";
+import TestPage from "./pages/TestPage";
+import Navbar from "./components/Navbar/Navbar";
+import { ThemeProvider } from "@mui/material";
+import theme from "./styling/theme";
+import { WaterCases } from "./waterCases";
+import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
+import Header from "./components/navbar";
+import { Contact } from "./pages/contact";
+import { KnowledgeCases } from "./knowledge";
+import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
+import { AboutUsPage } from "./pages/AboutUsPage";
+import { CorporateMember } from "./pages/CorporateMember/corporateMember";
+import {Footer2} from "./components/Footer/footer2";
+import { NonProfit } from "./pages/Non-profitMember/nonProfitMember";
+import { FaqPage } from "./pages/Faq/Faq";
+import { FaqQuestionCard } from "./components/FaqQuestionCard/FaqQuestionCard";
 
 export function Application() {
-    return (
+  return (
+    <ThemeProvider theme={theme}>
+      <AnimationContainer>
         <BrowserRouter>
-            <Favicon url="https://scontent.fosl1-1.fna.fbcdn.net/v/t39.30808-6/227509003_347695716998483_8567291070362624778_n.jpg?_nc_cat=103&ccb=1-6&_nc_sid=09cbfe&_nc_ohc=_gR5gtrT4x8AX_omtVZ&_nc_ht=scontent.fosl1-1.fna&oh=00_AT9K7qTrruXXjvwjWK8AkhkaNft2gk0mrLTZt0VMQ68KEA&oe=628008AE" />
-            <Routes>
-                <Route path={"/"} element={<Test />}/>
-                <Route path={"/booking"} element={<Start />}/>
-            </Routes>
+          <Navbar />
+          <Routes>
+            <Route path={"/contact"} element={<Contact />} />
+            <Route path={"/corporate"} element={<CorporateMember />} />
+            <Route path={"/nonprofit"} element={<NonProfit />} />
+            <Route path={"/"} element={<Home />} />
+            <Route path={"/test"} element={<TestPage />} />
+            <Route path={"/faq"} element={<FaqPage />} />
+            <Route path={"/privacy"} element={<PrivacyPage />} />
+            <Route path={"/about"} element={<AboutUsPage />} />
+            <Route path={"/water"} element={<WaterCases />} />
+            <Route path={"/knowledge"} element={<KnowledgeCases />} />
+            <Route path={"/booking"} element={<Start />}/>
+          </Routes>
+          <Footer2 />
         </BrowserRouter>
-    )
+      </AnimationContainer>
+    </ThemeProvider>
+  );
 }

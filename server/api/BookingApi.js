@@ -1,7 +1,7 @@
 import { Router } from "express";
 
 export function BookingApi(mongoDatabase) {
-    const router = new Router();
+  const router = new Router();
 
     router.get("/", async (req, res) => {
         const query = {};

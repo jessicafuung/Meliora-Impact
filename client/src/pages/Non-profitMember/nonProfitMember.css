@@ -1,0 +1,78 @@
+body{
+    margin: 0;
+}
+.container {
+    max-height: 1130px;
+    max-width: 1440px;
+    margin: auto;
+    width: 90%;
+}
+.box {
+    max-height: 1130px;
+    width: 1440px;
+    margin: auto;
+    background-color: white;
+}
+.header {
+    width: 100%;
+    height: 500px;
+    background-image: url("https://images.unsplash.com/photo-1505455184862-554165e5f6ba?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2969");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    font-size: 64px;
+}
+.header em {
+    color: #034F7A;
+    font-style: normal;
+}
+.top {
+    font-size: 0px;
+}
+.headline {
+    font-size: 64px;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+.description {
+    font-size: 30px;
+    margin-right: 115px;
+    font-family: "Montserrat", sans-serif;
+    color: white;
+}
+.description em {
+    color: #034F7A;
+    font-style: normal;
+}
+.joinUsBtn {
+    font-family: "Montserrat", sans-serif;
+    border-radius: 0;
+    height: 50px;
+    width: 200px;
+    background-color: #034F7A;
+    color: white;
+    border: 0;
+    font-size: 16px;
+}
+
+
+@media only screen and (max-width: 750px) {
+
+
+    .headline {
+        font-size: 34px;
+        margin-top: 100px;
+    }
+    .description {
+        font-size: 16px;
+    }
+    .consultationBtn {
+        font-size: 16px;
+        margin-top: 60px;
+    }
+    .header {
+        max-height: 5em;
+    }
+
+}

@@ -11,7 +11,11 @@
     "build": "npm run build:server && npm run build:client",
     "build:client": "cd client && npm run build",
     "build:server": "cd server && npm run build",
-    "start": "cd server && npm start"
+    "start": "cd server && npm start",
+    "format": "prettier --write **/*.{js,jsx}",
+    "format:check": "prettier --check **/*.{js,jsx}",
+    "pre-commit": "npm run format:check",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -25,10 +29,11 @@
   },
   "homepage": "https://github.com/FabianSolheim/Smidiggruppe35#readme",
   "dependencies": {
-    "concurrently": "^7.1.0",
-    "react-router-dom": "^6.3.0"
+    "@mui/icons-material": "^5.8.0",
+    "concurrently": "^7.1.0"
   },
   "devDependencies": {
+    "husky": "^8.0.1",
     "prettier": "^2.6.2"
   }
 }

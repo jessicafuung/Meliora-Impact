@@ -1,0 +1,33 @@
+.containerCorporateServices {
+    background-color: rgba(3,79,122,0.1);
+    width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+}
+.widthContainerServices {
+    width: 1440px;
+    margin: auto;
+}
+@media only screen and (max-width: 900px) {
+
+    .containerCorporateServices{
+        height: 1500px;
+    }
+
+    .headline {
+        font-size: 34px;
+        margin-top: 100px;
+    }
+    .description {
+        font-size: 16px;
+    }
+    .consultationBtn {
+        font-size: 16px;
+        margin-top: 60px;
+    }
+    .header {
+        max-height: 5em;
+    }
+
+}

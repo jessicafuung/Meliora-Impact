@@ -1,0 +1,22 @@
+body{
+    color: #212121;
+}
+section{
+    margin-block: 4rem;
+}
+h5{
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.privacy-page-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+ol{
+    list-style-type: disc;
+
+}
+li{
+    padding-bottom: 1rem;
+}

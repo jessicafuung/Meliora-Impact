@@ -1,0 +1,37 @@
+.joinUsBtnBenefits {
+    font-family: "Montserrat", sans-serif;
+    border-radius: 0;
+    height: 50px;
+    width: 200px;
+    background-color: #034F7A;
+    color: white;
+    border: 0;
+    font-size: 16px;
+    display:block; margin: 0 auto
+}
+.vettedNpoImg {
+    margin-left: 260px;
+}
+.dashboardImg {
+    max-width: 462px;
+    max-height: 280px;
+    object-fit: contain;
+}
+@media only screen and (max-width: 900px) {
+
+    .dashboardImg {
+        width: 300px;
+        margin-right: auto;
+        margin-top: 40px;
+
+    }
+    .vettedNpoImg {
+        width: 150px;
+        margin-left: auto;
+    }
+    .textCorporateBenefits {
+        text-align: center;
+        padding: 20px;
+    }
+
+}

@@ -1,0 +1,41 @@
+
+.home-header {
+    position: relative;
+    overflow: hidden;
+}
+.header-image{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    object-fit: contain;
+}
+.text-highlight{
+    font-weight: 700;
+    color: #034F7A;
+}
+.text-container-header{
+    position: relative;
+
+}
+
+
+
+
+.consultationBtn {
+    margin-top: 40px;
+    border-radius: 0;
+    height: 50px;
+    width: 200px;
+    background-color: #034F7A;
+    color: white;
+    border: 0;
+    font-size: 16px;
+}
+
+.sector-text {
+    max-width: 800px;
+    font-size: 16px;
+}
+
+

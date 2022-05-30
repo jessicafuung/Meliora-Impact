@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel src/index.html",
+    "dev": "parcel watch src/index.html",
     "build": "npm install --include=dev && parcel build index.html"
   },
   "keywords": [],
@@ -20,11 +20,18 @@
     "@mui/material": "^5.7.0",
     "date-fns": "^2.28.0",
     "moment": "^2.29.3",
+    "@mui/styles": "^5.7.0",
+    "framer-motion": "^6.3.3",
     "parcel": "^2.5.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-favicon": "^1.0.0",
+    "react-icons": "^4.3.1",
     "react-query": "^3.39.0",
     "react-router-dom": "^6.2.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-react-refresh-wrap": "^2.5.0",
+    "process": "^0.11.10"
   }
 }

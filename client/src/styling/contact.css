@@ -1,0 +1,17 @@
+.contactContainer {
+    margin-top: 200px;
+}
+
+.contactHeader {
+    margin-bottom: 50px;
+}
+
+.formInfo {
+    margin-bottom: 15px;
+}
+
+.contactInfo {
+    margin-bottom: 30px;
+    justify-content: center;
+    text-align: center;
+}
