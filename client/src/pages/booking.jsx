@@ -17,7 +17,7 @@ import {ThemeProvider} from "@material-ui/styles";
 import {ApiContext} from "../../lib/useContext";
 import materialTheme from "../styling/calendar";
 import "../styling/style.css"
-import Progressbar from "../components/progressbar";
+import {Progressbar} from "../components/progressbar";
 
 const availabilities = [
     {time: "08:30"},
@@ -61,12 +61,13 @@ function GetBookings() {
 }
 */
 
-function ShowForm({userDate, setUserDate}) {
+function ShowForm({userDate, setUserDate, setActiveStep}) {
     const { postBooking } = useContext(ApiContext);
 
     function handleSubmit(e) {
         e.preventDefault();
         postBooking(userDate)
+        setActiveStep(3)
     }
 
     const handleChange = event => {
@@ -161,14 +162,15 @@ function ShowForm({userDate, setUserDate}) {
 }
 
 /* mapping open hours (availabilities) and after click sends user to FormFn*/
-function ShowAvailabilities({userDate, setUserDate, setTimeIsClicked}) {
+function ShowAvailabilities({userDate, setUserDate, setTimeIsClicked, setActiveStep}) {
+
     /* Triggered when selected time */
     const handleSubmit = (e) => {
         e.preventDefault()
         const time = e.target.value
         setTimeIsClicked(true)
         setUserDate({...userDate, time: time})
-        console.log(time)
+        setActiveStep(2)
     }
 
     return <Grid item container justifyContent={"center"} xs={12} sm={6} md={6}>
@@ -189,7 +191,7 @@ function ShowAvailabilities({userDate, setUserDate, setTimeIsClicked}) {
     </Grid>
 }
 
-function ShowCalendar({setUserDate, userDate, setDateIsClicked}) {
+function ShowCalendar({setUserDate, userDate, setDateIsClicked, setActiveStep}) {
     const [selectedDate, setSelectedDate] = useState(new Date());
 
      /* Calendar shows only monday - friday */
@@ -203,6 +205,7 @@ function ShowCalendar({setUserDate, userDate, setDateIsClicked}) {
         setUserDate({...userDate, date: momentFormat})
         setDateIsClicked(true);
         setSelectedDate(date)
+        setActiveStep(1)
     }
 
     return (
@@ -248,27 +251,32 @@ export function Start() {
         message: '',
     });
 
+    const [activeStep, setActiveStep] = useState(0)
+
     return (
         <Box style={{marginTop: 50}} textAlign={"center"}>
         <Typography variant={"h3"} color={"black"} gutterbottom="true">Schedule Meeting</Typography>
-            <Progressbar />
+            <Progressbar activeStep={activeStep}/>
         <Grid container justifyContent={'start'} spacing={1} alignItems={"center"} gutterbottom="true">
             <ShowCalendar
                 userDate={userData}
                 setUserDate={setUserData}
                 setDateIsClicked={setDateIsClicked}
+                setActiveStep={setActiveStep}
             />
 
-            <ShowAvailabilities
+            {dateIsClicked && <ShowAvailabilities
                         userDate={userData}
                         setUserDate={setUserData}
                         setTimeIsClicked={setTimeIsClicked}
-                    />
+                        setActiveStep={setActiveStep}
+                    />}
 
-            <ShowForm
+            {timeIsClicked && <ShowForm
                 userDate={userData}
                 setUserDate={setUserData}
-            />
+                setActiveStep={setActiveStep}
+            />}
         </Grid>
         </Box>
     )
