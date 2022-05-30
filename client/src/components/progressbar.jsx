@@ -5,7 +5,7 @@ export function Progressbar({activeStep}) {
 
     return (
         <div style={{ margin: 20 }}>
-            <Stepper activeStep={activeStep}>
+            <Stepper alternativeLabel activeStep={activeStep}>
                 <Step>
                     <StepLabel>Step 1: Select a date</StepLabel>
                 </Step>
