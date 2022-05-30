@@ -70,9 +70,8 @@ export function FaqPage() {
               />
               <SearchIcon
                 color="primary"
-                fontSize="large"
                 onClick={handleSubmit}
-                style={{ cursor: "pointer" }}
+                style={{ cursor: "pointer", fontSize: "30px", textAlign: "center" }}
               />
             </form>
           </Box>

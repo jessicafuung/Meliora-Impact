@@ -24,9 +24,9 @@ export function FaqQuestionCard({ faqs: { _id, question, answer }, index }) {
           </h1>
           <span>
             {selected === index ? (
-              <RemoveCircleOutlineIcon style={{ color: "#034F7A" }} />
+              <RemoveCircleOutlineIcon style={{ color: "#034F7A", fontSize: "25px" }} />
             ) : (
-              <AddCircleOutlineIcon style={{ color: "#034F7A" }} />
+              <AddCircleOutlineIcon style={{ color: "#034F7A", fontSize: "25px" }} />
             )}
           </span>
         </div>

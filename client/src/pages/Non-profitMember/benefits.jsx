@@ -1,6 +1,5 @@
 import React from "react";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
+import {Grid, Box, Container} from "@mui/material"
 import "./benefits.css";
 import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/headlineWithUnderline";
 import { BtnWithHeadline } from "../../components/BtnWithHeadline/BtnWithHeadline";
@@ -12,6 +11,7 @@ export function Benefits() {
       <div className="containerBenefits">
         <div className="widthContainerBenefits">
           <Box sx={{ flexGrow: 1 }}>
+            <Container>
             <Grid
               container
               spacing={0}
@@ -55,6 +55,7 @@ export function Benefits() {
                 </div>
               </Grid>
             </Grid>
+            </Container>
           </Box>
         </div>
       </div>
