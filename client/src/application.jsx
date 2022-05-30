@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React from "react";
+import './application.css';
 import { Home } from "./pages/Home/Home";
 import TestPage from "./pages/TestPage";
 import Navbar from "./components/Navbar/Navbar";
-import { ThemeProvider } from "@mui/system";
+import { ThemeProvider } from "@mui/material";
 import theme from "./styling/theme";
 import { WaterCases } from "./waterCases";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
@@ -23,9 +24,7 @@ export function Application() {
     <ThemeProvider theme={theme}>
       <AnimationContainer>
         <BrowserRouter>
-          <header>
-            <Navbar />
-          </header>
+          <Navbar />
           <Routes>
             <Route path={"/contact"} element={<Contact />} />
             <Route path={"/corporate"} element={<CorporateMember />} />

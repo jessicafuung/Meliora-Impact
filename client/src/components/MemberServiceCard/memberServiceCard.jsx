@@ -15,30 +15,31 @@ import CustomButton from "../CustomButton/CustomButton";
 
 export function MemberServiceCard({ title, content, icon, linkTo }) {
   return (
-    <Box textAlign="center" className="service-container">
-      <Grid container flexDirection="row">
-        <Card className="service-card">
-          <Grid item xs={12}>
-            <div className="service-icon">{icon}</div>
-            <Typography className="service-header">{title}</Typography>
-            <Typography className="service-content">{content} </Typography>
+        <Box className="service-card" py={5} px={8}>
+        <Grid container direction="column" alignItems="center" justifyContent="space-around">
+          <Grid item >
+            <Box className="service-icon">
+            <Typography align="center" color="primary" fontSize={50}>
+            {icon}
+            </Typography>
+            </Box>
+            <Typography align="center" gutterBottom color="textPrimary" variant="h3" className="service-header">{title}</Typography>
+            <Typography align="left" paragraph fontSize={16} className="service-content">{content} </Typography>
           </Grid>
+
           <Grid
             item
-            container
             xs={12}
-            alignItems="center"
-            justifyContent="end"
-            xs={12}
-            flexDirection="column"
             className="service-button"
+            alignItems="flex-end"
           >
-            <CustomButton to={linkTo} variant="contained">
+          <Box pt={10}>
+            <CustomButton p="12px 22px" to={linkTo} variant="outlined">
               Learn more
             </CustomButton>
+            </Box>
           </Grid>
-        </Card>
-      </Grid>
-    </Box>
+        </Grid>
+        </Box>
   );
 }
