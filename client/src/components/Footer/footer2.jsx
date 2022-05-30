@@ -4,6 +4,7 @@ import CustomButton from "../CustomButton/CustomButton";
 import './footer2.css'
 import Logo from "../assets/Logo";
 import {Twitter, Instagram, LinkedIn, Facebook} from '@mui/icons-material';
+import {Link} from 'react-router-dom';
 
 export function Footer2(){
     return (
@@ -23,8 +24,9 @@ export function Footer2(){
                             }}>
                             <h2>Interested in collaborating with us?</h2>
                         </Grid>
-                        <Grid item xs={12} sm={4} md={4} container justifyContent={{md: "left", xs: "center"}} textAlign={'center'}>
-                            <Button sx={{
+                        <Grid item xs={12} sm={4} md={4} container justifyContent={{sm: "left", xs: "center",}} textAlign={'center'}>
+                            <Link to={'/contact'}>
+                            <Button className={'contact-button'} sx={{
                                 backgroundColor: '#EED655',
                                 color: '#212121',
                                 borderRadius: '0',
@@ -34,6 +36,7 @@ export function Footer2(){
                                 marginTop: { xs: '1rem', sm: '1 rem', md: '0'}
 
                             }}>Contact</Button>
+                            </Link>
                         </Grid>
                     </Grid>
 
@@ -47,9 +50,11 @@ export function Footer2(){
                             />
                         </Grid>
                         <Grid item xs={3} textAlign={'center'}>
+                            <a href='https://www.linkedin.com/company/meliora-impact/'>
                             <LinkedIn className={'soMe-icons'} sx={{
                                 fontSize: {xs: '35px', lg: '50px'}
                             }}/>
+                            </a>
                         </Grid>
                         <Grid item xs={3} textAlign={'center'}>
                             <Facebook className={'soMe-icons'}
@@ -74,25 +79,38 @@ export function Footer2(){
                         >
                             <Logo sx={{display: {sm: 'none', md: 'block'}}}></Logo>
                             <p className={'meliora-info'}>Peder ankers plass 49, 0301 Oslo</p>
-                            <p className={'meliora-info'}>+47  924 52 610</p>
-                            <p className={'meliora-info'}>contact@melioraimpact.no</p>
+                            <p  className={'meliora-info'}><a href={'tel:+4792452610'} className={'meliora-info'}>+47  924 52 610</a></p>
+                            <p className={'meliora-info'}> <a href={'mailto:contact@melioraimpact.no'} className={'meliora-info'}>contact@melioraimpact.no</a></p>
                         </Grid>
                         <Grid item xs={12} sm={4} md={4} sx={{textAlign: 'center',
                             marginTop: {xs: '3rem', sm: '0'}
                         }} >
                             <h3 className={'footer-heading'}>About us</h3>
-                            <p className={'footer-links'}>About</p>
-                            <p className={'footer-links'}>Businesses</p>
-                            <p className={'footer-links'}>Nonprofits</p>
-                            <p className={'footer-links'}>FAQ</p>
-                            <p className={'footer-links'}>Privacy Policy</p>
+                            <Link to={'/about'}>
+                                <p className={'footer-links'}>About</p>
+                            </Link>
+                            <Link to={'/corporate'}>
+                                <p className={'footer-links'}>Businesses</p>
+                            </Link>
+                            <Link to={'/nonprofit'}>
+                                <p className={'footer-links'}>Nonprofits</p>
+                            </Link>
+                            <Link to={'/faq'}>
+                                <p className={'footer-links'}>FAQ</p>
+                            </Link>
+                            <Link to={'/privacy'}>
+                                <p className={'footer-links'}>Privacy Policy</p>
+                            </Link>
+
                         </Grid>
                         <Grid item xs={12} sm={4} md={4} sx={{textAlign: 'center',
                             marginTop: {xs: '3rem', sm: '0'}
                         }}>
                             <h3 className={'footer-heading'}>Work with us</h3>
+
                             <p className={'footer-links'}>Schedule meeting</p>
-                            <p className={'footer-links'}>Corporate members</p>
+
+
                         </Grid>
                     </Grid>
 
