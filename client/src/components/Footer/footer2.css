@@ -13,6 +13,10 @@ footer{
     font-weight: 400;
 }
 
+.contact-button:hover{
+    background-color: #f1de77 !important;
+}
+
 .footer-heading{
     color: white;
     font-size: 18px;
