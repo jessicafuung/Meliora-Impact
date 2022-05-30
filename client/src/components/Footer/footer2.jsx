@@ -23,7 +23,7 @@ export function Footer2(){
                             }}>
                             <h2>Interested in collaborating with us?</h2>
                         </Grid>
-                        <Grid item xs={12} sm={4} md={4} textAlign={'center'}>
+                        <Grid item xs={12} sm={4} md={4} container justifyContent={{md: "left", xs: "center"}} textAlign={'center'}>
                             <Button sx={{
                                 backgroundColor: '#EED655',
                                 color: '#212121',
