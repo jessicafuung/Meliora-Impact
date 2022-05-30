@@ -14,7 +14,7 @@ import { KnowledgeCases } from "./knowledge";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
 import { CorporateMember } from "./pages/CorporateMember/corporateMember";
-import { Footer } from "./components/Footer/footer";
+import {Footer2} from "./components/Footer/footer2";
 import { NonProfit } from "./pages/Non-profitMember/nonProfitMember";
 import { FaqPage } from "./pages/Faq/Faq";
 import { FaqQuestionCard } from "./components/FaqQuestionCard/FaqQuestionCard";
@@ -37,6 +37,7 @@ export function Application() {
             <Route path={"/water"} element={<WaterCases />} />
             <Route path={"/knowledge"} element={<KnowledgeCases />} />
           </Routes>
+          <Footer2 />
         </BrowserRouter>
       </AnimationContainer>
     </ThemeProvider>
