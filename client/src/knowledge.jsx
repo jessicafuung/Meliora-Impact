@@ -47,7 +47,7 @@ export function KnowledgeCases() {
   return (
     <div>
       <CaseStudyKnowledgeHeader />
-      <div style={{ marginTop: 100 }}></div>
+      <div style={{ marginTop: 100 }} />
       {HeadlineWithUnderline("Global Issue", 175, "#034f7a")}
       <Typography id={"text"}>
         759 million adults are illiterate and do not have the awareness

@@ -18,11 +18,11 @@
 .content {
     max-height: 0;
     overflow: hidden;
-    transition: all 1s cubic-bezier(0,1,0,1);
+    transition: all 0.3s cubic-bezier(0,1,0,1);
 }
 
 .content.show {
     height: auto;
     max-height: 9999px;
-    transition: all 1s cubic-bezier(1,0,1,0);
+    transition: all 0.3s cubic-bezier(1,0,1,0);
 }

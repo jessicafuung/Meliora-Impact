@@ -13,7 +13,7 @@ export function FAQApi(mongoDatabase) {
     let replaceSpace = search.toLowerCase().split(" ");
 
     if (search) {
-      const faqs = await mongoDatabase.collection("test").find().toArray();
+      const faqs = await mongoDatabase.collection("faq").find().toArray();
       faqs.filter((q) => {
         for (let item in replaceSpace) {
           if (q.question.toLowerCase().includes(replaceSpace[item]) === true) {
@@ -26,7 +26,7 @@ export function FAQApi(mongoDatabase) {
       res.json(filteredArray);
       searchArray.length = 0;
     } else {
-      const faqs = await mongoDatabase.collection("test").find().toArray();
+      const faqs = await mongoDatabase.collection("faq").find().toArray();
       res.json(faqs);
     }
   });

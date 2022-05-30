@@ -8,7 +8,7 @@
     width: 1200px;
     margin: auto;
 }
-.joinUsBtnBenefits {
+.NpoBtn {
     font-family: "Montserrat", sans-serif;
     border-radius: 0;
     height: 50px;
@@ -17,14 +17,19 @@
     color: white;
     border: 0;
     font-size: 16px;
-    display:block; margin: 0 auto
+    display:block; margin: -200px auto
+}
+.joinUsDiv {
+    margin-top: -100px;
+    display: flex;
+    justifyContent: flex-start;
+}
+.textBenefits {
+    text-align: left;
 }
 .benefitsImg {
     display: block;
     margin-left: auto;
-}
-.textBenefits {
-    text-align: left;
 }
 @media only screen and (max-width: 900px) {
 
@@ -36,7 +41,11 @@
         margin-right: auto;
     }
     .textBenefits {
-        text-align: center;
+        text-align: left;
+    }
+    .joinUsDiv {
+        margin-top: 40px;
+        display: inherit;
     }
 
 }
