@@ -1,12 +1,12 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import "./Faq.css";
 import CustomButton from "../../components/CustomButton/CustomButton";
-import CustomHeadline from "../../components/CustomHeadline/CustomHeadlineComponent";
 import SearchIcon from "@mui/icons-material/Search";
 import { useLoading } from "../../assets/useLoading";
 import { ApiContext } from "../../assets/apiContext";
 import { FaqQuestionCard } from "../../components/FaqQuestionCard/FaqQuestionCard";
+import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/headlineWithUnderline";
 
 export function FaqPage() {
   const { listFaq } = useContext(ApiContext);
@@ -49,9 +49,7 @@ export function FaqPage() {
       >
         <Grid item container justifyContent="center" xs={12} md={6}>
           <Box>
-            <CustomHeadline fontWeight={700} size="h4">
-              FAQs
-            </CustomHeadline>
+            {HeadlineWithUnderline("FAQs", 80, "#034F7A")}
             <Typography mt={3} paragraph>
               How can we help you?
             </Typography>
@@ -98,7 +96,9 @@ export function FaqPage() {
         <Grid item xs={12}>
           <article>
             <p>If you can't find your question, please complete the form</p>
-            <CustomButton variant="text">Contact</CustomButton>
+            <CustomButton to={"/contact"} variant="text">
+              Contact
+            </CustomButton>
           </article>
         </Grid>
       </Grid>

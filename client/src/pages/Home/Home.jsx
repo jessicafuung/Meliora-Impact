@@ -1,6 +1,6 @@
 import React from "react";
 import "./Home.css";
-import {Box, Grid, Typography} from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import { members } from "../../components/MemberServiceCard/Members";
 import { MemberServiceCard } from "../../components/MemberServiceCard/memberServiceCard";
 import { sectors } from "../../components/SectorCard/sectors";
@@ -31,9 +31,7 @@ export function Home() {
         </Grid>
       </Box>
 
-
-
-       <Box py={{xs: 5, md: 10,}}>
+      <Box py={{ xs: 5, md: 10 }}>
         <Grid container justifyContent="center">
           <Grid item>
             <div className="text-box">
@@ -48,9 +46,9 @@ export function Home() {
           </Grid>
         </Grid>
         <Box py={5} px={{xs: 2}}>
-           <Grid container justifyContent="center" spacing={5}>
+           <Grid container justifyContent="center" spacing={2}>
             {members.map((member) => (
-                <Grid item xs={12} sm={6} md={5}>
+                <Grid item lg={4} xs={12} sm={6} md={5} justifyContent="center">
                     <>
                       <MemberServiceCard
                         key={member.title}
@@ -62,15 +60,12 @@ export function Home() {
                     </>
                 </Grid>
             ))}
-            </Grid>
-
-               </Box>
-
+          </Grid>
+        </Box>
       </Box>
 
-
       {/*SECTOR SECTION*/}
-      <Box paddingTop={{xs: 5, md: 10,}} >
+      <Box paddingTop={{ xs: 5, md: 10 }}>
         <Grid
           container
           flexDirection="column"
@@ -82,7 +77,7 @@ export function Home() {
               {HeadlineWithUnderline("Sectors", 80, "#034F7A", 15, "#212121")}
             </div>
           </Grid>
-          <Grid item>
+          <Grid item xs={8} sm={6} md={5}>
             <div className="sector-text" style={{ textAlign: "center" }}>
               <p>
                 Collaborating with the right partners and donors is important to
@@ -96,11 +91,10 @@ export function Home() {
         </Grid>
       </Box>
 
-
       <Box paddingBottom={{xs: 5, md: 15}} px={{xs: 2}} paddingTop={5}>
-      <Grid container justifyContent="center" spacing={5}>
+      <Grid container justifyContent="center" spacing={2}>
       {sectors.map((sector) => (
-                <Grid item xs={12} sm={6} md={5}>
+                <Grid item lg={4.1} xs={12} sm={6} md={5}>
                   <SectorCard
                     key={sector.title}
                     title={sector.title}
@@ -112,22 +106,9 @@ export function Home() {
               ))}
       </Grid>
       </Box>
-      {/* <Grid container justifyContent="center">
-        {sectors.map((sector) => (
-          <>
-            <SectorCard
-              key={sector.title}
-              title={sector.title}
-              content={sector.content}
-              image={sector.image}
-              linkTo={sector.linkTo}
-            />
-          </>
-        ))}
-      </Grid> */}
 
       {/*BE THE CHANGE SECTION*/}
-      <Box py={{xs: 5, md: 10,}}>
+      <Box py={{ xs: 5, md: 10 }}>
         <BeTheChange />
         <div style={{ marginTop: 40 }} />
       </Box>

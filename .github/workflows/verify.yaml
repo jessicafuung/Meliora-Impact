@@ -1,0 +1,30 @@
+on:
+  push:
+    branches:
+      - main
+      - master
+      - github_actions
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - name: install dependencies
+        run: npm ci
+      - run: npm test
+        env:
+          MONGODB_URL: ${{ secrets.MONGODB_URL }}
+      - name: Collect coverage from client
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          working-directory: client
+      - name: Collect coverage from server
+        uses: ArtiomTr/jest-coverage-report-action@v2
+        with:
+          working-directory: server
+        env:
+          MONGODB_URL: ${{ secrets.MONGODB_URL }}

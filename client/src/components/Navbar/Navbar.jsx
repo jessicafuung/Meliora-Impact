@@ -10,12 +10,10 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 import Logo from '../assets/Logo';
 
-const pages = ['About', 'Contact', 'Booking',];
+const pages = ['About', 'Contact', 'Booking'];
 
 const Navbar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
