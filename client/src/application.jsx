@@ -19,6 +19,7 @@ import {Footer2} from "./components/Footer/footer2";
 import { NonProfit } from "./pages/Non-profitMember/nonProfitMember";
 import { FaqPage } from "./pages/Faq/Faq";
 import { FaqQuestionCard } from "./components/FaqQuestionCard/FaqQuestionCard";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 export function Application() {
   return (
@@ -26,6 +27,7 @@ export function Application() {
       <AnimationContainer>
         <BrowserRouter>
           <Navbar />
+          <ScrollToTop>
           <Routes>
             <Route path={"/contact"} element={<Contact />} />
             <Route path={"/corporate"} element={<CorporateMember />} />
@@ -39,6 +41,7 @@ export function Application() {
             <Route path={"/knowledge"} element={<KnowledgeCases />} />
             <Route path={"/booking"} element={<Start />}/>
           </Routes>
+          </ScrollToTop>
           <Footer2 />
         </BrowserRouter>
       </AnimationContainer>
