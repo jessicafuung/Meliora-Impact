@@ -54,17 +54,15 @@ export function BookingApi(mongoDatabase) {
       message,
     } = req.body;
 
-    mongoDatabase
-      .collection("bookings")
-      .insertOne({
-        companyName,
-        contactPerson,
-        email,
-        telephone,
-        date,
-        time,
-        message,
-      });
+    mongoDatabase.collection("bookings").insertOne({
+      companyName,
+      contactPerson,
+      email,
+      telephone,
+      date,
+      time,
+      message,
+    });
     res.sendStatus(200);
   });
 
