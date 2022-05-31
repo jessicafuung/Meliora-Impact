@@ -83,7 +83,7 @@ export function Footer2(){
                             <p className={'meliora-info'}> <a href={'mailto:contact@melioraimpact.no'} className={'meliora-info'}>contact@melioraimpact.no</a></p>
                         </Grid>
                         <Grid item xs={12} sm={4} md={4} sx={{textAlign: 'center',
-                            marginTop: {xs: '3rem', sm: '0'}
+                            marginTop: {xs: '3rem', sm: '3rem', md: '0'}
                         }} >
                             <h3 className={'footer-heading'}>About us</h3>
                             <Link to={'/about'}>

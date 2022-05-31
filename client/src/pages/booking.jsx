@@ -11,13 +11,14 @@ import BusinessIcon from '@mui/icons-material/Business';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import Box from '@mui/material/Box';
-import {Typography} from "@mui/material";
+import {Typography, Container} from "@mui/material";
 import {ThemeProvider} from "@material-ui/styles";
 
 import {ApiContext} from "../../lib/useContext";
 import materialTheme from "../styling/calendar";
 import "../styling/style.css"
 import {Progressbar} from "../components/progressbar";
+
 
 const availabilities = [
     {time: "08:30"},
@@ -78,18 +79,18 @@ function ShowForm({userDate, setUserDate, setActiveStep}) {
     }
 
     return (
+        <Container>
         <Grid item container justifyContent={"center"} xs={12}>
             <Box sx={{
                 backgroundColor: "#DFE5E9",
                 padding: "2rem",
-                marginTop: "2rem",
-                position: {xs: "absolute", sm: "absolute", md: "absolute"},
-                left: {xs: "0%", md: "9%", lg: "20%"}
+                marginY: "2rem",
+                position: {xs: "relative", sm: "relative", md: "relative"},
             }}>
                 <form onSubmit={handleSubmit}>
                 <Grid item container justifyContent={"center"} spacing={10}>
                     <Grid item xs={12} sm={6}>
-                        <Box sx={{width: 500, maxWidth: '100%'}}>
+                        <Box sx={{width:{md: 500, sx: 0}, maxWidth: '100%'}}>
                             <Box>
                                 <TextField fullWidth required label={"Company Name"}
                                            variant={"standard"}
@@ -160,6 +161,7 @@ function ShowForm({userDate, setUserDate, setActiveStep}) {
                 </form>
             </Box>
         </Grid>
+        </Container>
     );
 }
 
@@ -172,10 +174,10 @@ function ShowAvailabilities({userDate, setUserDate, setTimeIsClicked, setActiveS
         setActiveStep(2)
     }
 
-    return <Grid item container justifyContent={"center"} xs={12} sm={6} md={6}>
-        <Box className="row" p={5} sx={{position: {lg: "relative"}, right: "20%"}}>
-            <Box px={0} textalign={"center"}>
-                <p id={"availabilities"}>Availabilities</p>
+    return <Grid item container alignContent={'center'} justifyContent={"center"} xs={12} sm={6} md={6}>
+        <Box className="row" p={5} sx={{position: {lg: "relative"}, marginBottom: "2rem"}}> {/*right: "20%"*/}
+            <Box px={0} textalign={"center"} sx={{marginBottom: "3rem"}}>
+                <p id={"availabilities"} >Availabilities</p>
             </Box>
             <Grid container>
                 {availabilities.map(({time}) => (
@@ -193,10 +195,9 @@ function ShowAvailabilities({userDate, setUserDate, setTimeIsClicked, setActiveS
 function ShowCalendar({setUserDate, userDate, setDateIsClicked, setActiveStep}) {
     const [selectedDate, setSelectedDate] = useState(new Date());
 
-     /* Calendar shows only monday - friday */
-     function disableWeekends(date) {
-         return date.getDay() === 0 || date.getDay() === 6;
-     }
+    function disableWeekends(date) {
+     return date.getDay() === 0 || date.getDay() === 6;
+    }
 
     const handleDateChange = (date) => {
         const momentFormat = moment(date).format("DD.MM.YYYY");
@@ -208,10 +209,10 @@ function ShowCalendar({setUserDate, userDate, setDateIsClicked, setActiveStep}) 
 
     return (
         <>
-            <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <MuiPickersUtilsProvider utils={DateFnsUtils}x  >
                 <ThemeProvider theme={materialTheme}>
                     <Grid item container justifyContent={'center'} xs={12} sm={6} md={6}>
-                        <Box sx={{position: {lg: "relative"}, left: "17%",}}>
+                        <Box sx={{position: {lg: "relative"},left: "17%", marginBottom: "2rem"}}>
                             <KeyboardDatePicker
                                 variant='static'
                                 id='date-picker'
@@ -255,27 +256,27 @@ export function Start() {
         <Box style={{marginTop: 50}} textAlign={"center"}>
         <Typography variant={"h3"} color={"black"} gutterbottom="true">Schedule Meeting</Typography>
             <Progressbar activeStep={activeStep}/>
-        <Grid container justifyContent={'start'} spacing={1} alignItems={"center"} gutterbottom="true">
-            <ShowCalendar
-                userDate={userData}
-                setUserDate={setUserData}
-                setDateIsClicked={setDateIsClicked}
-                setActiveStep={setActiveStep}
-            />
+            <Grid container justifyContent={'start'} spacing={1} alignItems={"center"} gutterbottom="true">
+                <ShowCalendar
+                    userDate={userData}
+                    setUserDate={setUserData}
+                    setDateIsClicked={setDateIsClicked}
+                    setActiveStep={setActiveStep}
+                />
 
-            {dateIsClicked && <ShowAvailabilities
+                {dateIsClicked && <ShowAvailabilities
                         userDate={userData}
                         setUserDate={setUserData}
                         setTimeIsClicked={setTimeIsClicked}
                         setActiveStep={setActiveStep}
-                    />}
+                />}
 
-            {timeIsClicked && <ShowForm
+                {timeIsClicked && <ShowForm
                 userDate={userData}
                 setUserDate={setUserData}
                 setActiveStep={setActiveStep}
-            />}
-        </Grid>
+                />}
+            </Grid>
         </Box>
     )
 }
