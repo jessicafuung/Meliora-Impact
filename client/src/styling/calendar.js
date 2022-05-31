@@ -1,122 +1,119 @@
-import {createTheme} from "@material-ui/core";
-import "./style.css"
+import { createTheme } from "@material-ui/core";
+import "./style.css";
 
 const materialTheme = createTheme({
-    overrides: {
+  overrides: {
+    MuiPickersCalendarHeader: {
+      switchHeader: {
+        backgroundColor: "#034F7A",
+        color: "white",
+        height: "4rem",
+        marginBottom: "0px",
+      },
+      daysHeader: {
+        maxHeight: "23px",
+        justifyContent: "space-around",
+      },
+      dayLabel: {
+        color: "white",
+        width: "18px",
+        margin: "0 0px",
+      },
+      iconButton: {
+        backgroundColor: "#034F7A",
+      },
+    },
 
-        MuiPickersCalendarHeader: {
-            switchHeader: {
-                backgroundColor: "#034F7A",
-                color: "white",
-                height: "4rem",
-                marginBottom: "0px"
-            },
-            daysHeader: {
-                maxHeight: "23px",
-                justifyContent: "space-around"
-
-            },
-            dayLabel: {
-                color: "white",
-                width: "18px",
-                margin: "0 0px"
-            },
-            iconButton: {
-                backgroundColor: "#034F7A"
-            },
+    MuiIconButton: {
+      root: {
+        borderRadius: "15%",
+        color: "white",
+        "&:hover": {
+          backgroundColor: "rgba(0, 0, 0, 0.2)",
         },
+      },
+    },
 
-        MuiIconButton: {
-            root: {
-                borderRadius: "15%",
-                color: "white",
-                "&:hover": {
-                    backgroundColor: "rgba(0, 0, 0, 0.2)"
-                }
-            }
+    MuiPickersDay: {
+      dayDisabled: {
+        color: "#A1A1A1",
+        pointerEvents: "none",
+      },
+      day: {
+        color: "white",
+      },
+      current: {
+        color: "white",
+      },
+      daySelected: {
+        backgroundColor: "rgb(255, 255, 255, 0.3)",
+        "&:hover": {
+          backgroundColor: "rgb(255, 255, 255, 0.4)",
         },
+      },
+    },
 
-        MuiPickersDay: {
-            dayDisabled: {
-                color: "#A1A1A1",
-                pointerEvents: "none"
-            },
-            day: {
-                color: "white"
-            },
-            current: {
-                color: "white"
-            },
-            daySelected: {
-                backgroundColor: "rgb(255, 255, 255, 0.3)",
-                "&:hover": {
-                    backgroundColor: "rgb(255, 255, 255, 0.4)",
-                }
-            },
-        },
+    MuiTypography: {
+      body1: {
+        fontFamily: "Montserrat, sans-serif",
+        fontWeight: "300",
+        fontSize: "24px",
+        color: "white",
+        lineHeight: "0.8",
+      },
+      body2: {
+        fontFamily: "Montserrat, sans-serif",
+        fontWeight: "300",
+        fontSize: "1rem",
+        color: "white",
+      },
+      caption: {
+        fontSize: "1rem",
+        fontFamily: "Montserrat, sans-serif",
+        fontWeight: "300",
+      },
+    },
 
-        MuiTypography: {
-            body1: {
-                fontFamily: "Montserrat, sans-serif",
-                fontWeight: "300",
-                fontSize: "24px",
-                color: "white",
-                lineHeight: "0.8"
+    MuiPickersBasePicker: {
+      pickerView: {
+        backgroundColor: "#034F7A",
+        height: "23rem",
+        minWidth: "384px",
+      },
+      pickerViewLandscape: {
+        padding: "0",
+      },
+    },
 
-            },
-            body2: {
-                fontFamily: "Montserrat, sans-serif",
-                fontWeight: "300",
-                fontSize: "1rem",
-                color: "white",
-            },
-            caption: {
-                fontSize: "1rem",
-                fontFamily: "Montserrat, sans-serif",
-                fontWeight: "300",
-            }
-        },
+    MuiGrid: {
+      item: {
+        boxSizing: "border-box",
+      },
+    },
 
-        MuiPickersBasePicker: {
-            pickerView: {
-                backgroundColor: "#034F7A",
-                height: "23rem",
-                minWidth: "384px"
-            },
-            pickerViewLandscape: {
-                padding: "0"
-            }
-        },
+    MuiPickersStaticWrapper: {
+      staticWrapperRoot: {
+        backgroundColor: "red",
+        minWidth: "24rem",
+      },
+    },
 
-        MuiGrid: {
-            item: {
-                boxSizing: "border-box",
-            }
-        },
+    MuiPickersCalendar: {
+      week: {
+        justifyContent: "space-around",
+        marginBottom: "5px",
+      },
+      transitionContainer: {
+        marginTop: "0px",
+      },
+    },
 
-        MuiPickersStaticWrapper: {
-            staticWrapperRoot: {
-                backgroundColor: "red",
-                minWidth: "24rem",
-            }
-        },
-
-        MuiPickersCalendar: {
-            week: {
-                justifyContent: "space-around",
-                marginBottom: "5px"
-            },
-            transitionContainer: {
-                marginTop: "0px"
-            }
-        },
-
-        MuiSvgIcon: {
-            root: {
-                fontSize: "2rem"
-            }
-        }
-    }
+    MuiSvgIcon: {
+      root: {
+        fontSize: "2rem",
+      },
+    },
+  },
 });
 
-export default materialTheme
+export default materialTheme;

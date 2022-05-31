@@ -33,7 +33,6 @@ export function AboutUsPage() {
           {HeadlineWithUnderline("About us", 120, "#212121", 30)}
         </Grid>
       </Grid>
-
   <Container maxWidth={'lg'} sx={{marginBottom: '8rem',}}>
       <Grid
         container
