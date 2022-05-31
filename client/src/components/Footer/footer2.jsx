@@ -74,7 +74,7 @@ export function Footer2(){
 
                     {/*Middle section of footer*/}
                     <Grid container sx={{marginTop: '2rem'}}>
-                        <Grid item textAlign={'center'} xs={12} sm={4} md={4}
+                        <Grid item textAlign={{xs:'center', sm: 'start'}} xs={12} sm={4} md={4}
                               sx={{ color: 'white'}}
                         >
                             <Logo sx={{display: {sm: 'none', md: 'block'}}}></Logo>
