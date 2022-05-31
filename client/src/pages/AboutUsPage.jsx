@@ -97,16 +97,19 @@ export function AboutUsPage() {
   );
 }
 
-    function SpinningAnimation({}) {
-      return (<Container sx={{
-      border: "2px red solid",
-  display: "flex",
-  width: "100%",
-  height: "100vh",
-  justifyContent: "center",
-  alignContent: "center"
-}}>
-        <CircularProgress />
-        </Container>);
-    }
-  
+function SpinningAnimation({}) {
+  return (
+    <Container
+      sx={{
+        border: "2px red solid",
+        display: "flex",
+        width: "100%",
+        height: "100vh",
+        justifyContent: "center",
+        alignContent: "center",
+      }}
+    >
+      <CircularProgress />
+    </Container>
+  );
+}

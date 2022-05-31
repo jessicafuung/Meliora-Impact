@@ -17,8 +17,8 @@ export function CorporateMember() {
           Joining Meloria Impact gives you access to a{" "}
           <strong>
             <em>broad variety</em>
-          </strong>
-            {" "}of{" "}
+          </strong>{" "}
+          of{" "}
           <strong>
             <em>helpful tools</em>
           </strong>{" "}
