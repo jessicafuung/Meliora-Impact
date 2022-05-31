@@ -26,16 +26,11 @@ export function Footer2(){
                         </Grid>
                         <Grid item xs={12} sm={4} md={4} container justifyContent={{sm: "left", xs: "center",}} textAlign={'center'}>
                             <Link to={'/contact'}>
-                            <Button className={'contact-button'} sx={{
-                                backgroundColor: '#EED655',
-                                color: '#212121',
-                                borderRadius: '0',
-                                paddingX: '2rem',
-                                fontWeight: 'bold',
-                                fontSize: '16px',
-                                marginTop: { xs: '1rem', sm: '1 rem', md: '0'}
-
-                            }}>Contact</Button>
+                            <CustomButton className={'contact-button'}
+                                to={"/contact"}
+                                p="1rem 2rem"
+                                backgroundColor="#EED655"
+                            >Contact</CustomButton>
                             </Link>
                         </Grid>
                     </Grid>

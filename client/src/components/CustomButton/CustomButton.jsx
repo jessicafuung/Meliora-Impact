@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 
-const CustomButton = ({ children, variant, w, h, to, p }) => {
+const CustomButton = ({ children, variant, w, h, to, p, backgroundColor }) => {
   if (to === undefined) {
     console.log(
       `%cCorrect usage: <CustomButton variant=\"contained | outlined | text\" to=\"/\">${children}</CustomButton>`,
@@ -22,6 +22,7 @@ const CustomButton = ({ children, variant, w, h, to, p }) => {
         fontWeight: 500,
         borderRadius: 0,
         textTransform: "none",
+        backgroundColor: backgroundColor,
       }}
         sx={{
         ":hover": {
