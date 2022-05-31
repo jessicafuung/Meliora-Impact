@@ -8,6 +8,7 @@ import { SectorCard } from "../../components/SectorCard/sectorCard";
 import { BeTheChange } from "../../components/BeTheChange/beTheChange";
 import { PartnerCard } from "../../components/PartnerCard/partnerCard";
 import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/headlineWithUnderline";
+import CustomButton from "../../components/CustomButton/CustomButton";
 
 export function Home() {
   return (
@@ -22,9 +23,9 @@ export function Home() {
               <Typography color="textPrimary" paragraph fontWeight={500} fontSize={16} >
                 A digital platform where companies can give to nonprofits in a more <span className="text-highlight">impactful and sustainable way</span>
               </Typography>
-              <button className="consultationBtn">
-                <strong>Book a Consultation</strong>
-              </button>
+              <CustomButton p="12px 22px" to={"/booking"}  variant="contained">
+                  Book a Consultation
+                </CustomButton>
             </Box>
           </Grid>
         </Grid>

@@ -1,4 +1,4 @@
-import { Typography, Container } from "@mui/material";
+import { Typography, Container, CircularProgress } from "@mui/material";
 import { Box } from "@mui/system";
 import Grid from "@mui/material/Grid";
 import { CustomEmployeeCard } from "../components/CustomEmployeeCard/CustomEmployeeCard";
@@ -12,7 +12,11 @@ export function AboutUsPage() {
   );
 
   if (loading) {
-    return <div>Loading ...</div>;
+    return (
+      <Box sx={{display: "flex", width: "100%", justifyContent: "center", alignContent: "center"}}>
+        <CircularProgress />
+        </Box>
+    )
   }
   if (error) {
     return (
