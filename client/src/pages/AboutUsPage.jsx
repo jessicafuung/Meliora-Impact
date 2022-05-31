@@ -5,9 +5,11 @@ import { CustomEmployeeCard } from "../components/CustomEmployeeCard/CustomEmplo
 import { useEffect, useState } from "react";
 import "../styling/about.css";
 import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
+import { fetchJSON } from "../assets/fetchJSON";
+import { useLoading } from "../../lib/useLoader";
 
 export function AboutUsPage() {
-  const { loading, error, data } = useLoader(async () =>
+  const { loading, error, data } = useLoading(async () =>
     fetchJSON("/api/employees")
   );
 
@@ -96,34 +98,4 @@ export function AboutUsPage() {
       </Grid>
     </Box>
   );
-}
-
-export function useLoader(loadingFn) {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState();
-  const [error, setError] = useState();
-
-  async function load() {
-    try {
-      setLoading(true);
-      setData(await loadingFn());
-    } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  useEffect(() => {
-    load();
-  }, []);
-  return { loading, data, error, reload: load };
-}
-
-async function fetchJSON(url) {
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`Failed to load ${res.status}: ${res.statusText}`);
-  }
-  return await res.json();
 }
