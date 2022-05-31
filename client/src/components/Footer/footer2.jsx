@@ -1,40 +1,11 @@
 import Box from "@mui/material/Box";
-import { Button, Container, Grid, Link } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import "./footer2.css";
 import Logo from "../assets/Logo";
 import { Twitter, Instagram, LinkedIn, Facebook } from "@mui/icons-material";
 import { Link } from "react-router-dom";
+import CustomButton from "../CustomButton/CustomButton";
 
-<<<<<<< HEAD
-export function Footer2(){
-    return (
-        <footer className={'footer-container'}>
-            <Box sx={{bgcolor: '#034F7A',
-                paddingY: '3rem',
-                borderTopRightRadius: { xs: '0', md: '21.875rem'}
-            }}>
-                <Container>
-                    {/*Top of footer*/}
-                    <Grid container justifyContent={'center'} alignItems={'center'}>
-                        <Grid item xs={12} sm={8} md={8}  sx={{
-                            textAlign: {xs: 'center',
-                                md: 'left'},
-                            fontSize: { xs: '36px', md: '48px'},
-                            color: '#ffffff'
-                            }}>
-                            <h2>Interested in collaborating with us?</h2>
-                        </Grid>
-                        <Grid item xs={12} sm={4} md={4} container justifyContent={{sm: "left", xs: "center",}} textAlign={'center'}>
-                            <Link to={'/contact'}>
-                            <CustomButton className={'contact-button'}
-                                to={"/contact"}
-                                p="1rem 2rem"
-                                backgroundColor="#EED655"
-                            >Contact</CustomButton>
-                            </Link>
-                        </Grid>
-                    </Grid>
-=======
 export function Footer2() {
   return (
     <footer className={"footer-container"}>
@@ -71,20 +42,14 @@ export function Footer2() {
               textAlign={"center"}
             >
               <Link to={"/contact"}>
-                <Button
+                <CustomButton
                   className={"contact-button"}
-                  sx={{
-                    backgroundColor: "#EED655",
-                    color: "#212121",
-                    borderRadius: "0",
-                    paddingX: "2rem",
-                    fontWeight: "bold",
-                    fontSize: "16px",
-                    marginTop: { xs: "1rem", sm: "1 rem", md: "0" },
-                  }}
+                  to={"/contact"}
+                  p="1rem 2rem"
+                  backgroundColor="#EED655"
                 >
                   Contact
-                </Button>
+                </CustomButton>
               </Link>
             </Grid>
           </Grid>
@@ -126,7 +91,6 @@ export function Footer2() {
               />
             </Grid>
           </Grid>
->>>>>>> refs/remotes/origin/master
 
           {/*Middle section of footer*/}
           <Grid container sx={{ marginTop: "2rem" }}>
