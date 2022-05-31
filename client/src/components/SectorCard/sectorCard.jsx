@@ -5,7 +5,7 @@ import "./sectorCard.css";
 
 export function SectorCard({ title, content, image, linkTo }) {
   return (
-    <Box textAlign="center" className="sector-container" p={6}>
+    <Box textAlign="center" className="sector-container" p={{xs: 6, lg: 10}}>
       <Grid container justifyContent="center" alignItems="center" flexDirection="column">
           <Grid item>
               <img src={image} className="sector-image"/>

@@ -14,7 +14,7 @@ export function Home() {
   return (
     <>
     {/*HEADER*/}
-      <Box className="home-header" paddingBottom={{xs: 5, md: 10,}} paddingTop={{xs: 5, md: 15,}}>
+      <Box className="home-header" paddingBottom={{xs: 5, md: 10, lg: 15}} height={{xs: "50vh", md: '60vh'}} paddingTop={{xs: 5, md: 15, lg: 10}}>
         <img className="header-image" src="https://images.unsplash.com/photo-1636320804382-912276801e97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" />
         <Grid container direction="row-reverse" alignItems="end" >
           <Grid item container justifyContent="end" xs={12} sm={6}>
