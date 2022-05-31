@@ -10,14 +10,14 @@ import theme from "./styling/theme";
 import { WaterCases } from "./waterCases";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
 import Header from "./components/navbar";
-import { Contact } from "./pages/contact";
+import {Contact} from "./pages/Contact/contact";
 import { KnowledgeCases } from "./knowledge";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
 import { CorporateMember } from "./pages/CorporateMember/corporateMember";
 import {Footer2} from "./components/Footer/footer2";
 import { NonProfit } from "./pages/Non-profitMember/nonProfitMember";
-import { FaqPage } from "./pages/Faq/Faq";
+import {FaqPage} from "./pages/Faq/Faq";
 import { FaqQuestionCard } from "./components/FaqQuestionCard/FaqQuestionCard";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 

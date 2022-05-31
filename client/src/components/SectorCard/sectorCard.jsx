@@ -16,7 +16,7 @@ export function SectorCard({ title, content, image, linkTo }) {
               <Typography fontSize={15} align="left" color="textPrimary" className="sector-content">
                 {content}
               </Typography>
-              <Box alignItems="center" sx={{position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)",}} textAlign="center" className="sector-button">
+              <Box alignItems="center" sx={{position: "absolute", bottom: "2rem", left: "50%", transform: "translateX(-50%)", paddingBottom: "15px"}} textAlign="center" className="sector-button">
                 <CustomButton p="12px 22px" to={linkTo} variant="outlined">
                   Case study
                 </CustomButton>
