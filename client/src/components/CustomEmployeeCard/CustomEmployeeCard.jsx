@@ -1,17 +1,14 @@
-import { Avatar, Grid, Typography, Link as MuiLink } from "@mui/material";
+import { Avatar, Grid, Typography, Button } from "@mui/material";
 import React from "react";
 import "./CustomEmployeeStyle.css";
-import { Box } from "@mui/system";
-import CustomButton from "../CustomButton/CustomButton";
-
-
+import Box from "@mui/material/Box";
 
 export function CustomEmployeeCard({
   employee: { name, image, position, about, linkedin },
 }) {
   return (
     <Box
-      sx={{ borderRadius: 2, maxWidth: 350 }}
+      sx={{ borderRadius: 2, maxWidth: 350, height: 350, position: "relative"}}
       className="employeeCard"
       style={{ backgroundColor: "#DFE5E9" }}
     >
@@ -27,12 +24,12 @@ export function CustomEmployeeCard({
             <Avatar sx={{ width: 56, height: 56 }} src={`${image}`} />
           </Grid>
           <Grid item container justifyContent="start" flexDirection={"column"} xs={8}>
-            <Typography mb={0} variant="h6" color="primary">
-              {name}
-            </Typography>
-            <Typography mb={0} paragraph color="textDisabled">
-              {position}
-            </Typography>
+              <Typography mb={0} variant="h6" color="primary">
+                {name}
+              </Typography>
+              <Typography mb={0} paragraph color="textDisabled">
+                {position}
+              </Typography>
           </Grid>
         </Grid>
         <Box mt={3} pr={2} pl={2}>
@@ -40,13 +37,30 @@ export function CustomEmployeeCard({
             {about}
           </Typography>
         </Box>
-      
-         <div className={"buttonDiv"}>
-         <MuiLink style={{textDecoration: "none"}} href={linkedin}>
-          <CustomButton variant="outlined">Linked In</CustomButton>
-        </MuiLink>
-      </div> 
       </Box>
+      <div className={"buttonDiv"}>
+        <Button
+          variant="outlined"
+          target="_blank"
+          href={linkedin}
+          color="primary"
+          style={{
+            padding: "0 22px",
+            textDecoration: "none",
+            fontWeight: 500,
+            borderRadius: 0,
+            textTransform: "none",
+          }}
+          sx={{
+            ":hover": {
+              backgroundColor: "#034F7A",
+              color: "white",
+            },
+          }}
+        >
+          LinkedIn
+        </Button>
+      </div>
     </Box>
   );
 }

@@ -1,8 +1,6 @@
 import { Typography, Container, CircularProgress, Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { CustomEmployeeCard } from "../components/CustomEmployeeCard/CustomEmployeeCard";
-import { useEffect, useState } from "react";
-import "../styling/about.css";
 import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
 import { fetchJSON } from "../assets/fetchJSON";
 import { useLoading } from "../../lib/useLoader";
