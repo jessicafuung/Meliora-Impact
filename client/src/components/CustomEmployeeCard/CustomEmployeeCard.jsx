@@ -1,15 +1,14 @@
-import { Avatar, Grid, Typography, Link, Button } from "@mui/material";
+import { Avatar, Grid, Typography, Button } from "@mui/material";
 import React from "react";
 import "./CustomEmployeeStyle.css";
 import Box from "@mui/material/Box";
-import CustomButton from "../CustomButton/CustomButton";
 
 export function CustomEmployeeCard({
   employee: { name, image, position, about, linkedin },
 }) {
   return (
     <Box
-      sx={{ borderRadius: 2, maxWidth: 350 }}
+      sx={{ borderRadius: 2, maxWidth: 350, height: 350, position: "relative"}}
       className="employeeCard"
       style={{ backgroundColor: "#DFE5E9" }}
     >
@@ -40,31 +39,30 @@ export function CustomEmployeeCard({
             {about}
           </Typography>
         </Box>
-
-        <div className={"buttonDiv"}>
-          <Button
-            variant="outlined"
-            target="_blank"
-            href={linkedin}
-            color="primary"
-            style={{
-              padding: "0 22px",
-              textDecoration: "none",
-              fontWeight: 500,
-              borderRadius: 0,
-              textTransform: "none",
-            }}
-            sx={{
-              ":hover": {
-                backgroundColor: "#034F7A",
-                color: "white",
-              },
-            }}
-          >
-            Linked In
-          </Button>
-        </div>
       </Box>
+      <div className={"buttonDiv"}>
+        <Button
+          variant="outlined"
+          target="_blank"
+          href={linkedin}
+          color="primary"
+          style={{
+            padding: "0 22px",
+            textDecoration: "none",
+            fontWeight: 500,
+            borderRadius: 0,
+            textTransform: "none",
+          }}
+          sx={{
+            ":hover": {
+              backgroundColor: "#034F7A",
+              color: "white",
+            },
+          }}
+        >
+          LinkedIn
+        </Button>
+      </div>
     </Box>
   );
 }
