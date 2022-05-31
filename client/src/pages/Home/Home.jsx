@@ -14,13 +14,13 @@ export function Home() {
   return (
     <>
     {/*HEADER*/}
-      <Box className="home-header" paddingBottom={{xs: 5, md: 10, lg: 15}} height={{xs: "50vh", md: '60vh'}} paddingTop={{xs: 5, md: 15, lg: 10}}>
-        <img className="header-image" src="https://images.unsplash.com/photo-1636320804382-912276801e97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" />
-        <Grid container direction="row-reverse" alignItems="end" >
-          <Grid item container justifyContent="end" xs={12} sm={6}>
-            <Box sx={{textAlign: {xs: 'center', sm: 'left'}}} className="text-container-header" paddingRight={{xs: 0, sm: 2}} >
+      <Box className="home-header" height={{xs: "60vh", sm: '80vh', lg: '100vh'}}>
+        {/*<img className="header-image" src="https://images.unsplash.com/photo-1636320804382-912276801e97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" />*/}
+        <Grid container direction="row-reverse" height={'100%'} justifyContent={{xs: "center", sm: 'end'}} alignItems={{xs: 'center'}} >
+          <Grid item container justifyContent="end" xs={12} sm={7}>
+            <Box sx={{textAlign: {xs: 'left'}}} className="text-container-header" padding={{xs: 2, sm: 2}} >
               <Typography gutterBottom variant="h2" color="white">Make an <span className="text-highlight">impact</span> with <span className="text-highlight">Meliora</span></Typography>
-              <Typography color="textPrimary" paragraph fontWeight={500} fontSize={16} >
+              <Typography paddingBottom={{xs: 2, sm: 8}} color="white" paragraph fontWeight={500} fontSize={{xs: 16, md: 18, lg: 22}} >
                 A digital platform where companies can give to nonprofits in a more <span className="text-highlight">impactful and sustainable way</span>
               </Typography>
               <CustomButton p="12px 22px" to={"/booking"}  variant="contained">
@@ -39,10 +39,10 @@ export function Home() {
             <div className="text-box">
               {HeadlineWithUnderline(
                 "Member services",
-                80,
+                200,
                 "#034F7A",
                 0,
-                "#034F7A"
+                "#212121"
               )}
             </div>
           </Grid>
@@ -79,7 +79,7 @@ export function Home() {
         >
           <Grid item>
             <div className="text-box">
-              {HeadlineWithUnderline("Sectors", 80, "#034F7A", 15, "#034F7A")}
+              {HeadlineWithUnderline("Sectors", 80, "#034F7A", 15, "#212121")}
             </div>
           </Grid>
           <Grid item>
@@ -132,7 +132,7 @@ export function Home() {
         <div style={{ marginTop: 40 }} />
       </Box>
       <Box>
-        {HeadlineWithUnderline("Partners", 80, "#034F7A", 40, "#034F7A")}
+        {HeadlineWithUnderline("Partners", 80, "#034F7A", 40, "#212121")}
 {/*         <PartnerCard /> */}
         <div style={{ marginBottom: 40 }} />
       </Box>
