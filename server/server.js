@@ -4,7 +4,6 @@ import {BookingApi} from "./api/BookingApi.js";
 import dotenv from "dotenv";
 import { MongoClient } from "mongodb";
 import { FAQApi } from "./api/FAQApi.js";
-import { BookingApi } from "./api/BookingApi.js";
 import { OrganizationApi } from "./api/OrganizationApi.js";
 import { EmployeeApi } from "./api/EmployeeApi.js";
 import * as bodyParser from "express";
