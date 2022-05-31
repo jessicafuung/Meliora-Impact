@@ -1,6 +1,6 @@
 describe("Faq test", () => {
-    it("dummyTest",  () => {
-        const country = 2 + 2
-        expect(country === 4)
-    });
+  it("dummyTest", () => {
+    const country = 2 + 2;
+    expect(country === 4);
+  });
 });
