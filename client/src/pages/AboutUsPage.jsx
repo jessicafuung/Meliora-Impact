@@ -1,4 +1,4 @@
-import { Typography, CircularProgress, Box } from "@mui/material";
+import { Typography, Container, CircularProgress, Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { CustomEmployeeCard } from "../components/CustomEmployeeCard/CustomEmployeeCard";
 import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
