@@ -10,7 +10,7 @@ import theme from "./styling/theme";
 import { WaterCases } from "./waterCases";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
 import Header from "./components/navbar";
-import {Contact} from "./pages/Contact/contact";
+import {Contact} from './pages/Contact/contact';
 import { KnowledgeCases } from "./knowledge";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import { AboutUsPage } from "./pages/AboutUsPage";

@@ -17,7 +17,7 @@ export function Home() {
       <Box className="home-header" height={{xs: "60vh", sm: '80vh', lg: '100vh'}}>
         {/*<img className="header-image" src="https://images.unsplash.com/photo-1636320804382-912276801e97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" />*/}
         <Grid container direction="row-reverse" height={'100%'} justifyContent={{xs: "center", sm: 'end'}} alignItems={{xs: 'center'}} >
-          <Grid item container justifyContent="end" xs={12} sm={7}>
+          <Grid item container justifyContent="end" xs={12} sm={6}>
             <Box sx={{textAlign: {xs: 'left'}}} className="text-container-header" padding={{xs: 2, sm: 2}} >
               <Typography gutterBottom variant="h2" color="white">Make an <span className="text-highlight">impact</span> with <span className="text-highlight">Meliora</span></Typography>
               <Typography paddingBottom={{xs: 2, sm: 8}} color="white" paragraph fontWeight={500} fontSize={{xs: 16, md: 18, lg: 22}} >
