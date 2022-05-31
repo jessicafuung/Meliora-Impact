@@ -1,7 +1,10 @@
-import { Avatar, Grid, Typography } from "@mui/material";
+import { Avatar, Grid, Typography, Link as MuiLink } from "@mui/material";
 import React from "react";
 import "./CustomEmployeeStyle.css";
 import { Box } from "@mui/system";
+import CustomButton from "../CustomButton/CustomButton";
+
+
 
 export function CustomEmployeeCard({
   employee: { name, image, position, about, linkedin },
@@ -37,11 +40,12 @@ export function CustomEmployeeCard({
             {about}
           </Typography>
         </Box>
-        <div className={"buttonDiv"}>
-          <a className={"fakeButton"} href={linkedin} target={"_blank"}>
-            LinkedIn
-          </a>
-        </div>
+      
+         <div className={"buttonDiv"}>
+         <MuiLink style={{textDecoration: "none"}} href={linkedin}>
+          <CustomButton variant="outlined">Linked In</CustomButton>
+        </MuiLink>
+      </div> 
       </Box>
     </Box>
   );
