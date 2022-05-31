@@ -36,12 +36,11 @@ export function AboutUsPage() {
         </Grid>
       </Grid>
 
-  <Box marginBottom={10}>
+  <Container maxWidth={'lg'} sx={{marginBottom: '8rem',}}>
       <Grid
         container
         alignItems="center"
-        justifyContent="center"
-        spacing={8}
+        justifyContent="space-between"
       >
 
         <Grid item xs={12} sm={6} className="aboutSection">
@@ -77,7 +76,7 @@ export function AboutUsPage() {
           />
         </Grid>
       </Grid>
-  </Box>
+  </Container>
       <Grid container alignItems="center" justifyContent="center" mb={25}>
         <Grid item mb={4}>
           {HeadlineWithUnderline("Our team", 120, "#034F7A", 20)}
