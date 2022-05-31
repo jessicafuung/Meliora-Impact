@@ -26,7 +26,7 @@ export function CustomEmployeeCard({
           <Grid item container justifyContent="center" xs={2}>
             <Avatar sx={{ width: 56, height: 56 }} src={`${image}`} />
           </Grid>
-          <Grid item container justifyContent="start" xs={8}>
+          <Grid item container justifyContent="start" flexDirection={"column"} xs={8}>
             <Typography mb={0} variant="h6" color="primary">
               {name}
             </Typography>
