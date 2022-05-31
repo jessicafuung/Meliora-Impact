@@ -98,7 +98,7 @@ export function FaqPage() {
         <Grid item xs={12}>
           <article>
             <p>If you can't find your question, please complete the form</p>
-            <CustomButton variant="text">Contact</CustomButton>
+            <CustomButton to={"/contact"} variant="text">Contact</CustomButton>
           </article>
         </Grid>
       </Grid>
