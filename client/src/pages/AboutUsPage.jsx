@@ -1,13 +1,14 @@
-import { Typography, Container, CircularProgress } from "@mui/material";
-import { Box } from "@mui/system";
+import { Typography, Container, CircularProgress, Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { CustomEmployeeCard } from "../components/CustomEmployeeCard/CustomEmployeeCard";
 import { useEffect, useState } from "react";
 import "../styling/about.css";
 import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
+import { fetchJSON } from "../assets/fetchJSON";
+import { useLoading } from "../../lib/useLoader";
 
 export function AboutUsPage() {
-  const { loading, error, data } = useLoader(async () =>
+  const { loading, error, data } = useLoading(async () =>
     fetchJSON("/api/employees")
   );
 
@@ -31,20 +32,19 @@ export function AboutUsPage() {
     <Box mt={10}>
       <Grid container alignItems="center" justifyContent="center" mb={4}>
         <Grid item>
-          {HeadlineWithUnderline("About us", 120, "#034F7A", 30)}
+          {HeadlineWithUnderline("About us", 120, "#212121", 30)}
         </Grid>
       </Grid>
 
-      <Container>
+  <Box marginBottom={10}>
       <Grid
         container
-        gap={15}
         alignItems="center"
         justifyContent="center"
-        mb={25}
+        spacing={8}
       >
 
-        <Grid item className="aboutSection">
+        <Grid item xs={12} sm={6} className="aboutSection">
           <Typography variant="h6" style={{ marginBottom: "30px" }}>
             Our vision
           </Typography>
@@ -69,15 +69,15 @@ export function AboutUsPage() {
             to carry out their frontline work.
           </Typography>
         </Grid>
-        <Grid item>
+        <Grid item xs={12} sm={5} md={4}>
           <img
             src={require("../images/office-ladies.png")}
-            height="auto"
+            style={{objectFit: 'contain', width: "100%"}}
             alt="image"
           />
         </Grid>
       </Grid>
-      </Container>
+  </Box>
       <Grid container alignItems="center" justifyContent="center" mb={25}>
         <Grid item mb={4}>
           {HeadlineWithUnderline("Our team", 120, "#034F7A", 20)}
@@ -96,34 +96,4 @@ export function AboutUsPage() {
       </Grid>
     </Box>
   );
-}
-
-export function useLoader(loadingFn) {
-  const [loading, setLoading] = useState(true);
-  const [data, setData] = useState();
-  const [error, setError] = useState();
-
-  async function load() {
-    try {
-      setLoading(true);
-      setData(await loadingFn());
-    } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  useEffect(() => {
-    load();
-  }, []);
-  return { loading, data, error, reload: load };
-}
-
-async function fetchJSON(url) {
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`Failed to load ${res.status}: ${res.statusText}`);
-  }
-  return await res.json();
 }

@@ -58,10 +58,10 @@ export function WaterCases() {
         health - especially for women and kids.
       </Typography>
       <div className={"list"}>
-        {data.map((organization) => (
+        {data.map((water) => (
           <OrganizationCard
-            key={organization.id}
-            organizations={organization}
+            key={water.id}
+            water={water}
           />
         ))}
       </div>
@@ -69,7 +69,7 @@ export function WaterCases() {
   );
 }
 
-function OrganizationCard({ organizations: { name, info } }) {
+function OrganizationCard({ water: { name, info } }) {
   return (
     <>
       <div className={"organization"}>
