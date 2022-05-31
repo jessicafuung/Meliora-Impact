@@ -23,7 +23,7 @@ const CustomButton = ({ children, variant, w, h, to, p }) => {
         borderRadius: 0,
         textTransform: "none",
       }}
-        sx={{
+      sx={{
         ":hover": {
           backgroundColor: "#034F7A",
           color: "white",
