@@ -3,11 +3,13 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import "./corporateBenefits.css";
 import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/headlineWithUnderline";
+import {BtnWithHeadline} from "../../components/BtnWithHeadline/BtnWithHeadline";
+import {Container} from "@mui/material";
 
 export function CorporateBenefits() {
   return (
     <>
-      {HeadlineWithUnderline("Benefits", 100, "#034F7A", 100)}
+      {HeadlineWithUnderline("Benefits", 100, "#034F7A", 50)}
 
       <Box
         sx={{ flexGrow: 1 }}
@@ -17,7 +19,8 @@ export function CorporateBenefits() {
         }}
       >
         <Grid container spacing={0}>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6}>
+              <Container>
             <p className="textCorporateBenefits">
               By using Meliora Impact's platform, companies can leverage their
               corporate resources for greater social good.
@@ -38,19 +41,10 @@ export function CorporateBenefits() {
               philanthropic strategy fully tailored to their business and
               values.
             </p>
-            <h1
-              style={{
-                marginTop: 80,
-                marginBottom: 20,
-                fontSize: 30,
-                textAlign: "center",
-              }}
-            >
-              Ready to get started?
-            </h1>
-            <button className={"joinUsBtnBenefits"}>Join us</button>
+              </Container>
           </Grid>
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} sm={6}>
+              <Container>
             <div>
               <img
                 className="dashboardImg"
@@ -71,7 +65,13 @@ export function CorporateBenefits() {
                 src={require("../../images/20vettednpo.svg")}
               />
             </div>
+              </Container>
           </Grid>
+            <Grid item xs={12} md={6}>
+                <div className={"joinUsDivCorporate"}>
+                {BtnWithHeadline("Ready to get Started?", "Join us")}
+                </div>
+            </Grid>
         </Grid>
       </Box>
     </>

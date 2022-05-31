@@ -18,7 +18,7 @@ export function CorporateMember() {
           <strong>
             <em>broad variety</em>
           </strong>
-          <br /> of{" "}
+            {" "}of{" "}
           <strong>
             <em>helpful tools</em>
           </strong>{" "}
@@ -26,9 +26,9 @@ export function CorporateMember() {
         </p>,
         "white"
       )}
-      <div style={{ height: 100 }} />
+      <div style={{ height: 60 }} />
       <CorporateBenefits />
-      <div style={{ height: 100 }} />
+      <div style={{ height: 60 }} />
       <CorporateServices />
       <div style={{ height: 100 }} />
     </div>
