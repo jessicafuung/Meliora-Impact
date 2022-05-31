@@ -7,9 +7,9 @@ import BusinessIcon from "@mui/icons-material/Business";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Grid from "@mui/material/Grid";
-import "../styling/contact.css";
-import CustomButton from "../components/CustomButton/CustomButton";
-import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
+import "./contact.css";
+import CustomButton from "../../components/CustomButton/CustomButton";
+import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/headlineWithUnderline";
 
 export function Contact() {
   return (
@@ -19,12 +19,12 @@ export function Contact() {
           <Grid item xs={12}>
             {HeadlineWithUnderline("Contact", 120, "#034F7A", 20)}
             <p style={{ maxWidth: 300, textAlign: "center", marginBottom: 30 }}>
-              Reach out if you want to collaborate or know more about our
-              services, or just to connect.
+              Reach out if you want to <span className={"textHighlight"}>collaborate</span> or know more about our
+              services, or just to <span className={"textHighlight"}>connect</span>.
             </p>
           </Grid>
         </header>
-        <Grid container gap={12} alignItems="center" justifyContent="center">
+        <Grid container gap={20} alignItems="center" justifyContent="center">
           <Grid item>
             <ContactForm color={"primary"} />
           </Grid>
@@ -69,7 +69,7 @@ function ContactForm() {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <PersonIcon color={"primary"} />
+                <PersonIcon sx={{fontSize: 40}} color={"primary"} />
               </InputAdornment>
             ),
           }}
@@ -84,7 +84,7 @@ function ContactForm() {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <BusinessIcon color={"primary"} />
+                <BusinessIcon sx={{fontSize: 40}} color={"primary"} />
               </InputAdornment>
             ),
           }}
@@ -99,7 +99,7 @@ function ContactForm() {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <EmailIcon color={"primary"} />
+                <EmailIcon sx={{fontSize: 40}} color={"primary"} />
               </InputAdornment>
             ),
           }}
