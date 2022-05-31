@@ -1,6 +1,15 @@
 import { useState } from "react";
 import React from "react";
-import { Box, InputAdornment, TextField } from "@mui/material";
+import {
+  Box, Button,
+  Container,
+  Dialog, DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  InputAdornment,
+  TextField
+} from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
 import BusinessIcon from "@mui/icons-material/Business";
@@ -56,16 +65,25 @@ function ContactForm() {
   const [companyName, setCompanyName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  /*const toast = useToast();*/
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
+    <Container>
     <form>
       <div className="formInfo">
         <TextField
           required
           color={"primary"}
           label={"Contact person"}
-          sx={{ width: 330 }}
+          sx={{ maxWidth: 320 }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -80,7 +98,7 @@ function ContactForm() {
         <TextField
           required
           label={"Co. Name"}
-          sx={{ width: 330 }}
+          sx={{ maxWidth: 320 }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -95,7 +113,7 @@ function ContactForm() {
         <TextField
           required
           label={"Email"}
-          sx={{ width: 330 }}
+          sx={{ maxWidth: 320 }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -110,7 +128,7 @@ function ContactForm() {
         <TextField
           required
           label="Message"
-          sx={{ width: 330 }}
+          sx={{ maxWidth: 450, width: 320 }}
           multiline
           rows={4}
         />
@@ -118,22 +136,31 @@ function ContactForm() {
       <div align="center">
         <CustomButton
           variant="contained"
-          to={"/contact"}
-          /*
-          Toast with chakra
-          onClick={() =>
-            toast({
-              title: "Message sent.",
-              description: "Thank you for reaching out to us.",
-              status: "success",
-              duration: 9000,
-              isClosable: true,
-            })
-          }*/
+          to={""}
+          onClick={handleClickOpen}
         >
           Submit
         </CustomButton>
+      <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+          {"Your message has been sent."}
+        </DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Thank you for contacting us. We will get back to you as soon as possible.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Close</Button>
+        </DialogActions>
+      </Dialog>
       </div>
     </form>
+    </Container>
   );
 }
