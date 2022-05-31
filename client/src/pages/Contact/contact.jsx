@@ -76,14 +76,13 @@ function ContactForm() {
   };
 
   return (
-    <Container>
     <form>
       <div className="formInfo">
         <TextField
           required
           color={"primary"}
           label={"Contact person"}
-          sx={{ maxWidth: 320 }}
+          sx={{ width: {xs: '300px', sm: '330px'} }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -98,7 +97,7 @@ function ContactForm() {
         <TextField
           required
           label={"Co. Name"}
-          sx={{ maxWidth: 320 }}
+          sx={{ width: {xs: '300px', sm: '330px'} }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -113,7 +112,7 @@ function ContactForm() {
         <TextField
           required
           label={"Email"}
-          sx={{ maxWidth: 320 }}
+          sx={{ width: {xs: '300px', sm: '330px'} }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
@@ -128,7 +127,7 @@ function ContactForm() {
         <TextField
           required
           label="Message"
-          sx={{ maxWidth: 450, width: 320 }}
+          sx={{ width: {xs: '300px', sm: '330px'} }}
           multiline
           rows={4}
         />
@@ -161,6 +160,5 @@ function ContactForm() {
       </Dialog>
       </div>
     </form>
-    </Container>
   );
 }
