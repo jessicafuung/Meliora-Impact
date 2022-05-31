@@ -157,11 +157,35 @@ export function Footer2() {
               sx={{ textAlign: "center", marginTop: { xs: "3rem", sm: "0" } }}
             >
               <h3 className={"footer-heading"}>Work with us</h3>
-
-              <p className={"footer-links"}>Schedule meeting</p>
-            </Grid>
-          </Grid>
-
+                    {/*Middle section of footer*/}
+                    <Grid container sx={{marginTop: '2rem'}}>
+                        <Grid item textAlign={{xs:'center', sm: 'start'}} xs={12} sm={4} md={4}
+                              sx={{ color: 'white'}}
+                        >
+                            <Logo sx={{display: {sm: 'none', md: 'block'}}}></Logo>
+                            <p className={'meliora-info'}>Peder ankers plass 49, 0301 Oslo</p>
+                            <p  className={'meliora-info'}><a href={'tel:+4792452610'} className={'meliora-info'}>+47  924 52 610</a></p>
+                            <p className={'meliora-info'}> <a href={'mailto:contact@melioraimpact.no'} className={'meliora-info'}>contact@melioraimpact.no</a></p>
+                        </Grid>
+                        <Grid item xs={12} sm={4} md={4} sx={{textAlign: 'center',
+                            marginTop: {xs: '3rem', sm: '0'}
+                        }} >
+                            <h3 className={'footer-heading'}>About us</h3>
+                            <Link to={'/about'}>
+                                <p className={'footer-links'}>About</p>
+                            </Link>
+                            <Link to={'/corporate'}>
+                                <p className={'footer-links'}>Businesses</p>
+                            </Link>
+                            <Link to={'/nonprofit'}>
+                                <p className={'footer-links'}>Nonprofits</p>
+                            </Link>
+                            <Link to={'/faq'}>
+                                <p className={'footer-links'}>FAQ</p>
+                            </Link>
+                            <Link to={'/privacy'}>
+                                <p className={'footer-links'}>Privacy Policy</p>
+                            </Link>
           <Grid container>
             <Grid
               item
