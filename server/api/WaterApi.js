@@ -5,7 +5,7 @@ export function WaterApi(mongoDatabase) {
 
   router.get("/", async (req, res) => {
     const water = await mongoDatabase
-      .collection("organizations")
+      .collection("water")
       .find()
       .map(({ name, info }) => ({
         name,
