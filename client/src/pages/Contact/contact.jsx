@@ -1,15 +1,6 @@
 import { useState } from "react";
 import React from "react";
-import {
-  Box, Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-  InputAdornment,
-  TextField
-} from "@mui/material";
+import { Box, InputAdornment, TextField } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
 import BusinessIcon from "@mui/icons-material/Business";
@@ -65,15 +56,7 @@ function ContactForm() {
   const [companyName, setCompanyName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
+  /*const toast = useToast();*/
 
   return (
     <form>
@@ -86,7 +69,7 @@ function ContactForm() {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <PersonIcon sx={{fontSize: 30}} color={"primary"} />
+                <PersonIcon sx={{fontSize: 40}} color={"primary"} />
               </InputAdornment>
             ),
           }}
@@ -101,7 +84,7 @@ function ContactForm() {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <BusinessIcon sx={{fontSize: 30}} color={"primary"} />
+                <BusinessIcon sx={{fontSize: 40}} color={"primary"} />
               </InputAdornment>
             ),
           }}
@@ -116,7 +99,7 @@ function ContactForm() {
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <EmailIcon sx={{fontSize: 30}} color={"primary"} />
+                <EmailIcon sx={{fontSize: 40}} color={"primary"} />
               </InputAdornment>
             ),
           }}
@@ -134,30 +117,22 @@ function ContactForm() {
       </div>
       <div align="center">
         <CustomButton
-          to=""
           variant="contained"
-          onClick={handleClickOpen}
+          to={"/contact"}
+          /*
+          Toast with chakra
+          onClick={() =>
+            toast({
+              title: "Message sent.",
+              description: "Thank you for reaching out to us.",
+              status: "success",
+              duration: 9000,
+              isClosable: true,
+            })
+          }*/
         >
           Submit
         </CustomButton>
-        <Dialog
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-        >
-          <DialogTitle id="alert-dialog-title">
-            {"Your message has been sent."}
-          </DialogTitle>
-          <DialogContent>
-            <DialogContentText id="alert-dialog-description">
-              Thank you for contacting us. We will get back to you as soon as possible.
-            </DialogContentText>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose}>Close</Button>
-          </DialogActions>
-        </Dialog>
       </div>
     </form>
   );

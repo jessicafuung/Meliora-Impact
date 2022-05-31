@@ -2,6 +2,7 @@ import { Avatar, Grid, Typography, Button } from "@mui/material";
 import React from "react";
 import "./CustomEmployeeStyle.css";
 import Box from "@mui/material/Box";
+import CustomButton from "../CustomButton/CustomButton";
 
 export function CustomEmployeeCard({
   employee: { name, image, position, about, linkedin },
