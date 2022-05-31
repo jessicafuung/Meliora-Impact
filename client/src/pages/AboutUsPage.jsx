@@ -1,3 +1,4 @@
+import { Undefined } from './undefined';
 import { Typography, Container, CircularProgress, Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { CustomEmployeeCard } from "../components/CustomEmployeeCard/CustomEmployeeCard";
@@ -14,9 +15,7 @@ export function AboutUsPage() {
 
   if (loading) {
     return (
-      <Box sx={{display: "flex", width: "100%", justifyContent: "center", alignContent: "center"}}>
-        <CircularProgress />
-        </Box>
+      <SpinningAnimation/>
     )
   }
   if (error) {
@@ -97,3 +96,17 @@ export function AboutUsPage() {
     </Box>
   );
 }
+
+    function SpinningAnimation({}) {
+      return (<Container sx={{
+      border: "2px red solid",
+  display: "flex",
+  width: "100%",
+  height: "100vh",
+  justifyContent: "center",
+  alignContent: "center"
+}}>
+        <CircularProgress />
+        </Container>);
+    }
+  
