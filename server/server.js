@@ -1,6 +1,6 @@
 import express from "express";
 import * as path from "path";
-import {BookingApi} from "./api/BookingApi.js";
+import { BookingApi } from "./api/BookingApi.js";
 import dotenv from "dotenv";
 import { MongoClient } from "mongodb";
 import { FAQApi } from "./api/FAQApi.js";
