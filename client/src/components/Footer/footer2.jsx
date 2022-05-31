@@ -1,6 +1,5 @@
 import Box from "@mui/material/Box";
-import { Button, Container, Grid, Link, Typography } from "@mui/material";
-import CustomButton from "../CustomButton/CustomButton";
+import { Button, Container, Grid, Link} from "@mui/material";
 import './footer2.css'
 import Logo from "../assets/Logo";
 import {Twitter, Instagram, LinkedIn, Facebook} from '@mui/icons-material';
@@ -107,10 +106,9 @@ export function Footer2(){
                             marginTop: {xs: '3rem', sm: '0'}
                         }}>
                             <h3 className={'footer-heading'}>Work with us</h3>
-
-                            <p className={'footer-links'}>Schedule meeting</p>
-
-
+                            <Link to={"/booking"}>
+                                <p className={'footer-links'}>Schedule meeting</p>
+                            </Link>
                         </Grid>
                     </Grid>
 
