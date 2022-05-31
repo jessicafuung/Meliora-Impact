@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Typography, Container } from "@mui/material";
 import { Box } from "@mui/system";
 import Grid from "@mui/material/Grid";
 import { CustomEmployeeCard } from "../components/CustomEmployeeCard/CustomEmployeeCard";
@@ -30,6 +30,8 @@ export function AboutUsPage() {
           {HeadlineWithUnderline("About us", 120, "#034F7A", 30)}
         </Grid>
       </Grid>
+
+      <Container>
       <Grid
         container
         gap={15}
@@ -37,6 +39,7 @@ export function AboutUsPage() {
         justifyContent="center"
         mb={25}
       >
+
         <Grid item className="aboutSection">
           <Typography variant="h6" style={{ marginBottom: "30px" }}>
             Our vision
@@ -70,6 +73,7 @@ export function AboutUsPage() {
           />
         </Grid>
       </Grid>
+      </Container>
       <Grid container alignItems="center" justifyContent="center" mb={25}>
         <Grid item mb={4}>
           {HeadlineWithUnderline("Our team", 120, "#034F7A", 20)}
