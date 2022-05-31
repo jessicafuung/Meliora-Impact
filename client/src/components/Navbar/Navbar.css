@@ -1,3 +1,10 @@
 .navbar-container{
     z-index: 9999 !important;
 }
+
+@media screen and (max-width: 900px) {
+    .css-1cndkqf-MuiToolbar-root{
+        flex-direction: row-reverse;
+    }
+
+}

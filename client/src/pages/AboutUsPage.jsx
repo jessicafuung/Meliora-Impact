@@ -36,7 +36,7 @@ export function AboutUsPage() {
         </Grid>
       </Grid>
 
-  <Box marginBottom={10}>
+  <Box marginBottom={10} px={{xs: 2, sm: 0}}>
       <Grid
         container
         alignItems="center"
