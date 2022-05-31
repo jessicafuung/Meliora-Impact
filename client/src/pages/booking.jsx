@@ -1,34 +1,37 @@
-import React, {useContext, useState} from "react";
-import "date-fns"
-import moment from 'moment';
+import React, { useContext, useState } from "react";
+import "date-fns";
+import moment from "moment";
 
-import Grid from "@material-ui/core/Grid"
-import DateFnsUtils from "@date-io/date-fns"
-import {KeyboardDatePicker, MuiPickersUtilsProvider} from "@material-ui/pickers";
-import {InputAdornment, TextField} from "@material-ui/core";
-import PersonIcon from '@mui/icons-material/Person';
-import BusinessIcon from '@mui/icons-material/Business';
-import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
-import Box from '@mui/material/Box';
-import {Typography} from "@mui/material";
-import {ThemeProvider} from "@material-ui/styles";
+import Grid from "@material-ui/core/Grid";
+import DateFnsUtils from "@date-io/date-fns";
+import {
+  KeyboardDatePicker,
+  MuiPickersUtilsProvider,
+} from "@material-ui/pickers";
+import { InputAdornment, TextField } from "@material-ui/core";
+import PersonIcon from "@mui/icons-material/Person";
+import BusinessIcon from "@mui/icons-material/Business";
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
+import Box from "@mui/material/Box";
+import { Typography } from "@mui/material";
+import { ThemeProvider } from "@material-ui/styles";
 
-import {ApiContext} from "../../lib/useContext";
+import { ApiContext } from "../../lib/useContext";
 import materialTheme from "../styling/calendar";
-import "../styling/style.css"
-import {Progressbar} from "../components/progressbar";
+import "../styling/style.css";
+import { Progressbar } from "../components/progressbar";
 
 const availabilities = [
-    {time: "08:30"},
-    {time: "09:30"},
-    {time: "10:30"},
-    {time: "11:30"},
-    {time: "12:30"},
-    {time: "13:30"},
-    {time: "14:30"},
-    {time: "15:30"},
-    {time: "16:30"},
+  { time: "08:30" },
+  { time: "09:30" },
+  { time: "10:30" },
+  { time: "11:30" },
+  { time: "12:30" },
+  { time: "13:30" },
+  { time: "14:30" },
+  { time: "15:30" },
+  { time: "16:30" },
 ];
 
 /* fetch booked times from DB
@@ -61,223 +64,283 @@ function GetBookings() {
 }
 */
 
-function ShowForm({userDate, setUserDate, setActiveStep}) {
-    const { postBooking } = useContext(ApiContext);
-    const [isBooked, setIsBooked] = useState(false)
+function ShowForm({ userDate, setUserDate, setActiveStep }) {
+  const { postBooking } = useContext(ApiContext);
+  const [isBooked, setIsBooked] = useState(false);
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        postBooking(userDate)
-        setActiveStep(3)
-        setIsBooked(true)
-    }
+  function handleSubmit(e) {
+    e.preventDefault();
+    postBooking(userDate);
+    setActiveStep(3);
+    setIsBooked(true);
+  }
 
-    const handleChange = event => {
-        const {name, value} = event.target
-        setUserDate({...userDate, [name]: value})
-    }
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setUserDate({ ...userDate, [name]: value });
+  };
 
-    return (
-        <Grid item container justifyContent={"center"} xs={12}>
-            <Box sx={{
-                backgroundColor: "#DFE5E9",
-                padding: "2rem",
-                marginTop: "2rem",
-                position: {xs: "absolute", sm: "absolute", md: "absolute"},
-                left: {xs: "0%", md: "9%", lg: "20%"}
-            }}>
-                <form onSubmit={handleSubmit}>
-                <Grid item container justifyContent={"center"} spacing={10}>
-                    <Grid item xs={12} sm={6}>
-                        <Box sx={{width: 500, maxWidth: '100%'}}>
-                            <Box>
-                                <TextField fullWidth required label={"Company Name"}
-                                           variant={"standard"}
-                                           name="companyName"
-                                           onChange={handleChange}
-                                           InputProps={{
-                                               endAdornment: (
-                                                   <InputAdornment position="end">
-                                                       <BusinessIcon color={"primary"}/>
-                                                   </InputAdornment>)
-                                           }}
-                                />
-                            </Box>
-                            <Box>
-                                <TextField fullWidth required color={"primary"}
-                                           label={"Contact Person"}
-                                           variant={"standard"}
-                                           name="contactPerson"
-                                           onChange={handleChange}
-                                           InputProps={{
-                                               endAdornment: (
-                                                   <InputAdornment position="end">
-                                                       <PersonIcon color={"primary"}/>
-                                                   </InputAdornment>)
-                                           }}
-                                />
-                            </Box>
-                            <Box>
-                                <TextField fullWidth required label={"Email"}
-                                           variant={"standard"}
-                                           name="email"
-                                           onChange={handleChange}
-                                           InputProps={{
-                                               endAdornment: (
-                                                   <InputAdornment position="end">
-                                                       <EmailIcon color={"primary"}/>
-                                                   </InputAdornment>)
-                                           }}
-                                />
-                            </Box>
-                            <Box>
-                                <TextField fullWidth required label={"Telephone"}
-                                           variant={"standard"}
-                                           name="telephone"
-                                           onChange={handleChange}
-                                           InputProps={{
-                                               endAdornment: (
-                                                   <InputAdornment position="end">
-                                                       <PhoneIcon color={"primary"}/>
-                                                   </InputAdornment>)
-                                           }}
-                                />
-                            </Box>
-                        </Box>
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <TextField fullWidth required label="Message"
-                                   multiline minRows={15}
-                                   name="message"
-                                   variant={"outlined"}
-                                   onChange={handleChange}
-                        />
-                    <div  align="center">
-                        {isBooked?<p>Booked!</p>:<button>Book</button>}
-                    </div>
-                    </Grid>
-                </Grid>
-                </form>
-            </Box>
-        </Grid>
-    );
-}
-
-function ShowAvailabilities({userDate, setUserDate, setTimeIsClicked, setActiveStep}) {
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        const time = e.target.value
-        setTimeIsClicked(true)
-        setUserDate({...userDate, time: time})
-        setActiveStep(2)
-    }
-
-    return <Grid item container justifyContent={"center"} xs={12} sm={6} md={6}>
-        <Box className="row" p={5} sx={{position: {lg: "relative"}, right: "20%"}}>
-            <Box px={0} textalign={"center"}>
-                <p id={"availabilities"}>Availabilities</p>
-            </Box>
-            <Grid container>
-                {availabilities.map(({time}) => (
-                    <Grid item container justifyContent={"center"} xs={4} key={time} className="column timeBoxes-container">
-                        <div>
-                            <button className="time-btn" value={time} onClick={handleSubmit}>{time}</button>
-                        </div>
-                    </Grid>
-                ))}
+  return (
+    <Grid item container justifyContent={"center"} xs={12}>
+      <Box
+        sx={{
+          backgroundColor: "#DFE5E9",
+          padding: "2rem",
+          marginTop: "2rem",
+          position: { xs: "absolute", sm: "absolute", md: "absolute" },
+          left: { xs: "0%", md: "9%", lg: "20%" },
+        }}
+      >
+        <form onSubmit={handleSubmit}>
+          <Grid item container justifyContent={"center"} spacing={10}>
+            <Grid item xs={12} sm={6}>
+              <Box sx={{ width: 500, maxWidth: "100%" }}>
+                <Box>
+                  <TextField
+                    fullWidth
+                    required
+                    label={"Company Name"}
+                    variant={"standard"}
+                    name="companyName"
+                    onChange={handleChange}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <BusinessIcon color={"primary"} />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                </Box>
+                <Box>
+                  <TextField
+                    fullWidth
+                    required
+                    color={"primary"}
+                    label={"Contact Person"}
+                    variant={"standard"}
+                    name="contactPerson"
+                    onChange={handleChange}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <PersonIcon color={"primary"} />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                </Box>
+                <Box>
+                  <TextField
+                    fullWidth
+                    required
+                    label={"Email"}
+                    variant={"standard"}
+                    name="email"
+                    onChange={handleChange}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <EmailIcon color={"primary"} />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                </Box>
+                <Box>
+                  <TextField
+                    fullWidth
+                    required
+                    label={"Telephone"}
+                    variant={"standard"}
+                    name="telephone"
+                    onChange={handleChange}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <PhoneIcon color={"primary"} />
+                        </InputAdornment>
+                      ),
+                    }}
+                  />
+                </Box>
+              </Box>
             </Grid>
-        </Box>
+            <Grid item xs={12} sm={6}>
+              <TextField
+                fullWidth
+                required
+                label="Message"
+                multiline
+                minRows={15}
+                name="message"
+                variant={"outlined"}
+                onChange={handleChange}
+              />
+              <div align="center">
+                {isBooked ? <p>Booked!</p> : <button>Book</button>}
+              </div>
+            </Grid>
+          </Grid>
+        </form>
+      </Box>
     </Grid>
+  );
 }
 
-function ShowCalendar({setUserDate, userDate, setDateIsClicked, setActiveStep}) {
-    const [selectedDate, setSelectedDate] = useState(new Date());
+function ShowAvailabilities({
+  userDate,
+  setUserDate,
+  setTimeIsClicked,
+  setActiveStep,
+}) {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const time = e.target.value;
+    setTimeIsClicked(true);
+    setUserDate({ ...userDate, time: time });
+    setActiveStep(2);
+  };
 
-     /* Calendar shows only monday - friday */
-     function disableWeekends(date) {
-         return date.getDay() === 0 || date.getDay() === 6;
-     }
+  return (
+    <Grid item container justifyContent={"center"} xs={12} sm={6} md={6}>
+      <Box
+        className="row"
+        p={5}
+        sx={{ position: { lg: "relative" }, right: "20%" }}
+      >
+        <Box px={0} textalign={"center"}>
+          <p id={"availabilities"}>Availabilities</p>
+        </Box>
+        <Grid container>
+          {availabilities.map(({ time }) => (
+            <Grid
+              item
+              container
+              justifyContent={"center"}
+              xs={4}
+              key={time}
+              className="column timeBoxes-container"
+            >
+              <div>
+                <button
+                  className="time-btn"
+                  value={time}
+                  onClick={handleSubmit}
+                >
+                  {time}
+                </button>
+              </div>
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+    </Grid>
+  );
+}
 
-    const handleDateChange = (date) => {
-        const momentFormat = moment(date).format("DD.MM.YYYY");
-        setUserDate({...userDate, date: momentFormat})
-        setDateIsClicked(true);
-        setSelectedDate(date)
-        setActiveStep(1)
-    }
+function ShowCalendar({
+  setUserDate,
+  userDate,
+  setDateIsClicked,
+  setActiveStep,
+}) {
+  const [selectedDate, setSelectedDate] = useState(new Date());
 
-    return (
-        <>
-            <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                <ThemeProvider theme={materialTheme}>
-                    <Grid item container justifyContent={'center'} xs={12} sm={6} md={6}>
-                        <Box sx={{position: {lg: "relative"}, left: "17%",}}>
-                            <KeyboardDatePicker
-                                variant='static'
-                                id='date-picker'
-                                label='Date Picker'
-                                format='dd/MM/yyyy'
-                                margin='normal'
-                                disablePast
-                                hintText="Weekends Disabled"
-                                shouldDisableDate={disableWeekends}
-                                disableToolbar
-                                value={selectedDate}
-                                onChange={handleDateChange}
-                                KeyboardButtonProps={{'aria-label': 'change date'}}
-                            />
-                        </Box>
-                    </Grid>
+  /* Calendar shows only monday - friday */
+  function disableWeekends(date) {
+    return date.getDay() === 0 || date.getDay() === 6;
+  }
 
-                </ThemeProvider>
-            </MuiPickersUtilsProvider>
-        </>
-    );
+  const handleDateChange = (date) => {
+    const momentFormat = moment(date).format("DD.MM.YYYY");
+    setUserDate({ ...userDate, date: momentFormat });
+    setDateIsClicked(true);
+    setSelectedDate(date);
+    setActiveStep(1);
+  };
+
+  return (
+    <>
+      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        <ThemeProvider theme={materialTheme}>
+          <Grid item container justifyContent={"center"} xs={12} sm={6} md={6}>
+            <Box sx={{ position: { lg: "relative" }, left: "17%" }}>
+              <KeyboardDatePicker
+                variant="static"
+                id="date-picker"
+                label="Date Picker"
+                format="dd/MM/yyyy"
+                margin="normal"
+                disablePast
+                hintText="Weekends Disabled"
+                shouldDisableDate={disableWeekends}
+                disableToolbar
+                value={selectedDate}
+                onChange={handleDateChange}
+                KeyboardButtonProps={{ "aria-label": "change date" }}
+              />
+            </Box>
+          </Grid>
+        </ThemeProvider>
+      </MuiPickersUtilsProvider>
+    </>
+  );
 }
 
 export function Start() {
-    const [dateIsClicked, setDateIsClicked] = useState(false)
-    const [timeIsClicked, setTimeIsClicked] = useState(false)
+  const [dateIsClicked, setDateIsClicked] = useState(false);
+  const [timeIsClicked, setTimeIsClicked] = useState(false);
 
-    const [userData, setUserData] = useState({
-        companyName: '',
-        contactPerson: '',
-        email: '',
-        telephone: '',
-        date: '',
-        time: '',
-        message: '',
-    });
+  const [userData, setUserData] = useState({
+    companyName: "",
+    contactPerson: "",
+    email: "",
+    telephone: "",
+    date: "",
+    time: "",
+    message: "",
+  });
 
-    const [activeStep, setActiveStep] = useState(0)
+  const [activeStep, setActiveStep] = useState(0);
 
-    return (
-        <Box style={{marginTop: 50}} textAlign={"center"}>
-        <Typography variant={"h3"} color={"black"} gutterbottom="true">Schedule Meeting</Typography>
-            <Progressbar activeStep={activeStep}/>
-        <Grid container justifyContent={'start'} spacing={1} alignItems={"center"} gutterbottom="true">
-            <ShowCalendar
-                userDate={userData}
-                setUserDate={setUserData}
-                setDateIsClicked={setDateIsClicked}
-                setActiveStep={setActiveStep}
-            />
+  return (
+    <Box style={{ marginTop: 50 }} textAlign={"center"}>
+      <Typography variant={"h3"} color={"black"} gutterbottom="true">
+        Schedule Meeting
+      </Typography>
+      <Progressbar activeStep={activeStep} />
+      <Grid
+        container
+        justifyContent={"start"}
+        spacing={1}
+        alignItems={"center"}
+        gutterbottom="true"
+      >
+        <ShowCalendar
+          userDate={userData}
+          setUserDate={setUserData}
+          setDateIsClicked={setDateIsClicked}
+          setActiveStep={setActiveStep}
+        />
 
-            {dateIsClicked && <ShowAvailabilities
-                        userDate={userData}
-                        setUserDate={setUserData}
-                        setTimeIsClicked={setTimeIsClicked}
-                        setActiveStep={setActiveStep}
-                    />}
+        {dateIsClicked && (
+          <ShowAvailabilities
+            userDate={userData}
+            setUserDate={setUserData}
+            setTimeIsClicked={setTimeIsClicked}
+            setActiveStep={setActiveStep}
+          />
+        )}
 
-            {timeIsClicked && <ShowForm
-                userDate={userData}
-                setUserDate={setUserData}
-                setActiveStep={setActiveStep}
-            />}
-        </Grid>
-        </Box>
-    )
+        {timeIsClicked && (
+          <ShowForm
+            userDate={userData}
+            setUserDate={setUserData}
+            setActiveStep={setActiveStep}
+          />
+        )}
+      </Grid>
+    </Box>
+  );
 }
-
-
