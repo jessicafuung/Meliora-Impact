@@ -19,6 +19,9 @@
     "start": "cd server && npm start",
     "format": "prettier --write **/*.{js,jsx}",
     "format:check": "prettier --check **/*.{js,jsx}",
+    "postinstall": "npm run install:client && npm run install:server",
+    "install:client": "cd client && npm install --include=dev",
+    "install:server": "cd server && npm install",
     "pre-commit": "npm run format:check",
     "prepare": "husky install"
   },
