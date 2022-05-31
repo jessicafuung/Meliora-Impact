@@ -1,14 +1,15 @@
 import { useState } from "react";
 import React from "react";
 import {
-  Box, Button,
-  Container,
-  Dialog, DialogActions,
+  Box,
+  Button,
+  Dialog,
+  DialogActions,
   DialogContent,
   DialogContentText,
   DialogTitle,
   InputAdornment,
-  TextField
+  TextField,
 } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
@@ -28,8 +29,10 @@ export function Contact() {
           <Grid item xs={12}>
             {HeadlineWithUnderline("Contact", 120, "#034F7A", 20)}
             <p style={{ maxWidth: 300, textAlign: "center", marginBottom: 30 }}>
-              Reach out if you want to <span className={"textHighlight"}>collaborate</span> or know more about our
-              services, or just to <span className={"textHighlight"}>connect</span>.
+              Reach out if you want to{" "}
+              <span className={"textHighlight"}>collaborate</span> or know more
+              about our services, or just to{" "}
+              <span className={"textHighlight"}>connect</span>.
             </p>
           </Grid>
         </header>
@@ -82,11 +85,11 @@ function ContactForm() {
           required
           color={"primary"}
           label={"Contact person"}
-          sx={{ width: {xs: '300px', sm: '330px'} }}
+          sx={{ width: { xs: "300px", sm: "330px" } }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <PersonIcon sx={{fontSize: 40}} color={"primary"} />
+                <PersonIcon sx={{ fontSize: 40 }} color={"primary"} />
               </InputAdornment>
             ),
           }}
@@ -97,11 +100,11 @@ function ContactForm() {
         <TextField
           required
           label={"Co. Name"}
-          sx={{ width: {xs: '300px', sm: '330px'} }}
+          sx={{ width: { xs: "300px", sm: "330px" } }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <BusinessIcon sx={{fontSize: 40}} color={"primary"} />
+                <BusinessIcon sx={{ fontSize: 40 }} color={"primary"} />
               </InputAdornment>
             ),
           }}
@@ -112,11 +115,11 @@ function ContactForm() {
         <TextField
           required
           label={"Email"}
-          sx={{ width: {xs: '300px', sm: '330px'} }}
+          sx={{ width: { xs: "300px", sm: "330px" } }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <EmailIcon sx={{fontSize: 40}} color={"primary"} />
+                <EmailIcon sx={{ fontSize: 40 }} color={"primary"} />
               </InputAdornment>
             ),
           }}
@@ -127,37 +130,34 @@ function ContactForm() {
         <TextField
           required
           label="Message"
-          sx={{ width: {xs: '300px', sm: '330px'} }}
+          sx={{ width: { xs: "300px", sm: "330px" } }}
           multiline
           rows={4}
         />
       </div>
       <div align="center">
-        <CustomButton
-          variant="contained"
-          to={""}
-          onClick={handleClickOpen}
-        >
+        <CustomButton variant="contained" to={""} onClick={handleClickOpen}>
           Submit
         </CustomButton>
-      <Dialog
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">
-          {"Your message has been sent."}
-        </DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            Thank you for contacting us. We will get back to you as soon as possible.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose}>Close</Button>
-        </DialogActions>
-      </Dialog>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">
+            {"Your message has been sent."}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              Thank you for contacting us. We will get back to you as soon as
+              possible.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Close</Button>
+          </DialogActions>
+        </Dialog>
       </div>
     </form>
   );
