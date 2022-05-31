@@ -12,6 +12,7 @@ h5{
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+    margin-top: 5rem;
 }
 ol{
     list-style-type: disc;

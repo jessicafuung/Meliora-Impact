@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import Logo from '../assets/Logo';
 
-const pages = ['About', 'Contact', 'Booking',];
+const pages = ['About', 'Contact', 'Booking'];
 
 const Navbar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
