@@ -268,7 +268,7 @@ export function Start() {
     return (
         <Container maxWidth={"lg"}>
             <Box py={10} textAlign={"center"}>
-                {HeadlineWithUnderline('Schedule Meeting', 200, "#034F7A", "2rem", "#212121")}
+                {HeadlineWithUnderline('Schedule Meeting', 200, "#034F7A", "2rem", "#212121", "36px")}
                 {/*<Progressbar activeStep={activeStep}/>*/}
                 <Grid container alignItems={"center"} justifyContent={'center'} spacing={2} gutterbottom="true">
                     <ShowCalendar
