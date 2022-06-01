@@ -28,7 +28,7 @@ export function Footer2() {
                 textAlign: { xs: "center", md: "left" },
                 fontSize: { xs: "36px", md: "48px" },
                 color: "#ffffff",
-                marginBottom:{xs: '2rem', sm: '2rem', md: '0'}
+                marginBottom: { xs: "2rem", sm: "2rem", md: "0" },
               }}
             >
               <h2>Interested in collaborating with us?</h2>
@@ -106,7 +106,7 @@ export function Footer2() {
               <Logo sx={{ display: { sm: "none", md: "block" } }}></Logo>
               <p className={"meliora-info"}>Peder ankers plass 49, 0301 Oslo</p>
               <p className={"meliora-info"}>
-                <a href={"tel:+4792452610"} className={"meliora-info"}>
+                <a href={"tel:+4792452610"} className={"meliora-info info-hover-effect"}>
                   +47 924 52 610
                 </a>
               </p>
@@ -114,7 +114,7 @@ export function Footer2() {
                 {" "}
                 <a
                   href={"mailto:contact@melioraimpact.no"}
-                  className={"meliora-info"}
+                  className={"meliora-info info-hover-effect"}
                 >
                   contact@melioraimpact.no
                 </a>
