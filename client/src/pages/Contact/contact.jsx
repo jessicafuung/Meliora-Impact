@@ -1,15 +1,25 @@
 import { useState } from "react";
 import React from "react";
-import { Box, InputAdornment, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  InputAdornment,
+  TextField,
+} from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
 import BusinessIcon from "@mui/icons-material/Business";
 import PhoneIcon from "@mui/icons-material/Phone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Grid from "@mui/material/Grid";
-import "../styling/contact.css";
-import CustomButton from "../components/CustomButton/CustomButton";
-import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
+import "./contact.css";
+import CustomButton from "../../components/CustomButton/CustomButton";
+import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/headlineWithUnderline";
 
 export function Contact() {
   return (
@@ -19,12 +29,14 @@ export function Contact() {
           <Grid item xs={12}>
             {HeadlineWithUnderline("Contact", 120, "#034F7A", 20)}
             <p style={{ maxWidth: 300, textAlign: "center", marginBottom: 30 }}>
-              Reach out if you want to collaborate or know more about our
-              services, or just to connect.
+              Reach out if you want to{" "}
+              <span className={"textHighlight"}>collaborate</span> or know more
+              about our services, or just to{" "}
+              <span className={"textHighlight"}>connect</span>.
             </p>
           </Grid>
         </header>
-        <Grid container gap={12} alignItems="center" justifyContent="center">
+        <Grid container gap={20} alignItems="center" justifyContent="center">
           <Grid item>
             <ContactForm color={"primary"} />
           </Grid>
@@ -56,7 +68,15 @@ function ContactForm() {
   const [companyName, setCompanyName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  /*const toast = useToast();*/
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <form>
@@ -65,11 +85,11 @@ function ContactForm() {
           required
           color={"primary"}
           label={"Contact person"}
-          sx={{ width: 330 }}
+          sx={{ width: { xs: "300px", sm: "330px" } }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <PersonIcon color={"primary"} />
+                <PersonIcon sx={{ fontSize: 40 }} color={"primary"} />
               </InputAdornment>
             ),
           }}
@@ -80,11 +100,11 @@ function ContactForm() {
         <TextField
           required
           label={"Co. Name"}
-          sx={{ width: 330 }}
+          sx={{ width: { xs: "300px", sm: "330px" } }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <BusinessIcon color={"primary"} />
+                <BusinessIcon sx={{ fontSize: 40 }} color={"primary"} />
               </InputAdornment>
             ),
           }}
@@ -95,11 +115,11 @@ function ContactForm() {
         <TextField
           required
           label={"Email"}
-          sx={{ width: 330 }}
+          sx={{ width: { xs: "300px", sm: "330px" } }}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <EmailIcon color={"primary"} />
+                <EmailIcon sx={{ fontSize: 40 }} color={"primary"} />
               </InputAdornment>
             ),
           }}
@@ -110,29 +130,34 @@ function ContactForm() {
         <TextField
           required
           label="Message"
-          sx={{ width: 330 }}
+          sx={{ width: { xs: "300px", sm: "330px" } }}
           multiline
           rows={4}
         />
       </div>
       <div align="center">
-        <CustomButton
-          variant="contained"
-          to={"/contact"}
-          /*
-          Toast with chakra
-          onClick={() =>
-            toast({
-              title: "Message sent.",
-              description: "Thank you for reaching out to us.",
-              status: "success",
-              duration: 9000,
-              isClosable: true,
-            })
-          }*/
-        >
+        <CustomButton variant="contained" to={""} onClick={handleClickOpen}>
           Submit
         </CustomButton>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle id="alert-dialog-title">
+            {"Your message has been sent."}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              Thank you for contacting us. We will get back to you as soon as
+              possible.
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose}>Close</Button>
+          </DialogActions>
+        </Dialog>
       </div>
     </form>
   );

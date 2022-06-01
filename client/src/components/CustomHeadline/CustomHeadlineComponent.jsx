@@ -1,5 +1,5 @@
 import React from "react";
-import "./CustomHeadlineStyle.css";
+//import "./CustomHeadlineStyle.css";
 import { Typography } from "@mui/material";
 
 const CustomHeadline = ({ size, children, ...otherProps }) => {

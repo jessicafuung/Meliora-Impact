@@ -10,12 +10,10 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import Logo from '../assets/Logo';
 
-const pages = ['About', 'Contact', 'Booking',];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['About', 'Contact', 'Booking'];
 
 const Navbar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -38,14 +36,14 @@ const Navbar = () => {
 
       return (
           <AppBar position="sticky" className="navbar-container">
-            <Container maxWidth="xl">
+            <Container maxWidth="lg" >
               <Toolbar disableGutters>
-                <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                 <Typography
                   variant="h6"
                   noWrap
                   component="a"
-                  href="/"
+                  as={Link}
+                  to={"/"}
                   sx={{
                     mr: 2,
                     display: { xs: 'none', md: 'flex' },
@@ -56,10 +54,10 @@ const Navbar = () => {
                     textDecoration: 'none',
                   }}
                 >
-                  LOGO
+                  {<Logo />}
                 </Typography>
 
-                <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                <Box sx={{flexDirection: 'row-reverse', flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                   <IconButton
                     size="large"
                     aria-label="account of current user"
@@ -85,7 +83,7 @@ const Navbar = () => {
                     open={Boolean(anchorElNav)}
                     onClose={handleCloseNavMenu}
                     sx={{
-                      display: { xs: 'block', md: 'none' },
+                      display: { xs: 'block', md: 'none' }
                     }}
                   >
                   <Link style={{textDecoration: "none", color: '#212121',}} to={`/`}>
@@ -102,12 +100,12 @@ const Navbar = () => {
                     ))}
                   </Menu>
                 </Box>
-                <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                 <Typography
                   variant="h5"
                   noWrap
                   component="a"
-                  href=""
+                  as={Link}
+                  to={"/"}
                   sx={{
                     mr: 2,
                     display: { xs: 'flex', md: 'none' },
@@ -119,9 +117,9 @@ const Navbar = () => {
                     textDecoration: 'none',
                   }}
                 >
-                  LOGO
+                  {<Logo />}
                 </Typography>
-                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'end' }}>
                 <Link to={`/`}>
                     <Button
                       key='home'
@@ -142,31 +140,6 @@ const Navbar = () => {
                     </Button>
                     </Link>
                   ))}
-                </Box>
-
-                <Box sx={{ flexGrow: 0 }}>
-                  <Menu
-                    sx={{ mt: '45px' }}
-                    id="menu-appbar"
-                    anchorEl={anchorElUser}
-                    anchorOrigin={{
-                      vertical: 'top',
-                      horizontal: 'right',
-                    }}
-                    keepMounted
-                    transformOrigin={{
-                      vertical: 'top',
-                      horizontal: 'right',
-                    }}
-                    open={Boolean(anchorElUser)}
-                    onClose={handleCloseUserMenu}
-                  >
-                    {settings.map((setting) => (
-                      <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center">{setting}</Typography>
-                      </MenuItem>
-                    ))}
-                  </Menu>
                 </Box>
               </Toolbar>
             </Container>

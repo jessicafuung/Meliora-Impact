@@ -17,6 +17,9 @@
     max-height: 280px;
     object-fit: contain;
 }
+.joinUsDivCorporate {
+    margin-top: -170px;
+}
 @media only screen and (max-width: 900px) {
 
     .dashboardImg {
@@ -30,8 +33,11 @@
         margin-left: auto;
     }
     .textCorporateBenefits {
-        text-align: center;
         padding: 20px;
+    }
+    .joinUsDivCorporate {
+        margin-top: 40px;
+        display: inherit;
     }
 
 }

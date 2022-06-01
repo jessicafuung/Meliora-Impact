@@ -17,8 +17,8 @@ export function CorporateMember() {
           Joining Meloria Impact gives you access to a{" "}
           <strong>
             <em>broad variety</em>
-          </strong>
-          <br /> of{" "}
+          </strong>{" "}
+          of{" "}
           <strong>
             <em>helpful tools</em>
           </strong>{" "}
@@ -26,9 +26,9 @@ export function CorporateMember() {
         </p>,
         "white"
       )}
-      <div style={{ height: 100 }} />
+      <div style={{ height: 60 }} />
       <CorporateBenefits />
-      <div style={{ height: 100 }} />
+      <div style={{ height: 60 }} />
       <CorporateServices />
       <div style={{ height: 100 }} />
     </div>
