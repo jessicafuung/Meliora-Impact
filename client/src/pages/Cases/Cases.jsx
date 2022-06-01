@@ -7,6 +7,7 @@ import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/he
 export function Cases() {
   return (
     <>
+      <div style={{ marginTop: 50 }} />
       {HeadlineWithUnderline("Cases", 80, "#034F7A", 0, "#212121", "36px")}
       <Grid container justifyContent="center" paddingTop={5}>
         <Grid item xs={12} sm={4}>
