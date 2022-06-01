@@ -1,3 +1,4 @@
+import React from "react";
 import { Box, Card, Grid, Typography } from "@mui/material";
 import CustomButton from "../CustomButton/CustomButton";
 import "./sectors";
