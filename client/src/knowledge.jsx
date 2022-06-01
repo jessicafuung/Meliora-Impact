@@ -1,31 +1,10 @@
-import { useEffect, useState } from "react";
+import React from "react";
 import "./styling/case.css";
 import { Typography } from "@mui/material";
 import { CaseStudyKnowledgeHeader } from "./pages/CaseStudyKnowledge/CaseStudyKnowledgeHeader";
 import { HeadlineWithUnderline } from "./components/HeadlineWithUnderline/headlineWithUnderline";
-
-function useLoading(loadingFunction) {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState();
-  const [data, setData] = useState();
-
-  async function load() {
-    try {
-      setLoading(true);
-      setData(await loadingFunction());
-    } catch (error) {
-      setError(error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  useEffect(() => {
-    load();
-  }, []);
-
-  return { loading, error, data };
-}
+import { fetchJSON } from "../lib/fetchJSON";
+import { useLoading } from "../lib/useLoader";
 
 export function KnowledgeCases() {
   const { loading, error, data } = useLoading(async () => {
@@ -89,12 +68,4 @@ function InfoCard({ info: { title, description, imagetext, image } }) {
       <Typography>{description}</Typography>
     </>
   );
-}
-
-async function fetchJSON(url) {
-  const res = await fetch(url);
-  if (!res.ok) {
-    throw new Error(`failed to load${res.status}: ${res.statusText}`);
-  }
-  return await res.json();
 }
