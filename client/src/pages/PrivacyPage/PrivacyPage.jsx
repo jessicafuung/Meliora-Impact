@@ -14,7 +14,7 @@ const PrivacyPage = () => {
             "#034f7a",
             0,
             "#212121",
-              '36px'
+            "36px"
           )}
         </Grid>
         <Grid item xs={6}>

@@ -7,13 +7,13 @@ import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/he
 export function CorporateServices() {
   return (
     <>
-      {HeadlineWithUnderline("Services", 100, "#034F7A", 50, '#212121', '36px')}
+      {HeadlineWithUnderline("Services", 100, "#034F7A", 50, "#212121", "36px")}
       <div className="containerCorporateServices">
         <div className="widthContainerServices">
           <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
               <Grid item xs={12} md={4}>
-                <div style={{ textAlign: "center" }}>
+                <div style={{ textAlign: "center", marginTop: 20 }}>
                   <img src={require("../../images/currentdonation.svg")} />
                   <p
                     style={{
@@ -30,8 +30,11 @@ export function CorporateServices() {
                       marginTop: 8,
                     }}
                   >
-                    <strong>Regular</strong> funding
-                    <br /> stream
+                    Make company donations <br />
+                    to any nonprofit in our <br />
+                    <strong>carefully selected</strong>
+                    <br />
+                    portfolio
                   </p>
                 </div>
               </Grid>
@@ -45,7 +48,7 @@ export function CorporateServices() {
                       marginTop: 10,
                     }}
                   >
-                    <strong>Platform</strong>
+                    <strong>Unabridged Donations</strong>
                   </p>
                   <p
                     style={{
@@ -53,11 +56,11 @@ export function CorporateServices() {
                       marginTop: 8,
                     }}
                   >
-                    One platform <strong>connecting</strong>
+                    <strong>100% </strong>
+                    of donations go <br />
+                    <strong>straight to the cause(s)</strong>
                     <br />
-                    them to their
-                    <br />
-                    <strong>donors</strong>
+                    you select
                   </p>
                 </div>
               </Grid>
@@ -71,7 +74,7 @@ export function CorporateServices() {
                       marginTop: 10,
                     }}
                   >
-                    <strong>Tools</strong>
+                    <strong>Inclusive Giving</strong>
                   </p>
                   <p
                     style={{
@@ -79,13 +82,14 @@ export function CorporateServices() {
                       marginTop: 8,
                     }}
                   >
-                    <strong>Free</strong> digital
-                    <br /> tools
+                    <strong>Engage employees</strong> <br />
+                    on choosing which <br />
+                    causes to support
                   </p>
                 </div>
               </Grid>
               <Grid item xs={12} md={4}>
-                <div style={{ textAlign: "center", marginTop: 10 }}>
+                <div style={{ textAlign: "center", marginTop: 20 }}>
                   <img src={require("../../images/scheduledgiving.svg")} />
                   <p
                     style={{
@@ -94,7 +98,7 @@ export function CorporateServices() {
                       marginTop: 10,
                     }}
                   >
-                    <strong>Funding</strong>
+                    <strong>Scheduled Giving</strong>
                   </p>
                   <p
                     style={{
@@ -102,8 +106,12 @@ export function CorporateServices() {
                       marginTop: 8,
                     }}
                   >
-                    <strong>Regular</strong> funding
-                    <br /> stream
+                    Set up a giving <br />
+                    strategy that <strong>suits</strong>
+                    <br />
+                    <strong>your organization's</strong>
+                    <br />
+                    planning
                   </p>
                 </div>
               </Grid>
@@ -117,7 +125,7 @@ export function CorporateServices() {
                       marginTop: 10,
                     }}
                   >
-                    <strong>Platform</strong>
+                    <strong>Useful Insights</strong>
                   </p>
                   <p
                     style={{
@@ -125,11 +133,13 @@ export function CorporateServices() {
                       marginTop: 8,
                     }}
                   >
-                    One platform <strong>connecting</strong>
+                    <strong>Track and get insights</strong>
                     <br />
-                    them to their
+                    on your company's
                     <br />
-                    <strong>donors</strong>
+                    philanthropic <strong>activity</strong>
+                    <br />
+                    <strong>and impact</strong>
                   </p>
                 </div>
               </Grid>
@@ -143,7 +153,7 @@ export function CorporateServices() {
                       marginTop: 10,
                     }}
                   >
-                    <strong>Tools</strong>
+                    <strong>Fast Search & Filter</strong>
                   </p>
                   <p
                     style={{
@@ -151,8 +161,13 @@ export function CorporateServices() {
                       marginTop: 8,
                     }}
                   >
-                    <strong>Free</strong> digital
-                    <br /> tools
+                    <strong>Easily search and</strong>
+                    <br />
+                    <strong>find</strong> causes and non
+                    <br />
+                    profits that <strong>work on</strong>
+                    <br />
+                    <strong>what you care about</strong>
                   </p>
                 </div>
               </Grid>
@@ -166,7 +181,7 @@ export function CorporateServices() {
                       marginTop: 10,
                     }}
                   >
-                    <strong>Tools</strong>
+                    <strong>Regular Reports</strong>
                   </p>
                   <p
                     style={{
@@ -174,8 +189,11 @@ export function CorporateServices() {
                       marginTop: 8,
                     }}
                   >
-                    <strong>Free</strong> digital
-                    <br /> tools
+                    Get <strong>engaging reports</strong>
+                    <br />
+                    that tell a story of <strong>your</strong>
+                    <br />
+                    <strong>company's giving</strong>
                   </p>
                 </div>
               </Grid>
@@ -189,7 +207,7 @@ export function CorporateServices() {
                       marginTop: 10,
                     }}
                   >
-                    <strong>Tools</strong>
+                    <strong>Inside Stories</strong>
                   </p>
                   <p
                     style={{
@@ -197,8 +215,11 @@ export function CorporateServices() {
                       marginTop: 8,
                     }}
                   >
-                    <strong>Free</strong> digital
-                    <br /> tools
+                    Gain access to <strong>inside</strong>
+                    <br />
+                    <strong>stories</strong> from your
+                    <br />
+                    chosen nonprofits
                   </p>
                 </div>
               </Grid>
@@ -212,7 +233,7 @@ export function CorporateServices() {
                       marginTop: 10,
                     }}
                   >
-                    <strong>Tools</strong>
+                    <strong>Book Consultations</strong>
                   </p>
                   <p
                     style={{
@@ -220,8 +241,11 @@ export function CorporateServices() {
                       marginTop: 8,
                     }}
                   >
-                    <strong>Free</strong> digital
-                    <br /> tools
+                    Talk with experts in <br />
+                    the field and get a <br />
+                    package <strong>tailored to</strong>
+                    <br />
+                    <strong>your needs</strong>
                   </p>
                 </div>
               </Grid>
