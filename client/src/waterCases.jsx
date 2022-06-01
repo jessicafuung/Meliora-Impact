@@ -59,10 +59,7 @@ export function WaterCases() {
       </Typography>
       <div className={"list"}>
         {data.map((water) => (
-          <OrganizationCard
-            key={water.id}
-            water={water}
-          />
+          <OrganizationCard key={water.id} water={water} />
         ))}
       </div>
     </div>

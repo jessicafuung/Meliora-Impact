@@ -8,7 +8,7 @@ export function CustomEmployeeCard({
 }) {
   return (
     <Box
-      sx={{ borderRadius: 2, maxWidth: 350, height: 350, position: "relative"}}
+      sx={{ borderRadius: 2, maxWidth: 350, height: 350, position: "relative" }}
       className="employeeCard"
       style={{ backgroundColor: "#DFE5E9" }}
     >
@@ -23,13 +23,19 @@ export function CustomEmployeeCard({
           <Grid item container justifyContent="center" xs={2}>
             <Avatar sx={{ width: 56, height: 56 }} src={`${image}`} />
           </Grid>
-          <Grid item container justifyContent="start" flexDirection={"column"} xs={8}>
-              <Typography mb={0} variant="h6" color="primary">
-                {name}
-              </Typography>
-              <Typography mb={0} paragraph color="textDisabled">
-                {position}
-              </Typography>
+          <Grid
+            item
+            container
+            justifyContent="start"
+            flexDirection={"column"}
+            xs={8}
+          >
+            <Typography mb={0} variant="h6" color="primary">
+              {name}
+            </Typography>
+            <Typography mb={0} paragraph color="textDisabled">
+              {position}
+            </Typography>
           </Grid>
         </Grid>
         <Box mt={3} pr={2} pl={2}>
