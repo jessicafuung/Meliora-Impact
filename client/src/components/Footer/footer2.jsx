@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box";
-import { Container, Grid } from "@mui/material";
+import {Container, Grid, Typography} from "@mui/material";
 import "./footer2.css";
 import Logo from '../assets/Logo';
 import { Twitter, Instagram, LinkedIn, Facebook } from "@mui/icons-material";
@@ -31,7 +31,7 @@ export function Footer2() {
                 marginBottom: { xs: "2rem", sm: "2rem", md: "0" },
               }}
             >
-              <h2>Interested in collaborating with us?</h2>
+              <Typography variant={"h3"}>Interested in collaborating with us?</Typography>
             </Grid>
             <Grid
               item
