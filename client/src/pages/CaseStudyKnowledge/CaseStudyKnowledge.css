@@ -1,4 +1,4 @@
-/**
+
 body {
     margin: 0;
 }
@@ -15,10 +15,7 @@ body {
     font-size: 64px;
 }
 
-.TopHeader {
-    max-height: 600px;
-}
-.headlines {
+.headline {
     font-size: 64px;
     font-family: "Montserrat", sans-serif;
     color: #FFFFFF;
@@ -57,5 +54,3 @@ body {
 
 
 }
-
- */

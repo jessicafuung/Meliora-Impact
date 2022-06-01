@@ -1,4 +1,4 @@
-/**
+
 
 body{
     margin: 0;
@@ -14,10 +14,6 @@ body{
     align-content: center;
     text-align: center;
     font-size: 64px;
-}
-
-.TopHeader {
-    max-height: 600px;
 }
 
 .top {
@@ -78,5 +74,3 @@ body{
     }
 
 }
-
- */
