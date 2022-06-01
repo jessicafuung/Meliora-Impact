@@ -70,6 +70,4 @@ theme.typography.h3 = {
     },
 }
 
-theme.paragraph
-
 export default theme;

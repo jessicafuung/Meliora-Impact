@@ -255,12 +255,14 @@ export function Start() {
     const [activeStep, setActiveStep] = useState(0)
     const styleForTime = {
         position:  'relative',
+        visibility: dateIsClicked ? 'visible' : 'hidden',
         opacity: dateIsClicked ? '1' : '0',
         right: dateIsClicked ? '0px' : '-50px',
         transition: '200ms all ease-out'
     }
     const styleForForm = {
         position:  'relative',
+        visibility: timeIsClicked ? 'visible' : 'hidden',
         opacity: timeIsClicked ? '1' : '0',
         bottom: timeIsClicked ? '0px' : '-50px',
         transition: '200ms all ease-out'
@@ -268,7 +270,7 @@ export function Start() {
     return (
         <Container maxWidth={"lg"}>
             <Box py={10} textAlign={"center"}>
-                {HeadlineWithUnderline('Schedule Meeting', 200, "#034F7A", "2rem", "#212121")}
+                {HeadlineWithUnderline('Schedule Meeting', 200, "#034F7A", "2rem", "#212121", "36px")}
                 {/*<Progressbar activeStep={activeStep}/>*/}
                 <Grid container alignItems={"center"} justifyContent={'center'} spacing={2} gutterbottom="true">
                     <ShowCalendar
