@@ -18,7 +18,6 @@ export function Home() {
         className="home-header"
         height={{ xs: "60vh", sm: "80vh", lg: "100vh" }}
       >
-        {/*<img className="header-image" src="https://images.unsplash.com/photo-1636320804382-912276801e97?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80" />*/}
         <Grid
           container
           direction="row-reverse"
@@ -72,7 +71,7 @@ export function Home() {
           </Grid>
         </Grid>
         <Box py={5} px={{ xs: 2 }}>
-          <Grid container justifyContent="center" spacing={2}>
+          <Grid container justifyContent="center" spacing={6}>
             {members.map((member) => (
               <Grid item lg={4} xs={12} sm={6} md={5} justifyContent="center">
                 <>
@@ -118,7 +117,7 @@ export function Home() {
       </Box>
 
       <Box paddingBottom={{ xs: 5, md: 15 }} px={{ xs: 2 }} paddingTop={5}>
-        <Grid container justifyContent="center" spacing={2}>
+        <Grid container justifyContent="center" spacing={6}>
           {sectors.map((sector) => (
             <Grid item lg={4.1} xs={12} sm={6} md={5}>
               <SectorCard
@@ -140,7 +139,7 @@ export function Home() {
       </Box>
       <Box>
         {HeadlineWithUnderline("Partners", 80, "#034F7A", 40, "#212121")}
-        {<PartnerCard />}
+        <PartnerCard />
         <div style={{ marginBottom: 40 }} />
       </Box>
     </>

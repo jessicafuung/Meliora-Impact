@@ -28,6 +28,7 @@ export function Footer2() {
                 textAlign: { xs: "center", md: "left" },
                 fontSize: { xs: "36px", md: "48px" },
                 color: "#ffffff",
+                marginBottom: { xs: "2rem", sm: "2rem", md: "0" },
               }}
             >
               <h2>Interested in collaborating with us?</h2>
@@ -45,7 +46,7 @@ export function Footer2() {
                 <CustomButton
                   className={"contact-button"}
                   to={"/contact"}
-                  p="1rem 2rem"
+                  p="1rem 3rem"
                   backgroundColor="#EED655"
                 >
                   Contact
