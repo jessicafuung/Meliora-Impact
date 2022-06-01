@@ -73,6 +73,7 @@ export function FaqPage() {
                   cursor: "pointer",
                   fontSize: "30px",
                   textAlign: "center",
+                  marginBlock: "-10px"
                 }}
               />
             </form>

@@ -1,6 +1,10 @@
 {
   "name": "smidiggruppe35",
   "version": "1.0.0",
+  "engines": {
+    "node": "17.6.0",
+    "npm": "8.5.1"
+  },
   "description": "Meliora Impact",
   "main": "index.js",
   "scripts": {
@@ -42,6 +46,7 @@
   },
   "devDependencies": {
     "husky": "^8.0.1",
+    "jest": "^28.1.0",
     "prettier": "^2.6.2"
   }
 }
