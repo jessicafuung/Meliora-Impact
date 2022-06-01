@@ -1,7 +1,8 @@
 import React, {useContext, useState} from "react";
+import CustomButton from "../components/CustomButton/CustomButton";
 import "date-fns"
 import moment from 'moment';
-
+import {HeadlineWithUnderline} from '../components/HeadlineWithUnderline/headlineWithUnderline';
 import Grid from "@material-ui/core/Grid"
 import DateFnsUtils from "@date-io/date-fns"
 import {KeyboardDatePicker, MuiPickersUtilsProvider} from "@material-ui/pickers";
@@ -62,7 +63,7 @@ function GetBookings() {
 }
 */
 
-function ShowForm({userDate, setUserDate, setActiveStep}) {
+function ShowForm({userDate, setUserDate, setActiveStep, customStyle}) {
     const { postBooking } = useContext(ApiContext);
     const [isBooked, setIsBooked] = useState(false)
 
@@ -86,7 +87,9 @@ function ShowForm({userDate, setUserDate, setActiveStep}) {
                 padding: "2rem",
                 marginY: "2rem",
                 position: {xs: "relative", sm: "relative", md: "relative"},
-            }}>
+            }}
+            style={customStyle}
+            >
                 <form onSubmit={handleSubmit}>
                 <Grid item container justifyContent={"center"} spacing={10}>
                     <Grid item xs={12} sm={6}>
@@ -152,10 +155,11 @@ function ShowForm({userDate, setUserDate, setActiveStep}) {
                                    name="message"
                                    variant={"outlined"}
                                    onChange={handleChange}
+                                   sx={{zIndex: 0, }}
                         />
-                    <div  align="center">
-                        {isBooked?<p>Booked!</p>:<button>Book</button>}
-                    </div>
+                    <Box align="center">
+                        <CustomButton to={"#"} p={"9px 25px"} variant={'contained'}>{isBooked ? 'Booked!' : 'Book'}</CustomButton>
+                    </Box>
                     </Grid>
                 </Grid>
                 </form>
@@ -165,7 +169,7 @@ function ShowForm({userDate, setUserDate, setActiveStep}) {
     );
 }
 
-function ShowAvailabilities({userDate, setUserDate, setTimeIsClicked, setActiveStep}) {
+function ShowAvailabilities({userDate, setUserDate, setTimeIsClicked, setActiveStep, customStyle}) {
     const handleSubmit = (e) => {
         e.preventDefault()
         const time = e.target.value
@@ -174,22 +178,24 @@ function ShowAvailabilities({userDate, setUserDate, setTimeIsClicked, setActiveS
         setActiveStep(2)
     }
 
-    return <Grid item container alignContent={'center'} justifyContent={"center"} xs={12} sm={6} md={6}>
-        <Box className="row" p={5} sx={{position: {lg: "relative"}, marginBottom: "2rem"}}> {/*right: "20%"*/}
-            <Box px={0} textalign={"center"} sx={{marginBottom: "3rem"}}>
-                <p id={"availabilities"} >Availabilities</p>
+    return(
+        <Grid item container justifyContent={'center'} xs={12} sm={6}>
+            <Box className="row" p={2} style={customStyle} >
+                <Typography paragraph color={"white"} align={"center"} id={"availabilities"} >Availabilities</Typography>
+                <Grid item container alignContent={'center'} >
+                        <Grid container justifyContent={'center'}>
+                            {availabilities.map(({time}) => (
+                                <Grid item xs={4} key={time} className="column timeBoxes-container">
+                                    <div>
+                                        <button className="time-btn" value={time} onClick={handleSubmit}>{time}</button>
+                                    </div>
+                                </Grid>
+                            ))}
+                        </Grid>
+                </Grid>
             </Box>
-            <Grid container>
-                {availabilities.map(({time}) => (
-                    <Grid item container justifyContent={"center"} xs={4} key={time} className="column timeBoxes-container">
-                        <div>
-                            <button className="time-btn" value={time} onClick={handleSubmit}>{time}</button>
-                        </div>
-                    </Grid>
-                ))}
-            </Grid>
-        </Box>
-    </Grid>
+        </Grid>
+    )
 }
 
 function ShowCalendar({setUserDate, userDate, setDateIsClicked, setActiveStep}) {
@@ -211,14 +217,12 @@ function ShowCalendar({setUserDate, userDate, setDateIsClicked, setActiveStep}) 
         <>
             <MuiPickersUtilsProvider utils={DateFnsUtils}x  >
                 <ThemeProvider theme={materialTheme}>
-                    <Grid item container justifyContent={'center'} xs={12} sm={6} md={6}>
-                        <Box sx={{position: {lg: "relative"},left: "17%", marginBottom: "2rem"}}>
+                    <Grid item container justifyContent={'center'} xs={12} sm={6} md={6} flexDirection={"column"}>
                             <KeyboardDatePicker
                                 variant='static'
                                 id='date-picker'
                                 label='Date Picker'
                                 format='dd/MM/yyyy'
-                                margin='normal'
                                 disablePast
                                 hintText="Weekends Disabled"
                                 shouldDisableDate={disableWeekends}
@@ -227,9 +231,7 @@ function ShowCalendar({setUserDate, userDate, setDateIsClicked, setActiveStep}) 
                                 onChange={handleDateChange}
                                 KeyboardButtonProps={{'aria-label': 'change date'}}
                             />
-                        </Box>
                     </Grid>
-
                 </ThemeProvider>
             </MuiPickersUtilsProvider>
         </>
@@ -251,33 +253,48 @@ export function Start() {
     });
 
     const [activeStep, setActiveStep] = useState(0)
-
+    const styleForTime = {
+        position:  'relative',
+        opacity: dateIsClicked ? '1' : '0',
+        right: dateIsClicked ? '0px' : '-50px',
+        transition: '200ms all ease-out'
+    }
+    const styleForForm = {
+        position:  'relative',
+        opacity: timeIsClicked ? '1' : '0',
+        bottom: timeIsClicked ? '0px' : '-50px',
+        transition: '200ms all ease-out'
+    }
     return (
-        <Box style={{marginTop: 50}} textAlign={"center"}>
-        <Typography variant={"h3"} color={"black"} gutterbottom="true">Schedule Meeting</Typography>
-            <Progressbar activeStep={activeStep}/>
-            <Grid container justifyContent={'start'} spacing={1} alignItems={"center"} gutterbottom="true">
-                <ShowCalendar
-                    userDate={userData}
-                    setUserDate={setUserData}
-                    setDateIsClicked={setDateIsClicked}
-                    setActiveStep={setActiveStep}
-                />
-
-                {dateIsClicked && <ShowAvailabilities
+        <Container maxWidth={"lg"}>
+            <Box py={10} textAlign={"center"}>
+                {HeadlineWithUnderline('Schedule Meeting', 200, "#034F7A", "2rem", "#212121")}
+                {/*<Progressbar activeStep={activeStep}/>*/}
+                <Grid container alignItems={"center"} justifyContent={'center'} spacing={2} gutterbottom="true">
+                    <ShowCalendar
                         userDate={userData}
                         setUserDate={setUserData}
-                        setTimeIsClicked={setTimeIsClicked}
+                        setDateIsClicked={setDateIsClicked}
                         setActiveStep={setActiveStep}
-                />}
+                    />
 
-                {timeIsClicked && <ShowForm
-                userDate={userData}
-                setUserDate={setUserData}
-                setActiveStep={setActiveStep}
-                />}
-            </Grid>
-        </Box>
+                    <ShowAvailabilities
+                            userDate={userData}
+                            setUserDate={setUserData}
+                            setTimeIsClicked={setTimeIsClicked}
+                            setActiveStep={setActiveStep}
+                            customStyle={styleForTime}
+                    />
+
+                    <ShowForm
+                    userDate={userData}
+                    setUserDate={setUserData}
+                    setActiveStep={setActiveStep}
+                    customStyle={styleForForm}
+                    />
+                </Grid>
+            </Box>
+        </Container>
     )
 }
 

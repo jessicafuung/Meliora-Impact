@@ -8,18 +8,11 @@ const materialTheme = createTheme({
             switchHeader: {
                 backgroundColor: "#034F7A",
                 color: "white",
-                height: "4rem",
-                marginBottom: "0px"
             },
-            daysHeader: {
-                maxHeight: "23px",
-                justifyContent: "space-around"
 
-            },
             dayLabel: {
                 color: "white",
-                width: "18px",
-                margin: "0 0px"
+
             },
             iconButton: {
                 backgroundColor: "#034F7A"
@@ -80,35 +73,8 @@ const materialTheme = createTheme({
         MuiPickersBasePicker: {
             pickerView: {
                 backgroundColor: "#034F7A",
-                height: "23rem",
-                minWidth: "384px"
+
             },
-            pickerViewLandscape: {
-                padding: "0"
-            }
-        },
-
-        MuiGrid: {
-            item: {
-                boxSizing: "border-box",
-            }
-        },
-
-        MuiPickersStaticWrapper: {
-            staticWrapperRoot: {
-                backgroundColor: "red",
-                minWidth: "24rem",
-            }
-        },
-
-        MuiPickersCalendar: {
-            week: {
-                justifyContent: "space-around",
-                marginBottom: "5px"
-            },
-            transitionContainer: {
-                marginTop: "0px"
-            }
         },
 
         MuiSvgIcon: {
