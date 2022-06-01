@@ -1,5 +1,5 @@
 import React from "react";
-import "./HeaderBox.css";
+import "./Headerbox.css";
 
 export function HeaderBox(
   backgroundImageUrl,
