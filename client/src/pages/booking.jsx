@@ -255,12 +255,14 @@ export function Start() {
     const [activeStep, setActiveStep] = useState(0)
     const styleForTime = {
         position:  'relative',
+        visibility: dateIsClicked ? 'visible' : 'hidden',
         opacity: dateIsClicked ? '1' : '0',
         right: dateIsClicked ? '0px' : '-50px',
         transition: '200ms all ease-out'
     }
     const styleForForm = {
         position:  'relative',
+        visibility: timeIsClicked ? 'visible' : 'hidden',
         opacity: timeIsClicked ? '1' : '0',
         bottom: timeIsClicked ? '0px' : '-50px',
         transition: '200ms all ease-out'
