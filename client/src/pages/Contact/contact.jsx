@@ -27,7 +27,14 @@ export function Contact() {
       <Grid container justifyContent="center" alignItems="center">
         <header className="contactHeader">
           <Grid item xs={12}>
-            {HeadlineWithUnderline("Contact", 120, "#034F7A", 20, '#212121', '36px')}
+            {HeadlineWithUnderline(
+              "Contact",
+              120,
+              "#034F7A",
+              20,
+              "#212121",
+              "36px"
+            )}
             <p style={{ maxWidth: 300, textAlign: "center", marginBottom: 30 }}>
               Reach out if you want to{" "}
               <span className={"textHighlight"}>collaborate</span> or know more

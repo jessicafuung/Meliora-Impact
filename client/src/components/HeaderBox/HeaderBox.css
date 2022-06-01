@@ -15,9 +15,7 @@
     background-color: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(6px);
 }
-.BoxHeadline {
-    font-size: 64px;
-}
+
 .BoxHeadline em {
     color: #034F7A;
     font-style: normal;

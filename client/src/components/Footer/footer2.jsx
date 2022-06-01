@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
-import {Container, Grid, Typography} from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import "./footer2.css";
-import Logo from '../assets/Logo';
+import Logo from "../assets/Logo";
 import { Twitter, Instagram, LinkedIn, Facebook } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import CustomButton from "../CustomButton/CustomButton";
@@ -31,7 +31,9 @@ export function Footer2() {
                 marginBottom: { xs: "2rem", sm: "2rem", md: "0" },
               }}
             >
-              <Typography variant={"h3"}>Interested in collaborating with us?</Typography>
+              <Typography variant={"h3"}>
+                Interested in collaborating with us?
+              </Typography>
             </Grid>
             <Grid
               item
@@ -106,7 +108,10 @@ export function Footer2() {
               <Logo sx={{ display: { sm: "none", md: "block" } }}></Logo>
               <p className={"meliora-info"}>Peder ankers plass 49, 0301 Oslo</p>
               <p className={"meliora-info"}>
-                <a href={"tel:+4792452610"} className={"meliora-info info-hover-effect"}>
+                <a
+                  href={"tel:+4792452610"}
+                  className={"meliora-info info-hover-effect"}
+                >
                   +47 924 52 610
                 </a>
               </p>
