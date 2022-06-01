@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 
 export function PartnerCard() {
   return (
-    <Box className="PartnerCardBox" sx={{ flexGrow: 1 }}>
+    <Box className="PartnerCardBox">
       <Grid container spacing={2} style={{ maxWidth: 1440, margin: "auto" }}>
         <Grid item xs={12} md={4}>
           <div style={{ textAlign: "center", marginTop: 10 }}>
