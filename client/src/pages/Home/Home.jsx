@@ -40,7 +40,8 @@ export function Home() {
                 200,
                 "#034F7A",
                 0,
-                "#212121"
+                "#212121",
+                 '36px'
               )}
             </div>
           </Grid>
@@ -74,7 +75,7 @@ export function Home() {
         >
           <Grid item>
             <div className="text-box">
-              {HeadlineWithUnderline("Sectors", 80, "#034F7A", 15, "#212121")}
+              {HeadlineWithUnderline("Sectors", 80, "#034F7A", 15, "#212121", '36px')}
             </div>
           </Grid>
           <Grid item xs={8} sm={6} md={5}>
@@ -113,7 +114,7 @@ export function Home() {
         <div style={{ marginTop: 40 }} />
       </Box>
       <Box>
-        {HeadlineWithUnderline("Partners", 80, "#034F7A", 40, "#212121")}
+        {HeadlineWithUnderline("Partners", 80, "#034F7A", 40, "#212121", '36px')}
 {/*         <PartnerCard /> */}
         <div style={{ marginBottom: 40 }} />
       </Box>

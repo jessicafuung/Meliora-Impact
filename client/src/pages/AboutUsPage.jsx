@@ -38,7 +38,7 @@ export function AboutUsPage() {
     <Box mt={10}>
       <Grid container alignItems="center" justifyContent="center" mb={4}>
         <Grid item>
-          {HeadlineWithUnderline("About us", 120, "#212121", 30)}
+          {HeadlineWithUnderline("About us", 120, "#212121", 30, '#212121', '36px')}
         </Grid>
       </Grid>
       <Container maxWidth={"lg"} sx={{ marginBottom: "8rem" }}>
@@ -79,7 +79,7 @@ export function AboutUsPage() {
       </Container>
       <Grid container alignItems="center" justifyContent="center" mb={25}>
         <Grid item mb={4}>
-          {HeadlineWithUnderline("Our team", 120, "#034F7A", 20)}
+          {HeadlineWithUnderline("Our team", 120, "#034F7A", 20, '#212121', '36px')}
         </Grid>
         <Grid
           container

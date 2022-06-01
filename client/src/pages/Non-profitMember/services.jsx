@@ -7,7 +7,7 @@ import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/he
 export function Services() {
   return (
     <>
-      {HeadlineWithUnderline("Services", 100, "#034F7A", 50, "black")}
+      {HeadlineWithUnderline("Services", 100, "#034F7A", 50, "#212121", '36px')}
       <div className="containerServices">
         <div className="widthContainer">
           <Box sx={{ flexGrow: 1 }}>
