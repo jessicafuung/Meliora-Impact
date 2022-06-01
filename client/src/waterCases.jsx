@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect, useState } from "react";
 import { Container, Typography, Grid } from "@mui/material";
 import { CaseStudyWaterHeader } from "./pages/CaseStudyWater/CaseStudyWaterHeader";
