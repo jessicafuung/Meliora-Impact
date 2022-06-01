@@ -113,7 +113,7 @@ export function Home() {
       </Box>
       <Box>
         {HeadlineWithUnderline("Partners", 80, "#034F7A", 40, "#212121")}
-{/*         <PartnerCard /> */}
+         <PartnerCard />
         <div style={{ marginBottom: 40 }} />
       </Box>
     </>
