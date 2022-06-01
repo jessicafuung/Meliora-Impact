@@ -1,4 +1,4 @@
-const container = {
+export const container = {
   pageInitial: {
     opacity: 0,
   },
@@ -9,5 +9,3 @@ const container = {
     },
   },
 };
-
-export default container;

@@ -155,7 +155,6 @@ export function Home() {
           "36px"
         )}
         <PartnerCard />
-
         <div style={{ marginBottom: 40 }} />
       </Box>
     </>
