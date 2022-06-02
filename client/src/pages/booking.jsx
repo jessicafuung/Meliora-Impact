@@ -303,6 +303,7 @@ function ShowCalendar({
 export function Start() {
   const [dateIsClicked, setDateIsClicked] = useState(false);
   const [timeIsClicked, setTimeIsClicked] = useState(false);
+  const [activeStep, setActiveStep] = useState(0);
 
   const [userData, setUserData] = useState({
     companyName: "",
@@ -314,7 +315,6 @@ export function Start() {
     message: "",
   });
 
-  const [activeStep, setActiveStep] = useState(0);
   const styleForTime = {
     position: "relative",
     visibility: dateIsClicked ? "visible" : "hidden",
@@ -322,6 +322,7 @@ export function Start() {
     right: dateIsClicked ? "0px" : "-50px",
     transition: "200ms all ease-out",
   };
+
   const styleForForm = {
     position: "relative",
     visibility: timeIsClicked ? "visible" : "hidden",
@@ -329,6 +330,7 @@ export function Start() {
     bottom: timeIsClicked ? "0px" : "-50px",
     transition: "200ms all ease-out",
   };
+
   return (
     <Container maxWidth={"lg"}>
       <Box py={10} textAlign={"center"}>
