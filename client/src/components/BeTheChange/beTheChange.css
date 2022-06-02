@@ -7,6 +7,7 @@
 .image1 {
     background-image: url("../../images/bethechangeimg1.png");
     background-repeat: no-repeat;
+    background-position: center bottom;
     background-size: cover;
     height: 453px;
 }
@@ -54,12 +55,12 @@
     font-style: normal;
 }
 .PhotoFindrImg {
-    border: 2px red solid;
-    margin-right: 45px;
     width: 394px;
     height: 82px;
     margin-top: 45px;
     margin-bottom: 90px;
+    margin-left: auto;
+    padding: 30px;
 }
 .KristianiaImg {
     width: 320px;
@@ -73,14 +74,14 @@
         padding-top: 20px;
         display: block;
         margin: 0 auto 40px;
-        width: 50%;
+        width: 60%;
         float: none;
     }
     .KristianiaImg {
         padding-top: 20px;
         display: block;
         margin: 0 auto 40px;
-        width: 50%;
+        width: 60%;
     }
     .text1 {
         text-align: center;

@@ -56,7 +56,7 @@ export function BeTheChange() {
         </Grid>
       </Box>
       <div style={{ height: 30 }} />
-      <Box sx={{ flexGrow: 1 }}>
+      <Box>
         <Grid container spacing={0} style={{ maxWidth: 1440, margin: "auto" }}>
           <Grid item xs={12} md={6}>
             <div className="section2">
