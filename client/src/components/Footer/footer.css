@@ -1,52 +1,54 @@
-
-
-.footer {
+footer{
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
     width: 100%;
-    border-top-right-radius: 300px;
-    background-color: #034F7A;
+}
+
+.footer-container{
+    max-width: 2000px;
+}
+
+.meliora-info{
     color: white;
-}
-.footer.footer {
-    max-width: 4000px;
-}
-
-.footer-top {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
+    margin-top: 1rem;
+    font-weight: 400;
 }
 
-.footer-collaborate {
-    margin-top: 2em;
-    margin-bottom: 1em;
-    font-size: 60px;
-    font-weight: bold;
+.info-hover-effect:hover{
+    color: #f1de77;
+    cursor: pointer;
 }
 
-.collaborate-text {
-    max-width: 500px;
+.contact-button:hover{
+    background-color: #f1de77 !important;
 }
 
-.contact-btn {
-    padding-right: 2em;
+.footer-heading{
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 2rem;
 }
 
-.footer-contact {
-    flex-direction: column;
-    max-width: 300px;
-    padding: 1em 1em 2em 0em;
+.footer-links{
+    color: white;
+    margin-bottom: 1rem;
 }
 
-.footer-links {
-    width: 600px;
+.footer-links:hover{
+    color: #f1de77;
+    cursor: pointer;
 }
 
-.footer-headline {
-    padding: 1em 0 1em 0;
-
+.copy-right{
+    color: #A1A1A1;
+    font-size: 13px;
 }
 
-.footer-links Link {
-    padding-bottom: 0.5em!important;
+.soMe-icons{
+    color: #cddce4;
+}
+
+.soMe-icons:hover{
+    color: #f1de77;
+    cursor: pointer;
 }
