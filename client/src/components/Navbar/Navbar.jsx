@@ -13,7 +13,29 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Logo from "../assets/Logo";
 
-const pages = ["About", "Contact", "Booking", "Cases"];
+const pages = [
+  {
+    name: "Home",
+    url: "",
+  },
+  {
+    name: "About",
+    url: "about",
+  },
+  {
+    name: "Booking",
+    url: "booking",
+  },
+  {
+    name: "Contact",
+    url: "contact",
+  },
+  {
+    name: "Cases",
+    url: "cases",
+  }
+
+]
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -92,21 +114,13 @@ const Navbar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              <Link
-                style={{ textDecoration: "none", color: "#212121" }}
-                to={`/`}
-              >
-                <MenuItem key="home" onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">Home</Typography>
-                </MenuItem>
-              </Link>
               {pages.map((page) => (
                 <Link
-                  to={`/${page}`}
+                  to={`/${page.url}`}
                   style={{ textDecoration: "none", color: "#212121" }}
                 >
-                  <MenuItem key={page} onClick={handleCloseNavMenu}>
-                    <Typography textAlign="center">{page}</Typography>
+                  <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{page.name}</Typography>
                   </MenuItem>
                 </Link>
               ))}
@@ -138,23 +152,14 @@ const Navbar = () => {
               justifyContent: "end",
             }}
           >
-            <Link to={`/`}>
-              <Button
-                key="home"
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                Home
-              </Button>
-            </Link>
             {pages.map((page) => (
-              <Link to={`/${page}`}>
+              <Link to={"/" + page.url}>
                 <Button
-                  key={page}
+                  key={page.name}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{ textTransform: "none", my: 2, color: "white", display: "block" }}
                 >
-                  {page}
+                  {page.name}
                 </Button>
               </Link>
             ))}

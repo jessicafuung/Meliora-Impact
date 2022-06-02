@@ -15,7 +15,7 @@ import { KnowledgeCases } from "./knowledge";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
 import { CorporateMember } from "./pages/CorporateMember/corporateMember";
-import { Footer2 } from "./components/Footer/footer2";
+import { Footer } from "./components/Footer/Footer";
 import { NonProfit } from "./pages/Non-profitMember/nonProfitMember";
 import { FaqPage } from "./pages/Faq/Faq";
 import { FaqQuestionCard } from "./components/FaqQuestionCard/FaqQuestionCard";
@@ -44,7 +44,7 @@ export function Application() {
               <Route path={"/cases"} element={<Cases />} />
             </Routes>
           </ScrollToTop>
-          <Footer2 />
+          <Footer />
         </BrowserRouter>
       </AnimationContainer>
     </ThemeProvider>
