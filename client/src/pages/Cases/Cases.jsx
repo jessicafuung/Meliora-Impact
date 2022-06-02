@@ -10,7 +10,7 @@ export function Cases() {
       <div style={{ marginTop: 50 }} />
       {HeadlineWithUnderline("Cases", 80, "#034F7A", 0, "#212121", "36px")}
       <Grid container justifyContent="center" paddingTop={5}>
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={6}>
           <Container>
             A lot of giving platforms leave us with the paradox of choice. Many
             corporate giving systems don't thoroughly vet the projects and
