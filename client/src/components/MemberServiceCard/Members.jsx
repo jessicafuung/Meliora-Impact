@@ -8,7 +8,7 @@ export const members = [
       "For businesses who are profitable \n" +
       "and want to use their resources \n" +
       "for greater social good",
-    icon: <Business />,
+    icon: <Business sx={{ fontSize: 50 }} />,
     linkTo: "/corporate",
   },
   {
@@ -16,7 +16,7 @@ export const members = [
     content:
       "For nonprofits who are seeking \n" +
       "to carry out their frontline work \n",
-    icon: <HandHoldingHeartIcon />,
+    icon: <HandHoldingHeartIcon sx={{ fontSize: 50 }} />,
     linkTo: "/nonprofit",
   },
 ];

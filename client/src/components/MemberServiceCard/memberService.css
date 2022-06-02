@@ -9,9 +9,7 @@
     bottom: 3rem;
 }
 
-.MuiSvgIcon-root {
-    font-size: 3rem!important;
-}
+
 
 @media screen and (min-width: 600px){
     .service-card {
