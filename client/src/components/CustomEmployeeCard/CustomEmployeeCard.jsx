@@ -8,7 +8,14 @@ export function CustomEmployeeCard({
 }) {
   return (
     <Box
-      sx={{ borderRadius: 2, maxWidth: 350, height: 350, position: "relative" }}
+      sx={{
+        borderRadius: 2,
+        width: { xs: "300px", sm: "350px" },
+        height: { xs: "450px", sm: "400px" },
+
+        paddingBottom: "2rem",
+        position: "relative",
+      }}
       className="employeeCard"
       style={{ backgroundColor: "#DFE5E9" }}
     >
@@ -37,36 +44,43 @@ export function CustomEmployeeCard({
               {position}
             </Typography>
           </Grid>
+          <Grid item>
+            <Box pr={2} pl={2}>
+              <Typography color="textPrimary" variant={"subtitle2"}>
+                {about}
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid
+            item
+            container
+            sx={{ marginTop: "2rem" }}
+            className={"buttonDiv"}
+          >
+            <Button
+              variant="outlined"
+              target="_blank"
+              href={linkedin}
+              color="primary"
+              style={{
+                padding: "0 22px",
+                textDecoration: "none",
+                fontWeight: 500,
+                borderRadius: 0,
+                textTransform: "none",
+              }}
+              sx={{
+                ":hover": {
+                  backgroundColor: "#034F7A",
+                  color: "white",
+                },
+              }}
+            >
+              LinkedIn
+            </Button>
+          </Grid>
         </Grid>
-        <Box mt={3} pr={2} pl={2}>
-          <Typography color="textPrimary" paragraph>
-            {about}
-          </Typography>
-        </Box>
       </Box>
-      <div className={"buttonDiv"}>
-        <Button
-          variant="outlined"
-          target="_blank"
-          href={linkedin}
-          color="primary"
-          style={{
-            padding: "0 22px",
-            textDecoration: "none",
-            fontWeight: 500,
-            borderRadius: 0,
-            textTransform: "none",
-          }}
-          sx={{
-            ":hover": {
-              backgroundColor: "#034F7A",
-              color: "white",
-            },
-          }}
-        >
-          LinkedIn
-        </Button>
-      </div>
     </Box>
   );
 }

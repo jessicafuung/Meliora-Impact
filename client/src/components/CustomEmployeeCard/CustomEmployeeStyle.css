@@ -2,7 +2,7 @@
 .buttonDiv {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    padding-bottom: 2rem;
     position: absolute;
     bottom: 0.3rem;
     left: 50%;
