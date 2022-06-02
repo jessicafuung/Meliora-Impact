@@ -76,7 +76,8 @@ function ContactForm() {
   const [message, setMessage] = useState("");
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
+  const handleClickOpen = (e) => {
+    e.preventDefault();
     setOpen(true);
   };
 
@@ -142,7 +143,7 @@ function ContactForm() {
         />
       </div>
       <div align="center">
-        <Button variant="contained" type={"submit"}>
+        <Button variant="contained" to={""} type={"submit"}>
           Submit
         </Button>
         <Dialog
