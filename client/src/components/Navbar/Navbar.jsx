@@ -92,7 +92,7 @@ const Navbar = () => {
                     </MenuItem>
                   </Link>
                     {pages.map((page) => (
-                    <Link to={`/${page}`} style={{textDecoration: "none", color: '#212121'}}>
+                    <Link to={`/${page}`} style={{textDecoration: "none", textTransform: "none", color: '#212121'}}>
                       <MenuItem key={page} onClick={handleCloseNavMenu}>
                         <Typography textAlign="center">{page}</Typography>
                       </MenuItem>
@@ -123,6 +123,7 @@ const Navbar = () => {
                 <Link to={`/`}>
                     <Button
                       key='home'
+                      style={{textTransform: "none"}}
                       onClick={handleCloseNavMenu}
                       sx={{ my: 2, color: 'white', display: 'block' }}
                     >
@@ -134,6 +135,7 @@ const Navbar = () => {
                     <Button
                       key={page}
                       onClick={handleCloseNavMenu}
+                      style={{textTransform: "none"}}
                       sx={{ my: 2, color: 'white', display: 'block' }}
                     >
                       {page}

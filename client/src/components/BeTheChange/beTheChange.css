@@ -14,6 +14,9 @@
     width: 100%;
     background-color: rgb(3, 79, 122, 0.1);
     height: 453px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 .image2 {
     background-image: url("../../images/beTheChange2.png");
@@ -26,6 +29,10 @@
     width: 100%;
     background-color: rgb(3, 79, 122, 0.1);
     height: 453px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
 }
 .text1 {
     text-align: left;
@@ -47,12 +54,12 @@
     font-style: normal;
 }
 .PhotoFindrImg {
+    border: 2px red solid;
+    margin-right: 45px;
     width: 394px;
     height: 82px;
     margin-top: 45px;
-    margin-right: 45px;
     margin-bottom: 90px;
-    float: right;
 }
 .KristianiaImg {
     width: 320px;
