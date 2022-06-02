@@ -46,14 +46,11 @@ export function MemberServiceCard({ title, content, icon, linkTo }) {
             {content}{" "}
           </Typography>
         </Grid>
-
-        <Grid item xs={12} className="service-button" alignItems="flex-end">
-          <Box pt={10}>
-            <CustomButton p="12px 22px" to={linkTo} variant="outlined">
-              Learn more
-            </CustomButton>
-          </Box>
-        </Grid>
+        <Box className="member-service-card__button">
+          <CustomButton p="12px 22px" to={linkTo}  variant="outlined">
+            Learn more
+          </CustomButton>
+        </Box>
       </Grid>
     </Box>
   );

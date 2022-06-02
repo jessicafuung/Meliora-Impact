@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 
-const CustomButton = ({ children, variant, w, h, to, p, backgroundColor }) => {
+const CustomButton = ({ children, variant, w, h, to, p, backgroundColor, otherProps }) => {
   if (to === undefined) {
     console.log(
       `%cCorrect usage: <CustomButton variant=\"contained | outlined | text\" to=\"/\">${children}</CustomButton>`,
@@ -30,6 +30,7 @@ const CustomButton = ({ children, variant, w, h, to, p, backgroundColor }) => {
           color: "white",
         },
       }}
+    {...otherProps}
     >
       {children}
     </Button>

@@ -2,8 +2,13 @@
 .service-card {
     background-color: #FFF;
     height: 350px;
+    position: relative;
 }
+.member-service-card__button{
+    position: absolute;
+    bottom: 3rem;
 
+}
 @media screen and (min-width: 600px){
     .service-card {
         box-shadow: 0px 4px 30px rgba(0,0,0,0.1);
