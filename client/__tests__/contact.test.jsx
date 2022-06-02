@@ -1,4 +1,4 @@
-/*import React from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import { Contact } from "../src/pages/Contact/contact";
 
@@ -8,4 +8,4 @@ describe("Contact page", () => {
     ReactDOM.render(<Contact />, domElement);
     expect(domElement.innerHTML).toMatchSnapshot();
   });
-});*/
+});
