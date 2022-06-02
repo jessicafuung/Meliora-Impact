@@ -342,7 +342,7 @@ export function Start() {
           "#212121",
           "36px"
         )}
-        {/*<Progressbar activeStep={activeStep}/>*/}
+        {<Progressbar activeStep={activeStep}/>}
         <Grid
           container
           alignItems={"center"}
