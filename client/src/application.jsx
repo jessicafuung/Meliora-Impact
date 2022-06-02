@@ -20,6 +20,7 @@ import { NonProfit } from "./pages/Non-profitMember/nonProfitMember";
 import { FaqPage } from "./pages/Faq/Faq";
 import { FaqQuestionCard } from "./components/FaqQuestionCard/FaqQuestionCard";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+import { Cases } from "./pages/Cases/Cases";
 
 export function Application() {
   return (
@@ -40,6 +41,7 @@ export function Application() {
               <Route path={"/water"} element={<WaterCases />} />
               <Route path={"/knowledge"} element={<KnowledgeCases />} />
               <Route path={"/booking"} element={<Start />} />
+              <Route path={"/cases"} element={<Cases />} />
             </Routes>
           </ScrollToTop>
           <Footer2 />

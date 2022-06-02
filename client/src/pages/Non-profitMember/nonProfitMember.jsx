@@ -8,11 +8,11 @@ export function NonProfit() {
     <>
       {HeaderBox(
         "https://images.unsplash.com/photo-1505455184862-554165e5f6ba?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2969",
-        <h1>
+        <div>
           Non-profit <em>members</em>
-        </h1>,
+        </div>,
         "white",
-        <p>
+        <div>
           There's often no solid{" "}
           <strong>
             <em>philanthropic</em>
@@ -25,7 +25,7 @@ export function NonProfit() {
           <strong>
             <em>ad-hoc basis.</em>
           </strong>
-        </p>,
+        </div>,
         "white"
       )}
       <div style={{ height: 100 }} />

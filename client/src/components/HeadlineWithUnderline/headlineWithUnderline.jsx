@@ -11,7 +11,7 @@ export function HeadlineWithUnderline(
   return (
     <>
       <div>
-        <h1
+        <div
           style={{
             fontSize: fontSize,
             fontWeight: "bold",
@@ -20,7 +20,7 @@ export function HeadlineWithUnderline(
           }}
         >
           {headlineText}
-        </h1>
+        </div>
       </div>
       <div
         style={{

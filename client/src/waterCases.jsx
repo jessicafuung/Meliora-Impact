@@ -72,8 +72,9 @@ function OrganizationCard({ water: { name, info } }) {
     <>
       {/*Grid item or grid container, not sure*/}
 
-      <Grid item xs={12} sm={12} md={5}>
-        {HeadlineWithUnderline(name, 215, "#034F7A", 0, "#034F7A", "28px")}
+      <Grid item xs={12} sm={12} md={5} sx={{ marginTop: "2rem" }}>
+        {HeadlineWithUnderline(name, 215, "#034F7A", "2rem", "#034F7A", "28px")}
+
         {info.map((info) => (
           <InfoCard key={info.id} info={info} />
         ))}

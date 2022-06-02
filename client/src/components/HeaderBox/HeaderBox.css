@@ -17,6 +17,7 @@
 }
 .BoxHeadline {
     font-size: 64px;
+    font-weight: 900;
 }
 .BoxHeadline em {
     color: #034F7A;

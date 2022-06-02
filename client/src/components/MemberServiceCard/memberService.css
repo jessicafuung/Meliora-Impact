@@ -7,8 +7,12 @@
 .member-service-card__button{
     position: absolute;
     bottom: 3rem;
-
 }
+
+.MuiSvgIcon-root {
+    font-size: 3rem!important;
+}
+
 @media screen and (min-width: 600px){
     .service-card {
         box-shadow: 0px 4px 30px rgba(0,0,0,0.1);

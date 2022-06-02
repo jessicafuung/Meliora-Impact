@@ -1,6 +1,10 @@
 {
   "name": "smidiggruppe35",
   "version": "1.0.0",
+  "engines": {
+    "node": "17.6.0",
+    "npm": "8.5.1"
+  },
   "description": "Meliora Impact",
   "main": "index.js",
   "scripts": {
