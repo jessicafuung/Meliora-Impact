@@ -17,11 +17,11 @@ export function FaqQuestionCard({ faqs: { _id, question, answer }, index }) {
     <div className="accordion">
       <div className="item">
         <div className="title" onClick={() => toggle(index)}>
-          <h1>
+          <div>
             <strong>
               {index + 1}. {question}
             </strong>
-          </h1>
+          </div>
           <span>
             {selected === index ? (
               <RemoveCircleOutlineIcon
@@ -35,7 +35,7 @@ export function FaqQuestionCard({ faqs: { _id, question, answer }, index }) {
           </span>
         </div>
         <div className={selected === index ? "content show" : "content"}>
-          <p>{answer}</p>
+          <div>{answer}</div>
         </div>
       </div>
     </div>

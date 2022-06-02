@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Montserrat:wght@400;500;700;900&display=swap');
 
 .row {
+    aspect-ratio: 5/4;
     background-color: #034F7A;
-    width: 300px;
     max-width: 320px;
 }
 
+.MuiPickersStaticWrapper-staticWrapperRoot{
+    width: auto;
+    background-color: transparent;
+}
 .timeBoxes-container{
     padding-bottom: 2rem !important;
 }
@@ -34,21 +37,22 @@
 }
 
 body {
-
+    background-color: #F2F2F2;
 }
 
 input {
     margin-top: 2rem !important;
 }
 
-* {
+/** {
     border: 0;
     padding: 0;
     margin: 0;
     font-size: 1em;
 
-}
+}*/
 
 a{
     text-decoration: none;
+    color: #FFFFFF;
 }

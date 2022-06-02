@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material";
-import { green, purple } from "@mui/material/colors";
+import { green } from "@mui/material/colors";
+import "./style.css";
 
 const primary = "#034F7A";
 const textPrimary = "#212121";
@@ -15,9 +16,10 @@ const theme = createTheme({
       main: green[500],
     },
   },
+
   typography: {
     fontFamily: "Montserrat",
-    fontSize: "16px",
+    fontSize: 16,
   },
 });
 theme.typography.h1 = {
@@ -65,6 +67,5 @@ theme.typography.h3 = {
     fontSize: "2.4rem",
   },
 };
-theme.paragraph;
 
 export default theme;

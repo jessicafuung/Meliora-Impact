@@ -2,6 +2,15 @@
 .service-card {
     background-color: #FFF;
     height: 350px;
+    position: relative;
+}
+.member-service-card__button{
+    position: absolute;
+    bottom: 3rem;
+}
+
+.MuiSvgIcon-root {
+    font-size: 3rem!important;
 }
 
 @media screen and (min-width: 600px){

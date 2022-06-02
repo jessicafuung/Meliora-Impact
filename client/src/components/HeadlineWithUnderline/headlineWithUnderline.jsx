@@ -5,21 +5,22 @@ export function HeadlineWithUnderline(
   lineWidth,
   hexColor,
   marginBottom,
-  textColor
+  textColor,
+  fontSize
 ) {
   return (
     <>
       <div>
-        <h1
+        <div
           style={{
-            fontSize: 36,
+            fontSize: fontSize,
             fontWeight: "bold",
             textAlign: "center",
             color: textColor,
           }}
         >
           {headlineText}
-        </h1>
+        </div>
       </div>
       <div
         style={{

@@ -7,7 +7,14 @@ import { HeadlineWithUnderline } from "../HeadlineWithUnderline/headlineWithUnde
 export function BeTheChange() {
   return (
     <>
-      {HeadlineWithUnderline("Be the Change", 200, "#034f7a", 0, "#034f7a")}
+      {HeadlineWithUnderline(
+        "Be the Change",
+        200,
+        "#034f7a",
+        0,
+        "#212121",
+        "36px"
+      )}
       <div>
         <p
           style={{

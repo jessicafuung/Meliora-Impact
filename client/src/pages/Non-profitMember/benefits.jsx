@@ -7,7 +7,7 @@ import { BtnWithHeadline } from "../../components/BtnWithHeadline/BtnWithHeadlin
 export function Benefits() {
   return (
     <>
-      {HeadlineWithUnderline("Benefits", 100, "#034F7A", 50, "black")}
+      {HeadlineWithUnderline("Benefits", 100, "#034F7A", 50, "#212121", "36px")}
       <div className="containerBenefits">
         <div className="widthContainerBenefits">
           <Box sx={{ flexGrow: 1 }}>
@@ -18,7 +18,7 @@ export function Benefits() {
                 justifyContent="center"
                 style={{ maxWidth: 1440, margin: "auto" }}
               >
-                <Grid item xs={8} md={6}>
+                <Grid item xs={8} sm={6}>
                   <p>
                     <strong>
                       More nonprofits are going digital: payments, platforms,
@@ -41,7 +41,7 @@ export function Benefits() {
                     their own resources.
                   </p>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6}>
                   <div>
                     <img
                       className="benefitsImg"

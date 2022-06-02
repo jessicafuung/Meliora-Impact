@@ -20,7 +20,7 @@
     display:block; margin: -200px auto
 }
 .joinUsDiv {
-    margin-top: -100px;
+    margin-top: -60px;
     display: flex;
     justifyContent: flex-start;
 }
@@ -34,7 +34,7 @@
 @media only screen and (max-width: 900px) {
 
     .benefitsImg {
-        width: 350px;
+        width: 300px;
         margin-top: 20px;
         display: block;
         margin-left: auto;
@@ -44,7 +44,7 @@
         text-align: left;
     }
     .joinUsDiv {
-        margin-top: 40px;
+        margin-top: 50px;
         display: inherit;
     }
 

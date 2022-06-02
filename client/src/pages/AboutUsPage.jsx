@@ -1,3 +1,5 @@
+//import { Undefined } from './undefined';
+import React from "react";
 import { Typography, Container, CircularProgress, Box } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { CustomEmployeeCard } from "../components/CustomEmployeeCard/CustomEmployeeCard";
@@ -37,7 +39,14 @@ export function AboutUsPage() {
     <Box mt={10}>
       <Grid container alignItems="center" justifyContent="center" mb={4}>
         <Grid item>
-          {HeadlineWithUnderline("About us", 120, "#212121", 30)}
+          {HeadlineWithUnderline(
+            "About us",
+            120,
+            "#212121",
+            30,
+            "#212121",
+            "36px"
+          )}
         </Grid>
       </Grid>
       <Container maxWidth={"lg"} sx={{ marginBottom: "8rem" }}>
@@ -78,7 +87,14 @@ export function AboutUsPage() {
       </Container>
       <Grid container alignItems="center" justifyContent="center" mb={25}>
         <Grid item mb={4}>
-          {HeadlineWithUnderline("Our team", 120, "#034F7A", 20)}
+          {HeadlineWithUnderline(
+            "Our team",
+            120,
+            "#034F7A",
+            20,
+            "#212121",
+            "36px"
+          )}
         </Grid>
         <Grid
           container
@@ -96,16 +112,19 @@ export function AboutUsPage() {
   );
 }
 
-    function SpinningAnimation({}) {
-      return (<Container sx={{
-      border: "2px red solid",
-  display: "flex",
-  width: "100%",
-  height: "100vh",
-  justifyContent: "center",
-  alignContent: "center"
-}}>
-        <CircularProgress />
-        </Container>);
-    }
-  
+function SpinningAnimation({}) {
+  return (
+    <Container
+      sx={{
+        border: "2px red solid",
+        display: "flex",
+        width: "100%",
+        height: "100vh",
+        justifyContent: "center",
+        alignContent: "center",
+      }}
+    >
+      <CircularProgress />
+    </Container>
+  );
+}
