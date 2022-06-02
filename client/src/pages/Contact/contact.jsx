@@ -18,7 +18,6 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Grid from "@mui/material/Grid";
 import "./contact.css";
-import CustomButton from "../../components/CustomButton/CustomButton";
 import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/headlineWithUnderline";
 
 export function Contact() {
@@ -86,7 +85,7 @@ function ContactForm() {
   };
 
   return (
-    <form>
+    <form onSubmit={handleClickOpen}>
       <div className="formInfo">
         <TextField
           required
@@ -143,9 +142,9 @@ function ContactForm() {
         />
       </div>
       <div align="center">
-        <CustomButton variant="contained" to={""} onClick={handleClickOpen}>
+        <Button variant="contained" type={"submit"}>
           Submit
-        </CustomButton>
+        </Button>
         <Dialog
           open={open}
           onClose={handleClose}
