@@ -5,7 +5,8 @@ const materialTheme = createTheme({
   overrides: {
     MuiButtonBase: {
       root: {
-        padding: ""
+        padding: "",
+        marginBlock: "16px"
       }
     },
 
