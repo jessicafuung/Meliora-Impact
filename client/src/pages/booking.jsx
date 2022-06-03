@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import CustomButton from "../components/CustomButton/CustomButton";
 import "date-fns";
 import moment from "moment";
 import { HeadlineWithUnderline } from "../components/HeadlineWithUnderline/headlineWithUnderline";
@@ -181,9 +180,9 @@ function ShowForm({ userDate, setUserDate, setActiveStep, customStyle }) {
                   sx={{ zIndex: 0 }}
                 />
                 <Box align="center">
-                  <CustomButton to={"#"} p={"9px 25px"} variant={"contained"}>
+                  <button variant={"contained"}>
                     {isBooked ? "Booked!" : "Book"}
-                  </CustomButton>
+                  </button>
                 </Box>
               </Grid>
             </Grid>
@@ -201,6 +200,7 @@ function ShowAvailabilities({
   setActiveStep,
   customStyle,
 }) {
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const time = e.target.value;
@@ -278,7 +278,7 @@ function ShowCalendar({
             xs={12}
             sm={6}
             md={6}
-            flexDirection={"column"}
+            flexdirection={"column"}
           >
             <KeyboardDatePicker
               variant="static"
@@ -342,7 +342,7 @@ export function Start() {
           "#212121",
           "36px"
         )}
-        {/*<Progressbar activeStep={activeStep}/>*/}
+        {<Progressbar activeStep={activeStep}/>}
         <Grid
           container
           alignItems={"center"}
