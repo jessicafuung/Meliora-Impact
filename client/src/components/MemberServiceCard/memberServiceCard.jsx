@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from "@mui/material";
 import "./memberService.css";
 import "./Members";
 import CustomButton from "../CustomButton/CustomButton";
+import {Link} from "react-router-dom";
 
 export function MemberServiceCard({ title, content, icon, linkTo }) {
   return (
