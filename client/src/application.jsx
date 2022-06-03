@@ -15,12 +15,13 @@ import { KnowledgeCases } from "./knowledge";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
 import { CorporateMember } from "./pages/CorporateMember/corporateMember";
-import {Footer} from "./components/Footer/Footer";
+import { Footer } from "./components/Footer/Footer";
 import { NonProfit } from "./pages/Non-profitMember/nonProfitMember";
 import { FaqPage } from "./pages/Faq/Faq";
 import { FaqQuestionCard } from "./components/FaqQuestionCard/FaqQuestionCard";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import { Cases } from "./pages/Cases/Cases";
+import BreadcrumbComponent from "./components/Breadcrumbs/breadcrumbs";
 
 export function Application() {
   return (
@@ -28,6 +29,7 @@ export function Application() {
       <AnimationContainer>
         <BrowserRouter>
           <Navbar />
+          <BreadcrumbComponent />
           <ScrollToTop>
             <Routes>
               <Route path={"/contact"} element={<Contact />} />
