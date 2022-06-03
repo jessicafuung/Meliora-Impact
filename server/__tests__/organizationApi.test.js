@@ -3,7 +3,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
-import { BookingApi } from "../api/BookingApi.js";
+import { OrganizationApi } from "../api/OrganizationApi.js";
 
 dotenv.config();
 
@@ -14,16 +14,16 @@ const mongoClient = new MongoClient(process.env.MONGODB_URL);
 beforeAll(async () => {
   await mongoClient.connect();
   const database = mongoClient.db("meliora_impact");
-  await database.collection("bookings");
-  app.use("/api/booking", BookingApi(database));
+  await database.collection("organizations");
+  app.use("/api/organizations", OrganizationApi(database));
 });
 afterAll(() => {
   mongoClient.close();
 });
 
-describe("Booking tests", () => {
-  it("Get 200 OK from bookingApi", async () => {
-    request(app);
-    expect(await request(app).get("/api/booking").expect(200));
+describe("organizationApi test", () => {
+  it("Shows all content in organization", async () => {
+    const organizationContent = "";
+    expect(await request(app).get("/api/organizations").expect(200));
   });
 });
