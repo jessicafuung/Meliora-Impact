@@ -2,7 +2,7 @@
 .service-card {
     background-color: #FFF;
     height: 350px;
-    position: relative;
+    position: relative
 }
 .member-service-card__button{
     position: absolute;

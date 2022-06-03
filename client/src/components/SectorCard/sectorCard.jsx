@@ -31,7 +31,7 @@ export function SectorCard({ title, content, image, linkTo }) {
             </Typography>
             <Typography
               fontSize={15}
-              align="left"
+              align="center"
               color="textPrimary"
               className="sector-content"
             >

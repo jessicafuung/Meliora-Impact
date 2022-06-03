@@ -10,6 +10,7 @@ export function MemberServiceCard({ title, content, icon, linkTo }) {
     <Box className="service-card" py={5} px={8}>
       <Grid
         container
+
         direction="column"
         alignItems="center"
         justifyContent="space-around"
@@ -30,7 +31,8 @@ export function MemberServiceCard({ title, content, icon, linkTo }) {
             {title}
           </Typography>
           <Typography
-            align="left"
+            align="center"
+            color="textPrimary"
             paragraph
             fontSize={16}
             className="service-content"
