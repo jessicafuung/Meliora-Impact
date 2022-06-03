@@ -1,15 +1,5 @@
-import { Business, Soap } from "@mui/icons-material";
-import {
-  Box,
-  Button,
-  Card,
-  CardActions,
-  Grid,
-  SvgIcon,
-  Typography,
-} from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import "./memberService.css";
-import { HandHoldingHeartIcon } from "../assets/handHoldingHeartIcon";
 import "./Members";
 import CustomButton from "../CustomButton/CustomButton";
 
@@ -47,7 +37,7 @@ export function MemberServiceCard({ title, content, icon, linkTo }) {
           </Typography>
         </Grid>
         <Box className="member-service-card__button">
-          <CustomButton p="12px 22px" to={linkTo}  variant="outlined">
+          <CustomButton p="12px 22px" to={linkTo} variant="outlined">
             Learn more
           </CustomButton>
         </Box>

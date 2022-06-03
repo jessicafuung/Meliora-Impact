@@ -5,8 +5,8 @@ export const members = [
   {
     title: "Business",
     content:
-      "For businesses who are profitable \n" +
-      "and want to use their resources \n" +
+      "For businesses who want \n" +
+      "to use their resources \n" +
       "for greater social good",
     icon: <Business sx={{ fontSize: 50 }} />,
     linkTo: "/corporate",
