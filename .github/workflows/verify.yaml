@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - none
+      - jest_test
       
 jobs:
   verify:

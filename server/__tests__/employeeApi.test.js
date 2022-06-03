@@ -20,3 +20,9 @@ beforeAll(async () => {
 afterAll(() => {
   mongoClient.close();
 });
+describe("EmployeeApi test", () => {
+  it("Shows all content in employeesApi", async () => {
+    const waterContent = "";
+    expect(await request(app).get("/api/employees").expect(200));
+  });
+});
