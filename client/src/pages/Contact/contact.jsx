@@ -50,11 +50,22 @@ export function Contact() {
           <Grid item>
             <div className="contactInfo">
               <PhoneIcon sx={{ fontSize: 50 }} color={"primary"} />
-              <p>+47 92 45 26 10</p>
+              <p>
+                <a style={{ color: "black" }} href={"tel:+4792452610"}>
+                  +47 924 52 610
+                </a>
+              </p>
             </div>
             <div className="contactInfo">
               <EmailIcon sx={{ fontSize: 50 }} color={"primary"} />
-              <p>contact@melioraimpact.no</p>
+              <p>
+                <a
+                  style={{ color: "black" }}
+                  href={"mailto:contact@melioraimpact.no"}
+                >
+                  contact@melioraimpact.no
+                </a>
+              </p>
             </div>
             <div className="contactInfo">
               <LocationOnIcon sx={{ fontSize: 50 }} color={"primary"} />
