@@ -42,8 +42,7 @@ const useStyles = makeStyles(theme => ({
     root: {
         "& .MuiPaper-root":{
             backgroundColor:"",
-            color: "black"
-        }
+        },
     },
 }));
 

@@ -58,7 +58,6 @@ const materialTheme = createTheme({
         fontFamily: "Montserrat, sans-serif",
         fontWeight: "300",
         fontSize: "24px",
-        color: "white",
         lineHeight: "0.8",
       },
       body2: {
