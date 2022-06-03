@@ -3,6 +3,13 @@ import "./style.css";
 
 const materialTheme = createTheme({
   overrides: {
+    MuiButtonBase: {
+      root: {
+        padding: "",
+        marginBlock: "16px"
+      }
+    },
+
     MuiPickersCalendarHeader: {
       switchHeader: {
         backgroundColor: "#034F7A",
@@ -51,7 +58,6 @@ const materialTheme = createTheme({
         fontFamily: "Montserrat, sans-serif",
         fontWeight: "300",
         fontSize: "24px",
-        color: "white",
         lineHeight: "0.8",
       },
       body2: {

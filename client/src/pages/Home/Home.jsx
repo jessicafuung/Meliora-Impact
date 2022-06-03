@@ -101,7 +101,7 @@ export function Home() {
           <Grid item>
             <div className="text-box">
               {HeadlineWithUnderline(
-                "Sectors",
+                "Categories",
                 80,
                 "#034F7A",
                 15,

@@ -18,7 +18,6 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import Grid from "@mui/material/Grid";
 import "./contact.css";
-import CustomButton from "../../components/CustomButton/CustomButton";
 import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/headlineWithUnderline";
 
 export function Contact() {
@@ -51,11 +50,22 @@ export function Contact() {
           <Grid item>
             <div className="contactInfo">
               <PhoneIcon sx={{ fontSize: 50 }} color={"primary"} />
-              <p>+47 92 45 26 10</p>
+              <p>
+                <a style={{ color: "black" }} href={"tel:+4792452610"}>
+                  +47 924 52 610
+                </a>
+              </p>
             </div>
             <div className="contactInfo">
               <EmailIcon sx={{ fontSize: 50 }} color={"primary"} />
-              <p>contact@melioraimpact.no</p>
+              <p>
+                <a
+                  style={{ color: "black" }}
+                  href={"mailto:contact@melioraimpact.no"}
+                >
+                  contact@melioraimpact.no
+                </a>
+              </p>
             </div>
             <div className="contactInfo">
               <LocationOnIcon sx={{ fontSize: 50 }} color={"primary"} />
@@ -77,7 +87,8 @@ function ContactForm() {
   const [message, setMessage] = useState("");
   const [open, setOpen] = React.useState(false);
 
-  const handleClickOpen = () => {
+  const handleClickOpen = (e) => {
+    e.preventDefault();
     setOpen(true);
   };
 
@@ -86,7 +97,7 @@ function ContactForm() {
   };
 
   return (
-    <form>
+    <form onSubmit={handleClickOpen}>
       <div className="formInfo">
         <TextField
           required
@@ -143,9 +154,9 @@ function ContactForm() {
         />
       </div>
       <div align="center">
-        <CustomButton variant="contained" to={""} onClick={handleClickOpen}>
+        <Button variant="contained" to={""} type={"submit"}>
           Submit
-        </CustomButton>
+        </Button>
         <Dialog
           open={open}
           onClose={handleClose}

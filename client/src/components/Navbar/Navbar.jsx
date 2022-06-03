@@ -12,6 +12,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Logo from "../assets/Logo";
+import {makeStyles} from "@material-ui/core";
 
 const pages = [
   {
@@ -37,6 +38,14 @@ const pages = [
 
 ]
 
+const useStyles = makeStyles(theme => ({
+    root: {
+        "& .MuiPaper-root":{
+            backgroundColor:"",
+        },
+    },
+}));
+
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -56,9 +65,11 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
 
-  return (
+    const classes = useStyles();
+
+    return (
     <AppBar position="sticky" className="navbar-container">
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" className={classes.root}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"

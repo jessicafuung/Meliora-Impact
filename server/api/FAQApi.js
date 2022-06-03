@@ -9,10 +9,10 @@ export function FAQApi(mongoDatabase) {
     }
 
     const { search } = req.query;
-    const searchArray = [];
-    let replaceSpace = search.toLowerCase().split(" ");
 
     if (search) {
+      const searchArray = [];
+      let replaceSpace = search.toLowerCase().split(" ");
       const faqs = await mongoDatabase.collection("faq").find().toArray();
       faqs.filter((q) => {
         for (let item in replaceSpace) {

@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import "./beTheChange.css";
 import { HeadlineWithUnderline } from "../HeadlineWithUnderline/headlineWithUnderline";
+import { Container } from "@mui/material";
 
 export function BeTheChange() {
   return (
@@ -38,25 +39,25 @@ export function BeTheChange() {
                 className="KristianiaImg"
                 src={require("../../images/KristianiaUniversityCollege_sort_rgb 1.svg")}
               />
-              <p className="text1">
-                The donations{" "}
-                <strong>
-                  <em>Kristiania University College</em>
-                </strong>{" "}
-                has made has contributed
-                <br />
-                with us being able to build{" "}
-                <strong>
-                  <em>50</em>
-                </strong>{" "}
-                more schools.
-              </p>
+              <Container>
+                <p className="text1">
+                  The donations{" "}
+                  <strong>
+                    <em>Kristiania University College</em>
+                  </strong>{" "}
+                  has made has contributed with us being able to build{" "}
+                  <strong>
+                    <em>50</em>
+                  </strong>{" "}
+                  more schools.
+                </p>
+              </Container>
             </div>
           </Grid>
         </Grid>
       </Box>
       <div style={{ height: 30 }} />
-      <Box sx={{ flexGrow: 1 }}>
+      <Box>
         <Grid container spacing={0} style={{ maxWidth: 1440, margin: "auto" }}>
           <Grid item xs={12} md={6}>
             <div className="section2">
@@ -64,17 +65,18 @@ export function BeTheChange() {
                 className="PhotoFindrImg"
                 src={require("../../images/PhotoFindr.svg")}
               />
-              <p className="text2">
-                <strong>
-                  <em>PhotoFindr</em>
-                </strong>{" "}
-                has helped us build wells and give clean water to{" "}
-                <strong>
-                  <em>10</em>
-                </strong>{" "}
-                different
-                <br /> villages, that never have had access to it before
-              </p>
+              <Container>
+                <p className="text2">
+                  <strong>
+                    <em>PhotoFindr</em>
+                  </strong>{" "}
+                  has helped us build wells and give clean water to{" "}
+                  <strong>
+                    <em>10</em>
+                  </strong>{" "}
+                  different villages, that never have had access to it before
+                </p>
+              </Container>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
