@@ -1,7 +1,7 @@
 import * as React from "react";
 import Link from "@mui/material/Link";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { Breadcrumbs, Typography } from "@mui/material";
+import {Breadcrumbs, Container, Typography} from "@mui/material";
 
 const BreadcrumbComponent = () => {
   // const navigate = useNavigate();
@@ -22,6 +22,7 @@ const BreadcrumbComponent = () => {
 
   return (
     <>
+      <Container>
       <Breadcrumbs>
         <Link underline={"hover"} fontSize={12} alignContent="center" href="/">
           Home
@@ -30,6 +31,7 @@ const BreadcrumbComponent = () => {
           {pathname.length > 1 ? path : "Home"}
         </Typography>
       </Breadcrumbs>
+      </Container>
     </>
   );
 };

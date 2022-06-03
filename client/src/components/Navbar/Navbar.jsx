@@ -24,6 +24,10 @@ const pages = [
     url: "about",
   },
   {
+    name: "Cases",
+    url: "cases",
+  },
+  {
     name: "Booking",
     url: "booking",
   },
@@ -31,10 +35,6 @@ const pages = [
     name: "Contact",
     url: "contact",
   },
-  {
-    name: "Cases",
-    url: "cases",
-  }
 
 ]
 
