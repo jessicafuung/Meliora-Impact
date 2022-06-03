@@ -20,3 +20,7 @@
     justify-content: center;
     text-align: center;
 }
+
+.contactInfoHover:hover{
+    color: #034f7a !important;
+}

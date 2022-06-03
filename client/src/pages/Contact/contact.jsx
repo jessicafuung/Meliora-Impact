@@ -51,7 +51,7 @@ export function Contact() {
             <div className="contactInfo">
               <PhoneIcon sx={{ fontSize: 50 }} color={"primary"} />
               <p>
-                <a style={{ color: "black" }} href={"tel:+4792452610"}>
+                <a style={{ color: "black" }} href={"tel:+4792452610"} className={'contactInfoHover'}>
                   +47 924 52 610
                 </a>
               </p>
@@ -59,7 +59,7 @@ export function Contact() {
             <div className="contactInfo">
               <EmailIcon sx={{ fontSize: 50 }} color={"primary"} />
               <p>
-                <a
+                <a className={'contactInfoHover'}
                   style={{ color: "black" }}
                   href={"mailto:contact@melioraimpact.no"}
                 >
