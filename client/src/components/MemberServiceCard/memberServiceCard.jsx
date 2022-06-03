@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 
 export function MemberServiceCard({ title, content, icon, linkTo }) {
   return (
+    <Link to={linkTo}>
     <Box className="service-card" py={5} px={8}>
       <Grid
         container
@@ -44,5 +45,6 @@ export function MemberServiceCard({ title, content, icon, linkTo }) {
         </Box>
       </Grid>
     </Box>
+    </Link>
   );
 }
