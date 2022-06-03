@@ -3,9 +3,11 @@ import { Box, Card, Grid, Typography } from "@mui/material";
 import CustomButton from "../CustomButton/CustomButton";
 import "./sectors";
 import "./sectorCard.css";
+import { Link } from "react-router-dom";
 
 export function SectorCard({ title, content, image, linkTo }) {
   return (
+    <Link to={linkTo}>
     <Box textAlign="center" className="sector-container" p={{ xs: 6, lg: 10 }}>
       <Grid
         container
@@ -55,5 +57,6 @@ export function SectorCard({ title, content, image, linkTo }) {
         </Grid>
       </Grid>
     </Box>
+    </Link>
   );
 }

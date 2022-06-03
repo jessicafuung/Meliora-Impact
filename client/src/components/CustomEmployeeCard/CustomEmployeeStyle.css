@@ -10,7 +10,7 @@
 }
 
 .employeeCard {
-    box-shadow: 2px 3px 9px 0px rgba(130,130,130,0.47);
-    -webkit-box-shadow: 2px 3px 9px 0px rgba(130,130,130,0.47);
-    -moz-box-shadow: 2px 3px 9px 0px rgba(130,130,130,0.47);
+     box-shadow: 2px 3px 9px 0px rgba(130,130,130,0.25);
+    -webkit-box-shadow: 2px 3px 9px 0px rgba(130,130,130,0.25);
+    -moz-box-shadow: 2px 3px 9px 0px rgba(130,130,130,0.25); 
 }
