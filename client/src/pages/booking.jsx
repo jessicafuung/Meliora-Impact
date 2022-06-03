@@ -21,6 +21,7 @@ import { ApiContext } from "../../lib/useContext";
 import materialTheme from "../styling/calendar";
 import "../styling/style.css";
 import { Progressbar } from "../components/progressbar";
+import Button from "@mui/material/Button";
 
 const availabilities = [
   { time: "08:30" },
@@ -180,9 +181,9 @@ function ShowForm({ userDate, setUserDate, setActiveStep, customStyle }) {
                   sx={{ zIndex: 0 }}
                 />
                 <Box align="center">
-                  <button variant={"contained"}>
+                  <Button variant="contained" to={""} type={"submit"}>
                     {isBooked ? "Booked!" : "Book"}
-                  </button>
+                  </Button>
                 </Box>
               </Grid>
             </Grid>
