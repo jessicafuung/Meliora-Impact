@@ -5,9 +5,9 @@
 }
 .buttonUnderHeadline {
     font-family: "Montserrat", sans-serif;
-    border-radius: 0;
-    height: 50px;
-    width: 200px;
+    border-radius: 0!important;
+    height: 30px;
+    width: 120px;
     background-color: #034F7A;
     color: white;
     border: 0;
