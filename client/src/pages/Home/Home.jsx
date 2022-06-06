@@ -32,7 +32,7 @@ export function Home() {
               padding={{ xs: 2, sm: 2 }}
             >
               <Typography gutterBottom variant="h2" color="textPrimary">
-                Make an <span className="text-highlight">impact</span> with{" "}
+                Make an <span className="text-highlight">Impact</span> with{" "}
                 <span className="text-highlight">Meliora</span>
               </Typography>
               <Typography
