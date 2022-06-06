@@ -26,7 +26,7 @@ const CustomButton = ({ children, variant, w, h, to, p, backgroundColor, otherPr
       }}
       sx={{
         ":hover": {
-          backgroundColor: "#034F7A",
+          backgroundColor: "#804f9e",
           color: "white",
         },
       }}
