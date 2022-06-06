@@ -72,6 +72,7 @@ theme.typography.h3 = {
 };
 theme.typography.h4 = {
   fontSize: "20px",
+  fontWeight: '500',
   fontFamily: "Josefin Sans",
   "@media (min-width:600px)": {
     fontSize: "1.3rem",
@@ -88,6 +89,7 @@ theme.typography.h4 = {
 };
 theme.typography.h5 = {
   fontFamily: "Josefin Sans",
+  fontWeight: '500',
 };
 theme.typography.h6 = {
   fontFamily: "Josefin Sans",
