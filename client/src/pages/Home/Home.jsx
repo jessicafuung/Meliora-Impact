@@ -31,22 +31,19 @@ export function Home() {
               className="text-container-header"
               padding={{ xs: 2, sm: 2 }}
             >
-              <Typography gutterBottom variant="h2" color="white">
+              <Typography gutterBottom variant="h2" color="textPrimary">
                 Make an <span className="text-highlight">impact</span> with{" "}
                 <span className="text-highlight">Meliora</span>
               </Typography>
               <Typography
                 paddingBottom={{ xs: 2, sm: 8 }}
-                color="white"
+                color="textPrimary"
                 paragraph
                 fontWeight={500}
                 fontSize={{ xs: 16, md: 18, lg: 22 }}
               >
                 A digital platform where companies can give to nonprofits in a
-                more{" "}
-                <span className="text-highlight">
-                  impactful and sustainable way
-                </span>
+                more impactful and sustainable way
               </Typography>
               <CustomButton p="12px 22px" to={"/booking"} variant="contained">
                 Book a Consultation

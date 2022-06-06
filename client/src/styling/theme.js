@@ -44,6 +44,7 @@ theme.typography.h1 = {
 };
 theme.typography.h2 = {
   fontSize: "28px",
+  fontWeight: "500",
   fontFamily: "Josefin Sans",
   "@media (min-width:600px)": {
     fontSize: "2.5rem",
