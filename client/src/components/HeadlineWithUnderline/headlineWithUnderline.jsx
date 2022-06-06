@@ -17,6 +17,7 @@ export function HeadlineWithUnderline(
             textAlign: "center",
             color: textColor,
             fontFamily: "Josefin Sans",
+            fontWeight: '500',
           }}
         >
           {headlineText}
