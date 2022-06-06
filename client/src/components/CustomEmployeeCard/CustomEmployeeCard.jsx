@@ -17,7 +17,7 @@ export function CustomEmployeeCard({
         position: "relative",
       }}
       className="employeeCard"
-      style={{ backgroundColor: "#DFE5E9" }}
+      style={{ backgroundColor: "#ede6f1" }}
     >
       <Box>
         <Grid
@@ -71,7 +71,7 @@ export function CustomEmployeeCard({
               }}
               sx={{
                 ":hover": {
-                  backgroundColor: "#034F7A",
+                  backgroundColor: "#804f9e",
                   color: "white",
                 },
               }}
