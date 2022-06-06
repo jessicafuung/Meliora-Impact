@@ -12,7 +12,7 @@ const materialTheme = createTheme({
 
     MuiPickersCalendarHeader: {
       switchHeader: {
-        backgroundColor: "#034F7A",
+        backgroundColor: "#490374",
         color: "white",
       },
 
@@ -20,7 +20,7 @@ const materialTheme = createTheme({
         color: "white",
       },
       iconButton: {
-        backgroundColor: "#034F7A",
+        backgroundColor: "#490374",
       },
     },
 
@@ -75,7 +75,7 @@ const materialTheme = createTheme({
 
     MuiPickersBasePicker: {
       pickerView: {
-        backgroundColor: "#034F7A",
+        backgroundColor: "#490374",
       },
     },
 
