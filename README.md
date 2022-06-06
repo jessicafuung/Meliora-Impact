@@ -7,7 +7,7 @@ Lenke til løsning: [https://melioraimpact.herokuapp.com](https://melioraimpact.
 
 ### How to run locally
 1. `git clone https://github.com/FabianSolheim/Smidiggruppe35.git`
-2. `cd Smidiggruppe`
+2. `cd Smidiggruppe35`
 3. `add .env values`
 4. `npm install`
 5. `npm run dev`
