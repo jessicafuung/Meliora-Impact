@@ -80,7 +80,7 @@ const Navbar = () => {
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
+              fontFamily: "Josefin Sans",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",
@@ -147,7 +147,7 @@ const Navbar = () => {
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: "monospace",
+              fontFamily: "Josefin Sans",
               fontWeight: 700,
               letterSpacing: ".3rem",
               color: "inherit",

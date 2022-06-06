@@ -1,6 +1,9 @@
 .navbar-container{
     z-index: 9999 !important;
 }
+.header-logo{
+    font-family: 'Josefin-sans' !important;
+}
 
 @media screen and (max-width: 900px) {
     .css-1cndkqf-MuiToolbar-root{
