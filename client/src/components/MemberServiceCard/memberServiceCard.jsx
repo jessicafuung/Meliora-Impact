@@ -24,8 +24,10 @@ export function MemberServiceCard({ title, content, icon, linkTo }) {
           <Typography
             align="center"
             gutterBottom
+            marginBottom={2}
             color="textPrimary"
-            variant="h3"
+            variant="h4"
+            fontWeight={400}
             className="service-header"
           >
             {title}

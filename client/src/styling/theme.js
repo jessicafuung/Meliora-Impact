@@ -70,7 +70,20 @@ theme.typography.h3 = {
   },
 };
 theme.typography.h4 = {
+  fontSize: "20px",
   fontFamily: "Josefin Sans",
+  "@media (min-width:600px)": {
+    fontSize: "1.3rem",
+  },
+  "@media (min-width:768px)": {
+    fontSize: "1.7rem",
+  },
+  "@media (min-width:1024px)": {
+    fontSize: "1.7rem",
+  },
+  "@media (min-width:1440px)": {
+    fontSize: "1.8rem",
+  },
 };
 theme.typography.h5 = {
   fontFamily: "Josefin Sans",
