@@ -37,7 +37,7 @@ export function CustomEmployeeCard({
             flexDirection={"column"}
             xs={8}
           >
-            <Typography mb={0} variant="h6" color="primary">
+            <Typography mb={0} variant="h4" color="primary">
               {name}
             </Typography>
             <Typography mb={0} paragraph color="textDisabled">

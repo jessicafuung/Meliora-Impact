@@ -9,7 +9,7 @@ import { Container } from "@mui/material";
 export function CorporateBenefits() {
   return (
     <>
-      {HeadlineWithUnderline("Benefits", 100, "#034F7A", 50, "#212121", "36px")}
+      {HeadlineWithUnderline("Benefits", 100, 50, "#212121", "36px")}
 
       <Box
         sx={{ flexGrow: 1 }}

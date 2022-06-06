@@ -201,7 +201,6 @@ function ShowAvailabilities({
   setActiveStep,
   customStyle,
 }) {
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const time = e.target.value;
@@ -338,12 +337,11 @@ export function Start() {
         {HeadlineWithUnderline(
           "Schedule Meeting",
           200,
-          "#034F7A",
           "2rem",
           "#212121",
           "36px"
         )}
-        {<Progressbar activeStep={activeStep}/>}
+        {<Progressbar activeStep={activeStep} />}
         <Grid
           container
           alignItems={"center"}

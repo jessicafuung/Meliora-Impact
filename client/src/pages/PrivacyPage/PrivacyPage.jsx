@@ -8,14 +8,7 @@ const PrivacyPage = () => {
     <div class="privacy-page-container">
       <Grid container justifyContent="center">
         <Grid item textAlign="center" xs={12}>
-          {HeadlineWithUnderline(
-            "Privacy Policy",
-            140,
-            "#034f7a",
-            0,
-            "#212121",
-            "36px"
-          )}
+          {HeadlineWithUnderline("Privacy Policy", 140, 0, "#212121", "36px")}
         </Grid>
         <Grid item xs={6}>
           <main>
@@ -138,7 +131,7 @@ const PrivacyPage = () => {
                 should contact us immediately via email at{" "}
                 <span
                   style={{
-                    color: "#034f7a",
+                    color: "#490374",
                     textDecoration: "underline",
                     cursor: "pointer",
                   }}

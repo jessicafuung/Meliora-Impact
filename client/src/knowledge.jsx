@@ -27,14 +27,7 @@ export function KnowledgeCases() {
     <div>
       <CaseStudyKnowledgeHeader />
       <div style={{ marginTop: 100 }} />
-      {HeadlineWithUnderline(
-        "Global Issue",
-        175,
-        "#034f7a",
-        "0",
-        "#212121",
-        "36px"
-      )}
+      {HeadlineWithUnderline("Global Issue", 175, "0", "#212121", "36px")}
       <Container>
         <Grid container marginTop={"2rem"}>
           <Grid item xs={12}>
@@ -69,7 +62,7 @@ function KnowledgeCard({ knowledge: { name, info } }) {
   return (
     <>
       <Grid item xs={12} sm={12} md={5} sx={{ marginTop: "2rem" }}>
-        {HeadlineWithUnderline(name, 215, "#034F7A", "2rem", "#034F7A", "28px")}
+        {HeadlineWithUnderline(name, 215, "2rem", "#212121", "28px")}
         {info.map((info) => (
           <InfoCard key={info.id} info={info} />
         ))}

@@ -12,7 +12,7 @@
 
 .textHighlight{
     font-weight: 700;
-    color: #034f7a;
+    color: #490374;
 }
 
 .contactInfo {
@@ -22,5 +22,5 @@
 }
 
 .contactInfoHover:hover{
-    color: #034f7a !important;
+    color: #490374 !important;
 }
