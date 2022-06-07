@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FaqQuestionCard test shows FaqQuestionCard 1`] = `"<div></div>"`;
