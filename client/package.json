@@ -61,6 +61,8 @@
       "**/*.jsx",
       "**/*.js",
       "!dist/**",
+      "!src/assets/**",
+      "!lib/**",
       "!coverage/**"
     ]
   }

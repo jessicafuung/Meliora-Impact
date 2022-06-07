@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Start } from "@mui/icons-material";
+import { Start } from "./../src/pages/booking";
 
 describe("Booking page", () => {
   it("shows booking page", () => {
