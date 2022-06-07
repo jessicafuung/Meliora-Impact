@@ -5,7 +5,7 @@ import { Box, Grid, Typography } from "@mui/material";
 
 const PrivacyPage = () => {
   return (
-    <div class="privacy-page-container">
+    <div className="privacy-page-container">
       <Grid container justifyContent="center">
         <Grid item textAlign="center" xs={12}>
           {HeadlineWithUnderline("Privacy Policy", 140, 0, "#212121", "36px")}
