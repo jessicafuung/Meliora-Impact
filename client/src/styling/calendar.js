@@ -6,8 +6,8 @@ const materialTheme = createTheme({
     MuiButtonBase: {
       root: {
         padding: "",
-        marginBlock: "16px"
-      }
+        marginBlock: "16px",
+      },
     },
 
     MuiPickersCalendarHeader: {

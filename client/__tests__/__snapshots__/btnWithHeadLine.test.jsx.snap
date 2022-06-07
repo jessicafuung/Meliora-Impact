@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`btnWithHeadline test shows btnWithHeadline component 1`] = `"<div></div>"`;
