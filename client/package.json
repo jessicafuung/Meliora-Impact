@@ -65,6 +65,8 @@
       "!src/index.jsx",
       "!src/assets/**",
       "!src/styling/theme.js",
+      "!src/components/ScrollToTop/ScrollToTop.jsx",
+      "!src/pages/Home/Home.jsx",
       "!lib/**",
       "!coverage/**"
     ]

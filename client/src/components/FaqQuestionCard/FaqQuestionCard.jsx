@@ -16,7 +16,7 @@ export function FaqQuestionCard({ faqs: { _id, question, answer }, index }) {
   return (
     <div className="accordion">
       <div className="item">
-        <div className="title" onClick={() => toggle(index)}>
+        <div className="title" id="faqBtn" onClick={() => toggle(index)}>
           <div>
             <strong>
               {index + 1}. {question}
