@@ -61,7 +61,10 @@
       "**/*.jsx",
       "**/*.js",
       "!dist/**",
+      "!src/application.jsx",
+      "!src/index.jsx",
       "!src/assets/**",
+      "!src/styling/theme.js",
       "!lib/**",
       "!coverage/**"
     ]

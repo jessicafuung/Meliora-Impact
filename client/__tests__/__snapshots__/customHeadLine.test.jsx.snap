@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`customHeadlineComponent shows customHeadlineComponent 1`] = `"<div class=\\"headline-container\\"><p class=\\"MuiTypography-root MuiTypography-body1 title css-ahj2mt-MuiTypography-root\\"></p><div class=\\"line\\"></div></div>"`;
