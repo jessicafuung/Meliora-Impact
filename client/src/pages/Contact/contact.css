@@ -12,11 +12,15 @@
 
 .textHighlight{
     font-weight: 700;
-    color: #034f7a;
+    color: #490374;
 }
 
 .contactInfo {
     margin-bottom: 30px;
     justify-content: center;
     text-align: center;
+}
+
+.contactInfoHover:hover{
+    color: #490374 !important;
 }

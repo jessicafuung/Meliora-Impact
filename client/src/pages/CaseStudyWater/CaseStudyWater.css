@@ -1,5 +1,4 @@
 
-
 body{
     margin: 0;
 }
@@ -21,27 +20,24 @@ body{
 }
 .headline {
     font-size: 64px;
-    font-family: "Montserrat", sans-serif;
     color: #212121;
     margin-top: 200px;
 }
 .description {
     font-size: 30px;
-    font-family: "Montserrat", sans-serif;
     color: #212121;
     text-align: center;
 }
 .description em {
-    color: #034F7A;
+    color: #490374;
     font-style: normal;
 }
 .consultationBtn {
     margin-top: 80px;
-    font-family: "Montserrat", sans-serif;
     border-radius: 0;
     height: 50px;
     width: 200px;
-    background-color: #034F7A;
+    background-color: #490374;
     color: white;
     border: 0;
     font-size: 16px;

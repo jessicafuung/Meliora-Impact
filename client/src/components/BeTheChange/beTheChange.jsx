@@ -8,14 +8,7 @@ import { Container } from "@mui/material";
 export function BeTheChange() {
   return (
     <>
-      {HeadlineWithUnderline(
-        "Be the Change",
-        200,
-        "#034f7a",
-        0,
-        "#212121",
-        "36px"
-      )}
+      {HeadlineWithUnderline("Be the Change", 200, 0, "#212121", "36px")}
       <div>
         <p
           style={{

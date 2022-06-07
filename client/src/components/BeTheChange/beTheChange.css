@@ -13,7 +13,7 @@
 }
 .section1 {
     width: 100%;
-    background-color: rgb(3, 79, 122, 0.1);
+    background-color: #ede6f1;
     height: 453px;
     display: flex;
     justify-content: center;
@@ -28,7 +28,7 @@
 }
 .section2 {
     width: 100%;
-    background-color: rgb(3, 79, 122, 0.1);
+    background-color: #ede6f1;
     height: 453px;
     display: flex;
     justify-content: center;
@@ -47,11 +47,11 @@
     margin-right: 45px;
 }
 .text1 em  {
-    color: #034F7A;
+    color: #490374;
     font-style: normal;
 }
 .text2 em  {
-    color: #034F7A;
+    color: #490374;
     font-style: normal;
 }
 .PhotoFindrImg {

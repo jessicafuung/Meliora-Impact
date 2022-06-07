@@ -21,8 +21,7 @@ export function SectorCard({ title, content, image, linkTo }) {
         <Grid item>
           <Box mt={2}>
             <Typography
-              gutterBottom
-              fontWeight={700}
+              gutterBottom  
               color="textPrimary"
               variant="h3"
               className="sector-header"

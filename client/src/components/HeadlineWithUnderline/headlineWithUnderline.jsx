@@ -3,7 +3,6 @@ import React from "react";
 export function HeadlineWithUnderline(
   headlineText,
   lineWidth,
-  hexColor,
   marginBottom,
   textColor,
   fontSize
@@ -17,6 +16,8 @@ export function HeadlineWithUnderline(
             fontWeight: "bold",
             textAlign: "center",
             color: textColor,
+            fontFamily: "Josefin Sans",
+            fontWeight: '500',
           }}
         >
           {headlineText}
@@ -26,7 +27,7 @@ export function HeadlineWithUnderline(
         style={{
           width: lineWidth,
           height: 2,
-          backgroundColor: hexColor,
+          backgroundColor: "#490374",
           margin: "auto",
           marginTop: 5,
           marginBottom: marginBottom,

@@ -7,7 +7,7 @@ import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/he
 export function Services() {
   return (
     <>
-      {HeadlineWithUnderline("Services", 100, "#034F7A", 50, "#212121", "36px")}
+      {HeadlineWithUnderline("Services", 100, 50, "#212121", "36px")}
       <div className="containerServices">
         <div className="widthContainer">
           <Box sx={{ flexGrow: 1 }}>
@@ -18,7 +18,7 @@ export function Services() {
                   <p
                     style={{
                       fontSize: 18,
-                      color: "#034F7A",
+                      color: "#490374",
                       marginTop: 10,
                     }}
                   >
@@ -41,7 +41,7 @@ export function Services() {
                   <p
                     style={{
                       fontSize: 18,
-                      color: "#034F7A",
+                      color: "#490374",
                       marginTop: 10,
                     }}
                   >
@@ -67,7 +67,7 @@ export function Services() {
                   <p
                     style={{
                       fontSize: 18,
-                      color: "#034F7A",
+                      color: "#490374",
                       marginTop: 10,
                     }}
                   >

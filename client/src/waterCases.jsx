@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import { Container, Typography, Grid } from "@mui/material";
 import { CaseStudyWaterHeader } from "./pages/CaseStudyWater/CaseStudyWaterHeader";
 import { HeadlineWithUnderline } from "./components/HeadlineWithUnderline/headlineWithUnderline";
@@ -26,14 +25,7 @@ export function WaterCases() {
     <div>
       <CaseStudyWaterHeader />
       <div style={{ marginTop: 100 }}></div>
-      {HeadlineWithUnderline(
-        "Limited access",
-        215,
-        "#034f7a",
-        0,
-        "#212121",
-        "36px"
-      )}
+      {HeadlineWithUnderline("Limited access", 215, 0, "#212121", "36px")}
       <Container>
         <Grid container marginTop={"2rem"}>
           <Grid item xs={12}>
@@ -73,7 +65,7 @@ function OrganizationCard({ water: { name, info } }) {
       {/*Grid item or grid container, not sure*/}
 
       <Grid item xs={12} sm={12} md={5} sx={{ marginTop: "2rem" }}>
-        {HeadlineWithUnderline(name, 215, "#034F7A", "2rem", "#034F7A", "28px")}
+        {HeadlineWithUnderline(name, 215, "2rem", "#212121", "28px")}
 
         {info.map((info) => (
           <InfoCard key={info.id} info={info} />

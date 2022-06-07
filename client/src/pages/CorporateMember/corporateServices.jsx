@@ -7,7 +7,7 @@ import { HeadlineWithUnderline } from "../../components/HeadlineWithUnderline/he
 export function CorporateServices() {
   return (
     <>
-      {HeadlineWithUnderline("Services", 100, "#034F7A", 50, "#212121", "36px")}
+      {HeadlineWithUnderline("Services", 100, 50, "#212121", "36px")}
       <div className="containerCorporateServices">
         <div className="widthContainerServices">
           <Box sx={{ flexGrow: 1 }}>
@@ -18,7 +18,7 @@ export function CorporateServices() {
                   <p
                     style={{
                       fontSize: 18,
-                      color: "#034F7A",
+                      color: "#490374",
                       marginTop: 10,
                     }}
                   >
@@ -44,7 +44,7 @@ export function CorporateServices() {
                   <p
                     style={{
                       fontSize: 18,
-                      color: "#034F7A",
+                      color: "#490374",
                       marginTop: 10,
                     }}
                   >
@@ -70,7 +70,7 @@ export function CorporateServices() {
                   <p
                     style={{
                       fontSize: 18,
-                      color: "#034F7A",
+                      color: "#490374",
                       marginTop: 10,
                     }}
                   >
@@ -94,7 +94,7 @@ export function CorporateServices() {
                   <p
                     style={{
                       fontSize: 18,
-                      color: "#034F7A",
+                      color: "#490374",
                       marginTop: 10,
                     }}
                   >
@@ -121,7 +121,7 @@ export function CorporateServices() {
                   <p
                     style={{
                       fontSize: 18,
-                      color: "#034F7A",
+                      color: "#490374",
                       marginTop: 10,
                     }}
                   >
@@ -149,7 +149,7 @@ export function CorporateServices() {
                   <p
                     style={{
                       fontSize: 18,
-                      color: "#034F7A",
+                      color: "#490374",
                       marginTop: 10,
                     }}
                   >
@@ -177,7 +177,7 @@ export function CorporateServices() {
                   <p
                     style={{
                       fontSize: 18,
-                      color: "#034F7A",
+                      color: "#490374",
                       marginTop: 10,
                     }}
                   >
@@ -203,7 +203,7 @@ export function CorporateServices() {
                   <p
                     style={{
                       fontSize: 18,
-                      color: "#034F7A",
+                      color: "#490374",
                       marginTop: 10,
                     }}
                   >
@@ -229,7 +229,7 @@ export function CorporateServices() {
                   <p
                     style={{
                       fontSize: 18,
-                      color: "#034F7A",
+                      color: "#490374",
                       marginTop: 10,
                     }}
                   >

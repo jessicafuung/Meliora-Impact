@@ -25,11 +25,11 @@ export function FaqQuestionCard({ faqs: { _id, question, answer }, index }) {
           <span>
             {selected === index ? (
               <RemoveCircleOutlineIcon
-                style={{ color: "#034F7A", fontSize: "25px" }}
+                style={{ color: "#490374", fontSize: "25px" }}
               />
             ) : (
               <AddCircleOutlineIcon
-                style={{ color: "#034F7A", fontSize: "25px" }}
+                style={{ color: "#490374", fontSize: "25px" }}
               />
             )}
           </span>

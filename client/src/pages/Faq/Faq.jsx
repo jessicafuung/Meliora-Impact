@@ -49,14 +49,7 @@ export function FaqPage() {
       >
         <Grid item container justifyContent="center" xs={12} md={6}>
           <Box>
-            {HeadlineWithUnderline(
-              "FAQs",
-              80,
-              "#034F7A",
-              "0",
-              "#212121",
-              "36px"
-            )}
+            {HeadlineWithUnderline("FAQs", 80, "0", "#212121", "36px")}
             <Typography mt={3} paragraph>
               How can we help you?
             </Typography>
