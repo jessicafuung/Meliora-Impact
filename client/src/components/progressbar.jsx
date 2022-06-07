@@ -1,8 +1,7 @@
 import React from "react";
-import {Stepper, Step, StepLabel, makeStyles} from "@material-ui/core";
-import { makeStyles } from "@material-ui/core";
+import { Stepper, Step, StepLabel, makeStyles } from "@material-ui/core";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     "& .MuiPaper-root":{
       backgroundColor:"#F2F2F2"

@@ -43,7 +43,8 @@
     "collectCoverageFrom": [
       "**/*.js",
       "!dist/**",
-      "!coverage/**"
+      "!coverage/**",
+      "!server.js"
     ]
   }
 }
