@@ -3,7 +3,7 @@ name: Jest Coverage
 on:
   push:
     branches:
-      - jest_test
+      - master
       
 jobs:
   verify:
