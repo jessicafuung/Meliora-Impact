@@ -12,7 +12,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import Logo from "../assets/Logo";
-import {makeStyles} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core";
 
 const pages = [
   {
@@ -35,15 +35,14 @@ const pages = [
     name: "Contact",
     url: "contact",
   },
+];
 
-]
-
-const useStyles = makeStyles(theme => ({
-    root: {
-        "& .MuiPaper-root":{
-            backgroundColor:"",
-        },
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& .MuiPaper-root": {
+      backgroundColor: "",
     },
+  },
 }));
 
 const Navbar = () => {
@@ -65,9 +64,9 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
 
-    const classes = useStyles();
+  const classes = useStyles();
 
-    return (
+  return (
     <AppBar position="sticky" className="navbar-container">
       <Container maxWidth="lg" className={classes.root}>
         <Toolbar disableGutters>
@@ -168,7 +167,12 @@ const Navbar = () => {
                 <Button
                   key={page.name}
                   onClick={handleCloseNavMenu}
-                  sx={{ textTransform: "none", my: 2, color: "white", display: "block" }}
+                  sx={{
+                    textTransform: "none",
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                  }}
                 >
                   {page.name}
                 </Button>
