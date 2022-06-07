@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`breadcrumb test shows breadcrumbs 1`] = `"<nav class=\\"MuiTypography-root MuiTypography-body1 MuiBreadcrumbs-root css-63vwl1-MuiTypography-root-MuiBreadcrumbs-root\\"><ol class=\\"MuiBreadcrumbs-ol css-4pdmu4-MuiBreadcrumbs-ol\\"></ol></nav>"`;

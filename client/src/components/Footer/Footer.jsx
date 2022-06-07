@@ -1,4 +1,5 @@
 import Box from "@mui/material/Box";
+import React from "react";
 import { Container, Grid, Typography } from "@mui/material";
 import "./Footer.css";
 import Logo from "../assets/Logo";

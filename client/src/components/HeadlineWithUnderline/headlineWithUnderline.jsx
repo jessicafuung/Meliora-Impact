@@ -13,11 +13,10 @@ export function HeadlineWithUnderline(
         <div
           style={{
             fontSize: fontSize,
-            fontWeight: "bold",
             textAlign: "center",
             color: textColor,
             fontFamily: "Josefin Sans",
-            fontWeight: '500',
+            fontWeight: "500",
           }}
         >
           {headlineText}
