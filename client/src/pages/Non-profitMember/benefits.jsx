@@ -7,7 +7,7 @@ import { BtnWithHeadline } from "../../components/BtnWithHeadline/BtnWithHeadlin
 export function Benefits() {
   return (
     <>
-      {HeadlineWithUnderline("Benefits", 100, "#034F7A", 50, "#212121", "36px")}
+      {HeadlineWithUnderline("Benefits", 100, 50, "#212121", "36px")}
       <div className="containerBenefits">
         <div className="widthContainerBenefits">
           <Box sx={{ flexGrow: 1 }}>

@@ -3,19 +3,15 @@ import { HandHoldingHeartIcon } from "../assets/handHoldingHeartIcon";
 
 export const members = [
   {
-    title: "Business",
+    title: "For Businesses",
     content:
-      "For businesses who want \n" +
-      "to use their resources \n" +
-      "for greater social good",
+      "who want \n" + "to use their resources \n" + "for greater social good",
     icon: <Business sx={{ fontSize: 50 }} />,
     linkTo: "/corporate",
   },
   {
-    title: "Non-profits",
-    content:
-      "For nonprofits who are seeking \n" +
-      "to carry out their frontline work \n",
+    title: "For Non-profits",
+    content: "who are seeking \n" + "to carry out their frontline work \n",
     icon: <HandHoldingHeartIcon sx={{ fontSize: 50 }} />,
     linkTo: "/nonprofit",
   },

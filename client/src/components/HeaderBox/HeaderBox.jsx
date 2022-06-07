@@ -1,5 +1,6 @@
 import React from "react";
 import "./HeaderBox.css";
+import Typography from "@mui/material/Typography";
 
 export function HeaderBox(
   backgroundImageUrl,
@@ -20,14 +21,15 @@ export function HeaderBox(
       }}
     >
       <div className="HeaderBox">
-        <div
+        <Typography
+          variant={"h1"}
           className="BoxHeadline"
           style={{
             color: headlineColor,
           }}
         >
           {headline}
-        </div>
+        </Typography>
         <div
           className="BoxText"
           style={{

@@ -31,22 +31,19 @@ export function Home() {
               className="text-container-header"
               padding={{ xs: 2, sm: 2 }}
             >
-              <Typography gutterBottom variant="h2" color="white">
-                Make an <span className="text-highlight">impact</span> with{" "}
+              <Typography gutterBottom variant="h2" color="textPrimary">
+                Make an <span className="text-highlight">Impact</span> with{" "}
                 <span className="text-highlight">Meliora</span>
               </Typography>
               <Typography
                 paddingBottom={{ xs: 2, sm: 8 }}
-                color="white"
+                color="textPrimary"
                 paragraph
                 fontWeight={500}
                 fontSize={{ xs: 16, md: 18, lg: 22 }}
               >
                 A digital platform where companies can give to nonprofits in a
-                more{" "}
-                <span className="text-highlight">
-                  impactful and sustainable way
-                </span>
+                more impactful and sustainable way
               </Typography>
               <CustomButton p="12px 22px" to={"/booking"} variant="contained">
                 Book a Consultation
@@ -63,7 +60,6 @@ export function Home() {
               {HeadlineWithUnderline(
                 "Member services",
                 200,
-                "#034F7A",
                 0,
                 "#212121",
                 "36px"
@@ -100,14 +96,7 @@ export function Home() {
         >
           <Grid item>
             <div className="text-box">
-              {HeadlineWithUnderline(
-                "Categories",
-                80,
-                "#034F7A",
-                15,
-                "#212121",
-                "36px"
-              )}
+              {HeadlineWithUnderline("Categories", 120, 15, "#212121", "36px")}
             </div>
           </Grid>
           <Grid item xs={8} sm={6} md={5}>
@@ -146,14 +135,7 @@ export function Home() {
         <div style={{ marginTop: 40 }} />
       </Box>
       <Box>
-        {HeadlineWithUnderline(
-          "Partners",
-          80,
-          "#034F7A",
-          40,
-          "#212121",
-          "36px"
-        )}
+        {HeadlineWithUnderline("Partners", 80, 40, "#212121", "36px")}
         <PartnerCard />
         <div style={{ marginBottom: 40 }} />
       </Box>

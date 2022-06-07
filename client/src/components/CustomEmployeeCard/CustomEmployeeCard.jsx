@@ -17,7 +17,7 @@ export function CustomEmployeeCard({
         position: "relative",
       }}
       className="employeeCard"
-      style={{ backgroundColor: "#DFE5E9" }}
+      style={{ backgroundColor: "#ede6f1" }}
     >
       <Box>
         <Grid
@@ -37,7 +37,7 @@ export function CustomEmployeeCard({
             flexDirection={"column"}
             xs={8}
           >
-            <Typography mb={0} variant="h6" color="primary">
+            <Typography mb={0} variant="h4" fontWeight={500} color="primary">
               {name}
             </Typography>
             <Typography mb={0} paragraph color="textDisabled">
@@ -71,7 +71,7 @@ export function CustomEmployeeCard({
               }}
               sx={{
                 ":hover": {
-                  backgroundColor: "#034F7A",
+                  backgroundColor: "#804f9e",
                   color: "white",
                 },
               }}

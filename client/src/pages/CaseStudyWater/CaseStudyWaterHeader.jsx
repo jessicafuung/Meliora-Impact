@@ -1,7 +1,6 @@
 import React from "react";
 import "./CaseStudyWater.css";
 import { HeaderBox } from "../../components/HeaderBox/HeaderBox";
-import { Box, Grid } from "@material-ui/core";
 import CustomButton from "../../components/CustomButton/CustomButton";
 
 export function CaseStudyWaterHeader() {

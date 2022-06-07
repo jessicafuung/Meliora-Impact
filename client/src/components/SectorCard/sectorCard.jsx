@@ -3,9 +3,11 @@ import { Box, Card, Grid, Typography } from "@mui/material";
 import CustomButton from "../CustomButton/CustomButton";
 import "./sectors";
 import "./sectorCard.css";
+import { Link } from "react-router-dom";
 
 export function SectorCard({ title, content, image, linkTo }) {
   return (
+    <Link to={linkTo}>
     <Box textAlign="center" className="sector-container" p={{ xs: 6, lg: 10 }}>
       <Grid
         container
@@ -19,8 +21,7 @@ export function SectorCard({ title, content, image, linkTo }) {
         <Grid item>
           <Box mt={2}>
             <Typography
-              gutterBottom
-              fontWeight={700}
+              gutterBottom  
               color="textPrimary"
               variant="h3"
               className="sector-header"
@@ -29,7 +30,7 @@ export function SectorCard({ title, content, image, linkTo }) {
             </Typography>
             <Typography
               fontSize={15}
-              align="left"
+              align="center"
               color="textPrimary"
               className="sector-content"
             >
@@ -55,5 +56,6 @@ export function SectorCard({ title, content, image, linkTo }) {
         </Grid>
       </Grid>
     </Box>
+    </Link>
   );
 }

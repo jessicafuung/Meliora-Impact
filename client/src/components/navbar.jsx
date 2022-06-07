@@ -186,7 +186,7 @@ export default function Header() {
           className={menuButton}
           style={{
             fontSize: 18,
-            fontFamily: "Montserrat",
+            fontFamily: "Josefin Sans",
             color: "white",
             textTransform: "capitalize",
           }}
@@ -200,7 +200,7 @@ export default function Header() {
           className={menuButton}
           style={{
             fontSize: 18,
-            fontFamily: "Montserrat",
+            fontFamily: "Josefin Sans",
             color: "white",
             textTransform: "capitalize",
           }}
@@ -214,7 +214,7 @@ export default function Header() {
           className={menuButton}
           style={{
             fontSize: 18,
-            fontFamily: "Montserrat",
+            fontFamily: "Josefin Sans",
             color: "white",
             textTransform: "capitalize",
           }}
@@ -228,7 +228,7 @@ export default function Header() {
           className={menuButton}
           style={{
             fontSize: 18,
-            fontFamily: "Montserrat",
+            fontFamily: "Josefin Sans",
             color: "white",
             textTransform: "capitalize",
           }}
@@ -242,7 +242,7 @@ export default function Header() {
           className={menuButton}
           style={{
             fontSize: 18,
-            fontFamily: "Montserrat",
+            fontFamily: "Josefin Sans",
             color: "white",
             textTransform: "capitalize",
           }}
@@ -256,7 +256,7 @@ export default function Header() {
           className={menuButton}
           style={{
             fontSize: 18,
-            fontFamily: "Montserrat",
+            fontFamily: "Josefin Sans",
             color: "white",
             textTransform: "capitalize",
           }}

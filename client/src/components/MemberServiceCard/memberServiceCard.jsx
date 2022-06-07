@@ -2,12 +2,15 @@ import { Box, Grid, Typography } from "@mui/material";
 import "./memberService.css";
 import "./Members";
 import CustomButton from "../CustomButton/CustomButton";
+import {Link} from "react-router-dom";
 
 export function MemberServiceCard({ title, content, icon, linkTo }) {
   return (
+    <Link to={linkTo}>
     <Box className="service-card" py={5} px={8}>
       <Grid
         container
+
         direction="column"
         alignItems="center"
         justifyContent="space-around"
@@ -21,14 +24,17 @@ export function MemberServiceCard({ title, content, icon, linkTo }) {
           <Typography
             align="center"
             gutterBottom
+            marginBottom={2}
             color="textPrimary"
-            variant="h3"
+            variant="h4"
+            fontWeight={400}
             className="service-header"
           >
             {title}
           </Typography>
           <Typography
-            align="left"
+            align="center"
+            color="textPrimary"
             paragraph
             fontSize={16}
             className="service-content"
@@ -43,5 +49,6 @@ export function MemberServiceCard({ title, content, icon, linkTo }) {
         </Box>
       </Grid>
     </Box>
+    </Link>
   );
 }

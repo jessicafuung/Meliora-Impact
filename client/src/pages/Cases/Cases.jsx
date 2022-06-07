@@ -8,7 +8,7 @@ export function Cases() {
   return (
     <>
       <div style={{ marginTop: 80 }} />
-      {HeadlineWithUnderline("Cases", 80, "#034F7A", 0, "#212121", "36px")}
+      {HeadlineWithUnderline("Cases", 80, 0, "#212121", "36px")}
       <Grid container justifyContent="center" paddingTop={5}>
         <Grid item xs={12} sm={6}>
           <Container>
