@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - jest_test
       
 jobs:
   verify:
