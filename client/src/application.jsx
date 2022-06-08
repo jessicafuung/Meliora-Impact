@@ -3,13 +3,11 @@ import React from "react";
 import { CalendarFn, BookingFn, Start } from "./pages/booking";
 import "./application.css";
 import { Home } from "./pages/Home/Home";
-import TestPage from "./pages/TestPage";
 import Navbar from "./components/Navbar/Navbar";
 import { ThemeProvider } from "@mui/material";
 import theme from "./styling/theme";
 import { WaterCases } from "./waterCases";
 import AnimationContainer from "./components/AnimationContainer/AnimationContainer";
-import Header from "./components/navbar";
 import { Contact } from "./pages/Contact/contact";
 import { KnowledgeCases } from "./knowledge";
 import PrivacyPage from "./pages/PrivacyPage/PrivacyPage";
@@ -18,7 +16,6 @@ import { CorporateMember } from "./pages/CorporateMember/corporateMember";
 import { Footer } from "./components/Footer/Footer";
 import { NonProfit } from "./pages/Non-profitMember/nonProfitMember";
 import { FaqPage } from "./pages/Faq/Faq";
-import { FaqQuestionCard } from "./components/FaqQuestionCard/FaqQuestionCard";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import { Cases } from "./pages/Cases/Cases";
 import BreadcrumbComponent from "./components/Breadcrumbs/breadcrumbs";
@@ -36,7 +33,6 @@ export function Application() {
               <Route path={"/corporate"} element={<CorporateMember />} />
               <Route path={"/nonprofit"} element={<NonProfit />} />
               <Route path={"/"} element={<Home />} />
-              <Route path={"/test"} element={<TestPage />} />
               <Route path={"/faq"} element={<FaqPage />} />
               <Route path={"/privacy"} element={<PrivacyPage />} />
               <Route path={"/about"} element={<AboutUsPage />} />
