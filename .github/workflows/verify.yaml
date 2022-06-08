@@ -4,11 +4,12 @@ on:
   push:
     branches:
       - master
+      - jest_test
       
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 4
+    timeout-minutes: 6
     permissions: write-all
     steps:
       - uses: actions/checkout@v2
