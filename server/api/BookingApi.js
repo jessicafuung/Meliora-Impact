@@ -6,12 +6,6 @@ export function BookingApi(mongoDatabase) {
   router.get("/", async (req, res) => {
     const query = {};
 
-    const { isBooked } = req.query;
-
-    if (isBooked) {
-      query.isBooked = isBooked;
-    }
-
     const bookingsQuery = await mongoDatabase
       .collection("bookings")
       .find(query)
@@ -34,13 +28,7 @@ export function BookingApi(mongoDatabase) {
       }))
       .toArray();
 
-    if (bookingsQuery.length >= 1) {
-      // If succeed finding isBooked = false
-      res.json(bookingsQuery);
-    } else {
-      // If not, return the whole collection
-      res.json(bookingsWithoutQuery);
-    }
+    res.json(bookingsQuery);
   });
 
   router.post("/", (req, res) => {
